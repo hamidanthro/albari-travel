@@ -3,323 +3,704 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Al Bari Travel and Tours | Umrah & Hajj Packages from USA</title>
+    <title>Al Bari Travel & Tours | Your Trusted Travel Partner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #1a1a1a;
+            background: #fff;
         }
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
+        
+        /* Header */
         header {
-            background: linear-gradient(135deg, #1B4D3E 0%, #2E7D5A 100%);
-            color: white;
-            padding: 20px;
-            text-align: center;
+            background: #0d1b2a;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
-        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        header p { font-size: 1.2rem; opacity: 0.9; }
-        nav {
-            background: #145A41;
-            padding: 15px;
-            text-align: center;
+        .logo {
+            color: #fff;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
+        .logo span { color: #c9a962; }
         nav a {
-            color: white;
+            color: rgba(255,255,255,0.85);
             text-decoration: none;
-            margin: 0 20px;
-            font-weight: 500;
+            margin-left: 35px;
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: color 0.3s;
         }
-        nav a:hover { text-decoration: underline; }
+        nav a:hover { color: #c9a962; }
+        
+        /* Hero */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=1200') center/cover;
-            height: 450px;
+            height: 100vh;
+            background: linear-gradient(rgba(13, 27, 42, 0.7), rgba(13, 27, 42, 0.8)), 
+                        url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600') center/cover fixed;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
+            padding: 0 20px;
         }
-        .hero h2 { font-size: 3rem; margin-bottom: 20px; }
-        .hero p { font-size: 1.3rem; max-width: 700px; margin-bottom: 30px; }
-        .cta-btn {
-            background: #D4AF37;
-            color: #1B4D3E;
-            padding: 15px 35px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .cta-btn:hover { background: #C9A227; }
-        section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
-        .packages { background: #F8F6F0; }
-        .packages h2 { text-align: center; margin-bottom: 40px; color: #1B4D3E; }
-        .packages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-        .package-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        .package-header {
-            background: #1B4D3E;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .package-header h3 { font-size: 1.5rem; }
-        .package-header .price { font-size: 2rem; font-weight: bold; color: #D4AF37; }
-        .package-body {
-            padding: 25px;
-        }
-        .package-body ul {
-            list-style: none;
+        .hero-content { max-width: 900px; }
+        .hero-tag {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.85rem;
+            color: #c9a962;
             margin-bottom: 20px;
         }
-        .package-body li {
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 25px;
         }
-        .package-body li:before {
-            content: "✓ ";
-            color: #2E7D5A;
-            font-weight: bold;
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            font-weight: 300;
         }
-        .services { text-align: center; }
-        .services h2 { color: #1B4D3E; margin-bottom: 40px; }
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            border-radius: 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+        }
+        .btn-primary {
+            background: #c9a962;
+            color: #0d1b2a;
+        }
+        .btn-primary:hover { background: #b8994d; }
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.5);
+            color: white;
+            margin-left: 15px;
+        }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); }
+        
+        /* Stats Bar */
+        .stats-bar {
+            background: #0d1b2a;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+        .stat { text-align: center; color: white; }
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #c9a962;
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+        
+        /* Services */
+        .services {
+            padding: 100px 20px;
+            background: #fafafa;
+        }
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+        .section-tag {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            color: #c9a962;
+            margin-bottom: 15px;
+        }
+        .section-header h2 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #0d1b2a;
+        }
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .service-item {
+        .service-card {
+            background: white;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+        }
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #0d1b2a;
+        }
+        .service-card p { color: #666; font-size: 0.95rem; }
+        
+        /* Destinations */
+        .destinations {
+            padding: 100px 20px;
+        }
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .dest-card {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .dest-card:first-child {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+        .dest-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .dest-card:hover img { transform: scale(1.1); }
+        .dest-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
             padding: 30px;
-            background: #F8F6F0;
-            border-radius: 12px;
-        }
-        .service-item .icon { font-size: 3rem; margin-bottom: 15px; }
-        .service-item h4 { color: #1B4D3E; margin-bottom: 10px; }
-        .about {
-            background: #1B4D3E;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
             color: white;
+        }
+        .dest-overlay h3 { font-size: 1.5rem; margin-bottom: 5px; }
+        .dest-overlay p { opacity: 0.8; font-size: 0.9rem; }
+        
+        /* Packages */
+        .packages {
+            padding: 100px 20px;
+            background: #0d1b2a;
+            color: white;
+        }
+        .packages .section-header h2 { color: white; }
+        .packages .section-header p { color: rgba(255,255,255,0.7); }
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .package-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 50px 40px;
+            position: relative;
+            transition: all 0.3s;
+        }
+        .package-card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: #c9a962;
+        }
+        .package-card.featured {
+            border-color: #c9a962;
+            background: rgba(201, 169, 98, 0.1);
+        }
+        .package-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #c9a962;
+            color: #0d1b2a;
+            padding: 5px 15px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .package-card h3 { font-size: 1.8rem; margin-bottom: 10px; }
+        .package-price {
+            font-size: 2.5rem;
+            color: #c9a962;
+            margin-bottom: 25px;
+            font-family: 'Playfair Display', serif;
+        }
+        .package-price span { font-size: 1rem; opacity: 0.7; }
+        .package-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        .package-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.95rem;
+        }
+        .package-features li:before {
+            content: "✓ ";
+            color: #c9a962;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 20px;
+            background: #fafafa;
+        }
+        .testimonial-card {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
         }
-        .about h2 { margin-bottom: 20px; color: #D4AF37; }
-        .contact { text-align: center; }
-        .contact h2 { color: #1B4D3E; margin-bottom: 30px; }
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            flex-wrap: wrap;
+        .testimonial-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            color: #0d1b2a;
+            line-height: 1.6;
+            margin-bottom: 30px;
         }
-        .contact-item { text-align: center; }
-        .contact-item .icon { font-size: 2rem; margin-bottom: 10px; }
+        .testimonial-author { color: #666; }
+        .testimonial-author strong { color: #0d1b2a; }
+        
+        /* Contact */
+        .contact {
+            padding: 100px 20px;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #0d1b2a;
+        }
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: #0d1b2a;
+            color: #c9a962;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .contact-item h4 { margin-bottom: 5px; color: #0d1b2a; }
+        .contact-item p { color: #666; font-size: 0.95rem; }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        .contact-form textarea { min-height: 150px; resize: vertical; }
+        .contact-form button {
+            width: 100%;
+            padding: 18px;
+            background: #0d1b2a;
+            color: white;
+            border: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .contact-form button:hover { background: #1a2f4a; }
+        
+        /* Footer */
         footer {
-            background: #0F2E24;
+            background: #0d1b2a;
             color: white;
-            text-align: center;
-            padding: 30px;
+            padding: 60px 20px 30px;
         }
-        .trust-badges {
-            display: flex;
-            justify-content: center;
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 40px;
-            margin-top: 20px;
-            flex-wrap: wrap;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .badge {
-            background: rgba(255,255,255,0.1);
-            padding: 10px 20px;
-            border-radius: 8px;
+        .footer-brand h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .footer-brand h3 span { color: #c9a962; }
+        .footer-brand p { opacity: 0.7; font-size: 0.95rem; line-height: 1.8; }
+        .footer-links h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: #c9a962;
+        }
+        .footer-links a {
+            display: block;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            padding: 8px 0;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover { color: #c9a962; }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            opacity: 0.5;
+            font-size: 0.85rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .destinations-grid { grid-template-columns: repeat(2, 1fr); }
+            .dest-card:first-child { grid-column: span 2; grid-row: span 1; height: 300px; }
+            .dest-card { height: 250px; }
+        }
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            nav { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .stats-bar { gap: 40px; }
+            .stat-number { font-size: 2.2rem; }
+            .destinations-grid { grid-template-columns: 1fr; }
+            .dest-card:first-child { grid-column: span 1; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>🕋 Al Bari Travel and Tours</h1>
-        <p>Your Trusted Partner for Umrah & Hajj from the USA</p>
+        <div class="logo">Al Bari <span>Travel & Tours</span></div>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#packages">Packages</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
     
-    <nav>
-        <a href="#packages">Packages</a>
-        <a href="#services">Services</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tag">Your Trusted Travel Partner</p>
+            <h1>Discover the World in Luxury & Comfort</h1>
+            <p>Experience extraordinary journeys crafted with precision, passion, and over 15 years of expertise. From spiritual pilgrimages to exotic getaways.</p>
+            <a href="#packages" class="btn btn-primary">Explore Packages</a>
+            <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+    </section>
     
-    <div class="hero">
-        <div>
-            <h2>Begin Your Sacred Journey</h2>
-            <p>Experience the pilgrimage of a lifetime with our all-inclusive Umrah and Hajj packages. Expert guidance, premium accommodations, and spiritual support every step of the way.</p>
-            <a href="#packages" class="cta-btn">View Packages →</a>
+    <div class="stats-bar">
+        <div class="stat">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">10K+</span>
+            <span class="stat-label">Happy Travelers</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Destinations</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Support</span>
         </div>
     </div>
     
+    <section class="services" id="services">
+        <div class="section-header">
+            <p class="section-tag">What We Offer</p>
+            <h2>World-Class Travel Services</h2>
+            <p>From visa processing to luxury accommodations, we handle every detail of your journey</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🕋</div>
+                <h3>Umrah & Hajj</h3>
+                <p>Sacred pilgrimages with premium accommodations, expert guides, and complete spiritual support throughout your journey.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✈️</div>
+                <h3>International Flights</h3>
+                <p>Best rates on business and economy class flights worldwide with flexible booking options.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏨</div>
+                <h3>Luxury Hotels</h3>
+                <p>Handpicked 4 & 5-star properties at exclusive rates. From boutique hotels to international chains.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛂</div>
+                <h3>Visa Services</h3>
+                <p>Hassle-free visa processing for all destinations. Tourist, business, and religious visas handled with care.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚐</div>
+                <h3>Private Transfers</h3>
+                <p>Luxury ground transportation and private chauffeur services at all destinations.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>Custom Packages</h3>
+                <p>Bespoke travel experiences tailored to your preferences, budget, and schedule.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="destinations" id="destinations">
+        <div class="section-header">
+            <p class="section-tag">Popular Destinations</p>
+            <h2>Where Will You Go?</h2>
+            <p>Explore our most sought-after destinations</p>
+        </div>
+        <div class="destinations-grid">
+            <div class="dest-card">
+                <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=800" alt="Makkah">
+                <div class="dest-overlay">
+                    <h3>Makkah & Madinah</h3>
+                    <p>Spiritual journeys to the Holy Cities</p>
+                </div>
+            </div>
+            <div class="dest-card">
+                <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=800" alt="Dubai">
+                <div class="dest-overlay">
+                    <h3>Dubai</h3>
+                    <p>Luxury & Adventure</p>
+                </div>
+            </div>
+            <div class="dest-card">
+                <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800" alt="Turkey">
+                <div class="dest-overlay">
+                    <h3>Turkey</h3>
+                    <p>Where East Meets West</p>
+                </div>
+            </div>
+            <div class="dest-card">
+                <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800" alt="Europe">
+                <div class="dest-overlay">
+                    <h3>Europe</h3>
+                    <p>Classic Grand Tours</p>
+                </div>
+            </div>
+            <div class="dest-card">
+                <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800" alt="Malaysia">
+                <div class="dest-overlay">
+                    <h3>Malaysia</h3>
+                    <p>Tropical Paradise</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <section class="packages" id="packages">
-        <h2>Our Umrah Packages</h2>
+        <div class="section-header">
+            <p class="section-tag">Featured Packages</p>
+            <h2>Curated Travel Experiences</h2>
+            <p>All-inclusive packages designed for unforgettable journeys</p>
+        </div>
         <div class="packages-grid">
             <div class="package-card">
-                <div class="package-header">
-                    <h3>Economy Umrah</h3>
-                    <p class="price">$2,499</p>
-                    <p>10 Days • Shared Room</p>
-                </div>
-                <div class="package-body">
-                    <ul>
-                        <li>Round-trip airfare from major US cities</li>
-                        <li>4-star hotel in Makkah (5 nights)</li>
-                        <li>4-star hotel in Madinah (4 nights)</li>
-                        <li>Ground transportation</li>
-                        <li>Umrah visa processing</li>
-                        <li>Guided Ziyarat tours</li>
-                        <li>24/7 support</li>
-                    </ul>
-                    <button class="cta-btn" style="width:100%">Book Now</button>
-                </div>
+                <h3>Economy Umrah</h3>
+                <div class="package-price">$2,499 <span>/ person</span></div>
+                <ul class="package-features">
+                    <li>10 Days / 9 Nights</li>
+                    <li>Round-trip airfare included</li>
+                    <li>4-star hotels near Haram</li>
+                    <li>Ground transportation</li>
+                    <li>Visa processing</li>
+                    <li>Guided Ziyarat tours</li>
+                    <li>24/7 support</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary" style="width:100%;text-align:center;">Book Now</a>
             </div>
-            
-            <div class="package-card">
-                <div class="package-header" style="background: #D4AF37; color: #1B4D3E;">
-                    <h3>⭐ Premium Umrah</h3>
-                    <p class="price" style="color: #1B4D3E;">$3,999</p>
-                    <p>12 Days • Private Room</p>
-                </div>
-                <div class="package-body">
-                    <ul>
-                        <li>Round-trip business class option</li>
-                        <li>5-star hotel near Haram (6 nights)</li>
-                        <li>5-star hotel in Madinah (5 nights)</li>
-                        <li>Private transportation</li>
-                        <li>Umrah visa processing</li>
-                        <li>Personal guide throughout</li>
-                        <li>Special Ziyarat program</li>
-                        <li>Complimentary meals</li>
-                    </ul>
-                    <button class="cta-btn" style="width:100%">Book Now</button>
-                </div>
+            <div class="package-card featured">
+                <span class="package-badge">Most Popular</span>
+                <h3>Premium Umrah</h3>
+                <div class="package-price">$3,999 <span>/ person</span></div>
+                <ul class="package-features">
+                    <li>12 Days / 11 Nights</li>
+                    <li>Business class upgrade option</li>
+                    <li>5-star hotels with Haram view</li>
+                    <li>Private transportation</li>
+                    <li>Personal guide throughout</li>
+                    <li>Special Ziyarat program</li>
+                    <li>Complimentary meals</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary" style="width:100%;text-align:center;">Book Now</a>
             </div>
-            
             <div class="package-card">
-                <div class="package-header">
-                    <h3>Ramadan Special</h3>
-                    <p class="price">$4,499</p>
-                    <p>15 Days • Last 10 Nights</p>
-                </div>
-                <div class="package-body">
-                    <ul>
-                        <li>Experience Laylatul Qadr in Makkah</li>
-                        <li>5-star hotel with Haram view</li>
-                        <li>Daily Iftar & Suhoor included</li>
-                        <li>Private transportation</li>
-                        <li>Scholar-led programs</li>
-                        <li>Small group (max 15 people)</li>
-                        <li>Zamzam water to take home</li>
-                    </ul>
-                    <button class="cta-btn" style="width:100%">Book Now</button>
-                </div>
+                <h3>Dubai Luxury</h3>
+                <div class="package-price">$1,899 <span>/ person</span></div>
+                <ul class="package-features">
+                    <li>5 Days / 4 Nights</li>
+                    <li>5-star hotel accommodation</li>
+                    <li>Desert safari experience</li>
+                    <li>Burj Khalifa tickets</li>
+                    <li>Private city tour</li>
+                    <li>Airport transfers</li>
+                    <li>Breakfast included</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary" style="width:100%;text-align:center;">Book Now</a>
             </div>
         </div>
     </section>
     
-    <section class="services" id="services">
-        <h2>Why Choose Al Bari?</h2>
-        <div class="services-grid">
-            <div class="service-item">
-                <div class="icon">🛂</div>
-                <h4>Visa Processing</h4>
-                <p>We handle all Saudi visa requirements hassle-free</p>
-            </div>
-            <div class="service-item">
-                <div class="icon">🏨</div>
-                <h4>Premium Hotels</h4>
-                <p>Carefully selected accommodations near the Haram</p>
-            </div>
-            <div class="service-item">
-                <div class="icon">👨‍🏫</div>
-                <h4>Expert Guides</h4>
-                <p>Knowledgeable guides for spiritual & historical context</p>
-            </div>
-            <div class="service-item">
-                <div class="icon">✈️</div>
-                <h4>Flight Booking</h4>
-                <p>Best rates from all major US airports</p>
-            </div>
-            <div class="service-item">
-                <div class="icon">🚐</div>
-                <h4>Ground Transport</h4>
-                <p>Comfortable AC buses & private cars available</p>
-            </div>
-            <div class="service-item">
-                <div class="icon">📞</div>
-                <h4>24/7 Support</h4>
-                <p>We're always available during your journey</p>
-            </div>
+    <section class="testimonials">
+        <div class="section-header">
+            <p class="section-tag">Testimonials</p>
+            <h2>What Our Travelers Say</h2>
         </div>
-    </section>
-    
-    <section class="about" id="about">
-        <h2>About Al Bari Travel</h2>
-        <p style="max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
-            Al Bari Travel and Tours has been helping Muslims from across the United States 
-            fulfill their sacred obligation of Umrah and Hajj for over 15 years. Based in San Antonio, Texas,
-            we understand the needs of American Muslim families and provide personalized service 
-            to make your pilgrimage a spiritually fulfilling and comfortable experience.
-        </p>
-        <div class="trust-badges">
-            <div class="badge">✓ Licensed Saudi Partner</div>
-            <div class="badge">✓ BBB Accredited</div>
-            <div class="badge">✓ 5000+ Happy Pilgrims</div>
-            <div class="badge">✓ Urdu, Arabic & English</div>
+        <div class="testimonial-card">
+            <p class="testimonial-text">"Al Bari Travel made our Umrah journey absolutely seamless. From visa processing to hotel accommodations, everything was first-class. Their attention to detail and genuine care made this spiritual journey even more meaningful."</p>
+            <p class="testimonial-author"><strong>Ahmed & Family</strong> — Houston, TX</p>
         </div>
     </section>
     
     <section class="contact" id="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-info">
-            <div class="contact-item">
-                <div class="icon">📍</div>
-                <h4>Visit Us</h4>
-                <p>5678 Fredericksburg Road<br>San Antonio, TX 78229</p>
+        <div class="section-header">
+            <p class="section-tag">Get in Touch</p>
+            <h2>Plan Your Journey</h2>
+            <p>Ready to explore? Contact us for a personalized quote</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h4>Visit Our Office</h4>
+                        <p>5678 Fredericksburg Road<br>San Antonio, TX 78229</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <h4>Call Us</h4>
+                        <p>(210) 555-4255<br>Mon-Sat: 9AM - 7PM</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <h4>Email Us</h4>
+                        <p>info@albaritravelspk.com<br>booking@albaritravelspk.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💬</div>
+                    <div>
+                        <h4>Live Chat</h4>
+                        <p>Chat with us 24/7<br>Click the chat icon →</p>
+                    </div>
+                </div>
             </div>
-            <div class="contact-item">
-                <div class="icon">📞</div>
-                <h4>Call Us</h4>
-                <p>(210) 555-HAJJ<br>(210) 555-4255</p>
-            </div>
-            <div class="contact-item">
-                <div class="icon">✉️</div>
-                <h4>Email Us</h4>
-                <p>info@albaritravel.com<br>booking@albaritravel.com</p>
-            </div>
-            <div class="contact-item">
-                <div class="icon">💬</div>
-                <h4>Chat With Us</h4>
-                <p>Click the chat icon<br>in the bottom right →</p>
-            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number">
+                <textarea placeholder="Tell us about your travel plans..."></textarea>
+                <button type="submit">Send Message</button>
+            </form>
         </div>
     </section>
     
     <footer>
-        <p>🕋 Al Bari Travel and Tours — Serving the Muslim Community Since 2010</p>
-        <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9rem;">
-            San Antonio, TX | Licensed & Bonded | Member of ASTA
-        </p>
-        <p style="margin-top: 15px; opacity: 0.5; font-size: 0.8rem;">
-            Powered by <a href="https://replyquik.com" style="color: #D4AF37;">ReplyQuik</a> AI Chat
-        </p>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Al Bari <span>Travel & Tours</span></h3>
+                <p>Your trusted travel partner for over 15 years. We specialize in creating unforgettable journeys — from sacred pilgrimages to luxury getaways worldwide.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <a href="#">Umrah Packages</a>
+                <a href="#">Hajj Packages</a>
+                <a href="#">Flight Booking</a>
+                <a href="#">Hotel Reservations</a>
+                <a href="#">Visa Services</a>
+            </div>
+            <div class="footer-links">
+                <h4>Destinations</h4>
+                <a href="#">Saudi Arabia</a>
+                <a href="#">Dubai & UAE</a>
+                <a href="#">Turkey</a>
+                <a href="#">Malaysia</a>
+                <a href="#">Europe</a>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Testimonials</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+        <p class="footer-bottom">© 2026 Al Bari Travel & Tours. All rights reserved. Licensed & Bonded.</p>
     </footer>
 
     <!-- ReplyQuik Chat Widget -->
-    <script src="https://api.replyquik.com/widget.js" data-id="demo"></script>
+    <script src="https://api.replyquik.com/widget.js" data-id="def73be0-32a0-4aac-acb9-e58645834ba9"></script>
 </body>
 </html>
