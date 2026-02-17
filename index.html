@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Bari Travel and Tours | Umrah & Hajj Packages from USA</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #1B4D3E 0%, #2E7D5A 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        header p { font-size: 1.2rem; opacity: 0.9; }
+        nav {
+            background: #145A41;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+        }
+        nav a:hover { text-decoration: underline; }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=1200') center/cover;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero h2 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.3rem; max-width: 700px; margin-bottom: 30px; }
+        .cta-btn {
+            background: #D4AF37;
+            color: #1B4D3E;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .cta-btn:hover { background: #C9A227; }
+        section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
+        .packages { background: #F8F6F0; }
+        .packages h2 { text-align: center; margin-bottom: 40px; color: #1B4D3E; }
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .package-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .package-header {
+            background: #1B4D3E;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .package-header h3 { font-size: 1.5rem; }
+        .package-header .price { font-size: 2rem; font-weight: bold; color: #D4AF37; }
+        .package-body {
+            padding: 25px;
+        }
+        .package-body ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        .package-body li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .package-body li:before {
+            content: "✓ ";
+            color: #2E7D5A;
+            font-weight: bold;
+        }
+        .services { text-align: center; }
+        .services h2 { color: #1B4D3E; margin-bottom: 40px; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        .service-item {
+            padding: 30px;
+            background: #F8F6F0;
+            border-radius: 12px;
+        }
+        .service-item .icon { font-size: 3rem; margin-bottom: 15px; }
+        .service-item h4 { color: #1B4D3E; margin-bottom: 10px; }
+        .about {
+            background: #1B4D3E;
+            color: white;
+            text-align: center;
+        }
+        .about h2 { margin-bottom: 20px; color: #D4AF37; }
+        .contact { text-align: center; }
+        .contact h2 { color: #1B4D3E; margin-bottom: 30px; }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        .contact-item { text-align: center; }
+        .contact-item .icon { font-size: 2rem; margin-bottom: 10px; }
+        footer {
+            background: #0F2E24;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🕋 Al Bari Travel and Tours</h1>
+        <p>Your Trusted Partner for Umrah & Hajj from the USA</p>
+    </header>
+    
+    <nav>
+        <a href="#packages">Packages</a>
+        <a href="#services">Services</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    
+    <div class="hero">
+        <div>
+            <h2>Begin Your Sacred Journey</h2>
+            <p>Experience the pilgrimage of a lifetime with our all-inclusive Umrah and Hajj packages. Expert guidance, premium accommodations, and spiritual support every step of the way.</p>
+            <a href="#packages" class="cta-btn">View Packages →</a>
+        </div>
+    </div>
+    
+    <section class="packages" id="packages">
+        <h2>Our Umrah Packages</h2>
+        <div class="packages-grid">
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Economy Umrah</h3>
+                    <p class="price">$2,499</p>
+                    <p>10 Days • Shared Room</p>
+                </div>
+                <div class="package-body">
+                    <ul>
+                        <li>Round-trip airfare from major US cities</li>
+                        <li>4-star hotel in Makkah (5 nights)</li>
+                        <li>4-star hotel in Madinah (4 nights)</li>
+                        <li>Ground transportation</li>
+                        <li>Umrah visa processing</li>
+                        <li>Guided Ziyarat tours</li>
+                        <li>24/7 support</li>
+                    </ul>
+                    <button class="cta-btn" style="width:100%">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="package-card">
+                <div class="package-header" style="background: #D4AF37; color: #1B4D3E;">
+                    <h3>⭐ Premium Umrah</h3>
+                    <p class="price" style="color: #1B4D3E;">$3,999</p>
+                    <p>12 Days • Private Room</p>
+                </div>
+                <div class="package-body">
+                    <ul>
+                        <li>Round-trip business class option</li>
+                        <li>5-star hotel near Haram (6 nights)</li>
+                        <li>5-star hotel in Madinah (5 nights)</li>
+                        <li>Private transportation</li>
+                        <li>Umrah visa processing</li>
+                        <li>Personal guide throughout</li>
+                        <li>Special Ziyarat program</li>
+                        <li>Complimentary meals</li>
+                    </ul>
+                    <button class="cta-btn" style="width:100%">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Ramadan Special</h3>
+                    <p class="price">$4,499</p>
+                    <p>15 Days • Last 10 Nights</p>
+                </div>
+                <div class="package-body">
+                    <ul>
+                        <li>Experience Laylatul Qadr in Makkah</li>
+                        <li>5-star hotel with Haram view</li>
+                        <li>Daily Iftar & Suhoor included</li>
+                        <li>Private transportation</li>
+                        <li>Scholar-led programs</li>
+                        <li>Small group (max 15 people)</li>
+                        <li>Zamzam water to take home</li>
+                    </ul>
+                    <button class="cta-btn" style="width:100%">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="services" id="services">
+        <h2>Why Choose Al Bari?</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="icon">🛂</div>
+                <h4>Visa Processing</h4>
+                <p>We handle all Saudi visa requirements hassle-free</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">🏨</div>
+                <h4>Premium Hotels</h4>
+                <p>Carefully selected accommodations near the Haram</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">👨‍🏫</div>
+                <h4>Expert Guides</h4>
+                <p>Knowledgeable guides for spiritual & historical context</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">✈️</div>
+                <h4>Flight Booking</h4>
+                <p>Best rates from all major US airports</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">🚐</div>
+                <h4>Ground Transport</h4>
+                <p>Comfortable AC buses & private cars available</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">📞</div>
+                <h4>24/7 Support</h4>
+                <p>We're always available during your journey</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about" id="about">
+        <h2>About Al Bari Travel</h2>
+        <p style="max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
+            Al Bari Travel and Tours has been helping Muslims from across the United States 
+            fulfill their sacred obligation of Umrah and Hajj for over 15 years. Based in San Antonio, Texas,
+            we understand the needs of American Muslim families and provide personalized service 
+            to make your pilgrimage a spiritually fulfilling and comfortable experience.
+        </p>
+        <div class="trust-badges">
+            <div class="badge">✓ Licensed Saudi Partner</div>
+            <div class="badge">✓ BBB Accredited</div>
+            <div class="badge">✓ 5000+ Happy Pilgrims</div>
+            <div class="badge">✓ Urdu, Arabic & English</div>
+        </div>
+    </section>
+    
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="icon">📍</div>
+                <h4>Visit Us</h4>
+                <p>5678 Fredericksburg Road<br>San Antonio, TX 78229</p>
+            </div>
+            <div class="contact-item">
+                <div class="icon">📞</div>
+                <h4>Call Us</h4>
+                <p>(210) 555-HAJJ<br>(210) 555-4255</p>
+            </div>
+            <div class="contact-item">
+                <div class="icon">✉️</div>
+                <h4>Email Us</h4>
+                <p>info@albaritravel.com<br>booking@albaritravel.com</p>
+            </div>
+            <div class="contact-item">
+                <div class="icon">💬</div>
+                <h4>Chat With Us</h4>
+                <p>Click the chat icon<br>in the bottom right →</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>🕋 Al Bari Travel and Tours — Serving the Muslim Community Since 2010</p>
+        <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9rem;">
+            San Antonio, TX | Licensed & Bonded | Member of ASTA
+        </p>
+        <p style="margin-top: 15px; opacity: 0.5; font-size: 0.8rem;">
+            Powered by <a href="https://replyquik.com" style="color: #D4AF37;">ReplyQuik</a> AI Chat
+        </p>
+    </footer>
+
+    <!-- ReplyQuik Chat Widget -->
+    <script src="https://api.replyquik.com/widget.js" data-id="demo"></script>
+</body>
+</html>
