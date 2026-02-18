@@ -127,6 +127,81 @@
             margin-top: 5px;
         }
         
+        /* Flight Prices Section */
+        .flight-prices {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        .prices-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .price-category {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .price-category h3 {
+            background: #0d1b2a;
+            color: white;
+            padding: 20px;
+            margin: 0;
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .price-table {
+            padding: 15px;
+        }
+        .price-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.2fr;
+            gap: 10px;
+            padding: 12px 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
+            align-items: center;
+        }
+        .price-row:last-child {
+            border-bottom: none;
+        }
+        .price-row.header {
+            font-weight: 600;
+            color: #666;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+        .price-row.featured {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+            border-radius: 6px;
+            border: 1px solid #c9a962;
+        }
+        .price-row .price {
+            font-weight: 700;
+            color: #c9a962;
+            font-size: 1rem;
+        }
+        .prices-note {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .price-row {
+                grid-template-columns: 1fr 1fr;
+                gap: 5px;
+            }
+            .price-row.header {
+                display: none;
+            }
+        }
+        
         /* Services */
         .services {
             padding: 100px 20px;
@@ -433,6 +508,7 @@
     <header>
         <div class="logo">Al Bari <span>Travel & Tours</span></div>
         <nav>
+            <a href="#flights">Flights</a>
             <a href="#services">Services</a>
             <a href="#destinations">Destinations</a>
             <a href="#packages">Packages</a>
@@ -468,6 +544,105 @@
             <span class="stat-label">Support</span>
         </div>
     </div>
+
+    <!-- Live Flight Prices Section -->
+    <section class="flight-prices" id="flights">
+        <div class="section-header">
+            <p class="section-tag">✈️ Live Flight Deals</p>
+            <h2>Today's Best Fares from Pakistan</h2>
+            <p>Updated daily • Prices in PKR • Limited seats available</p>
+        </div>
+        <div class="prices-container">
+            <div class="price-category">
+                <h3>🇦🇪 UAE Flights</h3>
+                <div class="price-table">
+                    <div class="price-row header">
+                        <span>Route</span>
+                        <span>Date</span>
+                        <span>Airline</span>
+                        <span>Price</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Islamabad → Dubai</span>
+                        <span>Feb 24</span>
+                        <span>Air Sial</span>
+                        <span class="price">PKR 53,000</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Islamabad → Dubai</span>
+                        <span>Feb 23</span>
+                        <span>Air Sial</span>
+                        <span class="price">PKR 57,000</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Islamabad → Sharjah</span>
+                        <span>Feb 20</span>
+                        <span>Fly Jinnah</span>
+                        <span class="price">PKR 75,000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="price-category">
+                <h3>🇸🇦 Saudi Arabia Flights</h3>
+                <div class="price-table">
+                    <div class="price-row header">
+                        <span>Route</span>
+                        <span>Date</span>
+                        <span>Airline</span>
+                        <span>Price</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Islamabad → Riyadh</span>
+                        <span>Feb 23</span>
+                        <span>Fly Jinnah</span>
+                        <span class="price">PKR 65,000</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Islamabad → Dammam</span>
+                        <span>Feb 20</span>
+                        <span>Air Sial</span>
+                        <span class="price">PKR 63,000</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Islamabad → Jeddah</span>
+                        <span>Feb 22</span>
+                        <span>Jazeera</span>
+                        <span class="price">PKR 85,000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="price-category">
+                <h3>🕋 Umrah Packages</h3>
+                <div class="price-table">
+                    <div class="price-row header">
+                        <span>Route</span>
+                        <span>Dates</span>
+                        <span>Airline</span>
+                        <span>Price</span>
+                    </div>
+                    <div class="price-row featured">
+                        <span>Islamabad ↔ Jeddah</span>
+                        <span>Mar 9-28</span>
+                        <span>Fly Jinnah</span>
+                        <span class="price">PKR 149,000</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Islamabad ↔ Jeddah</span>
+                        <span>Mar 14-28</span>
+                        <span>Saudi</span>
+                        <span class="price">PKR 165,000</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Islamabad ↔ Jeddah</span>
+                        <span>Mar 1-15</span>
+                        <span>Saudi</span>
+                        <span class="price">PKR 167,000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="prices-note">💡 Prices update daily at 8 AM PKT • Contact us for booking • Seats subject to availability</p>
+    </section>
     
     <section class="services" id="services">
         <div class="section-header">
