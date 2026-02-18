@@ -24,8 +24,20 @@
             align-items: center;
             position: fixed;
             width: 100%;
-            top: 0;
+            top: 44px;
             z-index: 1000;
+        }
+        .call-banner {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1001;
+            background: #c9a962;
+            color: #0d1b2a;
+            text-align: center;
+            padding: 10px 20px;
+            font-weight: 700;
+            font-size: 1rem;
         }
         .logo {
             color: #fff;
@@ -49,7 +61,8 @@
         
         /* Hero */
         .hero {
-            height: 100vh;
+            height: 50vh;
+            min-height: 350px;
             background: linear-gradient(rgba(13, 27, 42, 0.7), rgba(13, 27, 42, 0.8)), 
                         url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600') center/cover fixed;
             display: flex;
@@ -68,18 +81,24 @@
             margin-bottom: 20px;
         }
         .hero h1 {
-            font-size: 4rem;
+            font-size: 2.8rem;
             font-weight: 500;
             line-height: 1.1;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             opacity: 0.9;
             max-width: 600px;
-            margin: 0 auto 40px;
+            margin: 0 auto 25px;
             font-weight: 300;
         }
+        .call-banner a {
+            color: #0d1b2a;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        .call-banner a:hover { text-decoration: underline; }
         .btn {
             display: inline-block;
             padding: 16px 40px;
@@ -538,6 +557,9 @@
     </style>
 </head>
 <body>
+    <div class="call-banner">
+        📞 Call now for booking: <a href="tel:+923159596161">+92 315 9596161</a>
+    </div>
     <header>
         <div class="logo">Al Bari <span>Travel & Tours</span></div>
         <nav>
