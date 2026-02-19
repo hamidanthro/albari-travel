@@ -238,6 +238,81 @@
             color: #666;
             font-size: 0.9rem;
         }
+        
+        /* New Flight Card Styles */
+        .flight-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .flight-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .flight-card.featured {
+            border: 2px solid #c9a962;
+            background: linear-gradient(135deg, #fffdf7 0%, #fff 100%);
+        }
+        .flight-row-1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        .flight-row-1 .flight-route {
+            font-weight: 700;
+            color: #0d1b2a;
+            font-size: 1rem;
+        }
+        .flight-row-1 .flight-date {
+            color: #444;
+            font-size: 0.9rem;
+        }
+        .flight-row-1 .flight-airline {
+            color: #666;
+            font-size: 0.85rem;
+        }
+        .flight-row-1 .flight-price {
+            font-weight: 700;
+            color: #c9a962;
+            font-size: 1.1rem;
+        }
+        .flight-row-2 {
+            display: flex;
+            gap: 20px;
+            color: #666;
+            font-size: 0.85rem;
+        }
+        .flight-detail {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .flight-detail .icon {
+            font-size: 0.9rem;
+        }
+        .flight-detail .value {
+            color: #555;
+        }
+        @media (max-width: 600px) {
+            .flight-row-1 {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .flight-row-1 .flight-price {
+                margin-top: 5px;
+            }
+            .flight-row-2 {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+        }
         @media (max-width: 900px) {
             .flight-row {
                 grid-template-columns: 1.5fr 1fr 1fr 1fr;
