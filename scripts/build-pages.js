@@ -365,7 +365,8 @@ ${JSON.stringify({
     intro,
     canonical: `${site.domain}/offices/${province.slug}/${district.slug}/`,
     seoTitle: `Umrah & Hajj from ${district.name} | Al Bari Travel & Tours`,
-    seoDescription: `Book Umrah and Hajj packages from ${district.name}, ${province.name}. International flights via ${airportInfo.name} (${airportInfo.code}), Saudi visa processing, group departures. Contact ${bm.incharge}: ${bm.phoneDisplay}.`,
+    // Trimmed to ~150-160 chars (Google SERP display cap). Keep airport code + brand contact.
+    seoDescription: `Book Umrah and Hajj from ${district.name}, ${province.name}. Flights via ${airportInfo.code}, Saudi visa, group departures. Call ${bm.phoneDisplay}.`.slice(0, 158),
     ogType: 'place',
     ctaButtons: ctaButtons.map(b => '                    ' + b).join('\n'),
     faqHtml,
@@ -615,20 +616,23 @@ const STATIC_PAGES = [
 ];
 
 function contactPageBody() {
-  return offices.map(o => `
-        <div class="package-card" style="margin-bottom:18px;padding:30px 32px;">
+  return offices.map(o => {
+    const firstName = escapeHtml(o.incharge.split(' ')[0]);
+    return `
+        <section class="package-card" style="margin-bottom:18px;padding:30px 32px;" aria-labelledby="office-${o.slug}-h">
             <p style="color:#c9a962;text-transform:uppercase;letter-spacing:1.5px;font-size:0.72rem;font-weight:600;">${escapeHtml(o.country)} · ${escapeHtml(o.addressRegion)}</p>
-            <h3 style="font-size:1.4rem;margin:6px 0 18px;">${escapeHtml(o.name)}</h3>
+            <h2 id="office-${o.slug}-h" style="font-size:1.4rem;margin:6px 0 18px;">${escapeHtml(o.name)}</h2>
             <p style="opacity:0.75;margin-bottom:6px;"><strong>Branch Manager:</strong> ${escapeHtml(o.incharge)}</p>
-            <p style="opacity:0.75;margin-bottom:6px;"><strong>Phone:</strong> <a href="tel:${o.phoneE164}" style="color:#c9a962;">${escapeHtml(o.phoneDisplay)}</a></p>
+            <p style="opacity:0.75;margin-bottom:6px;"><strong>Phone:</strong> <a href="tel:${o.phoneE164}" style="color:#c9a962;" aria-label="Call ${firstName} at ${o.phoneDisplay}">${escapeHtml(o.phoneDisplay)}</a></p>
             <p style="opacity:0.75;margin-bottom:6px;"><strong>Location:</strong> ${escapeHtml(o.addressLocality)}, ${escapeHtml(o.country)}</p>
             <p style="opacity:0.75;margin-bottom:18px;"><strong>Hours:</strong> ${escapeHtml(o.openingHours.replace('Mo-Sa', 'Mon–Sat').replace('-', ' to '))}</p>
             <div class="office-actions">
-                ${o.hasWhatsapp ? `<a href="https://wa.me/${o.whatsappNumber}" target="_blank" rel="noopener" class="btn btn-primary">WhatsApp ${escapeHtml(o.incharge.split(' ')[0])}</a>` : ''}
-                <a href="tel:${o.phoneE164}" class="btn ${o.hasWhatsapp ? 'btn-secondary' : 'btn-primary'}">Call ${escapeHtml(o.incharge.split(' ')[0])}</a>
-                <a href="/offices/${o.slug}/" class="btn btn-secondary">Office page &rarr;</a>
+                ${o.hasWhatsapp ? `<a href="https://wa.me/${o.whatsappNumber}" target="_blank" rel="noopener" class="btn btn-primary">WhatsApp ${firstName}</a>` : ''}
+                <a href="tel:${o.phoneE164}" class="btn ${o.hasWhatsapp ? 'btn-secondary' : 'btn-primary'}">Call ${firstName}</a>
+                <a href="/offices/${o.slug}/" class="btn btn-secondary">Visit ${escapeHtml(o.name)} page</a>
             </div>
-        </div>`).join('');
+        </section>`;
+  }).join('');
 }
 
 function contactPageSchema() {
@@ -742,6 +746,39 @@ ${urls.map(u => {
   writeFile('sitemap.xml', xml);
 }
 
+// ------------------------------------------------------------------
+// CSS minification — zero-dependency, conservative.
+// Strips comments, collapses whitespace around { } : ; , > + ~ , and
+// removes the last semicolon before }. Preserves "foo: bar" strings
+// inside content: "..." declarations.
+// ------------------------------------------------------------------
+function minifyCss() {
+  const src = fs.readFileSync(path.join(ROOT, 'css/main.css'), 'utf8');
+  // Protect 'content: "..."' string values so we don't strip whitespace from them.
+  const strings = [];
+  let working = src.replace(/(["'])((?:\\.|(?!\1).)*)\1/g, (m) => {
+    strings.push(m);
+    return `__STR_${strings.length - 1}__`;
+  });
+  // Strip /* … */ comments.
+  working = working.replace(/\/\*[\s\S]*?\*\//g, '');
+  // Collapse all runs of whitespace to a single space.
+  working = working.replace(/\s+/g, ' ');
+  // Remove space around structural chars.
+  working = working.replace(/\s*([{}:;,>+~])\s*/g, '$1');
+  // Drop trailing semicolons before closing braces.
+  working = working.replace(/;}/g, '}');
+  // Restore strings.
+  working = working.replace(/__STR_(\d+)__/g, (_, i) => strings[+i]);
+  // Restore a couple of mandatory spaces (e.g. after media query keyword).
+  working = working.replace(/@(media|supports|keyframes|font-face)/g, ' @$1 ').trim();
+
+  writeFile('css/main.min.css', working);
+  const before = src.length, after = working.length;
+  const saved = ((1 - after/before) * 100).toFixed(1);
+  console.log(`  minified ${before} → ${after} bytes (-${saved}%)`);
+}
+
 function buildRobots() {
   // Explicit-allow per-bot. Most permissive for trusted crawlers, slight crawl-delay
   // hint to defaults so we don't get hammered by long-tail bots on 183 pages.
@@ -814,6 +851,11 @@ if (target === 'all' || target === 'sitemap') {
   console.log('building sitemap + robots...');
   buildSitemap();
   buildRobots();
+}
+
+if (target === 'all' || target === 'css') {
+  console.log('minifying CSS...');
+  minifyCss();
 }
 
 console.log('done.');

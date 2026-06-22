@@ -84,8 +84,8 @@
 
 <section class="packages">
     <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;">
-        <div class="package-card">
-            <h3>Your Contact for {{name}}</h3>
+        <section class="package-card" aria-labelledby="contact-block">
+            <h2 id="contact-block">Your Contact for {{name}}</h2>
             <div style="margin-top:20px;">
                 <div class="office-row"><span class="office-label">Contact</span><span class="office-value">{{incharge}}</span></div>
                 <div class="office-row"><span class="office-label">Role</span><span class="office-value">{{title}}</span></div>
@@ -96,18 +96,18 @@
 {{{ctaButtons}}}
                 </div>
             </div>
-        </div>
-        <div class="package-card">
-            <h3>Services Available for {{name}}</h3>
+        </section>
+        <section class="package-card" aria-labelledby="services-h">
+            <h2 id="services-h">Services Available for {{name}}</h2>
             <ul class="package-features" style="margin-top:20px;">
                 <li>Umrah packages serving {{name}}</li>
                 <li>Hajj packages with group departures from {{provinceName}}</li>
-                <li>International flight booking</li>
-                <li>Saudi Arabia visa processing &amp; documentation</li>
-                <li>Phone &amp; WhatsApp consultations</li>
+                <li>International flight booking from nearest airport</li>
+                <li>Saudi Arabia visa processing &amp; documentation for {{name}} residents</li>
+                <li>Phone &amp; WhatsApp consultations in English, Urdu, and Punjabi</li>
             </ul>
-            <a href="/#packages" class="btn btn-secondary" style="width:100%;text-align:center;display:block;">View All Packages</a>
-        </div>
+            <a href="/#packages" class="btn btn-secondary" style="width:100%;text-align:center;display:block;">View All Al Bari Travel Packages</a>
+        </section>
     </div>
 </section>
 

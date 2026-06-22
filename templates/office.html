@@ -93,8 +93,8 @@
 
 <section class="packages">
     <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;">
-        <div class="package-card">
-            <h3>Office Details</h3>
+        <section class="package-card" aria-labelledby="office-details-h">
+            <h2 id="office-details-h">Office Details</h2>
             <div style="margin-top:20px;">
                 <div class="office-row"><span class="office-label">Incharge</span><span class="office-value">{{incharge}}</span></div>
                 <div class="office-row"><span class="office-label">Phone</span><span class="office-value">{{phoneDisplay}}</span></div>
@@ -105,14 +105,14 @@
 {{{ctaButtons}}}
                 </div>
             </div>
-        </div>
-        <div class="package-card">
-            <h3>Services Offered</h3>
+        </section>
+        <section class="package-card" aria-labelledby="services-offered-h">
+            <h2 id="services-offered-h">Services Offered</h2>
             <ul class="package-features" style="margin-top:20px;">
 {{{serviceList}}}
             </ul>
             <a href="/#packages" class="btn btn-secondary" style="width:100%;text-align:center;display:block;">View All Packages</a>
-        </div>
+        </section>
     </div>
 </section>
 
