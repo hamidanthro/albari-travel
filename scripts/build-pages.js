@@ -195,10 +195,52 @@ function hashSlug(s) {
   return Math.abs(h);
 }
 
+// Nearest international airport per district — meaningful entity signal for SEO + real
+// info for the user. Mapping is by region + a few district overrides for major hubs.
+function nearestAirport(province, district) {
+  // Per-district overrides where a major airport sits in that district.
+  const overrides = {
+    'lahore':            { code: 'LHE', name: 'Allama Iqbal International Airport, Lahore' },
+    'multan':            { code: 'MUX', name: 'Multan International Airport' },
+    'faisalabad':        { code: 'LYP', name: 'Faisalabad International Airport' },
+    'sialkot':           { code: 'SKT', name: 'Sialkot International Airport' },
+    'rahim-yar-khan':    { code: 'RYK', name: 'Sheikh Zayed International Airport, Rahim Yar Khan' },
+    'karachi-central':   { code: 'KHI', name: 'Jinnah International Airport, Karachi' },
+    'karachi-east':      { code: 'KHI', name: 'Jinnah International Airport, Karachi' },
+    'karachi-south':     { code: 'KHI', name: 'Jinnah International Airport, Karachi' },
+    'karachi-west':      { code: 'KHI', name: 'Jinnah International Airport, Karachi' },
+    'kemari':            { code: 'KHI', name: 'Jinnah International Airport, Karachi' },
+    'korangi':           { code: 'KHI', name: 'Jinnah International Airport, Karachi' },
+    'malir':             { code: 'KHI', name: 'Jinnah International Airport, Karachi' },
+    'sukkur':            { code: 'SKZ', name: 'Sukkur Airport' },
+    'gwadar':            { code: 'GWD', name: 'Gwadar International Airport' },
+    'quetta':            { code: 'UET', name: 'Quetta International Airport' },
+    'turbat':            { code: 'TUK', name: 'Turbat International Airport' },
+    'kech':              { code: 'TUK', name: 'Turbat International Airport' },
+    'skardu':            { code: 'KDU', name: 'Skardu International Airport' },
+    'gilgit':            { code: 'GIL', name: 'Gilgit Airport' },
+  };
+  if (overrides[district.slug]) return overrides[district.slug];
+
+  // Province-level defaults.
+  const defaults = {
+    'punjab':              { code: 'ISB', name: 'Islamabad International Airport' },
+    'sindh':               { code: 'KHI', name: 'Jinnah International Airport, Karachi' },
+    'khyber-pakhtunkhwa':  { code: 'PEW', name: 'Bacha Khan International Airport, Peshawar' },
+    'balochistan':         { code: 'UET', name: 'Quetta International Airport' },
+    'islamabad':           { code: 'ISB', name: 'Islamabad International Airport' },
+    'azad-kashmir':        { code: 'ISB', name: 'Islamabad International Airport' },
+    'gilgit-baltistan':    { code: 'ISB', name: 'Islamabad International Airport' },
+    'united-states':       { code: 'IAH', name: 'George Bush Intercontinental Airport, Houston' },
+  };
+  return defaults[province.slug] || { code: 'ISB', name: 'Islamabad International Airport' };
+}
+
 function buildDistrictPage(province, district) {
   if (district.linkedOfficeSlug) return; // real office already has its own page
   const tpl = readTemplate('district.html');
   const bm = site.defaultBranchManager;
+  const airportInfo = nearestAirport(province, district);
   const ctaButtons = [];
   if (bm.hasWhatsapp) {
     ctaButtons.push(`<a href="https://wa.me/${bm.whatsappNumber}" target="_blank" rel="noopener" class="btn btn-primary">WhatsApp ${escapeHtml(bm.incharge.split(' ')[0])}</a>`);
@@ -206,27 +248,35 @@ function buildDistrictPage(province, district) {
   ctaButtons.push(`<a href="tel:${bm.phoneE164}" class="btn ${bm.hasWhatsapp ? 'btn-secondary' : 'btn-primary'}">Call ${escapeHtml(bm.incharge.split(' ')[0])}</a>`);
 
   // Rotate intro text by district to reduce duplicate-content footprint across 166 pages.
+  // Each variant front-loads the Umrah/Hajj keyword, names a real entity (airport, regional hub,
+  // Makkah/Madinah), and includes the named branch manager — that's entity-rich for Google
+  // and useful for real users.
   const introTemplates = [
-    `Al Bari Travel & Tours serves ${district.name} district in ${province.name}, Pakistan through our regional branch network. Your dedicated contact for Umrah, Hajj, and international travel inquiries from ${district.name} is ${bm.incharge}, ${bm.title}, reachable directly by phone or WhatsApp.`,
-    `Booking Umrah, Hajj, or an international flight from ${district.name}? Al Bari Travel & Tours coordinates the entire trip — packages, Saudi visas, ticketing, and group departures — through ${bm.title} ${bm.incharge}, based at our ${bm.regionalHubLocation} regional hub. One phone call gets you started.`,
-    `Pilgrims and travellers in ${district.name}, ${province.name} have a direct line to Al Bari Travel & Tours via ${bm.incharge}, our ${bm.title} for the region. Reach out by phone or WhatsApp for Umrah, Hajj, Saudi flight booking, and full visa documentation support — no walk-in required.`,
-    `For families and individuals in ${district.name} planning Umrah, Hajj, or international travel, Al Bari Travel & Tours offers complete branch-network service. ${bm.incharge} (${bm.title}) handles enquiries personally from our ${bm.regionalHubLocation} hub — packages, flights, and visa documentation, all from one point of contact.`,
+    `Book Umrah and Hajj packages from ${district.name}, ${province.name} with Al Bari Travel & Tours. We coordinate flights from ${airportInfo.name} (${airportInfo.code}) to Saudi Arabia (Makkah and Madinah), full Saudi visa processing, hotel accommodation near the Haram, and group departures. Your dedicated contact for ${district.name} is ${bm.incharge}, ${bm.title}, reachable directly by phone or WhatsApp.`,
+    `Planning Umrah, Hajj, or an international flight from ${district.name}? Al Bari Travel & Tours coordinates the entire trip — package selection, Saudi visa, ticketing on PIA / Saudi Airlines / Air Sial, hotel near Masjid al-Haram, and ground transport between Makkah and Madinah — through ${bm.title} ${bm.incharge}. Nearest departure hub: ${airportInfo.name} (${airportInfo.code}).`,
+    `Pilgrims and travellers in ${district.name}, ${province.name} have a direct line to Al Bari Travel & Tours via ${bm.incharge}, our ${bm.title}. Reach out for Umrah and Hajj packages, Saudi Arabia visa documentation, flight booking from ${airportInfo.name} (${airportInfo.code}), and group departure coordination — all handled by one point of contact, no walk-in required.`,
+    `For families and individuals in ${district.name} planning Umrah, Hajj 2027, or international travel, Al Bari Travel & Tours offers complete branch-network service. ${bm.incharge} (${bm.title}) handles enquiries personally from our ${bm.regionalHubLocation} hub — package quotes, Saudi visa applications, flights from ${airportInfo.name} (${airportInfo.code}), and hotel bookings in Makkah and Madinah.`,
   ];
   const intro = introTemplates[hashSlug(district.slug) % introTemplates.length];
 
-  // Per-district FAQ — pool of 10, deterministically pick 4 unique per district by slug hash.
-  // Wider pool means each pair of district pages shares fewer questions → less duplicate-content risk.
+  // Per-district FAQ — pool of 14 entity-rich questions, deterministically pick 4 unique
+  // per district by slug hash. Wider pool means each pair of district pages shares few/zero
+  // questions — strong defense against duplicate-content penalties.
   const faqPool = [
-    { q: `How do I book Umrah or Hajj from ${district.name}?`, a: `Call or WhatsApp ${bm.incharge}, our ${bm.title}, at ${bm.phoneDisplay}. We handle every step — package selection, Saudi visa, flights, and group departure logistics — for clients in ${district.name} without requiring you to visit in person.` },
+    { q: `How do I book Umrah or Hajj from ${district.name}?`, a: `Call or WhatsApp ${bm.incharge}, our ${bm.title}, at ${bm.phoneDisplay}. We handle every step — package selection, Saudi visa, flights from ${airportInfo.name} (${airportInfo.code}), and group departure logistics — for clients in ${district.name} without requiring you to visit in person.` },
     { q: `Does Al Bari Travel have a walk-in office in ${district.name}?`, a: `Our closest walk-in office to ${district.name} is in ${bm.regionalHubLocation}, where ${bm.incharge} is based. We serve ${district.name} clients directly through our regional branch network — by phone, WhatsApp, and online — so an in-person visit is not necessary to book.` },
-    { q: `Can I get international flights booked from ${district.name}?`, a: `Yes. Al Bari Travel & Tours books international flights from any major Pakistani airport for clients across ${district.name} and the wider ${province.name} region — including Saudi Arabia, UAE, and other destinations. Ticket delivery is digital.` },
+    { q: `Can I get international flights booked from ${district.name}?`, a: `Yes. Al Bari Travel & Tours books international flights from ${airportInfo.name} (${airportInfo.code}) and other major Pakistani airports for clients across ${district.name} and the wider ${province.name} region — including Saudi Arabia, UAE, and other destinations. We work with PIA, Saudi Airlines, Air Sial, and other carriers. Ticket delivery is digital.` },
     { q: `What documents are needed for a Saudi visa from ${district.name}?`, a: `For Umrah and Hajj from ${district.name} we typically need: a valid passport (6+ months), recent photos, NIC copy, and travel proof. Our Saudi visa processing handles the rest — application, fees, and tracking. Call ${bm.phoneDisplay} for the current checklist.` },
-    { q: `How long does it take to confirm an Umrah package booking from ${district.name}?`, a: `For ${district.name} clients, package quotation typically arrives within 1-2 hours of your first call or WhatsApp message. Once you confirm the dates and package tier, ${bm.incharge} books flights and submits the visa within 24-48 hours. End-to-end confirmation usually takes 3-5 business days.` },
-    { q: `Can a group from ${district.name} travel together for Hajj?`, a: `Yes — group Hajj from ${district.name} is one of the most popular services we coordinate. We arrange synchronised departure dates, group hotels in Makkah and Madinah, shared ground transport, and a single point of contact through ${bm.incharge}. Minimum group size is typically 8 people, but smaller family groups are also supported.` },
+    { q: `How long does it take to confirm an Umrah package booking from ${district.name}?`, a: `For ${district.name} clients, package quotation typically arrives within 1-2 hours of your first call or WhatsApp message. Once you confirm the dates and package tier, ${bm.incharge} books flights from ${airportInfo.name} and submits the visa within 24-48 hours. End-to-end confirmation usually takes 3-5 business days.` },
+    { q: `Can a group from ${district.name} travel together for Hajj 2027?`, a: `Yes — group Hajj from ${district.name} is one of the most popular services we coordinate. We arrange synchronised departure dates, group hotels in Makkah (near Masjid al-Haram) and Madinah (near Masjid an-Nabawi), shared ground transport, and a single point of contact through ${bm.incharge}. Minimum group size is typically 8 people, but smaller family groups are also supported. Hajj 2027 booking is open — reach out early for the best hotel inventory.` },
     { q: `What payment options does Al Bari Travel accept from ${district.name} clients?`, a: `We accept cash, bank transfer, JazzCash, and Easypaisa from clients in ${district.name}. Bookings are confirmed once a deposit is received; the balance is due before the visa submission. ${bm.incharge} will walk you through the schedule on the first call.` },
-    { q: `Does Al Bari Travel arrange airport transfers from ${district.name}?`, a: `Most pilgrims from ${district.name} fly out of Islamabad International Airport or Lahore International Airport. We coordinate pickup arrangements where possible; specific routes and rates are confirmed once your booking is finalised. Contact ${bm.incharge} at ${bm.phoneDisplay} to discuss.` },
-    { q: `Are family packages available for ${district.name} pilgrims?`, a: `Yes. Many of our ${district.name} clients travel as family groups — couples, parents with adult children, multi-generational. We tailor hotel categories, room types, and Ziyarat tour pacing to suit the family. ${bm.incharge} can suggest packages once we understand the group composition.` },
+    { q: `Does Al Bari Travel arrange airport transfers from ${district.name} to ${airportInfo.name}?`, a: `Most pilgrims from ${district.name} fly out of ${airportInfo.name} (${airportInfo.code}). We coordinate pickup arrangements where possible; specific routes and rates are confirmed once your booking is finalised. Contact ${bm.incharge} at ${bm.phoneDisplay} to discuss.` },
+    { q: `Are family Umrah packages available for ${district.name} pilgrims?`, a: `Yes. Many of our ${district.name} clients travel as family groups — couples, parents with adult children, multi-generational. We tailor hotel categories near the Haram in Makkah and Madinah, room types, and Ziyarat tour pacing to suit the family. ${bm.incharge} can suggest packages once we understand the group composition.` },
     { q: `What is the best time of year to book Umrah from ${district.name}?`, a: `Umrah from ${district.name} runs year-round. Off-peak months (mid-September through October, late February through April) offer the best rates and least crowded conditions in Makkah. Ramadan and the weeks around Hajj are most expensive. ${bm.incharge} can advise on the optimal window for your situation.` },
+    { q: `What is the cheapest Umrah package available from ${district.name}?`, a: `Economy Umrah packages from ${district.name} start at the lowest tier we offer — typically a 10-day trip with 3-star hotel accommodation a short walk from the Haram, shared transport, and round-trip flights from ${airportInfo.name}. Exact pricing varies by season and dates. WhatsApp ${bm.incharge} at ${bm.phoneDisplay} for a live quote.` },
+    { q: `Do I need to be in Hasan Abdal to book through Al Bari Travel?`, a: `No. ${district.name} clients can book entirely remotely. Our team in ${bm.regionalHubLocation} handles your application, visa, and ticketing end-to-end. Documents are shared via WhatsApp or email; the only thing you collect in person (if you wish) is the final visa stamping — and even that we can courier where possible.` },
+    { q: `Which airlines do you book for Umrah flights from ${district.name}?`, a: `From ${airportInfo.name} (${airportInfo.code}) we book PIA (Pakistan International Airlines), Saudi Airlines (Saudia), Air Sial, AirBlue, Qatar Airways, and Emirates depending on departure date and budget. Most Umrah pilgrims from ${district.name} fly direct or with a single stopover.` },
+    { q: `What is included in an Al Bari Travel Umrah package from ${district.name}?`, a: `A standard Umrah package from ${district.name} includes: return international flights, Saudi e-visa, hotel accommodation in Makkah (near Masjid al-Haram) and Madinah (near Masjid an-Nabawi), ground transport between cities, guided Ziyarat tour of historical Islamic sites, and full in-country support. Meals, Zamzam water, and laundry are typically extra unless you select a premium package.` },
   ];
   const seed = hashSlug(district.slug);
   const picked = [];
@@ -252,6 +302,34 @@ function buildDistrictPage(province, district) {
   }
   const relatedDistrictsHtml = relatedDistricts.map(d => `
         <a class="district-card-link" href="/offices/${province.slug}/${d.slug}/"><article class="district-card"><span class="district-card-badge">Nearby</span><h3>${escapeHtml(d.name)}</h3><span class="district-card-cta">View ${escapeHtml(d.name)} &rarr;</span></article></a>`).join('');
+
+  // HowTo schema — eligible for Google HowTo rich snippet. Specific to "book Umrah from {District}".
+  const howToSchema = `<script type="application/ld+json">
+${JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: `How to book an Umrah package from ${district.name}, ${province.name}`,
+  description: `Step-by-step process for booking Umrah from ${district.name} with Al Bari Travel & Tours — from initial enquiry to flying out of ${airportInfo.name}.`,
+  totalTime: 'P5D',
+  estimatedCost: { '@type': 'MonetaryAmount', currency: 'PKR', value: '150000' },
+  supply: [
+    { '@type': 'HowToSupply', name: 'Valid passport (6+ months validity)' },
+    { '@type': 'HowToSupply', name: 'Recent passport-size photos' },
+    { '@type': 'HowToSupply', name: 'NIC copy' }
+  ],
+  tool: [
+    { '@type': 'HowToTool', name: 'Phone or WhatsApp' }
+  ],
+  step: [
+    { '@type': 'HowToStep', name: 'Contact Al Bari Travel', text: `Call or WhatsApp ${bm.incharge} at ${bm.phoneDisplay}. Share your preferred dates, group size, and budget range.`, url: `${site.domain}/offices/${province.slug}/${district.slug}/#contact-block` },
+    { '@type': 'HowToStep', name: 'Get a quote', text: `Within 1-2 hours you receive a package quotation tailored for ${district.name} — including flights from ${airportInfo.name}, hotels in Makkah and Madinah, and Saudi visa.` },
+    { '@type': 'HowToStep', name: 'Confirm with a deposit', text: 'Pay a confirmation deposit by bank transfer, JazzCash, Easypaisa, or cash. The remaining balance is due before visa submission.' },
+    { '@type': 'HowToStep', name: 'Submit documents', text: 'Share your passport, NIC copy, and photos via WhatsApp. Al Bari Travel submits the Saudi visa application on your behalf.' },
+    { '@type': 'HowToStep', name: 'Receive ticket and visa', text: `Within 3-5 business days you receive the Saudi visa and flight tickets from ${airportInfo.name}. Pre-departure briefing is provided.` },
+    { '@type': 'HowToStep', name: 'Fly to Saudi Arabia', text: `Depart from ${airportInfo.name} (${airportInfo.code}) to Jeddah (JED) or Madinah (MED). Al Bari Travel coordinates ground transport and hotel check-in on arrival.` }
+  ]
+}, null, 2)}
+</script>`;
 
   const faqHtml = faqs.map(f => `
         <details class="faq-item">
@@ -286,12 +364,14 @@ function buildDistrictPage(province, district) {
     phoneE164: bm.phoneE164,
     intro,
     canonical: `${site.domain}/offices/${province.slug}/${district.slug}/`,
-    seoTitle: `Al Bari Travel and Tours ${district.name} | Umrah & Hajj`,
-    seoDescription: `Al Bari Travel & Tours serving ${district.name}, ${province.name}, Pakistan. Umrah & Hajj packages, international flight booking, and visa processing. Contact ${bm.incharge}, ${bm.title}: ${bm.phoneDisplay}.`,
+    seoTitle: `Umrah & Hajj from ${district.name} | Al Bari Travel & Tours`,
+    seoDescription: `Book Umrah and Hajj packages from ${district.name}, ${province.name}. International flights via ${airportInfo.name} (${airportInfo.code}), Saudi visa processing, group departures. Contact ${bm.incharge}: ${bm.phoneDisplay}.`,
     ogType: 'place',
     ctaButtons: ctaButtons.map(b => '                    ' + b).join('\n'),
     faqHtml,
     faqSchema,
+    howToSchema,
+    airportName: `${airportInfo.name} (${airportInfo.code})`,
     relatedDistrictsHtml,
     footerOfficeList: footerOfficeListHtml(),
     year: String(new Date().getFullYear()),
@@ -391,6 +471,73 @@ const STATIC_PAGES = [
     // body is dynamically built below
     body: '__CONTACT_BODY_PLACEHOLDER__',
     extraSchema: '__CONTACT_SCHEMA_PLACEHOLDER__',
+  },
+  {
+    slug: 'glossary',
+    pageName: 'Umrah & Hajj Glossary',
+    pageSchemaType: 'WebPage',
+    eyebrow: 'Reference',
+    h1: 'Umrah, Hajj & Pilgrimage Glossary',
+    lede: 'Plain-English definitions of the terms you will see in any Umrah or Hajj package — from ihram and tawaf to Saudi visa categories and aviation codes.',
+    seoTitle: 'Umrah, Hajj & Pilgrimage Glossary | Al Bari Travel & Tours',
+    seoDescription: "Plain-English glossary of Umrah and Hajj terms: ihram, tawaf, sa'i, miqat, Masjid al-Haram, Masjid an-Nabawi, Ziyarat, Hajj 2027, Saudi visa categories, and more.",
+    body: `
+        <p style="opacity:0.7;margin-bottom:30px;font-size:0.9rem;">A reference for anyone booking Umrah or Hajj from Pakistan or the USA. Bookmark this page or share it with a family member preparing for their pilgrimage.</p>
+
+        <h2 style="margin-top:30px;">Pilgrimage rites</h2>
+
+        <div class="definition-block"><h3>Umrah</h3><p>The "minor" Islamic pilgrimage to Makkah, Saudi Arabia. Can be performed at any time of year. Consists of ihram, tawaf, sa'i, and shaving or trimming hair.</p></div>
+
+        <div class="definition-block"><h3>Hajj</h3><p>The "major" Islamic pilgrimage, obligatory once in a lifetime for every able Muslim. Performed on specific days of Dhu'l-Hijjah. Hajj 2027 falls in mid-May 2027.</p></div>
+
+        <div class="definition-block"><h3>Ihram</h3><p>The sacred state a pilgrim enters before performing Umrah or Hajj. Men wear two pieces of white unstitched cloth; women wear ordinary modest clothing. Certain everyday actions are restricted during ihram.</p></div>
+
+        <div class="definition-block"><h3>Miqat</h3><p>One of five designated locations around Makkah where pilgrims must enter the state of ihram before proceeding. From Pakistan, most pilgrims enter ihram before landing in Jeddah or at the aircraft's miqat announcement.</p></div>
+
+        <div class="definition-block"><h3>Tawaf</h3><p>Walking seven times anticlockwise around the Kaaba inside Masjid al-Haram. The first rite performed on arrival in Makkah.</p></div>
+
+        <div class="definition-block"><h3>Sa'i</h3><p>Walking seven times between the hills of Safa and Marwa, performed after tawaf. Commemorates Hajar's search for water for her infant son Ismail.</p></div>
+
+        <div class="definition-block"><h3>Ziyarat</h3><p>The visit to historical and religious sites in Madinah and around Makkah. Optional but encouraged. Includes Masjid an-Nabawi, the Battle of Uhud site, and Quba Mosque.</p></div>
+
+        <h2 style="margin-top:40px;">Holy sites</h2>
+
+        <div class="definition-block"><h3>Kaaba</h3><p>The cubic structure at the centre of Masjid al-Haram in Makkah. The qibla (direction of prayer) for Muslims worldwide. Pilgrims perform tawaf around it.</p></div>
+
+        <div class="definition-block"><h3>Masjid al-Haram</h3><p>The Grand Mosque in Makkah, the largest mosque in the world. Contains the Kaaba.</p></div>
+
+        <div class="definition-block"><h3>Masjid an-Nabawi</h3><p>The Prophet's Mosque in Madinah, the second-holiest site in Islam. Contains the tomb of Prophet Muhammad (PBUH).</p></div>
+
+        <div class="definition-block"><h3>Mina, Arafat, Muzdalifah</h3><p>The three locations near Makkah where Hajj rites take place over five days. Pilgrims spend the day of Arafat (9th Dhu'l-Hijjah) in prayer on the Plain of Arafat.</p></div>
+
+        <h2 style="margin-top:40px;">Saudi visa categories</h2>
+
+        <div class="definition-block"><h3>Umrah visa</h3><p>A specific Saudi visa category for Umrah pilgrims. Valid for 30 days from entry. Issued via approved travel agents like Al Bari Travel & Tours.</p></div>
+
+        <div class="definition-block"><h3>Hajj visa</h3><p>A specific Saudi visa category for Hajj pilgrims, issued in limited quotas per country. Only valid during the Hajj season.</p></div>
+
+        <div class="definition-block"><h3>Tourist visa</h3><p>The Saudi e-visa launched in 2019. Can be used to perform Umrah year-round. Multiple entries, valid for one year.</p></div>
+
+        <h2 style="margin-top:40px;">Aviation codes</h2>
+
+        <div class="definition-block"><h3>JED — King Abdulaziz International Airport, Jeddah</h3><p>The primary entry airport for Umrah and Hajj pilgrims. Located ~80 km from Makkah.</p></div>
+
+        <div class="definition-block"><h3>MED — Prince Mohammad bin Abdulaziz International Airport, Madinah</h3><p>The secondary entry option, used by some Umrah packages that visit Madinah first.</p></div>
+
+        <div class="definition-block"><h3>ISB, LHE, KHI, PEW — Pakistani international airports</h3><p>ISB = Islamabad International Airport (primary for Punjab north, KP, AJK, GB). LHE = Allama Iqbal International Airport, Lahore. KHI = Jinnah International Airport, Karachi. PEW = Bacha Khan International Airport, Peshawar.</p></div>
+
+        <h2 style="margin-top:40px;">Practical terms</h2>
+
+        <div class="definition-block"><h3>Ziyarat tour</h3><p>A guided tour of Madinah and historical sites, typically included in our Umrah and Hajj packages.</p></div>
+
+        <div class="definition-block"><h3>Mu'allim / Muallim</h3><p>The licensed Saudi guide assigned to each Hajj group. Coordinates logistics in Mina and Arafat.</p></div>
+
+        <div class="definition-block"><h3>Zamzam water</h3><p>Water from the Zamzam well next to the Kaaba. Pilgrims typically bring some home. International airline allowance is usually 5 litres per traveller.</p></div>
+
+        <h2 style="margin-top:40px;">Need help understanding a term?</h2>
+        <p style="margin-top:14px;line-height:1.8;">WhatsApp <strong>Haiwad Ahmad</strong>, our Regional Branch Manager, at <a href="https://wa.me/923159596161" style="color:#c9a962;">+92 315 9596161</a>. He'll walk you through any term in Urdu, English, or Punjabi.</p>
+    `,
+    extraSchema: '',
   },
   {
     slug: 'privacy',
@@ -562,6 +709,7 @@ function buildSitemap() {
     { loc: `${site.domain}/offices/`, priority: '0.9', changefreq: 'monthly', image: ogImage, imageTitle: 'Al Bari Travel & Tours offices in Pakistan and USA' },
     { loc: `${site.domain}/about/`, priority: '0.6', changefreq: 'yearly', image: ogImage, imageTitle: 'About Al Bari Travel & Tours' },
     { loc: `${site.domain}/contact/`, priority: '0.8', changefreq: 'monthly', image: ogImage, imageTitle: 'Contact Al Bari Travel & Tours' },
+    { loc: `${site.domain}/glossary/`, priority: '0.5', changefreq: 'yearly', image: ogImage, imageTitle: 'Umrah & Hajj Glossary — Al Bari Travel' },
     { loc: `${site.domain}/privacy/`, priority: '0.3', changefreq: 'yearly' },
     { loc: `${site.domain}/terms/`, priority: '0.3', changefreq: 'yearly' },
     ...offices.map(o => ({

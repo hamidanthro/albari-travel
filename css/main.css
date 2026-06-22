@@ -1036,3 +1036,39 @@
     .breadcrumb { font-size: 0.7rem; margin-bottom: 18px; }
     .breadcrumb span[aria-hidden="true"] { margin: 0 4px; }
 }
+
+/* === Definitional content blocks (eligible for AI Overviews & featured snippets) === */
+.definition-block {
+    background: rgba(255,255,255,0.04);
+    border-left: 3px solid #c9a962;
+    padding: 22px 26px;
+    margin-bottom: 20px;
+}
+.definition-block h3 {
+    color: #c9a962;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    font-family: 'Playfair Display', serif;
+}
+.definition-block p {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.96rem;
+    line-height: 1.7;
+}
+
+/* === Skip-to-content link (a11y + slight SEO boost from valid heading nav) === */
+.skip-to-content {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: #c9a962;
+    color: #0d1b2a;
+    padding: 12px 18px;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 2000;
+}
+.skip-to-content:focus {
+    left: 0;
+    outline: 2px solid #0d1b2a;
+}

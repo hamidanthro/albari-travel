@@ -18,6 +18,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&h=630&fit=crop">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Al Bari Travel & Tours — Umrah, Hajj, and international flight booking from Pakistan and the USA">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
@@ -35,7 +36,15 @@
           "@type": ["TravelAgency", "Organization", "LocalBusiness"],
           "@id": "https://www.albaritravelspk.com/#organization",
           "name": "Al Bari Travel & Tours",
-          "alternateName": ["Albari Travels", "Al Bari Travels and Tours"],
+          "alternateName": ["Albari Travels", "Al-Bari Travel and Tours", "Al Bari Travels and Tours", "Albari Travel", "Albari Travels Pakistan"],
+          "legalName": "Al Bari Travel & Tours",
+          "slogan": "Your Trusted Travel Partner — Umrah, Hajj, and International Flights",
+          "foundingDate": "2018",
+          "knowsAbout": [
+            "Umrah", "Hajj", "Saudi Arabia visa processing", "International flight booking",
+            "Group travel", "Religious pilgrimage", "Makkah", "Madinah", "Masjid al-Haram",
+            "Masjid an-Nabawi", "Ziyarat", "Hajj 2027", "Umrah 2026", "Pilgrimage from Pakistan"
+          ],
           "url": "https://www.albaritravelspk.com/",
           "logo": {
             "@type": "ImageObject",
@@ -77,8 +86,29 @@
             }
           ],
           "sameAs": [
-            "https://wa.me/923159596161"
+            "https://wa.me/923159596161",
+            "https://www.google.com/maps/search/?api=1&query=Al+Bari+Travel+and+Tours+Hasan+Abdal"
           ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Al Bari Travel services",
+            "itemListElement": [
+              { "@type": "OfferCatalog", "name": "Umrah Packages", "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Economy Umrah Package", "description": "10-day Umrah from Pakistan with 3-star hotels near the Haram" }},
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Premium Umrah Package", "description": "12-day Umrah from Pakistan with 5-star hotels and Haram view" }},
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Family Umrah Package", "description": "Multi-room Umrah package tailored for families" }},
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ramadan Umrah", "description": "Peak-season Umrah during Ramadan with iftar arrangements" }}
+              ]},
+              { "@type": "OfferCatalog", "name": "Hajj Packages 2027", "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Standard Hajj Package 2027", "description": "Group Hajj departure with full logistics" }},
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Premium Hajj Package 2027", "description": "Premium-tier Hajj package with VIP accommodation" }}
+              ]},
+              { "@type": "OfferCatalog", "name": "Visa Services", "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Saudi Arabia Visa Processing" }},
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "UAE Visa Processing" }}
+              ]}
+            ]
+          },
           "department": [
             { "@type": "TravelAgency", "name": "Hasan Abdal Office", "url": "https://www.albaritravelspk.com/offices/hasan-abdal/", "@id": "https://www.albaritravelspk.com/offices/hasan-abdal/#business" },
             { "@type": "TravelAgency", "name": "Rawalpindi Office",  "url": "https://www.albaritravelspk.com/offices/rawalpindi/",  "@id": "https://www.albaritravelspk.com/offices/rawalpindi/#business" },
@@ -116,13 +146,64 @@
         },
         {
           "@type": "SiteNavigationElement",
-          "name": ["Services", "Packages", "Our Offices", "Contact"],
+          "name": ["About", "Our Offices", "Packages", "Contact"],
           "url": [
-            "https://www.albaritravelspk.com/#services",
-            "https://www.albaritravelspk.com/#packages",
+            "https://www.albaritravelspk.com/about/",
             "https://www.albaritravelspk.com/offices/",
-            "https://www.albaritravelspk.com/#contact"
+            "https://www.albaritravelspk.com/#packages",
+            "https://www.albaritravelspk.com/contact/"
           ]
+        },
+        {
+          "@type": "Event",
+          "@id": "https://www.albaritravelspk.com/#hajj-2027",
+          "name": "Hajj 2027 — Group Departures from Pakistan",
+          "description": "Al Bari Travel & Tours is now accepting bookings for Hajj 2027 group departures from Pakistan. Synchronised flights, accommodation near Masjid al-Haram (Makkah) and Masjid an-Nabawi (Madinah), full logistical support.",
+          "startDate": "2027-05-14",
+          "endDate": "2027-05-19",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": [
+            {
+              "@type": "Place",
+              "name": "Makkah, Saudi Arabia",
+              "address": { "@type": "PostalAddress", "addressLocality": "Makkah", "addressCountry": "SA" }
+            },
+            {
+              "@type": "Place",
+              "name": "Madinah, Saudi Arabia",
+              "address": { "@type": "PostalAddress", "addressLocality": "Madinah", "addressCountry": "SA" }
+            }
+          ],
+          "organizer": { "@id": "https://www.albaritravelspk.com/#organization" },
+          "offers": {
+            "@type": "Offer",
+            "url": "https://www.albaritravelspk.com/contact/",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2026-01-01"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.albaritravelspk.com/#umrah-service",
+          "name": "Umrah Packages from Pakistan and the USA",
+          "serviceType": "Religious pilgrimage travel",
+          "provider": { "@id": "https://www.albaritravelspk.com/#organization" },
+          "areaServed": [
+            { "@type": "Country", "name": "Pakistan" },
+            { "@type": "Country", "name": "United States" }
+          ],
+          "audience": { "@type": "PeopleAudience", "audienceType": "Muslim pilgrims" },
+          "termsOfService": "https://www.albaritravelspk.com/terms/",
+          "category": "Travel"
+        },
+        {
+          "@type": "LegalService",
+          "@id": "https://www.albaritravelspk.com/#visa-service",
+          "name": "Saudi Arabia Visa Processing",
+          "provider": { "@id": "https://www.albaritravelspk.com/#organization" },
+          "serviceType": "Visa processing and documentation",
+          "areaServed": { "@type": "Country", "name": "Pakistan" }
         }
       ]
     }
@@ -146,6 +227,7 @@
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <header>
         <div class="header-left">
             <div class="logo">Al Bari <span>Travel & Tours</span></div>
