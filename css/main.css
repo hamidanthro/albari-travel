@@ -480,6 +480,7 @@
         .package-features {
             list-style: none;
             margin-bottom: 30px;
+            padding-left: 0;
         }
         .package-features li {
             padding: 10px 0;
@@ -570,8 +571,10 @@
             min-width: 130px;
         }
         .package-features li:before {
-            content: "✓ ";
+            content: "✓";
             color: #c9a962;
+            margin-right: 10px;
+            font-weight: 600;
         }
         
         /* Testimonials */
