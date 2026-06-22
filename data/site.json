@@ -1,0 +1,15 @@
+{
+  "name": "Al Bari Travel & Tours",
+  "tagline": "Your Trusted Travel Partner",
+  "domain": "https://www.albaritravelspk.com",
+  "primaryPhone": "+92 315 9596161",
+  "primaryWhatsapp": "923159596161",
+  "description": "Al Bari Travel & Tours — trusted Umrah, Hajj, and luxury travel packages from Pakistan and the USA. Two offices, one team.",
+  "nav": [
+    { "label": "Home", "href": "/" },
+    { "label": "Services", "href": "/#services" },
+    { "label": "Packages", "href": "/#packages" },
+    { "label": "Our Offices", "href": "/offices/" },
+    { "label": "Contact", "href": "/#contact" }
+  ]
+}

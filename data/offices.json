@@ -1,0 +1,60 @@
+{
+  "offices": [
+    {
+      "slug": "hasan-abdal",
+      "name": "Hasan Abdal Office",
+      "city": "Hasan Abdal",
+      "region": "Punjab",
+      "country": "Pakistan",
+      "countryCode": "PK",
+      "addressCountry": "PK",
+      "addressLocality": "Hasan Abdal",
+      "addressRegion": "Punjab",
+      "incharge": "Haiwad Ahmad",
+      "phoneDisplay": "+92 315 9696161",
+      "phoneE164": "+923159696161",
+      "whatsappNumber": "923159696161",
+      "hasWhatsapp": true,
+      "openingHours": "Mo-Sa 09:00-20:00",
+      "languages": ["English", "Urdu", "Punjabi"],
+      "services": [
+        "Umrah packages from Pakistan",
+        "Hajj packages from Pakistan",
+        "Saudi Arabia flight booking",
+        "Visa processing & documentation",
+        "Group travel arrangements"
+      ],
+      "intro": "Our Hasan Abdal office is the home base for Al Bari Travel & Tours in Pakistan — serving pilgrims and travellers across Punjab and Khyber Pakhtunkhwa with end-to-end Umrah, Hajj, and international travel arrangements.",
+      "seoTitle": "Al Bari Travel and Tours Hasan Abdal | Umrah, Hajj & Flight Booking Pakistan",
+      "seoDescription": "Al Bari Travel and Tours — Hasan Abdal office. Trusted Umrah & Hajj packages, Saudi Arabia flights, and visa processing from Pakistan. Incharge: Haiwad Ahmad. Call +92 315 9696161."
+    },
+    {
+      "slug": "texas",
+      "name": "Texas Office",
+      "city": "Texas",
+      "region": "Texas",
+      "country": "United States",
+      "countryCode": "US",
+      "addressCountry": "US",
+      "addressLocality": "Texas",
+      "addressRegion": "TX",
+      "incharge": "Hamid Ali",
+      "phoneDisplay": "+1 (443) 589-4441",
+      "phoneE164": "+14435894441",
+      "whatsappNumber": "14435894441",
+      "hasWhatsapp": false,
+      "openingHours": "Mo-Sa 09:00-19:00",
+      "languages": ["English", "Urdu"],
+      "services": [
+        "Umrah packages from the USA",
+        "Hajj packages from the USA",
+        "International flight booking",
+        "US to Pakistan & Middle East travel",
+        "Family group travel"
+      ],
+      "intro": "Our Texas office serves the Pakistani-American and Muslim community across the United States — coordinating Umrah, Hajj, and international flights with full bilingual support and time-zone-friendly customer service.",
+      "seoTitle": "Al Bari Travel and Tours Texas | Umrah, Hajj & Flight Booking USA",
+      "seoDescription": "Al Bari Travel and Tours — Texas office. Umrah & Hajj packages, international flight booking, and travel coordination for the Pakistani-American community. Incharge: Hamid Ali. Call +1 (443) 589-4441."
+    }
+  ]
+}
