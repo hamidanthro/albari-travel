@@ -707,16 +707,58 @@
             .dest-card:first-child { grid-column: span 2; grid-row: span 1; height: 300px; }
             .dest-card { height: 250px; }
         }
+        /* desktop default for CTA text variants */
+        .header-cta .cta-short { display: none; }
+        .header-cta .cta-full { display: inline; }
+
         @media (max-width: 768px) {
-            header { padding: 15px 20px; }
+            header { padding: 10px 14px; }
             nav { display: none; }
-            .hero h1 { font-size: 2.5rem; }
+            .logo {
+                font-size: 1.1rem;
+                gap: 4px;
+                white-space: nowrap;
+            }
+            .logo span { white-space: nowrap; }
+            .header-cta {
+                padding: 8px 14px;
+                font-size: 0.82rem;
+                gap: 6px;
+                white-space: nowrap;
+                animation: none; /* the pulse halo wastes space at small widths */
+            }
+            .header-cta svg { width: 16px; height: 16px; }
+            .header-cta .cta-full { display: none; }
+            .header-cta .cta-short { display: inline; }
+
+            .hero { padding: 0 16px; }
+            .hero h1 { font-size: 2rem; line-height: 1.15; }
+            .hero-tag { font-size: 0.72rem; letter-spacing: 2.5px; margin-bottom: 12px; }
+            .hero-content p { font-size: 0.95rem; }
+
+            /* Office subpages override .hero padding via inline style — neutralize on mobile */
+            .hero[style*="padding:140px"] { padding: 110px 18px 40px !important; }
+            .hero[style*="padding:140px"] h1 { font-size: 1.7rem; }
+
             .stats-bar { gap: 40px; }
             .stat-number { font-size: 2.2rem; }
             .destinations-grid { grid-template-columns: 1fr; }
             .dest-card:first-child { grid-column: span 1; }
             .contact-grid { grid-template-columns: 1fr; }
             .footer-content { grid-template-columns: 1fr 1fr; }
+
+            /* office cards: tighter padding so they don't dominate the viewport */
+            .office-card-static { padding: 28px 22px 24px; }
+            .office-card-static h3 { font-size: 1.4rem; }
+            .packages { padding: 60px 16px; }
+            .section-header h2 { font-size: 1.8rem; }
+            .packages .section-header > p,
+            .hero-content > p { padding: 0 4px; }
+        }
+        @media (max-width: 420px) {
+            .logo { font-size: 0.95rem; }
+            .header-cta { padding: 7px 12px; font-size: 0.78rem; }
+            .hero[style*="padding:140px"] h1 { font-size: 1.45rem; }
         }
 
 /* === Office cards (multi-page) === */
