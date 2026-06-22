@@ -107,6 +107,12 @@ function serviceListHtml(office) {
   return office.services.map(s => `                <li>${escapeHtml(s)}</li>`).join('\n');
 }
 
+function footerOfficeListHtml() {
+  return offices.map(o =>
+    `                <li><a href="/offices/${o.slug}/" style="color:#fff;opacity:0.8;text-decoration:none;">${escapeHtml(o.city)}, ${escapeHtml(o.country)}</a></li>`
+  ).join('\n');
+}
+
 function buildOfficesLanding() {
   const tpl = readTemplate('offices-landing.html');
   const ctx = {
@@ -115,6 +121,7 @@ function buildOfficesLanding() {
     canonical: `${site.domain}/offices/`,
     ogType: 'website',
     officeCards: offices.map(officeCardHtml).join('\n'),
+    footerOfficeList: footerOfficeListHtml(),
     year: String(new Date().getFullYear()),
   };
   writeFile('offices/index.html', render(tpl, ctx));
@@ -134,6 +141,7 @@ function buildOfficePage(office) {
     ctaButtons: ctaButtonsHtml(office),
     serviceList: serviceListHtml(office),
     otherOfficeCards: others.map(officeCardHtml).join('\n'),
+    footerOfficeList: footerOfficeListHtml(),
     year: String(new Date().getFullYear()),
   };
   writeFile(`offices/${office.slug}/index.html`, render(tpl, ctx));
