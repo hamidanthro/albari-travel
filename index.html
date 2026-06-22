@@ -485,6 +485,89 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
             font-size: 0.95rem;
         }
+        /* Our Offices */
+        .offices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .office-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 0;
+            transition: all 0.3s;
+        }
+        .office-card[open],
+        .office-card:hover {
+            border-color: #c9a962;
+            background: rgba(255,255,255,0.08);
+        }
+        .office-card summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 35px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+        .office-card summary::-webkit-details-marker { display: none; }
+        .office-card summary h3 {
+            font-size: 1.6rem;
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+        }
+        .office-card summary .office-city {
+            display: block;
+            font-size: 0.85rem;
+            color: #c9a962;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 6px;
+        }
+        .office-card summary .office-toggle {
+            color: #c9a962;
+            font-size: 1.4rem;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+        .office-card[open] summary .office-toggle { transform: rotate(45deg); }
+        .office-details {
+            padding: 0 40px 35px 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 25px;
+        }
+        .office-details .office-row {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+        .office-details .office-row:last-of-type { border-bottom: none; }
+        .office-details .office-label {
+            color: rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+        .office-details .office-value { color: #fff; text-align: right; }
+        .office-details .office-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .office-details .office-actions a {
+            flex: 1 1 auto;
+            text-align: center;
+            min-width: 130px;
+        }
         .package-features li:before {
             content: "✓ ";
             color: #c9a962;
@@ -641,6 +724,7 @@
         <nav>
             <a href="#services">Services</a>
             <a href="#packages">Packages</a>
+            <a href="#offices">Our Offices</a>
             <a href="#contact">Contact</a>
         </nav>
         <a href="https://wa.me/923159596161" class="header-cta" target="_blank">
@@ -711,7 +795,72 @@
             </div>
         </div>
     </section>
-    
+
+    <section class="packages" id="offices">
+        <div class="section-header">
+            <p class="section-tag">Our Offices</p>
+            <h2>Two Locations, One Team</h2>
+            <p>Reach us in Pakistan or in the United States — tap a card for full contact details</p>
+        </div>
+        <div class="offices-grid">
+            <details class="office-card">
+                <summary>
+                    <div>
+                        <span class="office-city">Pakistan</span>
+                        <h3>Hasan Abdal Office</h3>
+                    </div>
+                    <span class="office-toggle" aria-hidden="true">+</span>
+                </summary>
+                <div class="office-details">
+                    <div class="office-row">
+                        <span class="office-label">Incharge</span>
+                        <span class="office-value">Haiwad Ahmad</span>
+                    </div>
+                    <div class="office-row">
+                        <span class="office-label">Phone</span>
+                        <span class="office-value">+92 315 9696161</span>
+                    </div>
+                    <div class="office-row">
+                        <span class="office-label">Location</span>
+                        <span class="office-value">Hasan Abdal, Pakistan</span>
+                    </div>
+                    <div class="office-actions">
+                        <a href="https://wa.me/923159696161" target="_blank" rel="noopener" class="btn btn-primary">WhatsApp</a>
+                        <a href="tel:+923159696161" class="btn btn-secondary">Call</a>
+                    </div>
+                </div>
+            </details>
+
+            <details class="office-card">
+                <summary>
+                    <div>
+                        <span class="office-city">USA</span>
+                        <h3>Texas Office</h3>
+                    </div>
+                    <span class="office-toggle" aria-hidden="true">+</span>
+                </summary>
+                <div class="office-details">
+                    <div class="office-row">
+                        <span class="office-label">Incharge</span>
+                        <span class="office-value">Hamid Ali</span>
+                    </div>
+                    <div class="office-row">
+                        <span class="office-label">Phone</span>
+                        <span class="office-value">+1 (443) 589-4441</span>
+                    </div>
+                    <div class="office-row">
+                        <span class="office-label">Location</span>
+                        <span class="office-value">Texas, USA</span>
+                    </div>
+                    <div class="office-actions">
+                        <a href="tel:+14435894441" class="btn btn-primary">Call</a>
+                        <a href="sms:+14435894441" class="btn btn-secondary">Text</a>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </section>
+
     <section class="testimonials">
         <div class="section-header">
             <p class="section-tag">Testimonials</p>
