@@ -141,11 +141,11 @@ function districtCardHtml(province, district) {
     : `/offices/${province.slug}/${district.slug}/`;
   const badge = district.linkedOfficeSlug ? 'Active office' : 'Branch network';
   const cardClass = district.linkedOfficeSlug ? 'district-card is-active-office' : 'district-card';
-  return `        <a class="district-card-link" href="${href}" aria-label="View ${escapeHtml(district.name)} district">
+  return `        <a class="district-card-link" href="${href}" aria-label="View Al Bari Travel and Tours ${escapeHtml(district.name)} contact details">
             <article class="${cardClass}">
                 <span class="district-card-badge">${badge}</span>
                 <h3>${escapeHtml(district.name)}</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View ${escapeHtml(district.name)} &rarr;</span>
             </article>
         </a>`;
 }
@@ -214,13 +214,44 @@ function buildDistrictPage(province, district) {
   ];
   const intro = introTemplates[hashSlug(district.slug) % introTemplates.length];
 
-  // Per-district FAQ — content + JSON-LD (eligible for rich-snippet treatment).
-  const faqs = [
+  // Per-district FAQ — pool of 10, deterministically pick 4 unique per district by slug hash.
+  // Wider pool means each pair of district pages shares fewer questions → less duplicate-content risk.
+  const faqPool = [
     { q: `How do I book Umrah or Hajj from ${district.name}?`, a: `Call or WhatsApp ${bm.incharge}, our ${bm.title}, at ${bm.phoneDisplay}. We handle every step — package selection, Saudi visa, flights, and group departure logistics — for clients in ${district.name} without requiring you to visit in person.` },
     { q: `Does Al Bari Travel have a walk-in office in ${district.name}?`, a: `Our closest walk-in office to ${district.name} is in ${bm.regionalHubLocation}, where ${bm.incharge} is based. We serve ${district.name} clients directly through our regional branch network — by phone, WhatsApp, and online — so an in-person visit is not necessary to book.` },
     { q: `Can I get international flights booked from ${district.name}?`, a: `Yes. Al Bari Travel & Tours books international flights from any major Pakistani airport for clients across ${district.name} and the wider ${province.name} region — including Saudi Arabia, UAE, and other destinations. Ticket delivery is digital.` },
     { q: `What documents are needed for a Saudi visa from ${district.name}?`, a: `For Umrah and Hajj from ${district.name} we typically need: a valid passport (6+ months), recent photos, NIC copy, and travel proof. Our Saudi visa processing handles the rest — application, fees, and tracking. Call ${bm.phoneDisplay} for the current checklist.` },
+    { q: `How long does it take to confirm an Umrah package booking from ${district.name}?`, a: `For ${district.name} clients, package quotation typically arrives within 1-2 hours of your first call or WhatsApp message. Once you confirm the dates and package tier, ${bm.incharge} books flights and submits the visa within 24-48 hours. End-to-end confirmation usually takes 3-5 business days.` },
+    { q: `Can a group from ${district.name} travel together for Hajj?`, a: `Yes — group Hajj from ${district.name} is one of the most popular services we coordinate. We arrange synchronised departure dates, group hotels in Makkah and Madinah, shared ground transport, and a single point of contact through ${bm.incharge}. Minimum group size is typically 8 people, but smaller family groups are also supported.` },
+    { q: `What payment options does Al Bari Travel accept from ${district.name} clients?`, a: `We accept cash, bank transfer, JazzCash, and Easypaisa from clients in ${district.name}. Bookings are confirmed once a deposit is received; the balance is due before the visa submission. ${bm.incharge} will walk you through the schedule on the first call.` },
+    { q: `Does Al Bari Travel arrange airport transfers from ${district.name}?`, a: `Most pilgrims from ${district.name} fly out of Islamabad International Airport or Lahore International Airport. We coordinate pickup arrangements where possible; specific routes and rates are confirmed once your booking is finalised. Contact ${bm.incharge} at ${bm.phoneDisplay} to discuss.` },
+    { q: `Are family packages available for ${district.name} pilgrims?`, a: `Yes. Many of our ${district.name} clients travel as family groups — couples, parents with adult children, multi-generational. We tailor hotel categories, room types, and Ziyarat tour pacing to suit the family. ${bm.incharge} can suggest packages once we understand the group composition.` },
+    { q: `What is the best time of year to book Umrah from ${district.name}?`, a: `Umrah from ${district.name} runs year-round. Off-peak months (mid-September through October, late February through April) offer the best rates and least crowded conditions in Makkah. Ramadan and the weeks around Hajj are most expensive. ${bm.incharge} can advise on the optimal window for your situation.` },
   ];
+  const seed = hashSlug(district.slug);
+  const picked = [];
+  const used = new Set();
+  // Pick 4 unique indices in a stable, district-specific order so each district has a different mix.
+  for (let i = 0; i < faqPool.length && picked.length < 4; i++) {
+    const idx = (seed + i * 7) % faqPool.length;
+    if (!used.has(idx)) { used.add(idx); picked.push(faqPool[idx]); }
+  }
+  const faqs = picked;
+
+  // Related districts: 3 alphabetically adjacent in the same province (excluding self and any linked-office districts).
+  const peers = province.districts.filter(d => d.slug !== district.slug && !d.linkedOfficeSlug);
+  const myIdx = peers.findIndex(d => d.slug > district.slug);
+  const startIdx = Math.max(0, (myIdx === -1 ? peers.length : myIdx) - 1);
+  const relatedDistricts = peers.slice(startIdx, startIdx + 3);
+  if (relatedDistricts.length < 3) {
+    // pad from the start of the alphabetical list
+    for (const d of peers) {
+      if (relatedDistricts.length >= 3) break;
+      if (!relatedDistricts.includes(d)) relatedDistricts.push(d);
+    }
+  }
+  const relatedDistrictsHtml = relatedDistricts.map(d => `
+        <a class="district-card-link" href="/offices/${province.slug}/${d.slug}/"><article class="district-card"><span class="district-card-badge">Nearby</span><h3>${escapeHtml(d.name)}</h3><span class="district-card-cta">View ${escapeHtml(d.name)} &rarr;</span></article></a>`).join('');
 
   const faqHtml = faqs.map(f => `
         <details class="faq-item">
@@ -261,6 +292,7 @@ function buildDistrictPage(province, district) {
     ctaButtons: ctaButtons.map(b => '                    ' + b).join('\n'),
     faqHtml,
     faqSchema,
+    relatedDistrictsHtml,
     footerOfficeList: footerOfficeListHtml(),
     year: String(new Date().getFullYear()),
   };
@@ -293,6 +325,13 @@ function buildOfficePage(office) {
     ogType: 'place',
     openingHoursDisplay: office.openingHours.replace('Mo-Sa', 'Mon–Sat').replace('-', ' to '),
     languagesDisplay: office.languages.join(' · '),
+    geoLat: String(office.geo.lat),
+    geoLng: String(office.geo.lng),
+    mapsUrl: office.mapsUrl,
+    currenciesAccepted: office.currenciesAccepted,
+    paymentAccepted: office.paymentAccepted,
+    priceRange: office.priceRange,
+    knowsLanguageJson: JSON.stringify(office.languages),
     ctaButtons: ctaButtonsHtml(office),
     serviceList: serviceListHtml(office),
     otherOfficeCards: others.map(officeCardHtml).join('\n'),
@@ -303,45 +342,292 @@ function buildOfficePage(office) {
 }
 
 // ------------------------------------------------------------------
+// Static pages (About, Contact, Privacy, Terms)
+// ------------------------------------------------------------------
+
+const STATIC_PAGES = [
+  {
+    slug: 'about',
+    pageName: 'About Us',
+    pageSchemaType: 'AboutPage',
+    eyebrow: 'Our Story',
+    h1: 'About Al Bari Travel & Tours',
+    lede: 'A family-run travel agency built on trust, transparent pricing, and personal service for every Umrah, Hajj, and international travel journey.',
+    seoTitle: 'About Al Bari Travel & Tours | Family-run Umrah & Hajj Agency',
+    seoDescription: 'Al Bari Travel & Tours — a family-run Umrah, Hajj, and international travel agency with seven walk-in offices across Pakistan and one in the USA. Trust, transparency, personal service.',
+    body: `
+        <h2>Who we are</h2>
+        <p style="margin-top:14px;line-height:1.8;">Al Bari Travel & Tours is a family-run travel agency serving the Pakistani and Pakistani-American community since our founding. We coordinate Umrah, Hajj, and international flight bookings with a personal touch — every client is matched with a named branch manager who handles their journey end-to-end.</p>
+
+        <h2 style="margin-top:40px;">What we do</h2>
+        <ul class="package-features" style="margin-top:14px;">
+            <li><strong>Umrah Packages</strong> — economy through premium tiers, year-round departures, group and family options</li>
+            <li><strong>Hajj Packages</strong> — coordinated group departures with full logistics, accommodation near the Haram, guided rites</li>
+            <li><strong>International Flight Booking</strong> — Saudi Arabia, UAE, USA, and beyond from any major Pakistani airport</li>
+            <li><strong>Saudi Visa Processing</strong> — documentation, submission, and tracking, all handled by our team</li>
+            <li><strong>Group Travel Arrangements</strong> — extended families, mosque groups, community trips</li>
+        </ul>
+
+        <h2 style="margin-top:40px;">Where we are</h2>
+        <p style="margin-top:14px;line-height:1.8;">We operate seven walk-in offices across Pakistan and the USA: <strong>Hasan Abdal</strong> (our home base in Punjab), <strong>Rawalpindi</strong>, <strong>Taxila</strong>, <strong>Swabi</strong>, <strong>Mardan</strong>, <strong>Peshawar</strong>, and <strong>Texas</strong> (serving the Pakistani-American community). Beyond walk-in offices, our regional branch network serves every district of Pakistan — 170 districts across all 7 administrative regions.</p>
+
+        <h2 style="margin-top:40px;">How we work</h2>
+        <p style="margin-top:14px;line-height:1.8;">No call centres, no bots. Every enquiry is handled by a named human at one of our offices. Quotations within hours, bookings confirmed within days, no hidden fees. We are licensed and operate in compliance with Pakistan's tourism and travel-agent regulations.</p>
+
+        <h2 style="margin-top:40px;">Get in touch</h2>
+        <p style="margin-top:14px;line-height:1.8;">The fastest way to reach us is WhatsApp on <a href="https://wa.me/923159596161" style="color:#c9a962;">+92 315 9596161</a> or visit our <a href="/contact/" style="color:#c9a962;">Contact page</a> for every office's direct line. You can also browse <a href="/offices/" style="color:#c9a962;">all our locations</a> to find the office nearest you.</p>
+    `,
+    extraSchema: '',
+  },
+  {
+    slug: 'contact',
+    pageName: 'Contact Us',
+    pageSchemaType: 'ContactPage',
+    eyebrow: 'Talk to a Human',
+    h1: 'Contact Al Bari Travel & Tours',
+    lede: 'Every office has a named branch manager who answers your call personally. Pick the office nearest you, or WhatsApp our main line for an immediate response.',
+    seoTitle: 'Contact Al Bari Travel & Tours | Call, WhatsApp, or Visit Any Office',
+    seoDescription: 'Contact Al Bari Travel & Tours for Umrah, Hajj, and travel booking. Seven offices across Pakistan and the USA, each with a named branch manager. Call +92 315 9596161 or WhatsApp.',
+    // body is dynamically built below
+    body: '__CONTACT_BODY_PLACEHOLDER__',
+    extraSchema: '__CONTACT_SCHEMA_PLACEHOLDER__',
+  },
+  {
+    slug: 'privacy',
+    pageName: 'Privacy Policy',
+    pageSchemaType: 'WebPage',
+    eyebrow: 'Legal',
+    h1: 'Privacy Policy',
+    lede: `How Al Bari Travel & Tours collects, uses, and protects your personal information.`,
+    seoTitle: 'Privacy Policy | Al Bari Travel & Tours',
+    seoDescription: 'Al Bari Travel & Tours privacy policy: what information we collect, how we use it, your rights, and how to contact us about your data.',
+    body: `
+        <p style="opacity:0.7;margin-bottom:30px;font-size:0.9rem;">Last updated: <time datetime="${new Date().toISOString().split('T')[0]}">${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>
+
+        <h2>1. Information we collect</h2>
+        <p style="margin-top:14px;line-height:1.8;">When you contact Al Bari Travel & Tours by phone, WhatsApp, in person, or through this website, we collect the information you provide voluntarily. This typically includes your name, contact details (phone, WhatsApp number, email if provided), travel dates, passport details (for visa applications), and travel preferences.</p>
+
+        <h2 style="margin-top:30px;">2. How we use your information</h2>
+        <p style="margin-top:14px;line-height:1.8;">We use your information solely to provide our services — preparing quotations, booking flights and hotels, submitting Saudi visa applications, and communicating with you about your booking. We do not sell your information to third parties.</p>
+
+        <h2 style="margin-top:30px;">3. Sharing with third parties</h2>
+        <p style="margin-top:14px;line-height:1.8;">We share information with third parties only when necessary to deliver your booking: airlines, hotels, the Saudi consulate (for visas), payment processors, and ground service providers. We share only the minimum required information.</p>
+
+        <h2 style="margin-top:30px;">4. Cookies and analytics</h2>
+        <p style="margin-top:14px;line-height:1.8;">This website is a simple static site. We do not set tracking cookies or run analytics that identify individual visitors. Your browser may receive standard server log entries (timestamp, IP address, page requested) which are not associated with any identity.</p>
+
+        <h2 style="margin-top:30px;">5. Data retention</h2>
+        <p style="margin-top:14px;line-height:1.8;">We retain client booking records for the period required by Pakistani tax and tourism law. Passport copies and visa application data are retained only as long as needed for the active booking and then destroyed securely.</p>
+
+        <h2 style="margin-top:30px;">6. Your rights</h2>
+        <p style="margin-top:14px;line-height:1.8;">You may request a copy of the information we hold about you, ask us to correct it, or ask us to delete it (subject to legal retention requirements). To exercise any of these rights, contact us at <a href="https://wa.me/923159596161" style="color:#c9a962;">+92 315 9596161</a> or visit our <a href="/contact/" style="color:#c9a962;">Contact page</a>.</p>
+
+        <h2 style="margin-top:30px;">7. Changes to this policy</h2>
+        <p style="margin-top:14px;line-height:1.8;">We may update this policy from time to time. The "Last updated" date at the top of this page indicates when the policy was last revised. Significant changes will be communicated to active clients.</p>
+    `,
+    extraSchema: '',
+  },
+  {
+    slug: 'terms',
+    pageName: 'Terms of Service',
+    pageSchemaType: 'WebPage',
+    eyebrow: 'Legal',
+    h1: 'Terms of Service',
+    lede: 'The terms that govern your use of this website and any booking made through Al Bari Travel & Tours.',
+    seoTitle: 'Terms of Service | Al Bari Travel & Tours',
+    seoDescription: 'Al Bari Travel & Tours terms of service covering bookings, payments, cancellations, third-party providers, and limitations of liability.',
+    body: `
+        <p style="opacity:0.7;margin-bottom:30px;font-size:0.9rem;">Last updated: <time datetime="${new Date().toISOString().split('T')[0]}">${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>
+
+        <h2>1. Acceptance of terms</h2>
+        <p style="margin-top:14px;line-height:1.8;">By using this website or booking a service through Al Bari Travel & Tours, you agree to these Terms of Service. If you do not agree, please do not use our services.</p>
+
+        <h2 style="margin-top:30px;">2. Bookings and payments</h2>
+        <p style="margin-top:14px;line-height:1.8;">All bookings require a deposit to confirm. The balance is due before visa submission or ticket issuance, whichever comes first. We accept cash, bank transfer, JazzCash, and Easypaisa in Pakistan; cash, credit card, and bank transfer in the USA. Prices quoted are valid for 48 hours unless otherwise stated.</p>
+
+        <h2 style="margin-top:30px;">3. Cancellations and refunds</h2>
+        <p style="margin-top:14px;line-height:1.8;">Cancellation terms vary by package, airline, and hotel. Cancellation fees may be charged based on the supplier's rules. Saudi visa fees, once paid to the consulate, are non-refundable. Specific cancellation terms for your booking are disclosed at the time of confirmation.</p>
+
+        <h2 style="margin-top:30px;">4. Third-party providers</h2>
+        <p style="margin-top:14px;line-height:1.8;">Flights, hotels, ground transport, and visa services are provided by third parties (airlines, hotels, the Saudi government, ground operators). Al Bari Travel & Tours acts as an agent and is not liable for delays, cancellations, or changes made by third-party providers. We do, however, advocate on our clients' behalf to resolve issues.</p>
+
+        <h2 style="margin-top:30px;">5. Travel documents</h2>
+        <p style="margin-top:14px;line-height:1.8;">It is your responsibility to ensure you have a valid passport (typically 6+ months validity) and meet all entry requirements for your destination. We assist with Saudi visa applications but cannot guarantee visa approval, which is at the sole discretion of the Saudi government.</p>
+
+        <h2 style="margin-top:30px;">6. Limitation of liability</h2>
+        <p style="margin-top:14px;line-height:1.8;">Al Bari Travel & Tours' liability is limited to the value of the services you have booked through us. We are not liable for indirect or consequential losses, including loss of enjoyment.</p>
+
+        <h2 style="margin-top:30px;">7. Governing law</h2>
+        <p style="margin-top:14px;line-height:1.8;">These terms are governed by the laws of the Islamic Republic of Pakistan. Disputes will be resolved in the courts of Punjab, Pakistan, unless otherwise required by law.</p>
+
+        <h2 style="margin-top:30px;">8. Contact</h2>
+        <p style="margin-top:14px;line-height:1.8;">Questions about these terms? Reach us at <a href="https://wa.me/923159596161" style="color:#c9a962;">+92 315 9596161</a> or visit our <a href="/contact/" style="color:#c9a962;">Contact page</a>.</p>
+    `,
+    extraSchema: '',
+  },
+];
+
+function contactPageBody() {
+  return offices.map(o => `
+        <div class="package-card" style="margin-bottom:18px;padding:30px 32px;">
+            <p style="color:#c9a962;text-transform:uppercase;letter-spacing:1.5px;font-size:0.72rem;font-weight:600;">${escapeHtml(o.country)} · ${escapeHtml(o.addressRegion)}</p>
+            <h3 style="font-size:1.4rem;margin:6px 0 18px;">${escapeHtml(o.name)}</h3>
+            <p style="opacity:0.75;margin-bottom:6px;"><strong>Branch Manager:</strong> ${escapeHtml(o.incharge)}</p>
+            <p style="opacity:0.75;margin-bottom:6px;"><strong>Phone:</strong> <a href="tel:${o.phoneE164}" style="color:#c9a962;">${escapeHtml(o.phoneDisplay)}</a></p>
+            <p style="opacity:0.75;margin-bottom:6px;"><strong>Location:</strong> ${escapeHtml(o.addressLocality)}, ${escapeHtml(o.country)}</p>
+            <p style="opacity:0.75;margin-bottom:18px;"><strong>Hours:</strong> ${escapeHtml(o.openingHours.replace('Mo-Sa', 'Mon–Sat').replace('-', ' to '))}</p>
+            <div class="office-actions">
+                ${o.hasWhatsapp ? `<a href="https://wa.me/${o.whatsappNumber}" target="_blank" rel="noopener" class="btn btn-primary">WhatsApp ${escapeHtml(o.incharge.split(' ')[0])}</a>` : ''}
+                <a href="tel:${o.phoneE164}" class="btn ${o.hasWhatsapp ? 'btn-secondary' : 'btn-primary'}">Call ${escapeHtml(o.incharge.split(' ')[0])}</a>
+                <a href="/offices/${o.slug}/" class="btn btn-secondary">Office page &rarr;</a>
+            </div>
+        </div>`).join('');
+}
+
+function contactPageSchema() {
+  // One ContactPoint per office for full Organization-level contact data.
+  const points = offices.map(o => ({
+    '@type': 'ContactPoint',
+    telephone: o.phoneE164,
+    contactType: 'customer service',
+    name: `${o.name} — ${o.incharge}`,
+    areaServed: o.addressCountry,
+    availableLanguage: o.languages,
+  }));
+  return `<script type="application/ld+json">
+${JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  'mainEntity': {
+    '@id': 'https://www.albaritravelspk.com/#organization',
+    'contactPoint': points
+  }
+}, null, 2)}
+</script>`;
+}
+
+function buildStaticPages() {
+  const tpl = readTemplate('static-page.html');
+  for (const page of STATIC_PAGES) {
+    let body = page.body;
+    let extraSchema = page.extraSchema;
+    if (page.slug === 'contact') {
+      body = contactPageBody();
+      extraSchema = contactPageSchema();
+    }
+    const ctx = {
+      pageName: page.pageName,
+      pageSchemaType: page.pageSchemaType,
+      eyebrow: page.eyebrow,
+      h1: page.h1,
+      lede: page.lede,
+      seoTitle: page.seoTitle,
+      seoDescription: page.seoDescription,
+      canonical: `${site.domain}/${page.slug}/`,
+      ogType: 'website',
+      body,
+      extraSchema,
+      footerOfficeList: footerOfficeListHtml(),
+      year: String(new Date().getFullYear()),
+    };
+    writeFile(`${page.slug}/index.html`, render(tpl, ctx));
+  }
+}
+
+// ------------------------------------------------------------------
 // Sitemap + robots
 // ------------------------------------------------------------------
 
 function buildSitemap() {
   const today = new Date().toISOString().split('T')[0];
+  const ogImage = `${site.domain}/og-default.svg`;
+
+  // Compose all URLs with optional image entries (Google Image sitemap extension).
   const districtUrls = [];
   for (const p of provinces) {
-    districtUrls.push({ loc: `${site.domain}/offices/${p.slug}/`, priority: '0.7', changefreq: 'monthly' });
+    districtUrls.push({ loc: `${site.domain}/offices/${p.slug}/`, priority: '0.7', changefreq: 'monthly', image: ogImage, imageTitle: `Al Bari Travel & Tours in ${p.name}` });
     for (const d of p.districts) {
       if (d.linkedOfficeSlug) continue;
-      districtUrls.push({ loc: `${site.domain}/offices/${p.slug}/${d.slug}/`, priority: '0.6', changefreq: 'monthly' });
+      districtUrls.push({
+        loc: `${site.domain}/offices/${p.slug}/${d.slug}/`,
+        priority: '0.6',
+        changefreq: 'monthly',
+        image: ogImage,
+        imageTitle: `Al Bari Travel & Tours — ${d.name}, ${p.name}`,
+      });
     }
   }
   const urls = [
-    { loc: `${site.domain}/`, priority: '1.0', changefreq: 'weekly' },
-    { loc: `${site.domain}/offices/`, priority: '0.9', changefreq: 'monthly' },
+    { loc: `${site.domain}/`, priority: '1.0', changefreq: 'weekly', image: ogImage, imageTitle: 'Al Bari Travel & Tours — Umrah, Hajj, International Flights' },
+    { loc: `${site.domain}/offices/`, priority: '0.9', changefreq: 'monthly', image: ogImage, imageTitle: 'Al Bari Travel & Tours offices in Pakistan and USA' },
+    { loc: `${site.domain}/about/`, priority: '0.6', changefreq: 'yearly', image: ogImage, imageTitle: 'About Al Bari Travel & Tours' },
+    { loc: `${site.domain}/contact/`, priority: '0.8', changefreq: 'monthly', image: ogImage, imageTitle: 'Contact Al Bari Travel & Tours' },
+    { loc: `${site.domain}/privacy/`, priority: '0.3', changefreq: 'yearly' },
+    { loc: `${site.domain}/terms/`, priority: '0.3', changefreq: 'yearly' },
     ...offices.map(o => ({
       loc: `${site.domain}/offices/${o.slug}/`,
       priority: '0.8',
       changefreq: 'monthly',
+      image: ogImage,
+      imageTitle: `${o.name} — Al Bari Travel & Tours`,
     })),
     ...districtUrls,
   ];
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(u => `  <url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${urls.map(u => {
+    const imgBlock = u.image ? `
+    <image:image>
+      <image:loc>${u.image}</image:loc>
+      <image:title>${escapeHtml(u.imageTitle || '')}</image:title>
+    </image:image>` : '';
+    return `  <url>
     <loc>${u.loc}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>${u.changefreq}</changefreq>
-    <priority>${u.priority}</priority>
-  </url>`).join('\n')}
+    <priority>${u.priority}</priority>${imgBlock}
+  </url>`;
+  }).join('\n')}
 </urlset>
 `;
   writeFile('sitemap.xml', xml);
 }
 
 function buildRobots() {
-  const txt = `User-agent: *
+  // Explicit-allow per-bot. Most permissive for trusted crawlers, slight crawl-delay
+  // hint to defaults so we don't get hammered by long-tail bots on 183 pages.
+  const txt = `# Al Bari Travel & Tours — robots.txt
+# Crawl rules. Sitemap below.
+
+User-agent: Googlebot
 Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: *
+Allow: /
+Disallow: /404
+Crawl-delay: 1
 
 Sitemap: ${site.domain}/sitemap.xml
 `;
@@ -369,6 +655,11 @@ if (target === 'all' || target === 'provinces') {
       buildDistrictPage(province, district);
     }
   }
+}
+
+if (target === 'all' || target === 'static') {
+  console.log('building static pages (about, contact, privacy, terms)...');
+  buildStaticPages();
 }
 
 if (target === 'all' || target === 'sitemap') {

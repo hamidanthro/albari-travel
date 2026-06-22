@@ -1,1101 +1,1866 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.albaritravelspk.com/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Umrah, Hajj, International Flights</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours offices in Pakistan and USA</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.albaritravelspk.com/about/</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>About Al Bari Travel &amp; Tours</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.albaritravelspk.com/contact/</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Contact Al Bari Travel &amp; Tours</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.albaritravelspk.com/privacy/</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.albaritravelspk.com/terms/</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/hasan-abdal/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Hasan Abdal Office — Al Bari Travel &amp; Tours</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/rawalpindi/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Rawalpindi Office — Al Bari Travel &amp; Tours</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/taxila/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Taxila Office — Al Bari Travel &amp; Tours</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/swabi/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Swabi Office — Al Bari Travel &amp; Tours</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/mardan/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Mardan Office — Al Bari Travel &amp; Tours</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/peshawar/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Peshawar Office — Al Bari Travel &amp; Tours</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/texas/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Texas Office — Al Bari Travel &amp; Tours</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours in Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/attock/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Attock, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/bahawalnagar/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Bahawalnagar, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/bahawalpur/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Bahawalpur, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/bhakkar/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Bhakkar, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/chakwal/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Chakwal, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/chiniot/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Chiniot, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/dera-ghazi-khan/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Dera Ghazi Khan, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/faisalabad/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Faisalabad, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/gujranwala/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Gujranwala, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/gujrat/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Gujrat, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/hafizabad/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Hafizabad, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/jhang/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Jhang, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/jhelum/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Jhelum, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/kasur/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Kasur, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/khanewal/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Khanewal, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/khushab/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Khushab, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/kot-addu/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Kot Addu, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/lahore/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Lahore, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/layyah/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Layyah, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/lodhran/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Lodhran, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/mandi-bahauddin/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Mandi Bahauddin, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/mianwali/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Mianwali, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/multan/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Multan, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/murree/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Murree, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/muzaffargarh/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Muzaffargarh, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/nankana-sahib/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Nankana Sahib, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/narowal/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Narowal, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/okara/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Okara, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/pakpattan/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Pakpattan, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/rahim-yar-khan/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Rahim Yar Khan, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/rajanpur/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Rajanpur, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/sahiwal/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Sahiwal, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/sargodha/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Sargodha, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/sheikhupura/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Sheikhupura, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/sialkot/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Sialkot, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/talagang/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Talagang, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/taunsa/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Taunsa, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/toba-tek-singh/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Toba Tek Singh, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/vehari/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Vehari, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/punjab/wazirabad/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Wazirabad, Punjab</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours in Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/badin/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Badin, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/dadu/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Dadu, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/ghotki/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Ghotki, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/hyderabad/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Hyderabad, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/jacobabad/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Jacobabad, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/jamshoro/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Jamshoro, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/karachi-central/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Karachi Central, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/karachi-east/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Karachi East, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/karachi-south/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Karachi South, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/karachi-west/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Karachi West, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/kemari/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Kemari, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/korangi/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Korangi, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/malir/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Malir, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/kashmore/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Kashmore, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/khairpur/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Khairpur, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/larkana/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Larkana, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/matiari/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Matiari, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/mirpur-khas/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Mirpur Khas, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/naushahro-feroze/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Naushahro Feroze, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/qambar-shahdadkot/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Qambar Shahdadkot, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/sanghar/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Sanghar, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/shaheed-benazirabad/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Shaheed Benazirabad, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/shikarpur/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Shikarpur, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/sujawal/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Sujawal, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/sukkur/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Sukkur, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/tando-allahyar/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Tando Allahyar, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/tando-muhammad-khan/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Tando Muhammad Khan, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/tharparkar/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Tharparkar, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/thatta/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Thatta, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/sindh/umerkot/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Umerkot, Sindh</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours in Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/abbottabad/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Abbottabad, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/bajaur/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Bajaur, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/bannu/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Bannu, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/battagram/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Battagram, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/buner/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Buner, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/central-kurram/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Central Kurram, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/charsadda/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Charsadda, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/dera-ismail-khan/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Dera Ismail Khan, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/hangu/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Hangu, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/haripur/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Haripur, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/karak/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Karak, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/khyber/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Khyber, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/kohat/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Kohat, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/kolai-palas/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Kolai-Palas, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/kurram/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Kurram, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/lakki-marwat/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Lakki Marwat, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/lower-chitral/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Lower Chitral, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/lower-dir/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Lower Dir, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/lower-kohistan/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Lower Kohistan, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/lower-south-waziristan/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Lower South Waziristan, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/malakand/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Malakand, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/mansehra/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Mansehra, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/mohmand/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Mohmand, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/north-waziristan/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — North Waziristan, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/nowshera/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Nowshera, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/orakzai/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Orakzai, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/shangla/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Shangla, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/swat/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Swat, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/tank/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Tank, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/tor-ghar/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Tor Ghar, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/upper-chitral/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Upper Chitral, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/upper-dir/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Upper Dir, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/upper-kohistan/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Upper Kohistan, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/upper-south-waziristan/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Upper South Waziristan, Khyber Pakhtunkhwa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours in Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/awaran/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Awaran, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/barkhan/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Barkhan, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/chagai/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Chagai, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/chaman/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Chaman, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/dera-bugti/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Dera Bugti, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/duki/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Duki, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/gwadar/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Gwadar, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/harnai/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Harnai, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/hub/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Hub, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/jafarabad/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Jafarabad, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/jhal-magsi/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Jhal Magsi, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/kachhi/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Kachhi, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/kalat/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Kalat, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/kech/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Kech (Turbat), Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/kharan/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Kharan, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/khuzdar/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Khuzdar, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/killa-abdullah/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Killa Abdullah, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/killa-saifullah/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Killa Saifullah, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/kohlu/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Kohlu, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/lasbela/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Lasbela, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/lehri/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Lehri, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/loralai/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Loralai, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/mastung/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Mastung, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/musakhel/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Musakhel, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/nasirabad/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Nasirabad, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/nushki/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Nushki, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/panjgur/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Panjgur, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/pishin/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Pishin, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/quetta/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Quetta, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/sherani/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Sherani, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/sibi/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Sibi, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/sohbatpur/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Sohbatpur, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/surab/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Surab, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/usta-muhammad/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Usta Muhammad, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/washuk/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Washuk, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/zhob/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Zhob, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/balochistan/ziarat/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Ziarat, Balochistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/islamabad/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours in Islamabad Capital Territory</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/islamabad/islamabad/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Islamabad, Islamabad Capital Territory</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/azad-kashmir/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours in Azad Jammu &amp; Kashmir</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/azad-kashmir/bagh/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Bagh, Azad Jammu &amp; Kashmir</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/azad-kashmir/bhimber/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Bhimber, Azad Jammu &amp; Kashmir</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/azad-kashmir/hattian-bala/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Hattian Bala, Azad Jammu &amp; Kashmir</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/azad-kashmir/haveli/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Haveli, Azad Jammu &amp; Kashmir</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/azad-kashmir/kotli/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Kotli, Azad Jammu &amp; Kashmir</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/azad-kashmir/mirpur/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Mirpur, Azad Jammu &amp; Kashmir</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/azad-kashmir/muzaffarabad/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Muzaffarabad, Azad Jammu &amp; Kashmir</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/azad-kashmir/neelum/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Neelum, Azad Jammu &amp; Kashmir</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/azad-kashmir/poonch/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Poonch, Azad Jammu &amp; Kashmir</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/azad-kashmir/sudhanoti/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Sudhanoti, Azad Jammu &amp; Kashmir</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/gilgit-baltistan/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours in Gilgit-Baltistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/gilgit-baltistan/astore/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Astore, Gilgit-Baltistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/gilgit-baltistan/darel/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Darel, Gilgit-Baltistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/gilgit-baltistan/diamer/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Diamer, Gilgit-Baltistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/gilgit-baltistan/ghanche/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Ghanche, Gilgit-Baltistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/gilgit-baltistan/ghizer/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Ghizer, Gilgit-Baltistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/gilgit-baltistan/gilgit/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Gilgit, Gilgit-Baltistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/gilgit-baltistan/gupis-yasin/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Gupis-Yasin, Gilgit-Baltistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/gilgit-baltistan/hunza/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Hunza, Gilgit-Baltistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/gilgit-baltistan/kharmang/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Kharmang, Gilgit-Baltistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/gilgit-baltistan/nagar/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Nagar, Gilgit-Baltistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/gilgit-baltistan/roundu/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Roundu, Gilgit-Baltistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/gilgit-baltistan/shigar/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Shigar, Gilgit-Baltistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/gilgit-baltistan/skardu/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Skardu, Gilgit-Baltistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/gilgit-baltistan/tangir/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours — Tangir, Gilgit-Baltistan</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.albaritravelspk.com/offices/united-states/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Al Bari Travel &amp; Tours in United States</image:title>
+    </image:image>
   </url>
 </urlset>

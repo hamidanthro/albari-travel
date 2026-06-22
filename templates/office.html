@@ -5,23 +5,61 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "TravelAgency",
+  "@type": ["TravelAgency", "LocalBusiness"],
+  "@id": "{{canonical}}#business",
   "name": "Al Bari Travel & Tours — {{name}}",
   "description": "{{seoDescription}}",
   "url": "{{canonical}}",
   "telephone": "{{phoneE164}}",
+  "image": "https://www.albaritravelspk.com/og-default.svg",
+  "logo": "https://www.albaritravelspk.com/favicon.svg",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "{{addressLocality}}",
     "addressRegion": "{{addressRegion}}",
     "addressCountry": "{{addressCountry}}"
   },
-  "openingHours": "{{openingHours}}",
-  "parentOrganization": {
-    "@type": "Organization",
-    "name": "Al Bari Travel & Tours",
-    "url": "https://www.albaritravelspk.com/"
-  }
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "{{geoLat}}",
+    "longitude": "{{geoLng}}"
+  },
+  "hasMap": "{{mapsUrl}}",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "09:00",
+    "closes": "20:00"
+  }],
+  "currenciesAccepted": "{{currenciesAccepted}}",
+  "paymentAccepted": "{{paymentAccepted}}",
+  "priceRange": "{{priceRange}}",
+  "knowsLanguage": {{{knowsLanguageJson}}},
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "{{addressRegion}}, {{country}}"
+  },
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "{{phoneE164}}",
+    "contactType": "customer service",
+    "availableLanguage": {{{knowsLanguageJson}}},
+    "areaServed": "{{addressCountry}}"
+  }],
+  "employee": [{
+    "@type": "Person",
+    "name": "{{incharge}}",
+    "jobTitle": "Branch Manager",
+    "telephone": "{{phoneE164}}",
+    "worksFor": { "@id": "https://www.albaritravelspk.com/#organization" }
+  }],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Umrah Packages", "serviceType": "Religious travel" }},
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hajj Packages", "serviceType": "Religious travel" }},
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "International Flight Booking", "serviceType": "Travel booking" }},
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Saudi Arabia Visa Processing", "serviceType": "Visa services" }}
+  ],
+  "parentOrganization": { "@id": "https://www.albaritravelspk.com/#organization" }
 }
 </script>
 <script type="application/ld+json">
@@ -41,6 +79,11 @@
 
 <section class="hero" style="height:auto;min-height:auto;padding:140px 40px 60px;">
     <div class="hero-content" style="text-align:center;max-width:780px;">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a> <span aria-hidden="true">›</span>
+            <a href="/offices/">Offices</a> <span aria-hidden="true">›</span>
+            <span aria-current="page">{{name}}</span>
+        </nav>
         <p class="hero-tag">{{country}} · {{addressRegion}}</p>
         <h1 style="font-size:2.6rem;">Al Bari Travel &amp; Tours — {{name}}</h1>
         <p style="opacity:0.85;margin-top:14px;">{{intro}}</p>

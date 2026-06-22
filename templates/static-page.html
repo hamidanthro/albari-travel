@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{>head}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.albaritravelspk.com/" },
+        { "@type": "ListItem", "position": 2, "name": "{{pageName}}", "item": "{{canonical}}" }
+      ]
+    },
+    {
+      "@type": "{{pageSchemaType}}",
+      "@id": "{{canonical}}#webpage",
+      "url": "{{canonical}}",
+      "name": "{{pageName}}",
+      "description": "{{seoDescription}}",
+      "about": { "@id": "https://www.albaritravelspk.com/#organization" },
+      "isPartOf": { "@id": "https://www.albaritravelspk.com/#website" },
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
+{{{extraSchema}}}
+</head>
+<body>
+{{>header}}
+
+<section class="hero" style="height:auto;min-height:auto;padding:140px 40px 60px;">
+    <div class="hero-content" style="text-align:center;max-width:780px;">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a> <span aria-hidden="true">›</span>
+            <span aria-current="page">{{pageName}}</span>
+        </nav>
+        <p class="hero-tag">{{eyebrow}}</p>
+        <h1 style="font-size:2.6rem;">{{h1}}</h1>
+        <p style="opacity:0.85;margin-top:14px;">{{lede}}</p>
+    </div>
+</section>
+
+<section class="packages">
+    <div class="static-content" style="max-width:780px;margin:0 auto;color:rgba(255,255,255,0.85);">
+{{{body}}}
+    </div>
+</section>
+
+{{>footer}}
+</body>
+</html>

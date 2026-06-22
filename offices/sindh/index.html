@@ -25,14 +25,19 @@
 <meta name="twitter:description" content="Al Bari Travel &amp; Tours serving all 30 districts of Sindh, Pakistan including Karachi, Hyderabad, Sukkur and more. Umrah, Hajj, and international travel through our branch network. Contact Branch Manager Haiwad Ahmad.">
 <meta name="twitter:image" content="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&h=630&fit=crop">
 
-<!-- Favicon + iOS -->
+<!-- Favicon + iOS + PWA -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="manifest" href="/manifest.webmanifest">
 <meta name="theme-color" content="#0d1b2a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-<!-- Perf: connect to font origins early (saves ~100-300ms) -->
+<!-- Perf: connect + preload critical resources for LCP -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600" fetchpriority="high">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/main.css">
@@ -40,11 +45,44 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.albaritravelspk.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Our Offices", "item": "https://www.albaritravelspk.com/offices/" },
-    { "@type": "ListItem", "position": 3, "name": "Sindh", "item": "https://www.albaritravelspk.com/offices/sindh/" }
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.albaritravelspk.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Our Offices", "item": "https://www.albaritravelspk.com/offices/" },
+        { "@type": "ListItem", "position": 3, "name": "Sindh", "item": "https://www.albaritravelspk.com/offices/sindh/" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Travel agency services",
+      "provider": { "@id": "https://www.albaritravelspk.com/#organization" },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Sindh, Pakistan"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Al Bari Travel services in Sindh",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Umrah Packages from Sindh" }},
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hajj Packages from Sindh" }},
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "International Flight Booking from Sindh" }},
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Saudi Arabia Visa Processing in Sindh" }}
+        ]
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.albaritravelspk.com/offices/sindh/#webpage",
+      "url": "https://www.albaritravelspk.com/offices/sindh/",
+      "name": "Al Bari Travel & Tours in Sindh",
+      "description": "Al Bari Travel &amp; Tours serving all 30 districts of Sindh, Pakistan including Karachi, Hyderabad, Sukkur and more. Umrah, Hajj, and international travel through our branch network. Contact Branch Manager Haiwad Ahmad.",
+      "isPartOf": { "@id": "https://www.albaritravelspk.com/#website" },
+      "primaryImageOfPage": "https://www.albaritravelspk.com/og-default.svg",
+      "inLanguage": "en"
+    }
   ]
 }
 </script>
@@ -55,10 +93,10 @@
         <a href="/" style="text-decoration:none;color:inherit;"><div class="logo">Al Bari <span>Travel &amp; Tours</span></div></a>
     </div>
     <nav>
-        <a href="/#services">Services</a>
-        <a href="/#packages">Packages</a>
+        <a href="/about/">About</a>
         <a href="/offices/">Our Offices</a>
-        <a href="/#contact">Contact</a>
+        <a href="/#packages">Packages</a>
+        <a href="/contact/">Contact</a>
     </nav>
     <a href="https://wa.me/923159596161" class="header-cta" target="_blank" rel="noopener" aria-label="Book on WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
@@ -70,6 +108,11 @@
 
 <section class="hero" style="height:auto;min-height:auto;padding:140px 40px 60px;">
     <div class="hero-content" style="text-align:center;max-width:780px;">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a> <span aria-hidden="true">›</span>
+            <a href="/offices/">Offices</a> <span aria-hidden="true">›</span>
+            <span aria-current="page">Sindh</span>
+        </nav>
         <p class="hero-tag">Pakistan · Province Coverage</p>
         <h1 style="font-size:2.6rem;">Al Bari Travel &amp; Tours in Sindh</h1>
         <p style="opacity:0.85;margin-top:14px;">Pakistan&#39;s southern coastal province — 30 districts served by our regional branch network</p>
@@ -85,214 +128,214 @@
         <p>Tap any district to see local contact details and how to book Umrah, Hajj, or international travel from that area.</p>
     </div>
     <div class="districts-grid">
-        <a class="district-card-link" href="/offices/sindh/badin/" aria-label="View Badin district">
+        <a class="district-card-link" href="/offices/sindh/badin/" aria-label="View Al Bari Travel and Tours Badin contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Badin</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Badin &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/dadu/" aria-label="View Dadu district">
+        <a class="district-card-link" href="/offices/sindh/dadu/" aria-label="View Al Bari Travel and Tours Dadu contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Dadu</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Dadu &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/ghotki/" aria-label="View Ghotki district">
+        <a class="district-card-link" href="/offices/sindh/ghotki/" aria-label="View Al Bari Travel and Tours Ghotki contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Ghotki</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Ghotki &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/hyderabad/" aria-label="View Hyderabad district">
+        <a class="district-card-link" href="/offices/sindh/hyderabad/" aria-label="View Al Bari Travel and Tours Hyderabad contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Hyderabad</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Hyderabad &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/jacobabad/" aria-label="View Jacobabad district">
+        <a class="district-card-link" href="/offices/sindh/jacobabad/" aria-label="View Al Bari Travel and Tours Jacobabad contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Jacobabad</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Jacobabad &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/jamshoro/" aria-label="View Jamshoro district">
+        <a class="district-card-link" href="/offices/sindh/jamshoro/" aria-label="View Al Bari Travel and Tours Jamshoro contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Jamshoro</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Jamshoro &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/karachi-central/" aria-label="View Karachi Central district">
+        <a class="district-card-link" href="/offices/sindh/karachi-central/" aria-label="View Al Bari Travel and Tours Karachi Central contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Karachi Central</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Karachi Central &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/karachi-east/" aria-label="View Karachi East district">
+        <a class="district-card-link" href="/offices/sindh/karachi-east/" aria-label="View Al Bari Travel and Tours Karachi East contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Karachi East</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Karachi East &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/karachi-south/" aria-label="View Karachi South district">
+        <a class="district-card-link" href="/offices/sindh/karachi-south/" aria-label="View Al Bari Travel and Tours Karachi South contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Karachi South</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Karachi South &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/karachi-west/" aria-label="View Karachi West district">
+        <a class="district-card-link" href="/offices/sindh/karachi-west/" aria-label="View Al Bari Travel and Tours Karachi West contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Karachi West</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Karachi West &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/kemari/" aria-label="View Kemari district">
+        <a class="district-card-link" href="/offices/sindh/kemari/" aria-label="View Al Bari Travel and Tours Kemari contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Kemari</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Kemari &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/korangi/" aria-label="View Korangi district">
+        <a class="district-card-link" href="/offices/sindh/korangi/" aria-label="View Al Bari Travel and Tours Korangi contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Korangi</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Korangi &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/malir/" aria-label="View Malir district">
+        <a class="district-card-link" href="/offices/sindh/malir/" aria-label="View Al Bari Travel and Tours Malir contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Malir</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Malir &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/kashmore/" aria-label="View Kashmore district">
+        <a class="district-card-link" href="/offices/sindh/kashmore/" aria-label="View Al Bari Travel and Tours Kashmore contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Kashmore</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Kashmore &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/khairpur/" aria-label="View Khairpur district">
+        <a class="district-card-link" href="/offices/sindh/khairpur/" aria-label="View Al Bari Travel and Tours Khairpur contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Khairpur</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Khairpur &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/larkana/" aria-label="View Larkana district">
+        <a class="district-card-link" href="/offices/sindh/larkana/" aria-label="View Al Bari Travel and Tours Larkana contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Larkana</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Larkana &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/matiari/" aria-label="View Matiari district">
+        <a class="district-card-link" href="/offices/sindh/matiari/" aria-label="View Al Bari Travel and Tours Matiari contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Matiari</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Matiari &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/mirpur-khas/" aria-label="View Mirpur Khas district">
+        <a class="district-card-link" href="/offices/sindh/mirpur-khas/" aria-label="View Al Bari Travel and Tours Mirpur Khas contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Mirpur Khas</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Mirpur Khas &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/naushahro-feroze/" aria-label="View Naushahro Feroze district">
+        <a class="district-card-link" href="/offices/sindh/naushahro-feroze/" aria-label="View Al Bari Travel and Tours Naushahro Feroze contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Naushahro Feroze</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Naushahro Feroze &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/qambar-shahdadkot/" aria-label="View Qambar Shahdadkot district">
+        <a class="district-card-link" href="/offices/sindh/qambar-shahdadkot/" aria-label="View Al Bari Travel and Tours Qambar Shahdadkot contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Qambar Shahdadkot</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Qambar Shahdadkot &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/sanghar/" aria-label="View Sanghar district">
+        <a class="district-card-link" href="/offices/sindh/sanghar/" aria-label="View Al Bari Travel and Tours Sanghar contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Sanghar</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Sanghar &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/shaheed-benazirabad/" aria-label="View Shaheed Benazirabad district">
+        <a class="district-card-link" href="/offices/sindh/shaheed-benazirabad/" aria-label="View Al Bari Travel and Tours Shaheed Benazirabad contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Shaheed Benazirabad</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Shaheed Benazirabad &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/shikarpur/" aria-label="View Shikarpur district">
+        <a class="district-card-link" href="/offices/sindh/shikarpur/" aria-label="View Al Bari Travel and Tours Shikarpur contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Shikarpur</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Shikarpur &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/sujawal/" aria-label="View Sujawal district">
+        <a class="district-card-link" href="/offices/sindh/sujawal/" aria-label="View Al Bari Travel and Tours Sujawal contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Sujawal</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Sujawal &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/sukkur/" aria-label="View Sukkur district">
+        <a class="district-card-link" href="/offices/sindh/sukkur/" aria-label="View Al Bari Travel and Tours Sukkur contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Sukkur</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Sukkur &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/tando-allahyar/" aria-label="View Tando Allahyar district">
+        <a class="district-card-link" href="/offices/sindh/tando-allahyar/" aria-label="View Al Bari Travel and Tours Tando Allahyar contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Tando Allahyar</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Tando Allahyar &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/tando-muhammad-khan/" aria-label="View Tando Muhammad Khan district">
+        <a class="district-card-link" href="/offices/sindh/tando-muhammad-khan/" aria-label="View Al Bari Travel and Tours Tando Muhammad Khan contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Tando Muhammad Khan</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Tando Muhammad Khan &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/tharparkar/" aria-label="View Tharparkar district">
+        <a class="district-card-link" href="/offices/sindh/tharparkar/" aria-label="View Al Bari Travel and Tours Tharparkar contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Tharparkar</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Tharparkar &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/thatta/" aria-label="View Thatta district">
+        <a class="district-card-link" href="/offices/sindh/thatta/" aria-label="View Al Bari Travel and Tours Thatta contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Thatta</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Thatta &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/sindh/umerkot/" aria-label="View Umerkot district">
+        <a class="district-card-link" href="/offices/sindh/umerkot/" aria-label="View Al Bari Travel and Tours Umerkot contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Umerkot</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Umerkot &rarr;</span>
             </article>
         </a>
     </div>
@@ -308,9 +351,11 @@
             <h4 style="font-family:'Playfair Display',serif;margin-bottom:14px;color:#c9a962;">Explore</h4>
             <ul style="list-style:none;line-height:2;font-size:0.9rem;">
                 <li><a href="/" style="color:#fff;opacity:0.8;text-decoration:none;">Home</a></li>
-                <li><a href="/#services" style="color:#fff;opacity:0.8;text-decoration:none;">Services</a></li>
-                <li><a href="/#packages" style="color:#fff;opacity:0.8;text-decoration:none;">Packages</a></li>
+                <li><a href="/about/" style="color:#fff;opacity:0.8;text-decoration:none;">About Us</a></li>
                 <li><a href="/offices/" style="color:#fff;opacity:0.8;text-decoration:none;">Our Offices</a></li>
+                <li><a href="/contact/" style="color:#fff;opacity:0.8;text-decoration:none;">Contact</a></li>
+                <li><a href="/privacy/" style="color:#fff;opacity:0.6;text-decoration:none;font-size:0.82rem;">Privacy</a></li>
+                <li><a href="/terms/" style="color:#fff;opacity:0.6;text-decoration:none;font-size:0.82rem;">Terms</a></li>
             </ul>
         </div>
         <div>

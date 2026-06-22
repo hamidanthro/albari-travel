@@ -1012,3 +1012,27 @@
     .faq-answer { padding: 14px 18px 18px; }
     .faq-answer p { font-size: 0.9rem; }
 }
+
+/* === Visible breadcrumb (SEO + UX) === */
+.breadcrumb {
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    color: rgba(255,255,255,0.55);
+}
+.breadcrumb a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.breadcrumb a:hover { color: #c9a962; }
+.breadcrumb span[aria-hidden="true"] {
+    color: rgba(201,169,98,0.6);
+    margin: 0 6px;
+}
+.breadcrumb span[aria-current="page"] { color: #c9a962; font-weight: 600; }
+@media (max-width: 768px) {
+    .breadcrumb { font-size: 0.7rem; margin-bottom: 18px; }
+    .breadcrumb span[aria-hidden="true"] { margin: 0 4px; }
+}

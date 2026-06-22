@@ -25,14 +25,19 @@
 <meta name="twitter:description" content="Al Bari Travel &amp; Tours serving Gwadar, Balochistan, Pakistan. Umrah &amp; Hajj packages, international flight booking, and visa processing. Contact Haiwad Ahmad, Regional Branch Manager: +92 315 9596161.">
 <meta name="twitter:image" content="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&h=630&fit=crop">
 
-<!-- Favicon + iOS -->
+<!-- Favicon + iOS + PWA -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="manifest" href="/manifest.webmanifest">
 <meta name="theme-color" content="#0d1b2a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-<!-- Perf: connect to font origins early (saves ~100-300ms) -->
+<!-- Perf: connect + preload critical resources for LCP -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600" fetchpriority="high">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/main.css">
@@ -41,10 +46,13 @@
 {
   "@context": "https://schema.org",
   "@type": "TravelAgency",
+  "@id": "https://www.albaritravelspk.com/offices/balochistan/gwadar/#agency",
   "name": "Al Bari Travel & Tours — Gwadar",
   "description": "Al Bari Travel &amp; Tours serving Gwadar, Balochistan, Pakistan. Umrah &amp; Hajj packages, international flight booking, and visa processing. Contact Haiwad Ahmad, Regional Branch Manager: +92 315 9596161.",
   "url": "https://www.albaritravelspk.com/offices/balochistan/gwadar/",
   "telephone": "+923159596161",
+  "image": "https://www.albaritravelspk.com/og-default.svg",
+  "logo": "https://www.albaritravelspk.com/favicon.svg",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Hasan Abdal",
@@ -55,11 +63,30 @@
     "@type": "AdministrativeArea",
     "name": "Gwadar District, Balochistan, Pakistan"
   },
-  "parentOrganization": {
-    "@type": "Organization",
-    "name": "Al Bari Travel & Tours",
-    "url": "https://www.albaritravelspk.com/"
-  }
+  "currenciesAccepted": "PKR",
+  "paymentAccepted": "Cash, Bank transfer, JazzCash, Easypaisa",
+  "priceRange": "$$",
+  "knowsLanguage": ["English","Urdu"],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "+923159596161",
+    "contactType": "customer service",
+    "availableLanguage": ["English","Urdu"],
+    "areaServed": "PK"
+  }],
+  "employee": [{
+    "@type": "Person",
+    "name": "Haiwad Ahmad",
+    "jobTitle": "Regional Branch Manager",
+    "telephone": "+923159596161"
+  }],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Umrah Packages from Gwadar", "serviceType": "Religious travel", "areaServed": "Gwadar" }},
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hajj Packages from Gwadar", "serviceType": "Religious travel", "areaServed": "Gwadar" }},
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "International Flight Booking serving Gwadar", "serviceType": "Travel booking", "areaServed": "Gwadar" }},
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Saudi Arabia Visa Processing for Gwadar residents", "serviceType": "Visa services", "areaServed": "Gwadar" }}
+  ],
+  "parentOrganization": { "@id": "https://www.albaritravelspk.com/#organization" }
 }
 </script>
 <script type="application/ld+json">
@@ -81,26 +108,10 @@
   "mainEntity": [
   {
     "@type": "Question",
-    "name": "How do I book Umrah or Hajj from Gwadar?",
+    "name": "What payment options does Al Bari Travel accept from Gwadar clients?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Call or WhatsApp Haiwad Ahmad, our Regional Branch Manager, at +92 315 9596161. We handle every step — package selection, Saudi visa, flights, and group departure logistics — for clients in Gwadar without requiring you to visit in person."
-    }
-  },
-  {
-    "@type": "Question",
-    "name": "Does Al Bari Travel have a walk-in office in Gwadar?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Our closest walk-in office to Gwadar is in Hasan Abdal, Pakistan, where Haiwad Ahmad is based. We serve Gwadar clients directly through our regional branch network — by phone, WhatsApp, and online — so an in-person visit is not necessary to book."
-    }
-  },
-  {
-    "@type": "Question",
-    "name": "Can I get international flights booked from Gwadar?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Yes. Al Bari Travel & Tours books international flights from any major Pakistani airport for clients across Gwadar and the wider Balochistan region — including Saudi Arabia, UAE, and other destinations. Ticket delivery is digital."
+      "text": "We accept cash, bank transfer, JazzCash, and Easypaisa from clients in Gwadar. Bookings are confirmed once a deposit is received; the balance is due before the visa submission. Haiwad Ahmad will walk you through the schedule on the first call."
     }
   },
   {
@@ -109,6 +120,22 @@
     "acceptedAnswer": {
       "@type": "Answer",
       "text": "For Umrah and Hajj from Gwadar we typically need: a valid passport (6+ months), recent photos, NIC copy, and travel proof. Our Saudi visa processing handles the rest — application, fees, and tracking. Call +92 315 9596161 for the current checklist."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "How do I book Umrah or Hajj from Gwadar?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Call or WhatsApp Haiwad Ahmad, our Regional Branch Manager, at +92 315 9596161. We handle every step — package selection, Saudi visa, flights, and group departure logistics — for clients in Gwadar without requiring you to visit in person."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Does Al Bari Travel arrange airport transfers from Gwadar?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Most pilgrims from Gwadar fly out of Islamabad International Airport or Lahore International Airport. We coordinate pickup arrangements where possible; specific routes and rates are confirmed once your booking is finalised. Contact Haiwad Ahmad at +92 315 9596161 to discuss."
     }
   }
 ]
@@ -121,10 +148,10 @@
         <a href="/" style="text-decoration:none;color:inherit;"><div class="logo">Al Bari <span>Travel &amp; Tours</span></div></a>
     </div>
     <nav>
-        <a href="/#services">Services</a>
-        <a href="/#packages">Packages</a>
+        <a href="/about/">About</a>
         <a href="/offices/">Our Offices</a>
-        <a href="/#contact">Contact</a>
+        <a href="/#packages">Packages</a>
+        <a href="/contact/">Contact</a>
     </nav>
     <a href="https://wa.me/923159596161" class="header-cta" target="_blank" rel="noopener" aria-label="Book on WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
@@ -136,6 +163,12 @@
 
 <section class="hero" style="height:auto;min-height:auto;padding:140px 40px 60px;">
     <div class="hero-content" style="text-align:center;max-width:780px;">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a> <span aria-hidden="true">›</span>
+            <a href="/offices/">Offices</a> <span aria-hidden="true">›</span>
+            <a href="/offices/balochistan/">Balochistan</a> <span aria-hidden="true">›</span>
+            <span aria-current="page">Gwadar</span>
+        </nav>
         <p class="hero-tag">Pakistan · Balochistan</p>
         <h1 style="font-size:2.6rem;">Al Bari Travel &amp; Tours — Gwadar</h1>
         <p style="opacity:0.85;margin-top:14px;">Al Bari Travel &amp; Tours serves Gwadar district in Balochistan, Pakistan through our regional branch network. Your dedicated contact for Umrah, Hajj, and international travel inquiries from Gwadar is Haiwad Ahmad, Regional Branch Manager, reachable directly by phone or WhatsApp.</p>
@@ -180,30 +213,37 @@
     <div style="max-width:820px;margin:30px auto 0;">
 
         <details class="faq-item">
-            <summary><h3 style="display:inline;margin:0;font-size:1.1rem;">How do I book Umrah or Hajj from Gwadar?</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
-            <div class="faq-answer"><p>Call or WhatsApp Haiwad Ahmad, our Regional Branch Manager, at +92 315 9596161. We handle every step — package selection, Saudi visa, flights, and group departure logistics — for clients in Gwadar without requiring you to visit in person.</p></div>
-        </details>
-        <details class="faq-item">
-            <summary><h3 style="display:inline;margin:0;font-size:1.1rem;">Does Al Bari Travel have a walk-in office in Gwadar?</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
-            <div class="faq-answer"><p>Our closest walk-in office to Gwadar is in Hasan Abdal, Pakistan, where Haiwad Ahmad is based. We serve Gwadar clients directly through our regional branch network — by phone, WhatsApp, and online — so an in-person visit is not necessary to book.</p></div>
-        </details>
-        <details class="faq-item">
-            <summary><h3 style="display:inline;margin:0;font-size:1.1rem;">Can I get international flights booked from Gwadar?</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
-            <div class="faq-answer"><p>Yes. Al Bari Travel &amp; Tours books international flights from any major Pakistani airport for clients across Gwadar and the wider Balochistan region — including Saudi Arabia, UAE, and other destinations. Ticket delivery is digital.</p></div>
+            <summary><h3 style="display:inline;margin:0;font-size:1.1rem;">What payment options does Al Bari Travel accept from Gwadar clients?</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>We accept cash, bank transfer, JazzCash, and Easypaisa from clients in Gwadar. Bookings are confirmed once a deposit is received; the balance is due before the visa submission. Haiwad Ahmad will walk you through the schedule on the first call.</p></div>
         </details>
         <details class="faq-item">
             <summary><h3 style="display:inline;margin:0;font-size:1.1rem;">What documents are needed for a Saudi visa from Gwadar?</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
             <div class="faq-answer"><p>For Umrah and Hajj from Gwadar we typically need: a valid passport (6+ months), recent photos, NIC copy, and travel proof. Our Saudi visa processing handles the rest — application, fees, and tracking. Call +92 315 9596161 for the current checklist.</p></div>
         </details>
+        <details class="faq-item">
+            <summary><h3 style="display:inline;margin:0;font-size:1.1rem;">How do I book Umrah or Hajj from Gwadar?</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>Call or WhatsApp Haiwad Ahmad, our Regional Branch Manager, at +92 315 9596161. We handle every step — package selection, Saudi visa, flights, and group departure logistics — for clients in Gwadar without requiring you to visit in person.</p></div>
+        </details>
+        <details class="faq-item">
+            <summary><h3 style="display:inline;margin:0;font-size:1.1rem;">Does Al Bari Travel arrange airport transfers from Gwadar?</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>Most pilgrims from Gwadar fly out of Islamabad International Airport or Lahore International Airport. We coordinate pickup arrangements where possible; specific routes and rates are confirmed once your booking is finalised. Contact Haiwad Ahmad at +92 315 9596161 to discuss.</p></div>
+        </details>
     </div>
 </section>
 
-<section class="packages" style="padding-top:30px;padding-bottom:80px;">
+<section class="packages" style="padding-top:30px;padding-bottom:40px;">
     <div class="section-header">
-        <p class="section-tag">Back to Balochistan</p>
-        <h2 style="font-size:1.8rem;">Explore Other Balochistan Districts</h2>
+        <p class="section-tag">Nearby in Balochistan</p>
+        <h2 style="font-size:1.8rem;">Related Districts</h2>
+        <p>Three more districts in Balochistan we serve through the same regional branch network.</p>
     </div>
-    <div style="text-align:center;margin-top:24px;">
+    <div class="districts-grid" style="max-width:760px;margin:24px auto 0;">
+
+        <a class="district-card-link" href="/offices/balochistan/duki/"><article class="district-card"><span class="district-card-badge">Nearby</span><h3>Duki</h3><span class="district-card-cta">View Duki &rarr;</span></article></a>
+        <a class="district-card-link" href="/offices/balochistan/harnai/"><article class="district-card"><span class="district-card-badge">Nearby</span><h3>Harnai</h3><span class="district-card-cta">View Harnai &rarr;</span></article></a>
+        <a class="district-card-link" href="/offices/balochistan/hub/"><article class="district-card"><span class="district-card-badge">Nearby</span><h3>Hub</h3><span class="district-card-cta">View Hub &rarr;</span></article></a>
+    </div>
+    <div style="text-align:center;margin-top:32px;">
         <a href="/offices/balochistan/" class="btn btn-secondary">View All Balochistan Districts &rarr;</a>
     </div>
 </section>
@@ -218,9 +258,11 @@
             <h4 style="font-family:'Playfair Display',serif;margin-bottom:14px;color:#c9a962;">Explore</h4>
             <ul style="list-style:none;line-height:2;font-size:0.9rem;">
                 <li><a href="/" style="color:#fff;opacity:0.8;text-decoration:none;">Home</a></li>
-                <li><a href="/#services" style="color:#fff;opacity:0.8;text-decoration:none;">Services</a></li>
-                <li><a href="/#packages" style="color:#fff;opacity:0.8;text-decoration:none;">Packages</a></li>
+                <li><a href="/about/" style="color:#fff;opacity:0.8;text-decoration:none;">About Us</a></li>
                 <li><a href="/offices/" style="color:#fff;opacity:0.8;text-decoration:none;">Our Offices</a></li>
+                <li><a href="/contact/" style="color:#fff;opacity:0.8;text-decoration:none;">Contact</a></li>
+                <li><a href="/privacy/" style="color:#fff;opacity:0.6;text-decoration:none;font-size:0.82rem;">Privacy</a></li>
+                <li><a href="/terms/" style="color:#fff;opacity:0.6;text-decoration:none;font-size:0.82rem;">Terms</a></li>
             </ul>
         </div>
         <div>

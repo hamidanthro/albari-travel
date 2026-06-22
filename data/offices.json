@@ -30,7 +30,15 @@
       ],
       "intro": "Our Hasan Abdal office is the home base for Al Bari Travel & Tours in Pakistan \u2014 serving pilgrims and travellers across Punjab and Khyber Pakhtunkhwa with end-to-end Umrah, Hajj, and international travel arrangements.",
       "seoTitle": "Al Bari Travel and Tours Hasan Abdal | Umrah & Hajj",
-      "seoDescription": "Al Bari Travel and Tours \u2014 Hasan Abdal office. Trusted Umrah & Hajj packages, Saudi Arabia flights, and visa processing from Pakistan. Incharge: Haiwad Ahmad. Call +92 315 9596161."
+      "seoDescription": "Al Bari Travel and Tours \u2014 Hasan Abdal office. Trusted Umrah & Hajj packages, Saudi Arabia flights, and visa processing from Pakistan. Incharge: Haiwad Ahmad. Call +92 315 9596161.",
+      "geo": {
+        "lat": 33.8197,
+        "lng": 72.6856
+      },
+      "currenciesAccepted": "PKR",
+      "paymentAccepted": "Cash, Bank transfer, JazzCash, Easypaisa",
+      "priceRange": "$$",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=33.8197,72.6856"
     },
     {
       "slug": "rawalpindi",
@@ -62,7 +70,15 @@
       ],
       "intro": "Our Rawalpindi office serves pilgrims and travellers across the twin cities of Rawalpindi and Islamabad \u2014 a convenient hub for Umrah, Hajj, and international travel arrangements with full visa and documentation support.",
       "seoTitle": "Al Bari Travel and Tours Rawalpindi | Umrah & Hajj",
-      "seoDescription": "Al Bari Travel and Tours \u2014 Rawalpindi office. Umrah & Hajj packages, international flights, and visa processing for Rawalpindi and Islamabad. Incharge: Maaz Ali. Call +92 331 8173742."
+      "seoDescription": "Al Bari Travel and Tours \u2014 Rawalpindi office. Umrah & Hajj packages, international flights, and visa processing for Rawalpindi and Islamabad. Incharge: Maaz Ali. Call +92 331 8173742.",
+      "geo": {
+        "lat": 33.5651,
+        "lng": 73.0169
+      },
+      "currenciesAccepted": "PKR",
+      "paymentAccepted": "Cash, Bank transfer, JazzCash, Easypaisa",
+      "priceRange": "$$",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=33.5651,73.0169"
     },
     {
       "slug": "taxila",
@@ -94,7 +110,15 @@
       ],
       "intro": "Our Taxila office serves the Taxila, Wah Cantt, and surrounding cantonment communities with personalised Umrah, Hajj, and international travel planning \u2014 close to home, with the same trusted Al Bari service.",
       "seoTitle": "Al Bari Travel and Tours Taxila | Umrah & Hajj",
-      "seoDescription": "Al Bari Travel and Tours \u2014 Taxila office. Umrah & Hajj packages, flight booking, and visa support for Taxila, Wah Cantt, and surrounding areas. Incharge: Jawad Ahmad. Call +92 311 5908269."
+      "seoDescription": "Al Bari Travel and Tours \u2014 Taxila office. Umrah & Hajj packages, flight booking, and visa support for Taxila, Wah Cantt, and surrounding areas. Incharge: Jawad Ahmad. Call +92 311 5908269.",
+      "geo": {
+        "lat": 33.7475,
+        "lng": 72.7884
+      },
+      "currenciesAccepted": "PKR",
+      "paymentAccepted": "Cash, Bank transfer, JazzCash, Easypaisa",
+      "priceRange": "$$",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=33.7475,72.7884"
     },
     {
       "slug": "swabi",
@@ -126,7 +150,15 @@
       ],
       "intro": "Our Swabi office serves the Swabi district and surrounding areas of Khyber Pakhtunkhwa \u2014 providing trusted Umrah, Hajj, and international travel arrangements with local Pashto-speaking support.",
       "seoTitle": "Al Bari Travel and Tours Swabi | Umrah & Hajj",
-      "seoDescription": "Al Bari Travel and Tours \u2014 Swabi office. Umrah & Hajj packages, international flights, and visa processing for Swabi and Khyber Pakhtunkhwa. Incharge: Yawar Hayat. Call +92 301 8139903."
+      "seoDescription": "Al Bari Travel and Tours \u2014 Swabi office. Umrah & Hajj packages, international flights, and visa processing for Swabi and Khyber Pakhtunkhwa. Incharge: Yawar Hayat. Call +92 301 8139903.",
+      "geo": {
+        "lat": 34.1209,
+        "lng": 72.4694
+      },
+      "currenciesAccepted": "PKR",
+      "paymentAccepted": "Cash, Bank transfer, JazzCash, Easypaisa",
+      "priceRange": "$$",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.1209,72.4694"
     },
     {
       "slug": "mardan",
@@ -158,7 +190,15 @@
       ],
       "intro": "Our Mardan office serves Mardan city and surrounding areas of Khyber Pakhtunkhwa \u2014 coordinating Umrah, Hajj, and international travel with local Pashto-speaking support and end-to-end documentation help.",
       "seoTitle": "Al Bari Travel and Tours Mardan | Umrah & Hajj",
-      "seoDescription": "Al Bari Travel and Tours \u2014 Mardan office. Umrah & Hajj packages, international flights, and visa processing for Mardan and Khyber Pakhtunkhwa. Incharge: Muhammad Huzaifa. Call +92 313 9708806."
+      "seoDescription": "Al Bari Travel and Tours \u2014 Mardan office. Umrah & Hajj packages, international flights, and visa processing for Mardan and Khyber Pakhtunkhwa. Incharge: Muhammad Huzaifa. Call +92 313 9708806.",
+      "geo": {
+        "lat": 34.1989,
+        "lng": 72.0418
+      },
+      "currenciesAccepted": "PKR",
+      "paymentAccepted": "Cash, Bank transfer, JazzCash, Easypaisa",
+      "priceRange": "$$",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.1989,72.0418"
     },
     {
       "slug": "peshawar",
@@ -190,7 +230,15 @@
       ],
       "intro": "Our Peshawar office is the Khyber Pakhtunkhwa provincial hub for Al Bari Travel & Tours \u2014 serving pilgrims and travellers from Peshawar and across the province with end-to-end Umrah, Hajj, and international travel support.",
       "seoTitle": "Al Bari Travel and Tours Peshawar | Umrah & Hajj",
-      "seoDescription": "Al Bari Travel and Tours \u2014 Peshawar office. Umrah & Hajj packages, international flights from Peshawar, and visa processing for Khyber Pakhtunkhwa. Incharge: Faisal Khan. Call +92 310 7379796."
+      "seoDescription": "Al Bari Travel and Tours \u2014 Peshawar office. Umrah & Hajj packages, international flights from Peshawar, and visa processing for Khyber Pakhtunkhwa. Incharge: Faisal Khan. Call +92 310 7379796.",
+      "geo": {
+        "lat": 34.0151,
+        "lng": 71.5249
+      },
+      "currenciesAccepted": "PKR",
+      "paymentAccepted": "Cash, Bank transfer, JazzCash, Easypaisa",
+      "priceRange": "$$",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.0151,71.5249"
     },
     {
       "slug": "texas",
@@ -200,7 +248,7 @@
       "country": "United States",
       "countryCode": "US",
       "addressCountry": "US",
-      "addressLocality": "Texas",
+      "addressLocality": "Houston",
       "addressRegion": "TX",
       "incharge": "Hamid Ali",
       "phoneDisplay": "+1 (443) 589-4441",
@@ -221,7 +269,15 @@
       ],
       "intro": "Our Texas office serves the Pakistani-American and Muslim community across the United States \u2014 coordinating Umrah, Hajj, and international flights with full bilingual support and time-zone-friendly customer service.",
       "seoTitle": "Al Bari Travel and Tours Texas | Umrah & Hajj",
-      "seoDescription": "Al Bari Travel and Tours \u2014 Texas office. Umrah & Hajj packages, international flight booking, and travel coordination for the Pakistani-American community. Incharge: Hamid Ali. Call +1 (443) 589-4441."
+      "seoDescription": "Al Bari Travel and Tours \u2014 Texas office. Umrah & Hajj packages, international flight booking, and travel coordination for the Pakistani-American community. Incharge: Hamid Ali. Call +1 (443) 589-4441.",
+      "geo": {
+        "lat": 31.9686,
+        "lng": -99.9018
+      },
+      "currenciesAccepted": "USD",
+      "paymentAccepted": "Cash, Credit Card, Bank transfer, Zelle",
+      "priceRange": "$$",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=31.9686,-99.9018"
     }
   ]
 }

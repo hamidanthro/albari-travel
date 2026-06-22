@@ -26,57 +26,121 @@
     <meta name="twitter:description" content="Trusted Umrah, Hajj, and international flight booking. Seven walk-in offices across Pakistan plus the USA.">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&h=630&fit=crop">
 
-    <!-- Schema.org: Organization + TravelAgency -->
+    <!-- Schema.org: Organization, TravelAgency, WebSite, SiteNavigationElement, Services -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "TravelAgency",
-      "name": "Al Bari Travel & Tours",
-      "url": "https://www.albaritravelspk.com/",
-      "logo": "https://www.albaritravelspk.com/favicon.svg",
-      "description": "Trusted Umrah, Hajj, and international flight booking with seven walk-in offices across Pakistan and one in the USA.",
-      "telephone": "+923159596161",
-      "areaServed": [
-        { "@type": "Country", "name": "Pakistan" },
-        { "@type": "Country", "name": "United States" }
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Hasan Abdal",
-        "addressRegion": "Punjab",
-        "addressCountry": "PK"
-      },
-      "sameAs": [
-        "https://wa.me/923159596161"
-      ],
-      "department": [
-        { "@type": "TravelAgency", "name": "Hasan Abdal Office", "url": "https://www.albaritravelspk.com/offices/hasan-abdal/" },
-        { "@type": "TravelAgency", "name": "Rawalpindi Office", "url": "https://www.albaritravelspk.com/offices/rawalpindi/" },
-        { "@type": "TravelAgency", "name": "Taxila Office", "url": "https://www.albaritravelspk.com/offices/taxila/" },
-        { "@type": "TravelAgency", "name": "Swabi Office", "url": "https://www.albaritravelspk.com/offices/swabi/" },
-        { "@type": "TravelAgency", "name": "Mardan Office", "url": "https://www.albaritravelspk.com/offices/mardan/" },
-        { "@type": "TravelAgency", "name": "Peshawar Office", "url": "https://www.albaritravelspk.com/offices/peshawar/" },
-        { "@type": "TravelAgency", "name": "Texas Office", "url": "https://www.albaritravelspk.com/offices/texas/" }
+      "@graph": [
+        {
+          "@type": ["TravelAgency", "Organization", "LocalBusiness"],
+          "@id": "https://www.albaritravelspk.com/#organization",
+          "name": "Al Bari Travel & Tours",
+          "alternateName": ["Albari Travels", "Al Bari Travels and Tours"],
+          "url": "https://www.albaritravelspk.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.albaritravelspk.com/favicon.svg",
+            "width": 512,
+            "height": 512
+          },
+          "image": "https://www.albaritravelspk.com/og-default.svg",
+          "description": "Trusted Umrah, Hajj, and international flight booking with seven walk-in offices across Pakistan and one in the USA.",
+          "telephone": "+923159596161",
+          "currenciesAccepted": "PKR, USD",
+          "paymentAccepted": "Cash, Bank transfer, JazzCash, Easypaisa, Credit Card",
+          "priceRange": "$$",
+          "areaServed": [
+            { "@type": "Country", "name": "Pakistan" },
+            { "@type": "Country", "name": "United States" }
+          ],
+          "knowsLanguage": ["English","Urdu","Punjabi","Pashto"],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Hasan Abdal",
+            "addressRegion": "Punjab",
+            "addressCountry": "PK"
+          },
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+923159596161",
+              "contactType": "customer service",
+              "areaServed": ["PK","US"],
+              "availableLanguage": ["English","Urdu"]
+            },
+            {
+              "@type": "ContactPoint",
+              "telephone": "+14435894441",
+              "contactType": "customer service",
+              "areaServed": "US",
+              "availableLanguage": ["English","Urdu"]
+            }
+          ],
+          "sameAs": [
+            "https://wa.me/923159596161"
+          ],
+          "department": [
+            { "@type": "TravelAgency", "name": "Hasan Abdal Office", "url": "https://www.albaritravelspk.com/offices/hasan-abdal/", "@id": "https://www.albaritravelspk.com/offices/hasan-abdal/#business" },
+            { "@type": "TravelAgency", "name": "Rawalpindi Office",  "url": "https://www.albaritravelspk.com/offices/rawalpindi/",  "@id": "https://www.albaritravelspk.com/offices/rawalpindi/#business" },
+            { "@type": "TravelAgency", "name": "Taxila Office",      "url": "https://www.albaritravelspk.com/offices/taxila/",      "@id": "https://www.albaritravelspk.com/offices/taxila/#business" },
+            { "@type": "TravelAgency", "name": "Swabi Office",       "url": "https://www.albaritravelspk.com/offices/swabi/",       "@id": "https://www.albaritravelspk.com/offices/swabi/#business" },
+            { "@type": "TravelAgency", "name": "Mardan Office",      "url": "https://www.albaritravelspk.com/offices/mardan/",      "@id": "https://www.albaritravelspk.com/offices/mardan/#business" },
+            { "@type": "TravelAgency", "name": "Peshawar Office",    "url": "https://www.albaritravelspk.com/offices/peshawar/",    "@id": "https://www.albaritravelspk.com/offices/peshawar/#business" },
+            { "@type": "TravelAgency", "name": "Texas Office",       "url": "https://www.albaritravelspk.com/offices/texas/",       "@id": "https://www.albaritravelspk.com/offices/texas/#business" }
+          ],
+          "makesOffer": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Umrah Packages",            "serviceType": "Religious travel", "provider": { "@id": "https://www.albaritravelspk.com/#organization" }}},
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hajj Packages",             "serviceType": "Religious travel", "provider": { "@id": "https://www.albaritravelspk.com/#organization" }}},
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "International Flight Booking", "serviceType": "Travel booking", "provider": { "@id": "https://www.albaritravelspk.com/#organization" }}},
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Saudi Arabia Visa Processing", "serviceType": "Visa services", "provider": { "@id": "https://www.albaritravelspk.com/#organization" }}},
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Group Travel Arrangements",  "serviceType": "Travel booking", "provider": { "@id": "https://www.albaritravelspk.com/#organization" }}}
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.albaritravelspk.com/#website",
+          "url": "https://www.albaritravelspk.com/",
+          "name": "Al Bari Travel & Tours",
+          "publisher": { "@id": "https://www.albaritravelspk.com/#organization" },
+          "inLanguage": "en"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.albaritravelspk.com/#webpage",
+          "url": "https://www.albaritravelspk.com/",
+          "name": "Al Bari Travel & Tours | Umrah, Hajj & Flights from Pakistan & USA",
+          "isPartOf": { "@id": "https://www.albaritravelspk.com/#website" },
+          "about": { "@id": "https://www.albaritravelspk.com/#organization" },
+          "primaryImageOfPage": "https://www.albaritravelspk.com/og-default.svg",
+          "inLanguage": "en"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": ["Services", "Packages", "Our Offices", "Contact"],
+          "url": [
+            "https://www.albaritravelspk.com/#services",
+            "https://www.albaritravelspk.com/#packages",
+            "https://www.albaritravelspk.com/offices/",
+            "https://www.albaritravelspk.com/#contact"
+          ]
+        }
       ]
     }
     </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Al Bari Travel & Tours",
-      "url": "https://www.albaritravelspk.com/"
-    }
-    </script>
 
-    <!-- Favicon + iOS -->
+    <!-- Favicon + iOS + PWA -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="apple-touch-icon" href="/favicon.svg">
+    <link rel="manifest" href="/manifest.webmanifest">
     <meta name="theme-color" content="#0d1b2a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <!-- Perf: connect to font origins early -->
+    <!-- Perf: connect + preload critical resources for LCP -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600" fetchpriority="high">
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
@@ -87,10 +151,10 @@
             <div class="logo">Al Bari <span>Travel & Tours</span></div>
         </div>
         <nav>
-            <a href="#services">Services</a>
-            <a href="#packages">Packages</a>
+            <a href="/about/">About</a>
             <a href="/offices/">Our Offices</a>
-            <a href="#contact">Contact</a>
+            <a href="#packages">Packages</a>
+            <a href="/contact/">Contact</a>
         </nav>
         <a href="https://wa.me/923159596161" class="header-cta" target="_blank" aria-label="Book on WhatsApp">
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>

@@ -25,14 +25,19 @@
 <meta name="twitter:description" content="Al Bari Travel &amp; Tours serving all 37 districts of Khyber Pakhtunkhwa. Three walk-in offices (Peshawar, Mardan, Swabi) plus full district coverage. Umrah, Hajj, and international travel.">
 <meta name="twitter:image" content="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&h=630&fit=crop">
 
-<!-- Favicon + iOS -->
+<!-- Favicon + iOS + PWA -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="manifest" href="/manifest.webmanifest">
 <meta name="theme-color" content="#0d1b2a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-<!-- Perf: connect to font origins early (saves ~100-300ms) -->
+<!-- Perf: connect + preload critical resources for LCP -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600" fetchpriority="high">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/main.css">
@@ -40,11 +45,44 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.albaritravelspk.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Our Offices", "item": "https://www.albaritravelspk.com/offices/" },
-    { "@type": "ListItem", "position": 3, "name": "Khyber Pakhtunkhwa", "item": "https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/" }
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.albaritravelspk.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Our Offices", "item": "https://www.albaritravelspk.com/offices/" },
+        { "@type": "ListItem", "position": 3, "name": "Khyber Pakhtunkhwa", "item": "https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Travel agency services",
+      "provider": { "@id": "https://www.albaritravelspk.com/#organization" },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Khyber Pakhtunkhwa, Pakistan"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Al Bari Travel services in Khyber Pakhtunkhwa",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Umrah Packages from Khyber Pakhtunkhwa" }},
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hajj Packages from Khyber Pakhtunkhwa" }},
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "International Flight Booking from Khyber Pakhtunkhwa" }},
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Saudi Arabia Visa Processing in Khyber Pakhtunkhwa" }}
+        ]
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/#webpage",
+      "url": "https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/",
+      "name": "Al Bari Travel & Tours in Khyber Pakhtunkhwa",
+      "description": "Al Bari Travel &amp; Tours serving all 37 districts of Khyber Pakhtunkhwa. Three walk-in offices (Peshawar, Mardan, Swabi) plus full district coverage. Umrah, Hajj, and international travel.",
+      "isPartOf": { "@id": "https://www.albaritravelspk.com/#website" },
+      "primaryImageOfPage": "https://www.albaritravelspk.com/og-default.svg",
+      "inLanguage": "en"
+    }
   ]
 }
 </script>
@@ -55,10 +93,10 @@
         <a href="/" style="text-decoration:none;color:inherit;"><div class="logo">Al Bari <span>Travel &amp; Tours</span></div></a>
     </div>
     <nav>
-        <a href="/#services">Services</a>
-        <a href="/#packages">Packages</a>
+        <a href="/about/">About</a>
         <a href="/offices/">Our Offices</a>
-        <a href="/#contact">Contact</a>
+        <a href="/#packages">Packages</a>
+        <a href="/contact/">Contact</a>
     </nav>
     <a href="https://wa.me/923159596161" class="header-cta" target="_blank" rel="noopener" aria-label="Book on WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
@@ -70,6 +108,11 @@
 
 <section class="hero" style="height:auto;min-height:auto;padding:140px 40px 60px;">
     <div class="hero-content" style="text-align:center;max-width:780px;">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a> <span aria-hidden="true">›</span>
+            <a href="/offices/">Offices</a> <span aria-hidden="true">›</span>
+            <span aria-current="page">Khyber Pakhtunkhwa</span>
+        </nav>
         <p class="hero-tag">Pakistan · Province Coverage</p>
         <h1 style="font-size:2.6rem;">Al Bari Travel &amp; Tours in Khyber Pakhtunkhwa</h1>
         <p style="opacity:0.85;margin-top:14px;">Pakistan&#39;s north-western province — 37 districts including Peshawar, Mardan, and Swabi where we have walk-in offices</p>
@@ -121,242 +164,242 @@
         <p>Tap any district to see local contact details and how to book Umrah, Hajj, or international travel from that area.</p>
     </div>
     <div class="districts-grid">
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/abbottabad/" aria-label="View Abbottabad district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/abbottabad/" aria-label="View Al Bari Travel and Tours Abbottabad contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Abbottabad</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Abbottabad &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/bajaur/" aria-label="View Bajaur district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/bajaur/" aria-label="View Al Bari Travel and Tours Bajaur contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Bajaur</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Bajaur &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/bannu/" aria-label="View Bannu district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/bannu/" aria-label="View Al Bari Travel and Tours Bannu contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Bannu</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Bannu &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/battagram/" aria-label="View Battagram district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/battagram/" aria-label="View Al Bari Travel and Tours Battagram contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Battagram</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Battagram &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/buner/" aria-label="View Buner district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/buner/" aria-label="View Al Bari Travel and Tours Buner contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Buner</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Buner &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/central-kurram/" aria-label="View Central Kurram district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/central-kurram/" aria-label="View Al Bari Travel and Tours Central Kurram contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Central Kurram</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Central Kurram &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/charsadda/" aria-label="View Charsadda district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/charsadda/" aria-label="View Al Bari Travel and Tours Charsadda contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Charsadda</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Charsadda &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/dera-ismail-khan/" aria-label="View Dera Ismail Khan district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/dera-ismail-khan/" aria-label="View Al Bari Travel and Tours Dera Ismail Khan contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Dera Ismail Khan</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Dera Ismail Khan &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/hangu/" aria-label="View Hangu district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/hangu/" aria-label="View Al Bari Travel and Tours Hangu contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Hangu</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Hangu &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/haripur/" aria-label="View Haripur district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/haripur/" aria-label="View Al Bari Travel and Tours Haripur contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Haripur</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Haripur &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/karak/" aria-label="View Karak district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/karak/" aria-label="View Al Bari Travel and Tours Karak contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Karak</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Karak &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/khyber/" aria-label="View Khyber district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/khyber/" aria-label="View Al Bari Travel and Tours Khyber contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Khyber</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Khyber &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/kohat/" aria-label="View Kohat district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/kohat/" aria-label="View Al Bari Travel and Tours Kohat contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Kohat</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Kohat &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/kolai-palas/" aria-label="View Kolai-Palas district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/kolai-palas/" aria-label="View Al Bari Travel and Tours Kolai-Palas contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Kolai-Palas</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Kolai-Palas &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/kurram/" aria-label="View Kurram district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/kurram/" aria-label="View Al Bari Travel and Tours Kurram contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Kurram</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Kurram &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/lakki-marwat/" aria-label="View Lakki Marwat district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/lakki-marwat/" aria-label="View Al Bari Travel and Tours Lakki Marwat contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Lakki Marwat</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Lakki Marwat &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/lower-chitral/" aria-label="View Lower Chitral district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/lower-chitral/" aria-label="View Al Bari Travel and Tours Lower Chitral contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Lower Chitral</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Lower Chitral &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/lower-dir/" aria-label="View Lower Dir district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/lower-dir/" aria-label="View Al Bari Travel and Tours Lower Dir contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Lower Dir</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Lower Dir &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/lower-kohistan/" aria-label="View Lower Kohistan district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/lower-kohistan/" aria-label="View Al Bari Travel and Tours Lower Kohistan contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Lower Kohistan</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Lower Kohistan &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/lower-south-waziristan/" aria-label="View Lower South Waziristan district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/lower-south-waziristan/" aria-label="View Al Bari Travel and Tours Lower South Waziristan contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Lower South Waziristan</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Lower South Waziristan &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/malakand/" aria-label="View Malakand district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/malakand/" aria-label="View Al Bari Travel and Tours Malakand contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Malakand</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Malakand &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/mansehra/" aria-label="View Mansehra district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/mansehra/" aria-label="View Al Bari Travel and Tours Mansehra contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Mansehra</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Mansehra &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/mohmand/" aria-label="View Mohmand district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/mohmand/" aria-label="View Al Bari Travel and Tours Mohmand contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Mohmand</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Mohmand &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/north-waziristan/" aria-label="View North Waziristan district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/north-waziristan/" aria-label="View Al Bari Travel and Tours North Waziristan contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>North Waziristan</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View North Waziristan &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/nowshera/" aria-label="View Nowshera district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/nowshera/" aria-label="View Al Bari Travel and Tours Nowshera contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Nowshera</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Nowshera &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/orakzai/" aria-label="View Orakzai district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/orakzai/" aria-label="View Al Bari Travel and Tours Orakzai contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Orakzai</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Orakzai &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/shangla/" aria-label="View Shangla district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/shangla/" aria-label="View Al Bari Travel and Tours Shangla contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Shangla</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Shangla &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/swat/" aria-label="View Swat district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/swat/" aria-label="View Al Bari Travel and Tours Swat contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Swat</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Swat &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/tank/" aria-label="View Tank district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/tank/" aria-label="View Al Bari Travel and Tours Tank contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Tank</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Tank &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/tor-ghar/" aria-label="View Tor Ghar district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/tor-ghar/" aria-label="View Al Bari Travel and Tours Tor Ghar contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Tor Ghar</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Tor Ghar &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/upper-chitral/" aria-label="View Upper Chitral district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/upper-chitral/" aria-label="View Al Bari Travel and Tours Upper Chitral contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Upper Chitral</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Upper Chitral &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/upper-dir/" aria-label="View Upper Dir district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/upper-dir/" aria-label="View Al Bari Travel and Tours Upper Dir contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Upper Dir</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Upper Dir &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/upper-kohistan/" aria-label="View Upper Kohistan district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/upper-kohistan/" aria-label="View Al Bari Travel and Tours Upper Kohistan contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Upper Kohistan</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Upper Kohistan &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/upper-south-waziristan/" aria-label="View Upper South Waziristan district">
+        <a class="district-card-link" href="/offices/khyber-pakhtunkhwa/upper-south-waziristan/" aria-label="View Al Bari Travel and Tours Upper South Waziristan contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Upper South Waziristan</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Upper South Waziristan &rarr;</span>
             </article>
         </a>
     </div>
@@ -372,9 +415,11 @@
             <h4 style="font-family:'Playfair Display',serif;margin-bottom:14px;color:#c9a962;">Explore</h4>
             <ul style="list-style:none;line-height:2;font-size:0.9rem;">
                 <li><a href="/" style="color:#fff;opacity:0.8;text-decoration:none;">Home</a></li>
-                <li><a href="/#services" style="color:#fff;opacity:0.8;text-decoration:none;">Services</a></li>
-                <li><a href="/#packages" style="color:#fff;opacity:0.8;text-decoration:none;">Packages</a></li>
+                <li><a href="/about/" style="color:#fff;opacity:0.8;text-decoration:none;">About Us</a></li>
                 <li><a href="/offices/" style="color:#fff;opacity:0.8;text-decoration:none;">Our Offices</a></li>
+                <li><a href="/contact/" style="color:#fff;opacity:0.8;text-decoration:none;">Contact</a></li>
+                <li><a href="/privacy/" style="color:#fff;opacity:0.6;text-decoration:none;font-size:0.82rem;">Privacy</a></li>
+                <li><a href="/terms/" style="color:#fff;opacity:0.6;text-decoration:none;font-size:0.82rem;">Terms</a></li>
             </ul>
         </div>
         <div>

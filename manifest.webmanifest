@@ -1,0 +1,21 @@
+{
+  "name": "Al Bari Travel & Tours",
+  "short_name": "Al Bari Travel",
+  "description": "Trusted Umrah, Hajj, and international flight booking. Seven walk-in offices across Pakistan and the USA.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0d1b2a",
+  "theme_color": "#0d1b2a",
+  "orientation": "portrait-primary",
+  "lang": "en",
+  "categories": ["travel", "business"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ]
+}

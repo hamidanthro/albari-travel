@@ -6,10 +6,13 @@
 {
   "@context": "https://schema.org",
   "@type": "TravelAgency",
+  "@id": "{{canonical}}#agency",
   "name": "Al Bari Travel & Tours — {{name}}",
   "description": "{{seoDescription}}",
   "url": "{{canonical}}",
   "telephone": "{{phoneE164}}",
+  "image": "https://www.albaritravelspk.com/og-default.svg",
+  "logo": "https://www.albaritravelspk.com/favicon.svg",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "{{regionalHubLocality}}",
@@ -20,11 +23,30 @@
     "@type": "AdministrativeArea",
     "name": "{{name}} District, {{provinceName}}, {{country}}"
   },
-  "parentOrganization": {
-    "@type": "Organization",
-    "name": "Al Bari Travel & Tours",
-    "url": "https://www.albaritravelspk.com/"
-  }
+  "currenciesAccepted": "PKR",
+  "paymentAccepted": "Cash, Bank transfer, JazzCash, Easypaisa",
+  "priceRange": "$$",
+  "knowsLanguage": ["English","Urdu"],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "{{phoneE164}}",
+    "contactType": "customer service",
+    "availableLanguage": ["English","Urdu"],
+    "areaServed": "{{addressCountry}}"
+  }],
+  "employee": [{
+    "@type": "Person",
+    "name": "{{incharge}}",
+    "jobTitle": "{{title}}",
+    "telephone": "{{phoneE164}}"
+  }],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Umrah Packages from {{name}}", "serviceType": "Religious travel", "areaServed": "{{name}}" }},
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hajj Packages from {{name}}", "serviceType": "Religious travel", "areaServed": "{{name}}" }},
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "International Flight Booking serving {{name}}", "serviceType": "Travel booking", "areaServed": "{{name}}" }},
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Saudi Arabia Visa Processing for {{name}} residents", "serviceType": "Visa services", "areaServed": "{{name}}" }}
+  ],
+  "parentOrganization": { "@id": "https://www.albaritravelspk.com/#organization" }
 }
 </script>
 <script type="application/ld+json">
@@ -46,6 +68,12 @@
 
 <section class="hero" style="height:auto;min-height:auto;padding:140px 40px 60px;">
     <div class="hero-content" style="text-align:center;max-width:780px;">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a> <span aria-hidden="true">›</span>
+            <a href="/offices/">Offices</a> <span aria-hidden="true">›</span>
+            <a href="/offices/{{provinceSlug}}/">{{provinceName}}</a> <span aria-hidden="true">›</span>
+            <span aria-current="page">{{name}}</span>
+        </nav>
         <p class="hero-tag">{{country}} · {{provinceName}}</p>
         <h1 style="font-size:2.6rem;">Al Bari Travel &amp; Tours — {{name}}</h1>
         <p style="opacity:0.85;margin-top:14px;">{{intro}}</p>
@@ -91,12 +119,16 @@
     </div>
 </section>
 
-<section class="packages" style="padding-top:30px;padding-bottom:80px;">
+<section class="packages" style="padding-top:30px;padding-bottom:40px;">
     <div class="section-header">
-        <p class="section-tag">Back to {{provinceName}}</p>
-        <h2 style="font-size:1.8rem;">Explore Other {{provinceName}} Districts</h2>
+        <p class="section-tag">Nearby in {{provinceName}}</p>
+        <h2 style="font-size:1.8rem;">Related Districts</h2>
+        <p>Three more districts in {{provinceName}} we serve through the same regional branch network.</p>
     </div>
-    <div style="text-align:center;margin-top:24px;">
+    <div class="districts-grid" style="max-width:760px;margin:24px auto 0;">
+{{{relatedDistrictsHtml}}}
+    </div>
+    <div style="text-align:center;margin-top:32px;">
         <a href="/offices/{{provinceSlug}}/" class="btn btn-secondary">View All {{provinceName}} Districts &rarr;</a>
     </div>
 </section>

@@ -1,4 +1,33 @@
+# Al Bari Travel & Tours — robots.txt
+# Crawl rules. Sitemap below.
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
 User-agent: *
 Allow: /
+Disallow: /404
+Crawl-delay: 1
 
 Sitemap: https://www.albaritravelspk.com/sitemap.xml

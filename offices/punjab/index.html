@@ -25,14 +25,19 @@
 <meta name="twitter:description" content="Al Bari Travel &amp; Tours serving all 41 districts of Punjab, Pakistan. Umrah, Hajj, and international travel coordination through our regional branch network. Contact Branch Manager Haiwad Ahmad.">
 <meta name="twitter:image" content="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&h=630&fit=crop">
 
-<!-- Favicon + iOS -->
+<!-- Favicon + iOS + PWA -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="manifest" href="/manifest.webmanifest">
 <meta name="theme-color" content="#0d1b2a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-<!-- Perf: connect to font origins early (saves ~100-300ms) -->
+<!-- Perf: connect + preload critical resources for LCP -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600" fetchpriority="high">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/main.css">
@@ -40,11 +45,44 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.albaritravelspk.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Our Offices", "item": "https://www.albaritravelspk.com/offices/" },
-    { "@type": "ListItem", "position": 3, "name": "Punjab", "item": "https://www.albaritravelspk.com/offices/punjab/" }
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.albaritravelspk.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Our Offices", "item": "https://www.albaritravelspk.com/offices/" },
+        { "@type": "ListItem", "position": 3, "name": "Punjab", "item": "https://www.albaritravelspk.com/offices/punjab/" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Travel agency services",
+      "provider": { "@id": "https://www.albaritravelspk.com/#organization" },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Punjab, Pakistan"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Al Bari Travel services in Punjab",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Umrah Packages from Punjab" }},
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hajj Packages from Punjab" }},
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "International Flight Booking from Punjab" }},
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Saudi Arabia Visa Processing in Punjab" }}
+        ]
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.albaritravelspk.com/offices/punjab/#webpage",
+      "url": "https://www.albaritravelspk.com/offices/punjab/",
+      "name": "Al Bari Travel & Tours in Punjab",
+      "description": "Al Bari Travel &amp; Tours serving all 41 districts of Punjab, Pakistan. Umrah, Hajj, and international travel coordination through our regional branch network. Contact Branch Manager Haiwad Ahmad.",
+      "isPartOf": { "@id": "https://www.albaritravelspk.com/#website" },
+      "primaryImageOfPage": "https://www.albaritravelspk.com/og-default.svg",
+      "inLanguage": "en"
+    }
   ]
 }
 </script>
@@ -55,10 +93,10 @@
         <a href="/" style="text-decoration:none;color:inherit;"><div class="logo">Al Bari <span>Travel &amp; Tours</span></div></a>
     </div>
     <nav>
-        <a href="/#services">Services</a>
-        <a href="/#packages">Packages</a>
+        <a href="/about/">About</a>
         <a href="/offices/">Our Offices</a>
-        <a href="/#contact">Contact</a>
+        <a href="/#packages">Packages</a>
+        <a href="/contact/">Contact</a>
     </nav>
     <a href="https://wa.me/923159596161" class="header-cta" target="_blank" rel="noopener" aria-label="Book on WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
@@ -70,6 +108,11 @@
 
 <section class="hero" style="height:auto;min-height:auto;padding:140px 40px 60px;">
     <div class="hero-content" style="text-align:center;max-width:780px;">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a> <span aria-hidden="true">›</span>
+            <a href="/offices/">Offices</a> <span aria-hidden="true">›</span>
+            <span aria-current="page">Punjab</span>
+        </nav>
         <p class="hero-tag">Pakistan · Province Coverage</p>
         <h1 style="font-size:2.6rem;">Al Bari Travel &amp; Tours in Punjab</h1>
         <p style="opacity:0.85;margin-top:14px;">Pakistan&#39;s largest province by population — 41 districts served by our regional branch network</p>
@@ -121,284 +164,284 @@
         <p>Tap any district to see local contact details and how to book Umrah, Hajj, or international travel from that area.</p>
     </div>
     <div class="districts-grid">
-        <a class="district-card-link" href="/offices/punjab/attock/" aria-label="View Attock district">
+        <a class="district-card-link" href="/offices/punjab/attock/" aria-label="View Al Bari Travel and Tours Attock contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Attock</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Attock &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/bahawalnagar/" aria-label="View Bahawalnagar district">
+        <a class="district-card-link" href="/offices/punjab/bahawalnagar/" aria-label="View Al Bari Travel and Tours Bahawalnagar contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Bahawalnagar</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Bahawalnagar &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/bahawalpur/" aria-label="View Bahawalpur district">
+        <a class="district-card-link" href="/offices/punjab/bahawalpur/" aria-label="View Al Bari Travel and Tours Bahawalpur contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Bahawalpur</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Bahawalpur &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/bhakkar/" aria-label="View Bhakkar district">
+        <a class="district-card-link" href="/offices/punjab/bhakkar/" aria-label="View Al Bari Travel and Tours Bhakkar contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Bhakkar</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Bhakkar &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/chakwal/" aria-label="View Chakwal district">
+        <a class="district-card-link" href="/offices/punjab/chakwal/" aria-label="View Al Bari Travel and Tours Chakwal contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Chakwal</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Chakwal &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/chiniot/" aria-label="View Chiniot district">
+        <a class="district-card-link" href="/offices/punjab/chiniot/" aria-label="View Al Bari Travel and Tours Chiniot contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Chiniot</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Chiniot &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/dera-ghazi-khan/" aria-label="View Dera Ghazi Khan district">
+        <a class="district-card-link" href="/offices/punjab/dera-ghazi-khan/" aria-label="View Al Bari Travel and Tours Dera Ghazi Khan contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Dera Ghazi Khan</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Dera Ghazi Khan &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/faisalabad/" aria-label="View Faisalabad district">
+        <a class="district-card-link" href="/offices/punjab/faisalabad/" aria-label="View Al Bari Travel and Tours Faisalabad contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Faisalabad</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Faisalabad &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/gujranwala/" aria-label="View Gujranwala district">
+        <a class="district-card-link" href="/offices/punjab/gujranwala/" aria-label="View Al Bari Travel and Tours Gujranwala contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Gujranwala</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Gujranwala &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/gujrat/" aria-label="View Gujrat district">
+        <a class="district-card-link" href="/offices/punjab/gujrat/" aria-label="View Al Bari Travel and Tours Gujrat contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Gujrat</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Gujrat &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/hafizabad/" aria-label="View Hafizabad district">
+        <a class="district-card-link" href="/offices/punjab/hafizabad/" aria-label="View Al Bari Travel and Tours Hafizabad contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Hafizabad</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Hafizabad &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/jhang/" aria-label="View Jhang district">
+        <a class="district-card-link" href="/offices/punjab/jhang/" aria-label="View Al Bari Travel and Tours Jhang contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Jhang</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Jhang &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/jhelum/" aria-label="View Jhelum district">
+        <a class="district-card-link" href="/offices/punjab/jhelum/" aria-label="View Al Bari Travel and Tours Jhelum contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Jhelum</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Jhelum &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/kasur/" aria-label="View Kasur district">
+        <a class="district-card-link" href="/offices/punjab/kasur/" aria-label="View Al Bari Travel and Tours Kasur contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Kasur</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Kasur &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/khanewal/" aria-label="View Khanewal district">
+        <a class="district-card-link" href="/offices/punjab/khanewal/" aria-label="View Al Bari Travel and Tours Khanewal contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Khanewal</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Khanewal &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/khushab/" aria-label="View Khushab district">
+        <a class="district-card-link" href="/offices/punjab/khushab/" aria-label="View Al Bari Travel and Tours Khushab contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Khushab</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Khushab &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/kot-addu/" aria-label="View Kot Addu district">
+        <a class="district-card-link" href="/offices/punjab/kot-addu/" aria-label="View Al Bari Travel and Tours Kot Addu contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Kot Addu</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Kot Addu &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/lahore/" aria-label="View Lahore district">
+        <a class="district-card-link" href="/offices/punjab/lahore/" aria-label="View Al Bari Travel and Tours Lahore contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Lahore</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Lahore &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/layyah/" aria-label="View Layyah district">
+        <a class="district-card-link" href="/offices/punjab/layyah/" aria-label="View Al Bari Travel and Tours Layyah contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Layyah</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Layyah &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/lodhran/" aria-label="View Lodhran district">
+        <a class="district-card-link" href="/offices/punjab/lodhran/" aria-label="View Al Bari Travel and Tours Lodhran contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Lodhran</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Lodhran &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/mandi-bahauddin/" aria-label="View Mandi Bahauddin district">
+        <a class="district-card-link" href="/offices/punjab/mandi-bahauddin/" aria-label="View Al Bari Travel and Tours Mandi Bahauddin contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Mandi Bahauddin</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Mandi Bahauddin &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/mianwali/" aria-label="View Mianwali district">
+        <a class="district-card-link" href="/offices/punjab/mianwali/" aria-label="View Al Bari Travel and Tours Mianwali contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Mianwali</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Mianwali &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/multan/" aria-label="View Multan district">
+        <a class="district-card-link" href="/offices/punjab/multan/" aria-label="View Al Bari Travel and Tours Multan contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Multan</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Multan &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/murree/" aria-label="View Murree district">
+        <a class="district-card-link" href="/offices/punjab/murree/" aria-label="View Al Bari Travel and Tours Murree contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Murree</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Murree &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/muzaffargarh/" aria-label="View Muzaffargarh district">
+        <a class="district-card-link" href="/offices/punjab/muzaffargarh/" aria-label="View Al Bari Travel and Tours Muzaffargarh contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Muzaffargarh</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Muzaffargarh &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/nankana-sahib/" aria-label="View Nankana Sahib district">
+        <a class="district-card-link" href="/offices/punjab/nankana-sahib/" aria-label="View Al Bari Travel and Tours Nankana Sahib contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Nankana Sahib</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Nankana Sahib &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/narowal/" aria-label="View Narowal district">
+        <a class="district-card-link" href="/offices/punjab/narowal/" aria-label="View Al Bari Travel and Tours Narowal contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Narowal</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Narowal &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/okara/" aria-label="View Okara district">
+        <a class="district-card-link" href="/offices/punjab/okara/" aria-label="View Al Bari Travel and Tours Okara contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Okara</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Okara &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/pakpattan/" aria-label="View Pakpattan district">
+        <a class="district-card-link" href="/offices/punjab/pakpattan/" aria-label="View Al Bari Travel and Tours Pakpattan contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Pakpattan</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Pakpattan &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/rahim-yar-khan/" aria-label="View Rahim Yar Khan district">
+        <a class="district-card-link" href="/offices/punjab/rahim-yar-khan/" aria-label="View Al Bari Travel and Tours Rahim Yar Khan contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Rahim Yar Khan</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Rahim Yar Khan &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/rajanpur/" aria-label="View Rajanpur district">
+        <a class="district-card-link" href="/offices/punjab/rajanpur/" aria-label="View Al Bari Travel and Tours Rajanpur contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Rajanpur</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Rajanpur &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/sahiwal/" aria-label="View Sahiwal district">
+        <a class="district-card-link" href="/offices/punjab/sahiwal/" aria-label="View Al Bari Travel and Tours Sahiwal contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Sahiwal</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Sahiwal &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/sargodha/" aria-label="View Sargodha district">
+        <a class="district-card-link" href="/offices/punjab/sargodha/" aria-label="View Al Bari Travel and Tours Sargodha contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Sargodha</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Sargodha &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/sheikhupura/" aria-label="View Sheikhupura district">
+        <a class="district-card-link" href="/offices/punjab/sheikhupura/" aria-label="View Al Bari Travel and Tours Sheikhupura contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Sheikhupura</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Sheikhupura &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/sialkot/" aria-label="View Sialkot district">
+        <a class="district-card-link" href="/offices/punjab/sialkot/" aria-label="View Al Bari Travel and Tours Sialkot contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Sialkot</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Sialkot &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/talagang/" aria-label="View Talagang district">
+        <a class="district-card-link" href="/offices/punjab/talagang/" aria-label="View Al Bari Travel and Tours Talagang contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Talagang</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Talagang &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/taunsa/" aria-label="View Taunsa district">
+        <a class="district-card-link" href="/offices/punjab/taunsa/" aria-label="View Al Bari Travel and Tours Taunsa contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Taunsa</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Taunsa &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/toba-tek-singh/" aria-label="View Toba Tek Singh district">
+        <a class="district-card-link" href="/offices/punjab/toba-tek-singh/" aria-label="View Al Bari Travel and Tours Toba Tek Singh contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Toba Tek Singh</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Toba Tek Singh &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/vehari/" aria-label="View Vehari district">
+        <a class="district-card-link" href="/offices/punjab/vehari/" aria-label="View Al Bari Travel and Tours Vehari contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Vehari</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Vehari &rarr;</span>
             </article>
         </a>
-        <a class="district-card-link" href="/offices/punjab/wazirabad/" aria-label="View Wazirabad district">
+        <a class="district-card-link" href="/offices/punjab/wazirabad/" aria-label="View Al Bari Travel and Tours Wazirabad contact details">
             <article class="district-card">
                 <span class="district-card-badge">Branch network</span>
                 <h3>Wazirabad</h3>
-                <span class="district-card-cta">View &rarr;</span>
+                <span class="district-card-cta">View Wazirabad &rarr;</span>
             </article>
         </a>
     </div>
@@ -414,9 +457,11 @@
             <h4 style="font-family:'Playfair Display',serif;margin-bottom:14px;color:#c9a962;">Explore</h4>
             <ul style="list-style:none;line-height:2;font-size:0.9rem;">
                 <li><a href="/" style="color:#fff;opacity:0.8;text-decoration:none;">Home</a></li>
-                <li><a href="/#services" style="color:#fff;opacity:0.8;text-decoration:none;">Services</a></li>
-                <li><a href="/#packages" style="color:#fff;opacity:0.8;text-decoration:none;">Packages</a></li>
+                <li><a href="/about/" style="color:#fff;opacity:0.8;text-decoration:none;">About Us</a></li>
                 <li><a href="/offices/" style="color:#fff;opacity:0.8;text-decoration:none;">Our Offices</a></li>
+                <li><a href="/contact/" style="color:#fff;opacity:0.8;text-decoration:none;">Contact</a></li>
+                <li><a href="/privacy/" style="color:#fff;opacity:0.6;text-decoration:none;font-size:0.82rem;">Privacy</a></li>
+                <li><a href="/terms/" style="color:#fff;opacity:0.6;text-decoration:none;font-size:0.82rem;">Terms</a></li>
             </ul>
         </div>
         <div>
