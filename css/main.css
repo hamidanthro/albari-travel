@@ -1072,3 +1072,52 @@
     left: 0;
     outline: 2px solid #0d1b2a;
 }
+
+/* === Trust stat strip (About page) — real verifiable facts only === */
+.trust-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 22px;
+    margin: 36px 0;
+    padding: 32px 28px;
+    background: linear-gradient(135deg, rgba(201,169,98,0.10) 0%, rgba(13,27,42,0.5) 100%);
+    border: 1px solid rgba(201,169,98,0.25);
+    border-radius: 4px;
+}
+.trust-stat { text-align: center; }
+.trust-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #c9a962;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+.trust-stat-unit {
+    font-size: 1.8rem;
+    margin-left: 2px;
+    opacity: 0.85;
+}
+.trust-stat-label {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+.trust-stat-sub {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+@media (max-width: 768px) {
+    .trust-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        padding: 22px 16px;
+    }
+    .trust-stat-num { font-size: 2.2rem; }
+    .trust-stat-unit { font-size: 1.4rem; }
+    .trust-stat-label { font-size: 0.85rem; }
+    .trust-stat-sub { font-size: 0.7rem; letter-spacing: 1px; }
+}
