@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{>head}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.albaritravelspk.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Our Offices", "item": "https://www.albaritravelspk.com/offices/" },
+    { "@type": "ListItem", "position": 3, "name": "{{name}}", "item": "{{canonical}}" }
+  ]
+}
+</script>
+</head>
+<body>
+{{>header}}
+
+<section class="hero" style="min-height:auto;padding:140px 40px 60px;">
+    <div class="hero-content" style="text-align:center;max-width:780px;">
+        <p class="hero-tag">{{country}} · Province Coverage</p>
+        <h1 style="font-size:2.6rem;">Al Bari Travel &amp; Tours in {{name}}</h1>
+        <p style="opacity:0.85;margin-top:14px;">{{tagline}}</p>
+    </div>
+</section>
+
+<section class="packages">
+    <div class="section-header" style="margin-bottom:30px;">
+        <p class="section-tag">Districts in {{name}}</p>
+        <h2>{{districtCount}} Districts &middot; One Network</h2>
+        <p>Tap any district to see local contact details and how to book Umrah, Hajj, or international travel from that area.</p>
+    </div>
+    <div class="districts-grid">
+{{{districtCards}}}
+    </div>
+</section>
+
+{{>footer}}
+</body>
+</html>

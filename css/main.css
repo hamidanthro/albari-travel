@@ -869,3 +869,94 @@
     text-align: center;
     min-width: 120px;
 }
+
+/* === Province cards on /offices/ landing === */
+.province-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 28px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.province-card-static {
+    background: linear-gradient(135deg, rgba(201,169,98,0.10) 0%, rgba(13,27,42,0.4) 100%);
+    border: 1px solid rgba(201,169,98,0.25);
+}
+.province-card-link:hover .province-card-static {
+    background: linear-gradient(135deg, rgba(201,169,98,0.18) 0%, rgba(13,27,42,0.4) 100%);
+    border-color: rgba(201,169,98,0.7);
+}
+
+/* === District cards on /offices/{province}/ pages === */
+.districts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.district-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.district-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 22px 22px 20px;
+    transition: all 0.25s;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.district-card-link:hover .district-card {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(201,169,98,0.6);
+    transform: translateY(-2px);
+}
+.district-card h3 {
+    font-size: 1.25rem;
+    font-family: 'Playfair Display', serif;
+    margin: 8px 0 14px;
+    color: #fff;
+    line-height: 1.2;
+}
+.district-card-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(201,169,98,0.85);
+    font-weight: 600;
+}
+.district-card-cta {
+    margin-top: auto;
+    padding-top: 10px;
+    color: #c9a962;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+/* Highlight cards that link to a real office (added by build script) */
+.district-card.is-active-office {
+    border-color: rgba(201,169,98,0.4);
+    background: rgba(201,169,98,0.06);
+}
+.district-card.is-active-office .district-card-badge {
+    color: #c9a962;
+}
+
+@media (max-width: 768px) {
+    .districts-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 12px;
+        padding: 0 4px;
+    }
+    .district-card { padding: 18px 16px 16px; }
+    .district-card h3 { font-size: 1.05rem; margin: 6px 0 10px; }
+    .district-card-badge { font-size: 0.6rem; }
+    .district-card-cta { font-size: 0.72rem; }
+    .province-grid { grid-template-columns: 1fr; }
+}
