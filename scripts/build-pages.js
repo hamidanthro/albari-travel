@@ -215,7 +215,7 @@ function buildDistrictPage(province, district) {
     phoneE164: bm.phoneE164,
     intro,
     canonical: `${site.domain}/offices/${province.slug}/${district.slug}/`,
-    seoTitle: `Al Bari Travel and Tours ${district.name} | Umrah, Hajj & Flight Booking`,
+    seoTitle: `Al Bari Travel and Tours ${district.name} | Umrah & Hajj`,
     seoDescription: `Al Bari Travel & Tours serving ${district.name}, ${province.name}, Pakistan. Umrah & Hajj packages, international flight booking, and visa processing. Contact ${bm.incharge}, ${bm.title}: ${bm.phoneDisplay}.`,
     ogType: 'place',
     ctaButtons: ctaButtons.map(b => '                    ' + b).join('\n'),
