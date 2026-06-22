@@ -120,12 +120,16 @@ function footerOfficeListHtml() {
 // ------------------------------------------------------------------
 
 function provinceCardHtml(province) {
-  return `        <a class="office-card-link province-card-link" href="/offices/${province.slug}/" aria-label="View ${province.name} coverage">
+  const walkInCount = (province.walkInOfficeSlugs || []).length;
+  const walkInLine = walkInCount > 0
+    ? `<p class="office-card-meta"><strong>${walkInCount} walk-in office${walkInCount > 1 ? 's' : ''}</strong> &middot; ${province.districts.length} ${province.districts.length === 1 ? 'district' : 'districts'} served</p>`
+    : `<p class="office-card-meta"><strong>${province.districts.length} ${province.districts.length === 1 ? 'district' : 'districts'}</strong> served via our branch network</p>`;
+  return `        <a class="office-card-link province-card-link" href="/offices/${province.slug}/" aria-label="View ${province.name} offices">
             <article class="office-card-static province-card-static">
-                <span class="office-city">${escapeHtml(province.country)} &middot; Province</span>
-                <h3>${escapeHtml(province.name)}</h3>
+                <span class="office-city">${escapeHtml(province.country)}</span>
+                <h3>${escapeHtml(province.name)} Offices</h3>
                 <p class="office-card-meta">${escapeHtml(province.tagline)}</p>
-                <p class="office-card-meta"><strong>${province.districts.length} districts</strong> served</p>
+                ${walkInLine}
                 <span class="office-card-cta">Explore ${escapeHtml(province.name)} &rarr;</span>
             </article>
         </a>`;
@@ -148,16 +152,36 @@ function districtCardHtml(province, district) {
 
 function buildProvincePage(province) {
   const tpl = readTemplate('province.html');
+  const walkInSlugs = new Set(province.walkInOfficeSlugs || []);
+  const walkIns = [...walkInSlugs].map(slug => officesBySlug[slug]).filter(Boolean);
+
+  // Districts shown below: skip those whose linkedOfficeSlug matches a walk-in
+  // (avoids the same office appearing twice on one page).
+  const districts = province.districts.filter(d => !walkInSlugs.has(d.linkedOfficeSlug));
+
+  const walkInSection = walkIns.length > 0 ? `
+<section class="packages" style="padding-bottom:40px;">
+    <div class="section-header" style="margin-bottom:30px;">
+        <p class="section-tag">Walk-in Offices</p>
+        <h2 style="font-size:1.8rem;">Visit Us in ${escapeHtml(province.name)}</h2>
+        <p>${walkIns.length === 1 ? 'Our' : 'Our'} ${walkIns.length} active office${walkIns.length > 1 ? 's' : ''} in ${escapeHtml(province.name)} where you can walk in and meet the team.</p>
+    </div>
+    <div class="offices-grid">
+${walkIns.map(officeCardHtml).join('\n')}
+    </div>
+</section>` : '';
+
   const ctx = {
     name: province.name,
     country: province.country,
     tagline: province.tagline,
-    districtCount: String(province.districts.length),
+    districtCount: String(districts.length),
     canonical: `${site.domain}/offices/${province.slug}/`,
     seoTitle: province.seoTitle,
     seoDescription: province.seoDescription,
     ogType: 'website',
-    districtCards: province.districts.map(d => districtCardHtml(province, d)).join('\n'),
+    walkInSection,
+    districtCards: districts.map(d => districtCardHtml(province, d)).join('\n'),
     footerOfficeList: footerOfficeListHtml(),
     year: String(new Date().getFullYear()),
   };
