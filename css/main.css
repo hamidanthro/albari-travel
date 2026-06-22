@@ -960,3 +960,55 @@
     .district-card-cta { font-size: 0.72rem; }
     .province-grid { grid-template-columns: 1fr; }
 }
+
+/* === FAQ accordion on district pages === */
+.faq-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 12px;
+    transition: border-color 0.3s, background 0.3s;
+}
+.faq-item[open],
+.faq-item:hover {
+    border-color: rgba(201,169,98,0.4);
+    background: rgba(255,255,255,0.06);
+}
+.faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary h3 {
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    font-weight: 500;
+}
+.faq-item .faq-toggle {
+    color: #c9a962;
+    font-size: 1.3rem;
+    font-weight: 300;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+}
+.faq-item[open] .faq-toggle { transform: rotate(45deg); }
+.faq-answer {
+    padding: 0 24px 20px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 16px;
+}
+.faq-answer p {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+@media (max-width: 768px) {
+    .faq-item summary { padding: 14px 18px; }
+    .faq-item summary h3 { font-size: 1rem !important; }
+    .faq-answer { padding: 14px 18px 18px; }
+    .faq-answer p { font-size: 0.9rem; }
+}

@@ -39,6 +39,7 @@
   ]
 }
 </script>
+{{{faqSchema}}}
 </head>
 <body>
 {{>header}}
@@ -80,7 +81,17 @@
     </div>
 </section>
 
-<section class="packages" style="padding-top:60px;padding-bottom:80px;border-top:1px solid rgba(255,255,255,0.08);">
+<section class="packages" style="padding-top:60px;padding-bottom:30px;border-top:1px solid rgba(255,255,255,0.08);">
+    <div class="section-header">
+        <p class="section-tag">Common Questions</p>
+        <h2 style="font-size:1.8rem;">Booking from {{name}} — FAQ</h2>
+    </div>
+    <div style="max-width:820px;margin:30px auto 0;">
+{{{faqHtml}}}
+    </div>
+</section>
+
+<section class="packages" style="padding-top:30px;padding-bottom:80px;">
     <div class="section-header">
         <p class="section-tag">Back to {{provinceName}}</p>
         <h2 style="font-size:1.8rem;">Explore Other {{provinceName}} Districts</h2>

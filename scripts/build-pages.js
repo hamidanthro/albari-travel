@@ -188,6 +188,13 @@ ${walkIns.map(officeCardHtml).join('\n')}
   writeFile(`offices/${province.slug}/index.html`, render(tpl, ctx));
 }
 
+// Deterministic hash → integer (so a given district always picks the same template).
+function hashSlug(s) {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
+
 function buildDistrictPage(province, district) {
   if (district.linkedOfficeSlug) return; // real office already has its own page
   const tpl = readTemplate('district.html');
@@ -198,7 +205,40 @@ function buildDistrictPage(province, district) {
   }
   ctaButtons.push(`<a href="tel:${bm.phoneE164}" class="btn ${bm.hasWhatsapp ? 'btn-secondary' : 'btn-primary'}">Call ${escapeHtml(bm.incharge.split(' ')[0])}</a>`);
 
-  const intro = `Al Bari Travel & Tours serves ${district.name} district in ${province.name}, Pakistan through our regional branch network. Your dedicated contact for Umrah, Hajj, and international travel inquiries from ${district.name} is ${bm.incharge}, ${bm.title}, reachable directly by phone or WhatsApp.`;
+  // Rotate intro text by district to reduce duplicate-content footprint across 166 pages.
+  const introTemplates = [
+    `Al Bari Travel & Tours serves ${district.name} district in ${province.name}, Pakistan through our regional branch network. Your dedicated contact for Umrah, Hajj, and international travel inquiries from ${district.name} is ${bm.incharge}, ${bm.title}, reachable directly by phone or WhatsApp.`,
+    `Booking Umrah, Hajj, or an international flight from ${district.name}? Al Bari Travel & Tours coordinates the entire trip — packages, Saudi visas, ticketing, and group departures — through ${bm.title} ${bm.incharge}, based at our ${bm.regionalHubLocation} regional hub. One phone call gets you started.`,
+    `Pilgrims and travellers in ${district.name}, ${province.name} have a direct line to Al Bari Travel & Tours via ${bm.incharge}, our ${bm.title} for the region. Reach out by phone or WhatsApp for Umrah, Hajj, Saudi flight booking, and full visa documentation support — no walk-in required.`,
+    `For families and individuals in ${district.name} planning Umrah, Hajj, or international travel, Al Bari Travel & Tours offers complete branch-network service. ${bm.incharge} (${bm.title}) handles enquiries personally from our ${bm.regionalHubLocation} hub — packages, flights, and visa documentation, all from one point of contact.`,
+  ];
+  const intro = introTemplates[hashSlug(district.slug) % introTemplates.length];
+
+  // Per-district FAQ — content + JSON-LD (eligible for rich-snippet treatment).
+  const faqs = [
+    { q: `How do I book Umrah or Hajj from ${district.name}?`, a: `Call or WhatsApp ${bm.incharge}, our ${bm.title}, at ${bm.phoneDisplay}. We handle every step — package selection, Saudi visa, flights, and group departure logistics — for clients in ${district.name} without requiring you to visit in person.` },
+    { q: `Does Al Bari Travel have a walk-in office in ${district.name}?`, a: `Our closest walk-in office to ${district.name} is in ${bm.regionalHubLocation}, where ${bm.incharge} is based. We serve ${district.name} clients directly through our regional branch network — by phone, WhatsApp, and online — so an in-person visit is not necessary to book.` },
+    { q: `Can I get international flights booked from ${district.name}?`, a: `Yes. Al Bari Travel & Tours books international flights from any major Pakistani airport for clients across ${district.name} and the wider ${province.name} region — including Saudi Arabia, UAE, and other destinations. Ticket delivery is digital.` },
+    { q: `What documents are needed for a Saudi visa from ${district.name}?`, a: `For Umrah and Hajj from ${district.name} we typically need: a valid passport (6+ months), recent photos, NIC copy, and travel proof. Our Saudi visa processing handles the rest — application, fees, and tracking. Call ${bm.phoneDisplay} for the current checklist.` },
+  ];
+
+  const faqHtml = faqs.map(f => `
+        <details class="faq-item">
+            <summary><h3 style="display:inline;margin:0;font-size:1.1rem;">${escapeHtml(f.q)}</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>${escapeHtml(f.a)}</p></div>
+        </details>`).join('');
+
+  const faqSchema = `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": ${JSON.stringify(faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a }
+  })), null, 2)}
+}
+</script>`;
 
   const ctx = {
     name: district.name,
@@ -219,6 +259,8 @@ function buildDistrictPage(province, district) {
     seoDescription: `Al Bari Travel & Tours serving ${district.name}, ${province.name}, Pakistan. Umrah & Hajj packages, international flight booking, and visa processing. Contact ${bm.incharge}, ${bm.title}: ${bm.phoneDisplay}.`,
     ogType: 'place',
     ctaButtons: ctaButtons.map(b => '                    ' + b).join('\n'),
+    faqHtml,
+    faqSchema,
     footerOfficeList: footerOfficeListHtml(),
     year: String(new Date().getFullYear()),
   };
