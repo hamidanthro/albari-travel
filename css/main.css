@@ -123,6 +123,15 @@
             color: #0d1b2a;
         }
         .btn-primary:hover { background: #b8994d; }
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid #c9a962;
+            color: #c9a962;
+        }
+        .btn-secondary:hover {
+            background: #c9a962;
+            color: #0d1b2a;
+        }
         .btn-outline {
             border: 1px solid rgba(255,255,255,0.5);
             color: white;
