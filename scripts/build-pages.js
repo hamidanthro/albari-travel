@@ -594,7 +594,8 @@ const STATIC_PAGES = [
         <p style="margin-top:14px;line-height:1.8;">We share information with third parties only when necessary to deliver your booking: airlines, hotels, the Saudi consulate (for visas), payment processors, and ground service providers. We share only the minimum required information.</p>
 
         <h2 style="margin-top:30px;">4. Cookies and analytics</h2>
-        <p style="margin-top:14px;line-height:1.8;">This website is a simple static site. We do not set tracking cookies or run analytics that identify individual visitors. Your browser may receive standard server log entries (timestamp, IP address, page requested) which are not associated with any identity.</p>
+        <p style="margin-top:14px;line-height:1.8;">We use <strong>Google Analytics 4</strong> to measure aggregate website traffic — for example, which pages are most-viewed and which regions of Pakistan visitors come from. Google Analytics sets first-party cookies (typically <code>_ga</code> and <code>_ga_*</code>) that identify your <em>device</em>, not you personally. We have enabled IP-address anonymisation, so your full IP address is never stored.</p>
+        <p style="margin-top:14px;line-height:1.8;">You can opt out by installing the <a href="https://tools.google.com/dlpage/gaoptout" style="color:#c9a962;" target="_blank" rel="noopener">Google Analytics opt-out browser add-on</a>, by blocking third-party cookies in your browser settings, or by enabling Do Not Track. We do not use any other tracking, advertising, or fingerprinting tools.</p>
 
         <h2 style="margin-top:30px;">5. Data retention</h2>
         <p style="margin-top:14px;line-height:1.8;">We retain client booking records for the period required by Pakistani tax and tourism law. Passport copies and visa application data are retained only as long as needed for the active booking and then destroyed securely.</p>
