@@ -516,6 +516,36 @@ ${t.highlights.map(h => `                        <li>${escapeHtml(h)}</li>`).joi
         </div>`;
   }
 
+  // Routes table (currently only Airline Tickets uses this)
+  let routesHtml = '';
+  if (service.routes && service.routes.length) {
+    const routeRows = service.routes.map(r => `
+                <div class="route-row">
+                    <div class="route-dest">${escapeHtml(r.destination)}</div>
+                    <div class="route-carriers">${escapeHtml(r.carriers)}</div>
+                </div>`).join('\n');
+    routesHtml = `
+        <div class="section-header" style="margin:50px 0 24px;">
+            <h2 style="font-size:1.6rem;text-align:left;">Popular routes from Pakistan</h2>
+        </div>
+        <div class="routes-table">${routeRows}
+        </div>`;
+  }
+
+  // Key facts callout — quick-reference info box above the overview
+  let keyFactsHtml = '';
+  if (service.keyFacts && service.keyFacts.length) {
+    const factRows = service.keyFacts.map(f => `
+            <div class="key-fact-row">
+                <div class="key-fact-label">${escapeHtml(f.label)}</div>
+                <div class="key-fact-value">${escapeHtml(f.value)}</div>
+            </div>`).join('\n');
+    keyFactsHtml = `
+        <aside class="key-facts" aria-label="Key facts" style="margin-bottom:40px;">
+            <div class="key-facts-header">At a glance</div>${factRows}
+        </aside>`;
+  }
+
   const faqHtml = service.faqs.map(f => `
         <details class="faq-item">
             <summary><h3 style="display:inline;margin:0;font-size:1.1rem;">${escapeHtml(f.q)}</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
@@ -547,6 +577,8 @@ ${JSON.stringify({
     ogType: 'website',
     includedListHtml,
     tiersHtml,
+    routesHtml,
+    keyFactsHtml,
     faqHtml,
     faqSchema,
     footerOfficeList: footerOfficeListHtml(),
