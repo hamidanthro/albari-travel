@@ -437,7 +437,7 @@ const STATIC_PAGES = [
     seoDescription: 'Al Bari Travel & Tours — a family-run Umrah, Hajj, and international travel agency serving Pakistan + USA through named Regional Representatives. Remote-first, transparent.',
     body: `
         <h2>Who we are</h2>
-        <p style="margin-top:14px;line-height:1.8;">Al Bari Travel & Tours is a family-run travel agency serving the Pakistani and Pakistani-American community since our founding. We coordinate Umrah, Hajj, and international flight bookings with a personal touch — every client is matched with a named branch manager who handles their journey end-to-end.</p>
+        <p style="margin-top:14px;line-height:1.8;">Al Bari Travel & Tours is a family-run travel agency that has been serving the Pakistani and Pakistani-American community since 2018. We coordinate Umrah, Hajj, and international flight bookings with a personal touch — every client is matched with a named <strong>Regional Representative</strong> who handles their journey end-to-end, by phone and WhatsApp.</p>
 
         <div class="trust-stats" role="list" aria-label="Al Bari Travel by the numbers">
             <div class="trust-stat" role="listitem">
@@ -498,9 +498,9 @@ const STATIC_PAGES = [
     pageSchemaType: 'ContactPage',
     eyebrow: 'Talk to a Human',
     h1: 'Contact Al Bari Travel & Tours',
-    lede: 'Every office has a named branch manager who answers your call personally. Pick the office nearest you, or WhatsApp our main line for an immediate response.',
+    lede: 'Every Regional Representative answers their phone personally. Pick the one closest to you, or WhatsApp our main line for an immediate response.',
     seoTitle: 'Contact Al Bari Travel & Tours | Call, WhatsApp, or Visit Any Office',
-    seoDescription: 'Contact Al Bari Travel & Tours for Umrah, Hajj, and travel booking. Seven offices across Pakistan and the USA, each with a named branch manager. Call +92 315 9596161 or WhatsApp.',
+    seoDescription: 'Contact Al Bari Travel & Tours for Umrah, Hajj, and travel booking. Seven Regional Representatives across Pakistan and the USA, each answering personally. Call +92 315 9596161.',
     // body is dynamically built below
     body: '__CONTACT_BODY_PLACEHOLDER__',
     extraSchema: '__CONTACT_SCHEMA_PLACEHOLDER__',
