@@ -2,180 +2,154 @@
   "offices": [
     {
       "slug": "hasan-abdal",
-      "name": "Hasan Abdal Office",
+      "name": "Hasan Abdal Regional Representative",
       "city": "Hasan Abdal",
       "region": "Punjab",
       "country": "Pakistan",
       "countryCode": "PK",
       "addressCountry": "PK",
-      "addressLocality": "Hasan Abdal",
       "addressRegion": "Punjab",
       "incharge": "Haiwad Ahmad",
       "phoneDisplay": "+92 315 9596161",
       "phoneE164": "+923159596161",
       "whatsappNumber": "923159596161",
       "hasWhatsapp": true,
-      "openingHours": "Mo-Sa 09:00-20:00",
       "languages": [
         "English",
         "Urdu",
         "Punjabi"
       ],
       "services": [
-        "Umrah packages from Pakistan",
-        "Hajj packages from Pakistan",
-        "Saudi Arabia flight booking",
-        "Visa processing & documentation",
-        "Group travel arrangements"
+        "Umrah packages from Hasan Abdal",
+        "Hajj packages with group departures",
+        "International flight booking",
+        "Saudi Arabia visa processing & documentation",
+        "Family and group travel coordination by phone / WhatsApp"
       ],
-      "intro": "Our Hasan Abdal office is the home base for Al Bari Travel & Tours in Pakistan \u2014 serving pilgrims and travellers across Punjab and Khyber Pakhtunkhwa with end-to-end Umrah, Hajj, and international travel arrangements.",
+      "intro": "Al Bari Travel & Tours serves Hasan Abdal through Haiwad Ahmad, our Regional Representative. All Umrah, Hajj, international flight booking, and Saudi visa processing for Hasan Abdal clients is handled remotely by phone and WhatsApp \u2014 no in-person visit required.",
       "seoTitle": "Umrah & Hajj from Hasan Abdal | Al Bari Travel & Tours",
-      "seoDescription": "Book Umrah and Hajj packages from Hasan Abdal, Pakistan. International flights, Saudi visa processing, and group departures. Walk-in office.",
-      "geo": {
-        "lat": 33.8197,
-        "lng": 72.6856
-      },
+      "seoDescription": "Book Umrah and Hajj from Hasan Abdal, Pakistan with Al Bari Travel. Haiwad Ahmad, our Regional Rep, handles flights, Saudi visa, packages. Call +92 315 959616",
       "currenciesAccepted": "PKR",
       "paymentAccepted": "Cash, Bank transfer, JazzCash, Easypaisa",
       "priceRange": "$$",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=33.8197,72.6856"
+      "phoneHours": "Mon\u2013Sat 09:00 to 20:00 (PKT)"
     },
     {
       "slug": "rawalpindi",
-      "name": "Rawalpindi Office",
+      "name": "Rawalpindi Regional Representative",
       "city": "Rawalpindi",
       "region": "Punjab",
       "country": "Pakistan",
       "countryCode": "PK",
       "addressCountry": "PK",
-      "addressLocality": "Rawalpindi",
       "addressRegion": "Punjab",
       "incharge": "Maaz Ali",
       "phoneDisplay": "+92 331 8173742",
       "phoneE164": "+923318173742",
       "whatsappNumber": "923318173742",
       "hasWhatsapp": true,
-      "openingHours": "Mo-Sa 09:00-20:00",
       "languages": [
         "English",
         "Urdu",
         "Punjabi"
       ],
       "services": [
-        "Umrah packages from Rawalpindi & Islamabad",
+        "Umrah packages from Rawalpindi",
         "Hajj packages with group departures",
         "International flight booking",
-        "Saudi visa processing",
-        "Twin-city (Rawalpindi-Islamabad) pickup & drop"
+        "Saudi Arabia visa processing & documentation",
+        "Family and group travel coordination by phone / WhatsApp"
       ],
-      "intro": "Our Rawalpindi office serves pilgrims and travellers across the twin cities of Rawalpindi and Islamabad \u2014 a convenient hub for Umrah, Hajj, and international travel arrangements with full visa and documentation support.",
+      "intro": "Al Bari Travel & Tours serves Rawalpindi through Maaz Ali, our Regional Representative. All Umrah, Hajj, international flight booking, and Saudi visa processing for Rawalpindi clients is handled remotely by phone and WhatsApp \u2014 no in-person visit required.",
       "seoTitle": "Umrah & Hajj from Rawalpindi | Al Bari Travel & Tours",
-      "seoDescription": "Book Umrah and Hajj packages from Rawalpindi, Pakistan. International flights, Saudi visa processing, and group departures. Walk-in office.",
-      "geo": {
-        "lat": 33.5651,
-        "lng": 73.0169
-      },
+      "seoDescription": "Book Umrah and Hajj from Rawalpindi, Pakistan with Al Bari Travel. Maaz Ali, our Regional Rep, handles flights, Saudi visa, packages. Call +92 331 8173742.",
       "currenciesAccepted": "PKR",
       "paymentAccepted": "Cash, Bank transfer, JazzCash, Easypaisa",
       "priceRange": "$$",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=33.5651,73.0169"
+      "phoneHours": "Mon\u2013Sat 09:00 to 20:00 (PKT)"
     },
     {
       "slug": "taxila",
-      "name": "Taxila Office",
+      "name": "Taxila Regional Representative",
       "city": "Taxila",
       "region": "Punjab",
       "country": "Pakistan",
       "countryCode": "PK",
       "addressCountry": "PK",
-      "addressLocality": "Taxila",
       "addressRegion": "Punjab",
       "incharge": "Jawad Ahmad",
       "phoneDisplay": "+92 311 5908269",
       "phoneE164": "+923115908269",
       "whatsappNumber": "923115908269",
       "hasWhatsapp": true,
-      "openingHours": "Mo-Sa 09:00-20:00",
       "languages": [
         "English",
         "Urdu",
         "Punjabi"
       ],
       "services": [
-        "Umrah packages from Taxila & Wah Cantt",
-        "Hajj packages for families & groups",
-        "Saudi Arabia & UAE flight booking",
-        "Visa processing & documentation",
-        "Local pickup from Taxila, Wah Cantt & Hasan Abdal"
+        "Umrah packages from Taxila",
+        "Hajj packages with group departures",
+        "International flight booking",
+        "Saudi Arabia visa processing & documentation",
+        "Family and group travel coordination by phone / WhatsApp"
       ],
-      "intro": "Our Taxila office serves the Taxila, Wah Cantt, and surrounding cantonment communities with personalised Umrah, Hajj, and international travel planning \u2014 close to home, with the same trusted Al Bari service.",
+      "intro": "Al Bari Travel & Tours serves Taxila through Jawad Ahmad, our Regional Representative. All Umrah, Hajj, international flight booking, and Saudi visa processing for Taxila clients is handled remotely by phone and WhatsApp \u2014 no in-person visit required.",
       "seoTitle": "Umrah & Hajj from Taxila | Al Bari Travel & Tours",
-      "seoDescription": "Book Umrah and Hajj packages from Taxila, Pakistan. International flights, Saudi visa processing, and group departures. Walk-in office. Call +92 311 5908269.",
-      "geo": {
-        "lat": 33.7475,
-        "lng": 72.7884
-      },
+      "seoDescription": "Book Umrah and Hajj from Taxila, Pakistan with Al Bari Travel. Jawad Ahmad, our Regional Rep, handles flights, Saudi visa, packages. Call +92 311 5908269.",
       "currenciesAccepted": "PKR",
       "paymentAccepted": "Cash, Bank transfer, JazzCash, Easypaisa",
       "priceRange": "$$",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=33.7475,72.7884"
+      "phoneHours": "Mon\u2013Sat 09:00 to 20:00 (PKT)"
     },
     {
       "slug": "swabi",
-      "name": "Swabi Office",
+      "name": "Swabi Regional Representative",
       "city": "Swabi",
       "region": "Khyber Pakhtunkhwa",
       "country": "Pakistan",
       "countryCode": "PK",
       "addressCountry": "PK",
-      "addressLocality": "Swabi",
       "addressRegion": "Khyber Pakhtunkhwa",
       "incharge": "Yawar Hayat",
       "phoneDisplay": "+92 301 8139903",
       "phoneE164": "+923018139903",
       "whatsappNumber": "923018139903",
       "hasWhatsapp": true,
-      "openingHours": "Mo-Sa 09:00-20:00",
       "languages": [
         "English",
         "Urdu",
         "Pashto"
       ],
       "services": [
-        "Umrah packages from Swabi & surrounding areas",
-        "Hajj packages with KP group departures",
+        "Umrah packages from Swabi",
+        "Hajj packages with group departures",
         "International flight booking",
-        "Saudi visa processing & documentation",
-        "Family and group travel arrangements"
+        "Saudi Arabia visa processing & documentation",
+        "Family and group travel coordination by phone / WhatsApp"
       ],
-      "intro": "Our Swabi office serves the Swabi district and surrounding areas of Khyber Pakhtunkhwa \u2014 providing trusted Umrah, Hajj, and international travel arrangements with local Pashto-speaking support.",
+      "intro": "Al Bari Travel & Tours serves Swabi through Yawar Hayat, our Regional Representative. All Umrah, Hajj, international flight booking, and Saudi visa processing for Swabi clients is handled remotely by phone and WhatsApp \u2014 no in-person visit required.",
       "seoTitle": "Umrah & Hajj from Swabi | Al Bari Travel & Tours",
-      "seoDescription": "Book Umrah and Hajj packages from Swabi, Pakistan. International flights, Saudi visa processing, and group departures. Walk-in office. Call +92 301 8139903.",
-      "geo": {
-        "lat": 34.1209,
-        "lng": 72.4694
-      },
+      "seoDescription": "Book Umrah and Hajj from Swabi, Pakistan with Al Bari Travel. Yawar Hayat, our Regional Rep, handles flights, Saudi visa, packages. Call +92 301 8139903.",
       "currenciesAccepted": "PKR",
       "paymentAccepted": "Cash, Bank transfer, JazzCash, Easypaisa",
       "priceRange": "$$",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.1209,72.4694"
+      "phoneHours": "Mon\u2013Sat 09:00 to 20:00 (PKT)"
     },
     {
       "slug": "mardan",
-      "name": "Mardan Office",
+      "name": "Mardan Regional Representative",
       "city": "Mardan",
       "region": "Khyber Pakhtunkhwa",
       "country": "Pakistan",
       "countryCode": "PK",
       "addressCountry": "PK",
-      "addressLocality": "Mardan",
       "addressRegion": "Khyber Pakhtunkhwa",
       "incharge": "Muhammad Huzaifa",
       "phoneDisplay": "+92 313 9708806",
       "phoneE164": "+923139708806",
       "whatsappNumber": "923139708806",
       "hasWhatsapp": true,
-      "openingHours": "Mo-Sa 09:00-20:00",
       "languages": [
         "English",
         "Urdu",
@@ -183,39 +157,33 @@
       ],
       "services": [
         "Umrah packages from Mardan",
-        "Hajj packages with KP group departures",
-        "Saudi Arabia & UAE flight booking",
-        "Visa processing & documentation",
-        "Family and group travel arrangements"
+        "Hajj packages with group departures",
+        "International flight booking",
+        "Saudi Arabia visa processing & documentation",
+        "Family and group travel coordination by phone / WhatsApp"
       ],
-      "intro": "Our Mardan office serves Mardan city and surrounding areas of Khyber Pakhtunkhwa \u2014 coordinating Umrah, Hajj, and international travel with local Pashto-speaking support and end-to-end documentation help.",
+      "intro": "Al Bari Travel & Tours serves Mardan through Muhammad Huzaifa, our Regional Representative. All Umrah, Hajj, international flight booking, and Saudi visa processing for Mardan clients is handled remotely by phone and WhatsApp \u2014 no in-person visit required.",
       "seoTitle": "Umrah & Hajj from Mardan | Al Bari Travel & Tours",
-      "seoDescription": "Book Umrah and Hajj packages from Mardan, Pakistan. International flights, Saudi visa processing, and group departures. Walk-in office. Call +92 313 9708806.",
-      "geo": {
-        "lat": 34.1989,
-        "lng": 72.0418
-      },
+      "seoDescription": "Book Umrah and Hajj from Mardan, Pakistan with Al Bari Travel. Muhammad Huzaifa, our Regional Rep, handles flights, Saudi visa, packages. Call +92 313 9708806",
       "currenciesAccepted": "PKR",
       "paymentAccepted": "Cash, Bank transfer, JazzCash, Easypaisa",
       "priceRange": "$$",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.1989,72.0418"
+      "phoneHours": "Mon\u2013Sat 09:00 to 20:00 (PKT)"
     },
     {
       "slug": "peshawar",
-      "name": "Peshawar Office",
+      "name": "Peshawar Regional Representative",
       "city": "Peshawar",
       "region": "Khyber Pakhtunkhwa",
       "country": "Pakistan",
       "countryCode": "PK",
       "addressCountry": "PK",
-      "addressLocality": "Peshawar",
       "addressRegion": "Khyber Pakhtunkhwa",
       "incharge": "Faisal Khan",
       "phoneDisplay": "+92 310 7379796",
       "phoneE164": "+923107379796",
       "whatsappNumber": "923107379796",
       "hasWhatsapp": true,
-      "openingHours": "Mo-Sa 09:00-20:00",
       "languages": [
         "English",
         "Urdu",
@@ -223,61 +191,51 @@
       ],
       "services": [
         "Umrah packages from Peshawar",
-        "Hajj packages with KP group departures",
-        "International flight booking from Peshawar Airport",
-        "Saudi visa processing & documentation",
-        "Family and group travel arrangements"
+        "Hajj packages with group departures",
+        "International flight booking",
+        "Saudi Arabia visa processing & documentation",
+        "Family and group travel coordination by phone / WhatsApp"
       ],
-      "intro": "Our Peshawar office is the Khyber Pakhtunkhwa provincial hub for Al Bari Travel & Tours \u2014 serving pilgrims and travellers from Peshawar and across the province with end-to-end Umrah, Hajj, and international travel support.",
+      "intro": "Al Bari Travel & Tours serves Peshawar through Faisal Khan, our Regional Representative. All Umrah, Hajj, international flight booking, and Saudi visa processing for Peshawar clients is handled remotely by phone and WhatsApp \u2014 no in-person visit required.",
       "seoTitle": "Umrah & Hajj from Peshawar | Al Bari Travel & Tours",
-      "seoDescription": "Book Umrah and Hajj packages from Peshawar, Pakistan. International flights, Saudi visa processing, and group departures. Walk-in office.",
-      "geo": {
-        "lat": 34.0151,
-        "lng": 71.5249
-      },
+      "seoDescription": "Book Umrah and Hajj from Peshawar, Pakistan with Al Bari Travel. Faisal Khan, our Regional Rep, handles flights, Saudi visa, packages. Call +92 310 7379796.",
       "currenciesAccepted": "PKR",
       "paymentAccepted": "Cash, Bank transfer, JazzCash, Easypaisa",
       "priceRange": "$$",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.0151,71.5249"
+      "phoneHours": "Mon\u2013Sat 09:00 to 20:00 (PKT)"
     },
     {
       "slug": "texas",
-      "name": "Texas Office",
+      "name": "Texas Regional Representative",
       "city": "Texas",
       "region": "Texas",
       "country": "United States",
       "countryCode": "US",
       "addressCountry": "US",
-      "addressLocality": "Houston",
       "addressRegion": "TX",
       "incharge": "Hamid Ali",
       "phoneDisplay": "+1 (443) 589-4441",
       "phoneE164": "+14435894441",
       "whatsappNumber": "14435894441",
       "hasWhatsapp": false,
-      "openingHours": "Mo-Sa 09:00-19:00",
       "languages": [
         "English",
         "Urdu"
       ],
       "services": [
-        "Umrah packages from the USA",
-        "Hajj packages from the USA",
+        "Umrah packages from Texas",
+        "Hajj packages with group departures",
         "International flight booking",
-        "US to Pakistan & Middle East travel",
-        "Family group travel"
+        "Saudi Arabia visa processing & documentation",
+        "Family and group travel coordination by phone / WhatsApp"
       ],
-      "intro": "Our Texas office serves the Pakistani-American and Muslim community across the United States \u2014 coordinating Umrah, Hajj, and international flights with full bilingual support and time-zone-friendly customer service.",
-      "seoTitle": "Umrah & Hajj from Texas 2026 | Al Bari Travel & Tours",
-      "seoDescription": "Book Umrah and Hajj packages from Texas, USA. Direct flights, Saudi visa processing, and bilingual support for the Pakistani-American community.",
-      "geo": {
-        "lat": 31.9686,
-        "lng": -99.9018
-      },
+      "intro": "Al Bari Travel & Tours serves Texas through Hamid Ali, our Regional Representative. All Umrah, Hajj, international flight booking, and Saudi visa processing for Texas clients is handled remotely by phone and WhatsApp \u2014 no in-person visit required.",
+      "seoTitle": "Umrah & Hajj from Texas | Al Bari Travel & Tours",
+      "seoDescription": "Book Umrah and Hajj from Texas, USA with Al Bari Travel. Hamid Ali, our Regional Rep, handles flights, Saudi visa, packages. Call +1 (443) 589-4441.",
       "currenciesAccepted": "USD",
       "paymentAccepted": "Cash, Credit Card, Bank transfer, Zelle",
       "priceRange": "$$",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=31.9686,-99.9018"
+      "phoneHours": "Mon\u2013Sat 09:00 to 19:00 (CT)"
     }
   ]
 }

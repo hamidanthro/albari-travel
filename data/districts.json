@@ -8,14 +8,9 @@
       "countryCode": "PK",
       "addressCountry": "PK",
       "addressRegion": "Punjab",
-      "walkInOfficeSlugs": [
-        "hasan-abdal",
-        "rawalpindi",
-        "taxila"
-      ],
       "tagline": "Pakistan's largest province by population \u2014 41 districts served by our regional branch network",
       "seoTitle": "Umrah & Hajj from Punjab | Al Bari Travel & Tours",
-      "seoDescription": "Book Umrah and Hajj packages from anywhere in Punjab, Pakistan. 41 districts served through our regional branch network.",
+      "seoDescription": "Book Umrah and Hajj from anywhere in Punjab, Pakistan with Al Bari Travel. 41 districts served by our regional representatives. Flights, Saudi visa, group dep",
       "districts": [
         {
           "slug": "attock",
@@ -182,6 +177,11 @@
           "slug": "wazirabad",
           "name": "Wazirabad"
         }
+      ],
+      "regionalRepSlugs": [
+        "hasan-abdal",
+        "rawalpindi",
+        "taxila"
       ]
     },
     {
@@ -193,7 +193,7 @@
       "addressRegion": "Sindh",
       "tagline": "Pakistan's southern coastal province \u2014 30 districts served by our regional branch network",
       "seoTitle": "Umrah & Hajj from Sindh | Al Bari Travel & Tours",
-      "seoDescription": "Book Umrah and Hajj packages from anywhere in Sindh, Pakistan. 30 districts served through our regional branch network.",
+      "seoDescription": "Book Umrah and Hajj from anywhere in Sindh, Pakistan with Al Bari Travel. 30 districts served by our regional representatives. Flights, Saudi visa, group depa",
       "districts": [
         {
           "slug": "badin",
@@ -324,14 +324,9 @@
       "countryCode": "PK",
       "addressCountry": "PK",
       "addressRegion": "Khyber Pakhtunkhwa",
-      "walkInOfficeSlugs": [
-        "peshawar",
-        "mardan",
-        "swabi"
-      ],
-      "tagline": "Pakistan's north-western province \u2014 37 districts including Peshawar, Mardan, and Swabi where we have walk-in offices",
+      "tagline": "Pakistan's north-western province \u2014 37 districts including Peshawar, Mardan, and Swabi where we have named Regional Representatives",
       "seoTitle": "Umrah & Hajj from Khyber Pakhtunkhwa | Al Bari Travel & Tours",
-      "seoDescription": "Book Umrah and Hajj packages from anywhere in Khyber Pakhtunkhwa, Pakistan. 37 districts served through our regional branch network.",
+      "seoDescription": "Book Umrah and Hajj from anywhere in KP, Pakistan with Al Bari Travel. 37 districts served by our regional representatives. Flights, Saudi visa, group departu",
       "districts": [
         {
           "slug": "abbottabad",
@@ -484,6 +479,11 @@
           "slug": "upper-south-waziristan",
           "name": "Upper South Waziristan"
         }
+      ],
+      "regionalRepSlugs": [
+        "peshawar",
+        "mardan",
+        "swabi"
       ]
     },
     {
@@ -495,7 +495,7 @@
       "addressRegion": "Balochistan",
       "tagline": "Pakistan's largest province by area \u2014 37 districts served by our regional branch network",
       "seoTitle": "Umrah & Hajj from Balochistan | Al Bari Travel & Tours",
-      "seoDescription": "Book Umrah and Hajj packages from anywhere in Balochistan, Pakistan. 37 districts served through our regional branch network.",
+      "seoDescription": "Book Umrah and Hajj from anywhere in Balochistan, Pakistan with Al Bari Travel. 37 districts served by our regional representatives. Flights, Saudi visa, grou",
       "districts": [
         {
           "slug": "awaran",
@@ -656,7 +656,7 @@
       "addressRegion": "Islamabad Capital Territory",
       "tagline": "Pakistan's federal capital \u2014 direct branch network coverage from our Rawalpindi office next door",
       "seoTitle": "Umrah & Hajj from Islamabad Capital Territory | Al Bari Travel & Tours",
-      "seoDescription": "Book Umrah and Hajj packages from anywhere in Islamabad Capital Territory, Pakistan. 1 districts served through our regional branch network.",
+      "seoDescription": "Book Umrah and Hajj from anywhere in Islamabad Capital Territory, Pakistan with Al Bari Travel. 1 district served by our regional representatives. Flights, Sa",
       "districts": [
         {
           "slug": "islamabad",
@@ -673,7 +673,7 @@
       "addressRegion": "Azad Jammu and Kashmir",
       "tagline": "Autonomous territory of northern Pakistan \u2014 10 districts served by our regional branch network",
       "seoTitle": "Umrah & Hajj from Azad Jammu & Kashmir | Al Bari Travel & Tours",
-      "seoDescription": "Book Umrah and Hajj packages from anywhere in Azad Jammu & Kashmir, Pakistan. 10 districts served through our regional branch network.",
+      "seoDescription": "Book Umrah and Hajj from anywhere in Azad Jammu & Kashmir, Pakistan with Al Bari Travel. 10 districts served by our regional representatives. Flights, Saudi v",
       "districts": [
         {
           "slug": "bagh",
@@ -726,7 +726,7 @@
       "addressRegion": "Gilgit-Baltistan",
       "tagline": "Pakistan's far-north mountain territory \u2014 14 districts including Gilgit, Skardu, and Hunza",
       "seoTitle": "Umrah & Hajj from Gilgit-Baltistan | Al Bari Travel & Tours",
-      "seoDescription": "Book Umrah and Hajj packages from anywhere in Gilgit-Baltistan, Pakistan. 14 districts served through our regional branch network.",
+      "seoDescription": "Book Umrah and Hajj from anywhere in Gilgit-Baltistan, Pakistan with Al Bari Travel. 14 districts served by our regional representatives. Flights, Saudi visa,",
       "districts": [
         {
           "slug": "astore",
@@ -793,18 +793,18 @@
       "countryCode": "US",
       "addressCountry": "US",
       "addressRegion": "United States",
-      "walkInOfficeSlugs": [
-        "texas"
-      ],
       "tagline": "Our United States branch network \u2014 serving the Pakistani-American community for Umrah, Hajj, and international travel",
       "seoTitle": "Umrah & Hajj from the USA | Al Bari Travel & Tours",
-      "seoDescription": "Book Umrah and Hajj packages from the United States. Texas office + bilingual customer service for the Pakistani-American community.",
+      "seoDescription": "Book Umrah and Hajj from the USA with Al Bari Travel. Our Texas Regional Rep handles flights, Saudi visa, packages for Pakistani-Americans.",
       "districts": [
         {
           "slug": "texas",
           "name": "Texas",
           "linkedOfficeSlug": "texas"
         }
+      ],
+      "regionalRepSlugs": [
+        "texas"
       ]
     }
   ]

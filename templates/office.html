@@ -5,32 +5,14 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["TravelAgency", "LocalBusiness"],
-  "@id": "{{canonical}}#business",
+  "@type": "TravelAgency",
+  "@id": "{{canonical}}#branch",
   "name": "Al Bari Travel & Tours — {{name}}",
   "description": "{{seoDescription}}",
   "url": "{{canonical}}",
   "telephone": "{{phoneE164}}",
   "image": "https://www.albaritravelspk.com/og-default.svg",
   "logo": "https://www.albaritravelspk.com/favicon.svg",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "{{addressLocality}}",
-    "addressRegion": "{{addressRegion}}",
-    "addressCountry": "{{addressCountry}}"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "{{geoLat}}",
-    "longitude": "{{geoLng}}"
-  },
-  "hasMap": "{{mapsUrl}}",
-  "openingHoursSpecification": [{
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-    "opens": "09:00",
-    "closes": "20:00"
-  }],
   "currenciesAccepted": "{{currenciesAccepted}}",
   "paymentAccepted": "{{paymentAccepted}}",
   "priceRange": "{{priceRange}}",
@@ -49,7 +31,7 @@
   "employee": [{
     "@type": "Person",
     "name": "{{incharge}}",
-    "jobTitle": "Branch Manager",
+    "jobTitle": "Regional Representative",
     "telephone": "{{phoneE164}}",
     "worksFor": { "@id": "https://www.albaritravelspk.com/#organization" }
   }],
@@ -93,13 +75,13 @@
 
 <section class="packages">
     <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;">
-        <section class="package-card" aria-labelledby="office-details-h">
-            <h2 id="office-details-h">Office Details</h2>
+        <section class="package-card" aria-labelledby="rep-contact-h">
+            <h2 id="rep-contact-h">Representative Contact</h2>
             <div style="margin-top:20px;">
-                <div class="office-row"><span class="office-label">Incharge</span><span class="office-value">{{incharge}}</span></div>
-                <div class="office-row"><span class="office-label">Phone</span><span class="office-value">{{phoneDisplay}}</span></div>
-                <div class="office-row"><span class="office-label">Location</span><span class="office-value">{{addressLocality}}, {{country}}</span></div>
-                <div class="office-row"><span class="office-label">Hours</span><span class="office-value">{{openingHoursDisplay}}</span></div>
+                <div class="office-row"><span class="office-label">Representative</span><span class="office-value">{{incharge}}</span></div>
+                <div class="office-row"><span class="office-label">Phone &amp; WhatsApp</span><span class="office-value">{{phoneDisplay}}</span></div>
+                <div class="office-row"><span class="office-label">Serving</span><span class="office-value">{{addressLocality}}, {{country}}</span></div>
+                <div class="office-row"><span class="office-label">Phone hours</span><span class="office-value">{{openingHoursDisplay}}</span></div>
                 <div class="office-row" style="border-bottom:none;"><span class="office-label">Languages</span><span class="office-value">{{languagesDisplay}}</span></div>
                 <div class="office-actions" style="margin-top:24px;">
 {{{ctaButtons}}}
@@ -118,8 +100,8 @@
 
 <section class="packages" style="padding-top:60px;padding-bottom:80px;border-top:1px solid rgba(255,255,255,0.08);">
     <div class="section-header">
-        <p class="section-tag">Visit Another Office</p>
-        <h2 style="font-size:1.8rem;">Explore Our Other Locations</h2>
+        <p class="section-tag">Reach Another Representative</p>
+        <h2 style="font-size:1.8rem;">Our Other Regional Contacts</h2>
     </div>
     <div class="offices-grid" style="margin-top:30px;">
 {{{otherOfficeCards}}}

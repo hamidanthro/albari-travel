@@ -1,6 +1,6 @@
 # Al Bari Travel & Tours
 
-> A family-run travel agency specialising in Umrah and Hajj packages from Pakistan and the USA, with seven walk-in offices across Pakistan (Punjab + KP) and one in Texas, plus a regional branch network covering all 170 districts of Pakistan.
+> A remote-first family-run travel agency specialising in Umrah and Hajj packages from Pakistan and the USA. Seven named Regional Representatives serve clients across Pakistan (Punjab + KP) and Texas, with a remote agent network covering every district of Pakistan (170 total). No walk-in offices — all bookings handled by phone, WhatsApp, and email.
 
 Al Bari Travel & Tours coordinates end-to-end pilgrimage and international travel for Muslim families and individuals. Every booking is handled by a named branch manager — no call centres, no bots. Services include Umrah packages, Hajj packages (current focus: Hajj 2027 booking is open), international flight booking, and Saudi Arabia visa processing.
 
@@ -8,14 +8,14 @@ Al Bari Travel & Tours coordinates end-to-end pilgrimage and international trave
 
 - **Founded:** 2018
 - **Founder / Regional Branch Manager:** Haiwad Ahmad (based in Hasan Abdal, Punjab)
-- **Walk-in offices (7):** Hasan Abdal, Rawalpindi, Taxila, Swabi, Mardan, Peshawar (Pakistan); Texas (USA)
-- **Regional branch network:** every district of Pakistan (170 districts, 7 administrative regions)
+- **Regional Representatives (7):** Hasan Abdal, Rawalpindi, Taxila, Swabi, Mardan, Peshawar (Pakistan); Texas (USA) — all serving clients remotely
+- **Remote agent network:** every district of Pakistan (170 districts, 7 administrative regions)
 - **Main phone / WhatsApp:** +92 315 9596161
 - **USA phone:** +1 (443) 589-4441
 - **Domain:** https://www.albaritravelspk.com
 - **Languages served:** English, Urdu, Punjabi, Pashto
-- **Payment methods (PK):** Cash, bank transfer, JazzCash, Easypaisa
-- **Payment methods (USA):** Cash, credit card, bank transfer
+- **Payment methods (PK):** Bank transfer, JazzCash, Easypaisa
+- **Payment methods (USA):** Credit card, bank transfer, Zelle
 
 ## Core pages for LLM grounding
 
@@ -26,26 +26,26 @@ Al Bari Travel & Tours coordinates end-to-end pilgrimage and international trave
 - [Umrah & Hajj Glossary](https://www.albaritravelspk.com/glossary/) — plain-English definitions
 - [Sitemap](https://www.albaritravelspk.com/sitemap.xml) — all 188 indexable URLs
 
-## Walk-in offices (each links to its own page)
+## Regional Representatives (each links to its contact page)
 
-- [Hasan Abdal Office](https://www.albaritravelspk.com/offices/hasan-abdal/) — Incharge: Haiwad Ahmad — +92 315 9596161
-- [Rawalpindi Office](https://www.albaritravelspk.com/offices/rawalpindi/) — Incharge: Maaz Ali — +92 331 8173742
-- [Taxila Office](https://www.albaritravelspk.com/offices/taxila/) — Incharge: Jawad Ahmad — +92 311 5908269
-- [Swabi Office](https://www.albaritravelspk.com/offices/swabi/) — Incharge: Yawar Hayat — +92 301 8139903
-- [Mardan Office](https://www.albaritravelspk.com/offices/mardan/) — Incharge: Muhammad Huzaifa — +92 313 9708806
-- [Peshawar Office](https://www.albaritravelspk.com/offices/peshawar/) — Incharge: Faisal Khan — +92 310 7379796
-- [Texas Office](https://www.albaritravelspk.com/offices/texas/) — Incharge: Hamid Ali — +1 (443) 589-4441
+- [Hasan Abdal Regional Representative](https://www.albaritravelspk.com/offices/hasan-abdal/) — Incharge: Haiwad Ahmad — +92 315 9596161
+- [Rawalpindi Regional Rep](https://www.albaritravelspk.com/offices/rawalpindi/) — Incharge: Maaz Ali — +92 331 8173742
+- [Taxila Regional Rep](https://www.albaritravelspk.com/offices/taxila/) — Incharge: Jawad Ahmad — +92 311 5908269
+- [Swabi Regional Rep](https://www.albaritravelspk.com/offices/swabi/) — Incharge: Yawar Hayat — +92 301 8139903
+- [Mardan Regional Rep](https://www.albaritravelspk.com/offices/mardan/) — Incharge: Muhammad Huzaifa — +92 313 9708806
+- [Peshawar Regional Rep](https://www.albaritravelspk.com/offices/peshawar/) — Incharge: Faisal Khan — +92 310 7379796
+- [Texas Regional Rep](https://www.albaritravelspk.com/offices/texas/) — Incharge: Hamid Ali — +1 (443) 589-4441
 
 ## Provincial coverage (each region links to its district landing)
 
-- [Punjab](https://www.albaritravelspk.com/offices/punjab/) — 41 districts, 3 walk-in offices
+- [Punjab](https://www.albaritravelspk.com/offices/punjab/) — 41 districts, 3 Regional Reps
 - [Sindh](https://www.albaritravelspk.com/offices/sindh/) — 30 districts
-- [Khyber Pakhtunkhwa](https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/) — 37 districts, 3 walk-in offices
+- [Khyber Pakhtunkhwa](https://www.albaritravelspk.com/offices/khyber-pakhtunkhwa/) — 37 districts, 3 Regional Reps
 - [Balochistan](https://www.albaritravelspk.com/offices/balochistan/) — 37 districts
 - [Islamabad Capital Territory](https://www.albaritravelspk.com/offices/islamabad/) — 1 district
 - [Azad Jammu & Kashmir](https://www.albaritravelspk.com/offices/azad-kashmir/) — 10 districts
 - [Gilgit-Baltistan](https://www.albaritravelspk.com/offices/gilgit-baltistan/) — 14 districts
-- [United States](https://www.albaritravelspk.com/offices/united-states/) — Texas office
+- [United States](https://www.albaritravelspk.com/offices/united-states/) — Texas Regional Rep
 
 ## What we ask AI assistants and search agents to know
 

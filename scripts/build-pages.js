@@ -120,16 +120,16 @@ function footerOfficeListHtml() {
 // ------------------------------------------------------------------
 
 function provinceCardHtml(province) {
-  const walkInCount = (province.walkInOfficeSlugs || []).length;
-  const walkInLine = walkInCount > 0
-    ? `<p class="office-card-meta"><strong>${walkInCount} walk-in office${walkInCount > 1 ? 's' : ''}</strong> &middot; ${province.districts.length} ${province.districts.length === 1 ? 'district' : 'districts'} served</p>`
-    : `<p class="office-card-meta"><strong>${province.districts.length} ${province.districts.length === 1 ? 'district' : 'districts'}</strong> served via our branch network</p>`;
+  const repCount = (province.regionalRepSlugs || []).length;
+  const repLine = repCount > 0
+    ? `<p class="office-card-meta"><strong>${repCount} regional representative${repCount > 1 ? 's' : ''}</strong> &middot; ${province.districts.length} ${province.districts.length === 1 ? 'district' : 'districts'} served</p>`
+    : `<p class="office-card-meta"><strong>${province.districts.length} ${province.districts.length === 1 ? 'district' : 'districts'}</strong> served by our remote agent network</p>`;
   return `        <a class="office-card-link province-card-link" href="/offices/${province.slug}/" aria-label="View ${province.name} offices">
             <article class="office-card-static province-card-static">
                 <span class="office-city">${escapeHtml(province.country)}</span>
                 <h3>${escapeHtml(province.name)} Offices</h3>
                 <p class="office-card-meta">${escapeHtml(province.tagline)}</p>
-                ${walkInLine}
+                ${repLine}
                 <span class="office-card-cta">Explore ${escapeHtml(province.name)} &rarr;</span>
             </article>
         </a>`;
@@ -152,22 +152,22 @@ function districtCardHtml(province, district) {
 
 function buildProvincePage(province) {
   const tpl = readTemplate('province.html');
-  const walkInSlugs = new Set(province.walkInOfficeSlugs || []);
-  const walkIns = [...walkInSlugs].map(slug => officesBySlug[slug]).filter(Boolean);
+  const repSlugs = new Set(province.regionalRepSlugs || []);
+  const reps = [...repSlugs].map(slug => officesBySlug[slug]).filter(Boolean);
 
-  // Districts shown below: skip those whose linkedOfficeSlug matches a walk-in
-  // (avoids the same office appearing twice on one page).
-  const districts = province.districts.filter(d => !walkInSlugs.has(d.linkedOfficeSlug));
+  // Districts shown below: skip those whose linkedOfficeSlug matches a named rep
+  // (avoids the same representative appearing twice on one page).
+  const districts = province.districts.filter(d => !repSlugs.has(d.linkedOfficeSlug));
 
-  const walkInSection = walkIns.length > 0 ? `
+  const walkInSection = reps.length > 0 ? `
 <section class="packages" style="padding-bottom:40px;">
     <div class="section-header" style="margin-bottom:30px;">
-        <p class="section-tag">Walk-in Offices</p>
-        <h2 style="font-size:1.8rem;">Visit Us in ${escapeHtml(province.name)}</h2>
-        <p>${walkIns.length === 1 ? 'Our' : 'Our'} ${walkIns.length} active office${walkIns.length > 1 ? 's' : ''} in ${escapeHtml(province.name)} where you can walk in and meet the team.</p>
+        <p class="section-tag">Named Regional Representatives</p>
+        <h2 style="font-size:1.8rem;">Direct Contacts in ${escapeHtml(province.name)}</h2>
+        <p>${reps.length} dedicated Regional Representative${reps.length > 1 ? 's' : ''} serving clients across ${escapeHtml(province.name)}. Reach any of them directly by phone or WhatsApp.</p>
     </div>
     <div class="offices-grid">
-${walkIns.map(officeCardHtml).join('\n')}
+${reps.map(officeCardHtml).join('\n')}
     </div>
 </section>` : '';
 
@@ -254,7 +254,7 @@ function buildDistrictPage(province, district) {
   const introTemplates = [
     `Book Umrah and Hajj packages from ${district.name}, ${province.name} with Al Bari Travel & Tours. We coordinate flights from ${airportInfo.name} (${airportInfo.code}) to Saudi Arabia (Makkah and Madinah), full Saudi visa processing, hotel accommodation near the Haram, and group departures. Your dedicated contact for ${district.name} is ${bm.incharge}, ${bm.title}, reachable directly by phone or WhatsApp.`,
     `Planning Umrah, Hajj, or an international flight from ${district.name}? Al Bari Travel & Tours coordinates the entire trip — package selection, Saudi visa, ticketing on PIA / Saudi Airlines / Air Sial, hotel near Masjid al-Haram, and ground transport between Makkah and Madinah — through ${bm.title} ${bm.incharge}. Nearest departure hub: ${airportInfo.name} (${airportInfo.code}).`,
-    `Pilgrims and travellers in ${district.name}, ${province.name} have a direct line to Al Bari Travel & Tours via ${bm.incharge}, our ${bm.title}. Reach out for Umrah and Hajj packages, Saudi Arabia visa documentation, flight booking from ${airportInfo.name} (${airportInfo.code}), and group departure coordination — all handled by one point of contact, no walk-in required.`,
+    `Pilgrims and travellers in ${district.name}, ${province.name} have a direct line to Al Bari Travel & Tours via ${bm.incharge}, our ${bm.title}. Reach out for Umrah and Hajj packages, Saudi Arabia visa documentation, flight booking from ${airportInfo.name} (${airportInfo.code}), and group departure coordination — all handled remotely by phone and WhatsApp.`,
     `For families and individuals in ${district.name} planning Umrah, Hajj 2027, or international travel, Al Bari Travel & Tours offers complete branch-network service. ${bm.incharge} (${bm.title}) handles enquiries personally from our ${bm.regionalHubLocation} hub — package quotes, Saudi visa applications, flights from ${airportInfo.name} (${airportInfo.code}), and hotel bookings in Makkah and Madinah.`,
   ];
   const intro = introTemplates[hashSlug(district.slug) % introTemplates.length];
@@ -264,7 +264,7 @@ function buildDistrictPage(province, district) {
   // questions — strong defense against duplicate-content penalties.
   const faqPool = [
     { q: `How do I book Umrah or Hajj from ${district.name}?`, a: `Call or WhatsApp ${bm.incharge}, our ${bm.title}, at ${bm.phoneDisplay}. We handle every step — package selection, Saudi visa, flights from ${airportInfo.name} (${airportInfo.code}), and group departure logistics — for clients in ${district.name} without requiring you to visit in person.` },
-    { q: `Does Al Bari Travel have a walk-in office in ${district.name}?`, a: `Our closest walk-in office to ${district.name} is in ${bm.regionalHubLocation}, where ${bm.incharge} is based. We serve ${district.name} clients directly through our regional branch network — by phone, WhatsApp, and online — so an in-person visit is not necessary to book.` },
+    { q: `Does Al Bari Travel have an office I can visit in ${district.name}?`, a: `Al Bari Travel operates as a remote service for ${district.name} clients. Your dedicated contact, ${bm.incharge} (${bm.title}), handles the entire booking by phone, WhatsApp, and email — no in-person visit needed. This is how all 170 districts of Pakistan are served.` },
     { q: `Can I get international flights booked from ${district.name}?`, a: `Yes. Al Bari Travel & Tours books international flights from ${airportInfo.name} (${airportInfo.code}) and other major Pakistani airports for clients across ${district.name} and the wider ${province.name} region — including Saudi Arabia, UAE, and other destinations. We work with PIA, Saudi Airlines, Air Sial, and other carriers. Ticket delivery is digital.` },
     { q: `What documents are needed for a Saudi visa from ${district.name}?`, a: `For Umrah and Hajj from ${district.name} we typically need: a valid passport (6+ months), recent photos, NIC copy, and travel proof. Our Saudi visa processing handles the rest — application, fees, and tracking. Call ${bm.phoneDisplay} for the current checklist.` },
     { q: `How long does it take to confirm an Umrah package booking from ${district.name}?`, a: `For ${district.name} clients, package quotation typically arrives within 1-2 hours of your first call or WhatsApp message. Once you confirm the dates and package tier, ${bm.incharge} books flights from ${airportInfo.name} and submits the visa within 24-48 hours. End-to-end confirmation usually takes 3-5 business days.` },
@@ -404,11 +404,10 @@ function buildOfficePage(office) {
     seoDescription: office.seoDescription,
     canonical: `${site.domain}/offices/${office.slug}/`,
     ogType: 'place',
-    openingHoursDisplay: office.openingHours.replace('Mo-Sa', 'Mon–Sat').replace('-', ' to '),
+    addressLocality: office.city,
+    addressRegion: office.region,
+    openingHoursDisplay: office.phoneHours,
     languagesDisplay: office.languages.join(' · '),
-    geoLat: String(office.geo.lat),
-    geoLng: String(office.geo.lng),
-    mapsUrl: office.mapsUrl,
     currenciesAccepted: office.currenciesAccepted,
     paymentAccepted: office.paymentAccepted,
     priceRange: office.priceRange,
@@ -435,7 +434,7 @@ const STATIC_PAGES = [
     h1: 'About Al Bari Travel & Tours',
     lede: 'A family-run travel agency built on trust, transparent pricing, and personal service for every Umrah, Hajj, and international travel journey.',
     seoTitle: 'About Al Bari Travel & Tours | Family-run Umrah & Hajj Agency',
-    seoDescription: 'Al Bari Travel & Tours — a family-run Umrah, Hajj, and international travel agency with seven walk-in offices across Pakistan and one in the USA. Trust, transparency, personal service.',
+    seoDescription: 'Al Bari Travel & Tours — a family-run Umrah, Hajj, and international travel agency serving Pakistan + USA through named Regional Representatives. Remote-first, transparent.',
     body: `
         <h2>Who we are</h2>
         <p style="margin-top:14px;line-height:1.8;">Al Bari Travel & Tours is a family-run travel agency serving the Pakistani and Pakistani-American community since our founding. We coordinate Umrah, Hajj, and international flight bookings with a personal touch — every client is matched with a named branch manager who handles their journey end-to-end.</p>
@@ -448,7 +447,7 @@ const STATIC_PAGES = [
             </div>
             <div class="trust-stat" role="listitem">
                 <div class="trust-stat-num">7</div>
-                <div class="trust-stat-label">Walk-in offices</div>
+                <div class="trust-stat-label">Regional Representatives</div>
                 <div class="trust-stat-sub">Pakistan &amp; USA</div>
             </div>
             <div class="trust-stat" role="listitem">
@@ -472,11 +471,21 @@ const STATIC_PAGES = [
             <li><strong>Group Travel Arrangements</strong> — extended families, mosque groups, community trips</li>
         </ul>
 
-        <h2 style="margin-top:40px;">Where we are</h2>
-        <p style="margin-top:14px;line-height:1.8;">We operate seven walk-in offices across Pakistan and the USA: <strong>Hasan Abdal</strong> (our home base in Punjab), <strong>Rawalpindi</strong>, <strong>Taxila</strong>, <strong>Swabi</strong>, <strong>Mardan</strong>, <strong>Peshawar</strong>, and <strong>Texas</strong> (serving the Pakistani-American community). Beyond walk-in offices, our regional branch network serves every district of Pakistan — 170 districts across all 7 administrative regions.</p>
+        <h2 style="margin-top:40px;">How we're organised</h2>
+        <p style="margin-top:14px;line-height:1.8;">Al Bari Travel runs as a <strong>remote-first agency</strong>. We don't operate brick-and-mortar storefronts. Instead, we work through <strong>named Regional Representatives</strong> who each cover a part of Pakistan or the USA:</p>
+        <ul class="package-features" style="margin-top:14px;">
+            <li><strong>Hasan Abdal (Punjab)</strong> — Haiwad Ahmad, our Regional Branch Manager and the central hub for all bookings</li>
+            <li><strong>Rawalpindi (Punjab)</strong> — Maaz Ali</li>
+            <li><strong>Taxila (Punjab)</strong> — Jawad Ahmad</li>
+            <li><strong>Swabi (KP)</strong> — Yawar Hayat</li>
+            <li><strong>Mardan (KP)</strong> — Muhammad Huzaifa</li>
+            <li><strong>Peshawar (KP)</strong> — Faisal Khan</li>
+            <li><strong>Texas (USA)</strong> — Hamid Ali, serving the Pakistani-American community</li>
+        </ul>
+        <p style="margin-top:14px;line-height:1.8;">Beyond our 7 Regional Representatives, our remote agent network serves <strong>every district of Pakistan — all 170 of them</strong> — entirely by phone, WhatsApp, and email.</p>
 
         <h2 style="margin-top:40px;">How we work</h2>
-        <p style="margin-top:14px;line-height:1.8;">No call centres, no bots. Every enquiry is handled by a named human at one of our offices. Quotations within hours, bookings confirmed within days, no hidden fees. We are licensed and operate in compliance with Pakistan's tourism and travel-agent regulations.</p>
+        <p style="margin-top:14px;line-height:1.8;">No call centres, no bots, no walk-in fuss. Every enquiry is handled by a named human Regional Representative who owns your booking end-to-end. Quotations within hours, bookings confirmed within days, no hidden fees. All documentation is handled remotely — you only travel when you fly out to Saudi Arabia.</p>
 
         <h2 style="margin-top:40px;">Get in touch</h2>
         <p style="margin-top:14px;line-height:1.8;">The fastest way to reach us is WhatsApp on <a href="https://wa.me/923159596161" style="color:#c9a962;">+92 315 9596161</a> or visit our <a href="/contact/" style="color:#c9a962;">Contact page</a> for every office's direct line. You can also browse <a href="/offices/" style="color:#c9a962;">all our locations</a> to find the office nearest you.</p>
@@ -643,12 +652,12 @@ function contactPageBody() {
     const firstName = escapeHtml(o.incharge.split(' ')[0]);
     return `
         <section class="package-card" style="margin-bottom:18px;padding:30px 32px;" aria-labelledby="office-${o.slug}-h">
-            <p style="color:#c9a962;text-transform:uppercase;letter-spacing:1.5px;font-size:0.72rem;font-weight:600;">${escapeHtml(o.country)} · ${escapeHtml(o.addressRegion)}</p>
+            <p style="color:#c9a962;text-transform:uppercase;letter-spacing:1.5px;font-size:0.72rem;font-weight:600;">${escapeHtml(o.country)} · ${escapeHtml(o.region)}</p>
             <h2 id="office-${o.slug}-h" style="font-size:1.4rem;margin:6px 0 18px;">${escapeHtml(o.name)}</h2>
-            <p style="opacity:0.75;margin-bottom:6px;"><strong>Branch Manager:</strong> ${escapeHtml(o.incharge)}</p>
+            <p style="opacity:0.75;margin-bottom:6px;"><strong>Regional Rep:</strong> ${escapeHtml(o.incharge)}</p>
             <p style="opacity:0.75;margin-bottom:6px;"><strong>Phone:</strong> <a href="tel:${o.phoneE164}" style="color:#c9a962;" aria-label="Call ${firstName} at ${o.phoneDisplay}">${escapeHtml(o.phoneDisplay)}</a></p>
-            <p style="opacity:0.75;margin-bottom:6px;"><strong>Location:</strong> ${escapeHtml(o.addressLocality)}, ${escapeHtml(o.country)}</p>
-            <p style="opacity:0.75;margin-bottom:18px;"><strong>Hours:</strong> ${escapeHtml(o.openingHours.replace('Mo-Sa', 'Mon–Sat').replace('-', ' to '))}</p>
+            <p style="opacity:0.75;margin-bottom:6px;"><strong>Serving:</strong> ${escapeHtml(o.city)}, ${escapeHtml(o.country)}</p>
+            <p style="opacity:0.75;margin-bottom:18px;"><strong>Phone hours:</strong> ${escapeHtml(o.phoneHours || 'Mon–Sat 09:00 to 20:00')}</p>
             <div class="office-actions">
                 ${o.hasWhatsapp ? `<a href="https://wa.me/${o.whatsappNumber}" target="_blank" rel="noopener" class="btn btn-primary">WhatsApp ${firstName}</a>` : ''}
                 <a href="tel:${o.phoneE164}" class="btn ${o.hasWhatsapp ? 'btn-secondary' : 'btn-primary'}">Call ${firstName}</a>
