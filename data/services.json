@@ -1,0 +1,196 @@
+{
+  "_note": "Five top-level service categories shown on the homepage + /services/ landing. Each renders as a card on the homepage AND a dedicated /services/{slug}/ page. To add a new service: append a new entry here and run `node scripts/build-pages.js`.",
+  "services": [
+    {
+      "slug": "hajj-and-umrah",
+      "name": "Hajj & Umrah",
+      "shortName": "Hajj & Umrah",
+      "tagline": "Complete pilgrimage packages — Economy through Premium tiers",
+      "featured": true,
+      "icon": "🕋",
+      "cardBullets": [
+        "Economy + Premium + Family tiers",
+        "Group + individual departures",
+        "Saudi visa included",
+        "Hotels near Masjid al-Haram",
+        "Ziyarat tours in Madinah"
+      ],
+      "seoTitle": "Hajj & Umrah Packages from Pakistan & USA | Al Bari Travel",
+      "seoDescription": "Book Umrah and Hajj packages from Pakistan or the USA. Saudi visa, flights, Makkah/Madinah hotels, Ziyarat tours. Call +92 315 9596161.",
+      "heroEyebrow": "Our Flagship Service",
+      "heroHeading": "Hajj & Umrah Packages",
+      "heroLede": "Complete pilgrimage packages from Pakistan and the USA — Economy through Premium tiers, Saudi visa included, hotels near the Haram, full Ziyarat program in Madinah.",
+      "intro": "Al Bari Travel & Tours has been coordinating Hajj and Umrah for Pakistani and Pakistani-American families since 2018. Every package includes round-trip international flights, Saudi visa processing, hotel accommodation chosen for proximity to Masjid al-Haram (Makkah) and Masjid an-Nabawi (Madinah), ground transport between cities, and a guided Ziyarat tour of historical Islamic sites. Your Regional Representative handles every step personally — no call centres, no hand-offs.",
+      "whatsIncluded": [
+        "Round-trip international flights from any major Pakistani airport (or US gateway for the Texas office)",
+        "Saudi Arabia visa application and processing",
+        "Hotel accommodation in Makkah and Madinah (tier varies by package — 3-star Economy through 5-star Premium)",
+        "Ground transport between Jeddah/Madinah airports, Makkah, and Madinah",
+        "Guided Ziyarat tour covering Masjid an-Nabawi, Mount Uhud, Quba Mosque, and other historical sites",
+        "Pre-departure briefing covering ihram, the rites of Umrah/Hajj, and what to pack",
+        "24/7 in-country support during your stay"
+      ],
+      "tiers": [
+        { "name": "Economy Umrah", "duration": "10 days / 9 nights", "highlights": ["3-star hotels", "Shared transport", "Round-trip flights", "Saudi visa included"] },
+        { "name": "Premium Umrah", "duration": "12 days / 11 nights", "highlights": ["5-star hotels with Haram view", "Private transport", "Personal guide", "Special Ziyarat program"] },
+        { "name": "Family Umrah", "duration": "10–14 days", "highlights": ["Multi-room hotel suites", "Family-paced Ziyarat", "Pre-departure briefing for first-timers"] },
+        { "name": "Hajj Package", "duration": "25–40 days", "highlights": ["Group departure with synchronised flights", "Accommodation in Makkah, Mina, Arafat, Madinah", "Licensed mu'allim (Saudi guide)", "Hajj rites coordination"] }
+      ],
+      "faqs": [
+        { "q": "What is the difference between Hajj and Umrah?", "a": "Hajj is the obligatory pilgrimage every able Muslim must perform once in their lifetime, on specific days of Dhu'l-Hijjah. Umrah is a non-obligatory pilgrimage that can be performed any time of year. From Pakistan, Umrah trips typically last 10–14 days; Hajj trips run 25–40 days because of the multi-stage rites." },
+        { "q": "What documents do I need?", "a": "A valid passport with at least 6 months of validity, recent passport-size photos, an NIC copy, and proof of travel (we provide this from our booking). For Hajj you also need to be vaccinated for meningitis (we coordinate this with you). Children require their own passports and NICs." },
+        { "q": "How early should I book?", "a": "For Umrah, 2–4 weeks before your travel date is comfortable. For Hajj, book as early as possible — 6+ months ideally — because the Saudi government allocates limited Hajj visa quotas per country and good hotel inventory near the Haram books out fast." },
+        { "q": "Are family packages available?", "a": "Yes. We tailor hotel categories, room types, and Ziyarat pacing for families of any size — couples, parents with adult children, and multi-generational groups. Tell your Regional Representative your group composition and we'll quote accordingly." }
+      ],
+      "primaryCta": "Get a Pilgrimage Quote"
+    },
+    {
+      "slug": "airline-tickets",
+      "name": "Airline Tickets",
+      "shortName": "Airline Tickets",
+      "tagline": "International flights with major carriers — best-fare matching",
+      "featured": false,
+      "icon": "✈️",
+      "cardBullets": [
+        "All major Pakistani airports",
+        "PIA, Saudi Airlines, Air Sial, Emirates",
+        "E-tickets within hours",
+        "Best-fare matching",
+        "24/7 booking support"
+      ],
+      "seoTitle": "International Flight Booking from Pakistan | Al Bari Travel",
+      "seoDescription": "Book international flights from any Pakistani airport. PIA, Saudi Airlines, Air Sial, AirBlue, Emirates, Qatar Airways. Best-fare matched. Call +92 315 9596161.",
+      "heroEyebrow": "Flight Booking",
+      "heroHeading": "International Airline Tickets",
+      "heroLede": "Book international flights from any major Pakistani airport — Saudi Arabia, UAE, USA, Canada, UK, and beyond — with best-fare matching across all major carriers.",
+      "intro": "Al Bari Travel issues international airline tickets from every major Pakistani airport — Allama Iqbal Lahore (LHE), Jinnah Karachi (KHI), Islamabad (ISB), Bacha Khan Peshawar (PEW), Multan (MUX), Faisalabad (LYP), Sialkot (SKT), and others. We work with all major regional carriers including PIA, Saudi Airlines, Air Sial, AirBlue, Emirates, Qatar Airways, and Etihad. E-tickets are delivered digitally within hours of payment confirmation.",
+      "whatsIncluded": [
+        "One-way, return, and multi-city itineraries",
+        "Economy, Business, and First class options",
+        "All major Pakistani departure airports",
+        "Best-fare comparison across PIA, Saudi Airlines, Air Sial, AirBlue, Qatar Airways, Emirates, Etihad",
+        "E-ticket delivery within hours of payment",
+        "Re-booking and date-change assistance",
+        "Group and family bookings with bulk-fare discounts where available"
+      ],
+      "faqs": [
+        { "q": "Which airlines do you book?", "a": "All major carriers serving Pakistan: PIA, Saudi Airlines (Saudia), Air Sial, AirBlue, Qatar Airways, Emirates, Etihad, Turkish Airlines, Oman Air, and others depending on route. We compare fares across them and recommend the best value for your dates." },
+        { "q": "Which Pakistani airports can I fly from?", "a": "All major international airports: Allama Iqbal Lahore (LHE), Jinnah Karachi (KHI), Islamabad (ISB), Bacha Khan Peshawar (PEW), Multan (MUX), Faisalabad (LYP), Sialkot (SKT), Sukkur (SKZ), Quetta (UET), and others as available." },
+        { "q": "How fast do I get my ticket?", "a": "E-tickets are typically delivered within 2–4 hours of payment confirmation during business hours, often faster. For complex multi-city itineraries we may take up to 24 hours." },
+        { "q": "Can I change or cancel a ticket?", "a": "Yes, subject to the airline's fare rules. We handle re-booking and cancellation on your behalf. Costs depend on the fare class — some are non-refundable, others fully flexible. Your Regional Representative will brief you on the fare rules before you book." }
+      ],
+      "primaryCta": "Get a Flight Quote"
+    },
+    {
+      "slug": "student-visas",
+      "name": "Student Visas",
+      "shortName": "Student Visas",
+      "tagline": "Study-abroad applications — UK, USA, Canada, Australia",
+      "featured": false,
+      "icon": "🎓",
+      "cardBullets": [
+        "UK, USA, Canada, Australia",
+        "Application preparation",
+        "Document attestation",
+        "Embassy appointment booking",
+        "Status tracking"
+      ],
+      "seoTitle": "Student Visa Services Pakistan — UK, USA, Canada | Al Bari Travel",
+      "seoDescription": "Study abroad visa applications for UK, USA, Canada, Australia. Document review, embassy booking, status tracking. Pakistani student visa specialists. Call +92 315 9596161.",
+      "heroEyebrow": "Visa Services",
+      "heroHeading": "Student Visa Applications",
+      "heroLede": "End-to-end student visa support for Pakistani students applying to universities in the UK, USA, Canada, Australia, and other study destinations.",
+      "intro": "Studying abroad starts with a complete, well-prepared visa application — that's where we come in. Al Bari Travel helps Pakistani students assemble the right documents, prepare for embassy interviews, book appointment slots, and track applications through to decision. We work with applications to the UK (Tier 4 / Student Route), USA (F-1), Canada (Study Permit), Australia (subclass 500), and other major study destinations.",
+      "whatsIncluded": [
+        "Document checklist review tailored to your destination and university",
+        "CAS / I-20 / Letter of Acceptance verification and supporting documents",
+        "Financial documentation guidance (bank statements, sponsor letters, affidavits)",
+        "Embassy appointment booking",
+        "Application form completion assistance",
+        "Mock interview preparation",
+        "Status tracking through to decision"
+      ],
+      "faqs": [
+        { "q": "Which countries do you handle student visas for?", "a": "UK, USA, Canada, Australia primarily — plus Germany, France, Ireland, New Zealand, and Malaysia as commonly requested. Tell us your university acceptance and destination and we'll confirm what's needed." },
+        { "q": "How long does the application take?", "a": "From document preparation to decision: typically 4–8 weeks depending on the country and the embassy's processing time. UK and Canada are usually faster; USA varies by consulate. Start early — at least 8 weeks before your intake." },
+        { "q": "Do you guarantee visa approval?", "a": "No agent can guarantee visa approval — the decision rests with the embassy. What we guarantee is a complete, error-free application with all supporting documentation in the right format. A well-prepared application has a significantly higher approval rate." },
+        { "q": "What documents do I need?", "a": "At minimum: valid passport, university acceptance letter (CAS / I-20 / LOA), financial proof, academic transcripts, English-language test results (IELTS/TOEFL/PTE), and police clearance certificate. Exact list varies by country — your Regional Representative will give you a custom checklist." }
+      ],
+      "primaryCta": "Start Visa Application"
+    },
+    {
+      "slug": "visit-visas",
+      "name": "Visit Visas",
+      "shortName": "Visit Visas",
+      "tagline": "Tourist & family visit visas worldwide",
+      "featured": false,
+      "icon": "🌍",
+      "cardBullets": [
+        "Saudi Arabia, UAE, Schengen",
+        "UK, USA, Canada",
+        "Family visit support",
+        "Document attestation",
+        "Online tracking"
+      ],
+      "seoTitle": "Visit Visa Services Pakistan — Saudi, UAE, Schengen, UK, USA | Al Bari Travel",
+      "seoDescription": "Tourist and family visit visa applications from Pakistan. Saudi Arabia, UAE, Schengen, UK, USA, Canada. Document attestation, embassy booking, online tracking.",
+      "heroEyebrow": "Visa Services",
+      "heroHeading": "Visit Visa Applications",
+      "heroLede": "Tourist and family-visit visa support for popular destinations — Saudi Arabia, UAE, Schengen, UK, USA, Canada — handled end-to-end from your home.",
+      "intro": "Whether you're planning a family visit to relatives abroad or a leisure trip, Al Bari Travel handles the visa application from document preparation through to embassy submission and tracking. We support tourist and family-visit applications for all major destinations including Saudi Arabia (Umrah/tourist), UAE, Schengen (26 European countries on one visa), UK, USA, Canada, Australia, Malaysia, Singapore, and Turkey.",
+      "whatsIncluded": [
+        "Application form completion",
+        "Document checklist and review",
+        "Invitation letter verification (for family visit visas)",
+        "Document attestation where required",
+        "Embassy appointment booking",
+        "Travel insurance coordination",
+        "Status tracking through to decision",
+        "Re-application support if needed"
+      ],
+      "faqs": [
+        { "q": "Which countries' visit visas do you process?", "a": "Saudi Arabia (tourist + Umrah), UAE, Schengen (26 European countries), UK, USA, Canada, Australia, Malaysia, Singapore, Turkey, Thailand, and most other tourist-friendly destinations from Pakistan." },
+        { "q": "How long does processing take?", "a": "Schengen: 15–30 days. UK: 3 weeks. USA: 1–3 months depending on consulate appointment availability. UAE: 3–5 working days. Saudi tourist: 24–48 hours. Apply as early as your dates allow." },
+        { "q": "Do I need an invitation letter for a family visit?", "a": "Most destinations require one when visiting family — UK, Schengen, USA, Canada all do. Your host abroad sends the invitation along with proof of their status (visa, citizenship) and address. We tell you exactly what's needed." }
+      ],
+      "primaryCta": "Apply for Visit Visa"
+    },
+    {
+      "slug": "work-visas",
+      "name": "Work Visas",
+      "shortName": "Work Visas",
+      "tagline": "Employment visas for the Gulf — UAE, Saudi, Qatar",
+      "featured": false,
+      "icon": "💼",
+      "cardBullets": [
+        "UAE, Saudi Arabia, Qatar",
+        "Kuwait, Bahrain, Oman",
+        "Employment visa processing",
+        "Document attestation",
+        "Medical & police clearance"
+      ],
+      "seoTitle": "Gulf Work Visa Services Pakistan — UAE, Saudi, Qatar | Al Bari Travel",
+      "seoDescription": "Gulf employment visa processing for Pakistani workers. UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman. Document attestation, medical clearance support.",
+      "heroEyebrow": "Visa Services",
+      "heroHeading": "Gulf Work Visa Processing",
+      "heroLede": "End-to-end employment visa support for Pakistani workers heading to UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman.",
+      "intro": "If you've received a job offer from a Gulf employer, Al Bari Travel handles the full work-visa pipeline — document attestation, medical clearances, police clearance certificates, embassy stamping, and final visa issuance. We work with Pakistani workers heading to UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman, in both blue-collar and white-collar roles.",
+      "whatsIncluded": [
+        "Employer-letter and offer-letter verification",
+        "Document attestation (HEC, MoFA, embassy)",
+        "Medical clearance (GAMCA-approved centres)",
+        "Police clearance certificate (PCC) coordination",
+        "Visa stamping at relevant embassy",
+        "Travel ticket booking once visa is issued",
+        "Pre-departure briefing on Gulf country regulations"
+      ],
+      "faqs": [
+        { "q": "Which Gulf countries do you handle work visas for?", "a": "All six GCC countries: UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman. Each has its own visa process — we know them all." },
+        { "q": "What's GAMCA medical?", "a": "GAMCA (Gulf Approved Medical Centres Association) is the network of medical centres approved by GCC governments to conduct pre-departure health checks. Required for all work visas. We help you book at the nearest GAMCA-approved centre in Pakistan." },
+        { "q": "How long does the process take?", "a": "From job offer to visa-in-hand: typically 4–8 weeks. The slowest steps are document attestation and medical clearance. We run them in parallel to compress the timeline." },
+        { "q": "Do you find me a job?", "a": "No — we are a visa-processing agency, not a recruiter. You need an existing job offer from a Gulf employer to start the visa process. Once you have it, we handle everything else." }
+      ],
+      "primaryCta": "Enquire About Work Visa"
+    }
+  ]
+}

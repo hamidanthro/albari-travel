@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{>head}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.albaritravelspk.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.albaritravelspk.com/services/" },
+        { "@type": "ListItem", "position": 3, "name": "{{name}}", "item": "{{canonical}}" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "{{canonical}}#service",
+      "name": "{{name}}",
+      "description": "{{seoDescription}}",
+      "url": "{{canonical}}",
+      "provider": { "@id": "https://www.albaritravelspk.com/#organization" },
+      "areaServed": [
+        { "@type": "Country", "name": "Pakistan" },
+        { "@type": "Country", "name": "United States" }
+      ],
+      "audience": { "@type": "PeopleAudience", "audienceType": "Pakistani families and travellers" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{canonical}}#webpage",
+      "url": "{{canonical}}",
+      "name": "{{seoTitle}}",
+      "description": "{{seoDescription}}",
+      "about": { "@id": "{{canonical}}#service" },
+      "isPartOf": { "@id": "https://www.albaritravelspk.com/#website" },
+      "primaryImageOfPage": "https://www.albaritravelspk.com/og-default.svg",
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
+{{{faqSchema}}}
+</head>
+<body>
+<a href="#main-content" class="skip-to-content">Skip to main content</a>
+{{>header}}
+<main id="main-content">
+
+<section class="hero" style="height:auto;min-height:auto;padding:140px 40px 60px;">
+    <div class="hero-content" style="text-align:center;max-width:780px;">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a> <span aria-hidden="true">›</span>
+            <a href="/services/">Services</a> <span aria-hidden="true">›</span>
+            <span aria-current="page">{{name}}</span>
+        </nav>
+        <p class="hero-tag">{{heroEyebrow}}</p>
+        <h1 style="font-size:2.6rem;">{{heroHeading}}</h1>
+        <p style="opacity:0.85;margin-top:14px;">{{heroLede}}</p>
+        <div style="margin-top:28px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+            <a href="https://wa.me/923159596161" target="_blank" rel="noopener" class="btn btn-primary">{{primaryCta}}</a>
+            <a href="/contact/" class="btn btn-secondary">Contact a Representative</a>
+        </div>
+    </div>
+</section>
+
+<section class="packages">
+    <div style="max-width:820px;margin:0 auto;">
+        <div class="section-header" style="margin-bottom:30px;">
+            <p class="section-tag">Overview</p>
+            <h2 style="font-size:1.8rem;">What this service covers</h2>
+        </div>
+        <p style="color:rgba(255,255,255,0.85);line-height:1.8;font-size:1rem;">{{intro}}</p>
+
+        <div class="section-header" style="margin:50px 0 24px;">
+            <h2 style="font-size:1.6rem;text-align:left;">What's included</h2>
+        </div>
+        <ul class="package-features">
+{{{includedListHtml}}}
+        </ul>
+{{{tiersHtml}}}
+    </div>
+</section>
+
+<section class="packages" style="padding-top:30px;padding-bottom:30px;border-top:1px solid rgba(255,255,255,0.08);">
+    <div class="section-header">
+        <p class="section-tag">Common Questions</p>
+        <h2 style="font-size:1.8rem;">{{name}} — FAQ</h2>
+    </div>
+    <div style="max-width:820px;margin:30px auto 0;">
+{{{faqHtml}}}
+    </div>
+</section>
+
+<section class="packages" style="padding-top:30px;padding-bottom:80px;">
+    <div class="section-header">
+        <p class="section-tag">Ready to start?</p>
+        <h2 style="font-size:1.8rem;">Talk to a Regional Representative</h2>
+        <p>WhatsApp Haiwad Ahmad on <strong>+92 315 9596161</strong> — Mon–Sat 9 AM to 8 PM PKT. First quote within hours.</p>
+    </div>
+    <div style="text-align:center;margin-top:24px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://wa.me/923159596161" target="_blank" rel="noopener" class="btn btn-primary">WhatsApp Us</a>
+        <a href="/services/" class="btn btn-secondary">Browse All Services</a>
+    </div>
+</section>
+
+</main>
+{{>footer}}
+</body>
+</html>

@@ -32,6 +32,66 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.albaritravelspk.com/services/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Our Services — Al Bari Travel &amp; Tours</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.albaritravelspk.com/services/hajj-and-umrah/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Hajj &amp; Umrah — Al Bari Travel &amp; Tours</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.albaritravelspk.com/services/airline-tickets/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Airline Tickets — Al Bari Travel &amp; Tours</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.albaritravelspk.com/services/student-visas/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Student Visas — Al Bari Travel &amp; Tours</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.albaritravelspk.com/services/visit-visas/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Visit Visas — Al Bari Travel &amp; Tours</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.albaritravelspk.com/services/work-visas/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>Work Visas — Al Bari Travel &amp; Tours</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.albaritravelspk.com/contact/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>

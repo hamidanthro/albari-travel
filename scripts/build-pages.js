@@ -25,6 +25,7 @@ const DATA = path.join(ROOT, 'data');
 const site = readJson('site.json');
 const offices = readJson('offices.json').offices;
 const provinces = readJson('districts.json').provinces;
+const services = readJson('services.json').services;
 const officesBySlug = Object.fromEntries(offices.map(o => [o.slug, o]));
 
 // ------------------------------------------------------------------
@@ -455,6 +456,106 @@ function buildOfficePage(office) {
 }
 
 // ------------------------------------------------------------------
+// Service pages (Hajj & Umrah, Airline Tickets, Student Visas, etc.)
+// ------------------------------------------------------------------
+
+function serviceCardHtml(service) {
+  const featured = service.featured ? ' featured' : '';
+  const badge = service.featured ? `<span class="package-badge">Most Popular</span>` : '';
+  const bullets = service.cardBullets.map(b => `                    <li>${escapeHtml(b)}</li>`).join('\n');
+  return `            <a href="/services/${service.slug}/" class="package-card-link" style="text-decoration:none;color:inherit;display:block;">
+            <article class="package-card${featured}">
+                ${badge}
+                <div style="font-size:2rem;margin-bottom:14px;line-height:1;" aria-hidden="true">${service.icon}</div>
+                <h3>${escapeHtml(service.name)}</h3>
+                <p class="package-tagline" style="color:rgba(255,255,255,0.7);font-size:0.95rem;margin-bottom:18px;line-height:1.5;">${escapeHtml(service.tagline)}</p>
+                <ul class="package-features">
+${bullets}
+                </ul>
+                <span class="btn btn-primary" style="width:100%;text-align:center;display:block;">${escapeHtml(service.primaryCta)}</span>
+            </article>
+            </a>`;
+}
+
+function buildServicesLanding() {
+  const tpl = readTemplate('services-landing.html');
+  const ctx = {
+    seoTitle: 'Our Services | Al Bari Travel & Tours — Hajj, Umrah, Flights, Visas',
+    seoDescription: 'Al Bari Travel & Tours services: Hajj & Umrah packages, international flights, student visas, visit visas, and Gulf work visas. Pakistan + USA.',
+    canonical: `${site.domain}/services/`,
+    ogType: 'website',
+    serviceCards: services.map(serviceCardHtml).join('\n'),
+    footerOfficeList: footerOfficeListHtml(),
+    year: String(new Date().getFullYear()),
+  };
+  writeFile('services/index.html', render(tpl, ctx));
+}
+
+function buildServicePage(service) {
+  const tpl = readTemplate('service.html');
+
+  const includedListHtml = service.whatsIncluded
+    .map(item => `            <li>${escapeHtml(item)}</li>`)
+    .join('\n');
+
+  let tiersHtml = '';
+  if (service.tiers && service.tiers.length) {
+    const tierCards = service.tiers.map(t => `
+                <article class="package-card" style="padding:30px 28px;">
+                    <h3 style="font-size:1.3rem;">${escapeHtml(t.name)}</h3>
+                    <p class="package-tagline" style="color:#c9a962;font-size:0.85rem;margin-bottom:14px;text-transform:uppercase;letter-spacing:1.5px;">${escapeHtml(t.duration)}</p>
+                    <ul class="package-features">
+${t.highlights.map(h => `                        <li>${escapeHtml(h)}</li>`).join('\n')}
+                    </ul>
+                </article>`).join('\n');
+    tiersHtml = `
+        <div class="section-header" style="margin:50px 0 24px;">
+            <h2 style="font-size:1.6rem;text-align:left;">Package tiers</h2>
+        </div>
+        <div class="packages-grid">${tierCards}
+        </div>`;
+  }
+
+  const faqHtml = service.faqs.map(f => `
+        <details class="faq-item">
+            <summary><h3 style="display:inline;margin:0;font-size:1.1rem;">${escapeHtml(f.q)}</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>${escapeHtml(f.a)}</p></div>
+        </details>`).join('');
+
+  const faqSchema = `<script type="application/ld+json">
+${JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': service.faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a }
+  }))
+}, null, 2)}
+</script>`;
+
+  const ctx = {
+    name: service.name,
+    heroEyebrow: service.heroEyebrow,
+    heroHeading: service.heroHeading,
+    heroLede: service.heroLede,
+    intro: service.intro,
+    primaryCta: service.primaryCta,
+    canonical: `${site.domain}/services/${service.slug}/`,
+    seoTitle: service.seoTitle,
+    seoDescription: service.seoDescription,
+    ogType: 'website',
+    includedListHtml,
+    tiersHtml,
+    faqHtml,
+    faqSchema,
+    footerOfficeList: footerOfficeListHtml(),
+    year: String(new Date().getFullYear()),
+  };
+  writeFile(`services/${service.slug}/index.html`, render(tpl, ctx));
+}
+
+// ------------------------------------------------------------------
 // Static pages (About, Contact, Privacy, Terms)
 // ------------------------------------------------------------------
 
@@ -822,6 +923,14 @@ function buildSitemap() {
     { loc: `${site.domain}/`, priority: '1.0', changefreq: 'weekly', image: ogImage, imageTitle: 'Al Bari Travel & Tours — Umrah, Hajj, International Flights' },
     { loc: `${site.domain}/offices/`, priority: '0.9', changefreq: 'monthly', image: ogImage, imageTitle: 'Al Bari Travel & Tours offices in Pakistan and USA' },
     { loc: `${site.domain}/about/`, priority: '0.6', changefreq: 'yearly', image: ogImage, imageTitle: 'About Al Bari Travel & Tours' },
+    { loc: `${site.domain}/services/`, priority: '0.9', changefreq: 'monthly', image: ogImage, imageTitle: 'Our Services — Al Bari Travel & Tours' },
+    ...services.map(s => ({
+      loc: `${site.domain}/services/${s.slug}/`,
+      priority: '0.85',
+      changefreq: 'monthly',
+      image: ogImage,
+      imageTitle: `${s.name} — Al Bari Travel & Tours`,
+    })),
     { loc: `${site.domain}/contact/`, priority: '0.8', changefreq: 'monthly', image: ogImage, imageTitle: 'Contact Al Bari Travel & Tours' },
     { loc: `${site.domain}/glossary/`, priority: '0.5', changefreq: 'yearly', image: ogImage, imageTitle: 'Umrah & Hajj Glossary — Al Bari Travel' },
     { loc: `${site.domain}/privacy/`, priority: '0.3', changefreq: 'yearly' },
@@ -1001,6 +1110,12 @@ if (target === 'all' || target === 'provinces') {
 if (target === 'all' || target === 'static') {
   console.log('building static pages (about, contact, privacy, terms)...');
   buildStaticPages();
+}
+
+if (target === 'all' || target === 'services') {
+  console.log('building services landing + individual service pages...');
+  buildServicesLanding();
+  services.forEach(buildServicePage);
 }
 
 if (target === 'all' || target === 'sitemap') {
