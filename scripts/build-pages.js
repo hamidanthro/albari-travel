@@ -195,6 +195,37 @@ function hashSlug(s) {
   return Math.abs(h);
 }
 
+// =====================================================================
+// Date helpers — DO NOT hardcode years in copy. Use these.
+//
+// Build-time computation means a re-run of `node scripts/build-pages.js`
+// keeps everything current. Years drift as follows:
+//   - Hajj 2026 = May 25-30, 2026
+//   - Hajj 2027 = May 14-19, 2027
+//   - Hajj 2028 = May 4-9, 2028  (then April from 2029+ as it walks back)
+// Cutoff rule: month >= July → upcoming Hajj is next Gregorian year.
+// This is safe for the next 10+ years because Hajj keeps moving earlier.
+//
+// To refresh dates: `cd albari-travel && node scripts/build-pages.js`
+// then commit. Consider scheduling this via GitHub Actions monthly.
+// =====================================================================
+function currentYear() {
+  return new Date().getFullYear();
+}
+function upcomingHajjYear() {
+  const now = new Date();
+  // Cutoff = June 1. Before June: this year's Hajj is still upcoming.
+  // From June onwards: this year's Hajj has passed, upcoming is next year.
+  // Edge case: Hajj migrates ~11 days earlier each Gregorian year. From 2028+
+  // Hajj ends in early May / late April. There's a ~10-day window after Hajj
+  // ends but before June 1 where this rule lags by one year. Manually override
+  // the HAJJ_YEAR const if that matters during a build window.
+  return now.getMonth() >= 5 ? now.getFullYear() + 1 : now.getFullYear();
+}
+const HAJJ_YEAR = upcomingHajjYear();
+const CURRENT_YEAR = currentYear();
+console.log(`  context: currentYear=${CURRENT_YEAR}, upcomingHajjYear=${HAJJ_YEAR}`);
+
 // Nearest international airport per district — meaningful entity signal for SEO + real
 // info for the user. Mapping is by region + a few district overrides for major hubs.
 function nearestAirport(province, district) {
@@ -255,7 +286,7 @@ function buildDistrictPage(province, district) {
     `Book Umrah and Hajj packages from ${district.name}, ${province.name} with Al Bari Travel & Tours. We coordinate flights from ${airportInfo.name} (${airportInfo.code}) to Saudi Arabia (Makkah and Madinah), full Saudi visa processing, hotel accommodation near the Haram, and group departures. Your dedicated contact for ${district.name} is ${bm.incharge}, ${bm.title}, reachable directly by phone or WhatsApp.`,
     `Planning Umrah, Hajj, or an international flight from ${district.name}? Al Bari Travel & Tours coordinates the entire trip — package selection, Saudi visa, ticketing on PIA / Saudi Airlines / Air Sial, hotel near Masjid al-Haram, and ground transport between Makkah and Madinah — through ${bm.title} ${bm.incharge}. Nearest departure hub: ${airportInfo.name} (${airportInfo.code}).`,
     `Pilgrims and travellers in ${district.name}, ${province.name} have a direct line to Al Bari Travel & Tours via ${bm.incharge}, our ${bm.title}. Reach out for Umrah and Hajj packages, Saudi Arabia visa documentation, flight booking from ${airportInfo.name} (${airportInfo.code}), and group departure coordination — all handled remotely by phone and WhatsApp.`,
-    `For families and individuals in ${district.name} planning Umrah, Hajj 2027, or international travel, Al Bari Travel & Tours offers complete branch-network service. ${bm.incharge} (${bm.title}) handles enquiries personally from our ${bm.regionalHubLocation} hub — package quotes, Saudi visa applications, flights from ${airportInfo.name} (${airportInfo.code}), and hotel bookings in Makkah and Madinah.`,
+    `For families and individuals in ${district.name} planning Umrah, Hajj ${HAJJ_YEAR}, or international travel, Al Bari Travel & Tours offers complete branch-network service. ${bm.incharge} (${bm.title}) handles enquiries personally from our ${bm.regionalHubLocation} hub — package quotes, Saudi visa applications, flights from ${airportInfo.name} (${airportInfo.code}), and hotel bookings in Makkah and Madinah.`,
   ];
   const intro = introTemplates[hashSlug(district.slug) % introTemplates.length];
 
@@ -268,7 +299,7 @@ function buildDistrictPage(province, district) {
     { q: `Can I get international flights booked from ${district.name}?`, a: `Yes. Al Bari Travel & Tours books international flights from ${airportInfo.name} (${airportInfo.code}) and other major Pakistani airports for clients across ${district.name} and the wider ${province.name} region — including Saudi Arabia, UAE, and other destinations. We work with PIA, Saudi Airlines, Air Sial, and other carriers. Ticket delivery is digital.` },
     { q: `What documents are needed for a Saudi visa from ${district.name}?`, a: `For Umrah and Hajj from ${district.name} we typically need: a valid passport (6+ months), recent photos, NIC copy, and travel proof. Our Saudi visa processing handles the rest — application, fees, and tracking. Call ${bm.phoneDisplay} for the current checklist.` },
     { q: `How long does it take to confirm an Umrah package booking from ${district.name}?`, a: `For ${district.name} clients, package quotation typically arrives within 1-2 hours of your first call or WhatsApp message. Once you confirm the dates and package tier, ${bm.incharge} books flights from ${airportInfo.name} and submits the visa within 24-48 hours. End-to-end confirmation usually takes 3-5 business days.` },
-    { q: `Can a group from ${district.name} travel together for Hajj 2027?`, a: `Yes — group Hajj from ${district.name} is one of the most popular services we coordinate. We arrange synchronised departure dates, group hotels in Makkah (near Masjid al-Haram) and Madinah (near Masjid an-Nabawi), shared ground transport, and a single point of contact through ${bm.incharge}. Minimum group size is typically 8 people, but smaller family groups are also supported. Hajj 2027 booking is open — reach out early for the best hotel inventory.` },
+    { q: `Can a group from ${district.name} travel together for Hajj ${HAJJ_YEAR}?`, a: `Yes — group Hajj from ${district.name} is one of the most popular services we coordinate. We arrange synchronised departure dates, group hotels in Makkah (near Masjid al-Haram) and Madinah (near Masjid an-Nabawi), shared ground transport, and a single point of contact through ${bm.incharge}. Minimum group size is typically 8 people, but smaller family groups are also supported. Hajj ${HAJJ_YEAR} booking is open — reach out early for the best hotel inventory.` },
     { q: `What payment options does Al Bari Travel accept from ${district.name} clients?`, a: `We accept cash, bank transfer, JazzCash, and Easypaisa from clients in ${district.name}. Bookings are confirmed once a deposit is received; the balance is due before the visa submission. ${bm.incharge} will walk you through the schedule on the first call.` },
     { q: `Does Al Bari Travel arrange airport transfers from ${district.name} to ${airportInfo.name}?`, a: `Most pilgrims from ${district.name} fly out of ${airportInfo.name} (${airportInfo.code}). We coordinate pickup arrangements where possible; specific routes and rates are confirmed once your booking is finalised. Contact ${bm.incharge} at ${bm.phoneDisplay} to discuss.` },
     { q: `Are family Umrah packages available for ${district.name} pilgrims?`, a: `Yes. Many of our ${district.name} clients travel as family groups — couples, parents with adult children, multi-generational. We tailor hotel categories near the Haram in Makkah and Madinah, room types, and Ziyarat tour pacing to suit the family. ${bm.incharge} can suggest packages once we understand the group composition.` },
@@ -372,6 +403,8 @@ ${JSON.stringify({
     faqHtml,
     faqSchema,
     howToSchema,
+    hajjYear: String(HAJJ_YEAR),
+    hajjDates: HAJJ_DATES[HAJJ_YEAR] ? `${new Date(HAJJ_DATES[HAJJ_YEAR].start).toLocaleDateString('en-GB',{day:'numeric',month:'long',timeZone:'UTC'})}–${new Date(HAJJ_DATES[HAJJ_YEAR].end).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}` : `mid-May ${HAJJ_YEAR}`,
     airportName: `${airportInfo.name} (${airportInfo.code})`,
     relatedDistrictsHtml,
     footerOfficeList: footerOfficeListHtml(),
@@ -513,7 +546,7 @@ const STATIC_PAGES = [
     h1: 'Umrah, Hajj & Pilgrimage Glossary',
     lede: 'Plain-English definitions of the terms you will see in any Umrah or Hajj package — from ihram and tawaf to Saudi visa categories and aviation codes.',
     seoTitle: 'Umrah, Hajj & Pilgrimage Glossary | Al Bari Travel & Tours',
-    seoDescription: "Plain-English glossary of Umrah and Hajj terms: ihram, tawaf, sa'i, miqat, Masjid al-Haram, Masjid an-Nabawi, Ziyarat, Hajj 2027, Saudi visa categories, and more.",
+    seoDescription: `Plain-English glossary of Umrah and Hajj terms: ihram, tawaf, sa'i, miqat, Masjid al-Haram, Masjid an-Nabawi, Ziyarat, Hajj ${HAJJ_YEAR}, Saudi visa categories, and more.`,
     body: `
         <p style="opacity:0.7;margin-bottom:30px;font-size:0.9rem;">A reference for anyone booking Umrah or Hajj from Pakistan or the USA. Bookmark this page or share it with a family member preparing for their pilgrimage.</p>
 
@@ -521,7 +554,7 @@ const STATIC_PAGES = [
 
         <div class="definition-block"><h3>Umrah</h3><p>The "minor" Islamic pilgrimage to Makkah, Saudi Arabia. Can be performed at any time of year. Consists of ihram, tawaf, sa'i, and shaving or trimming hair.</p></div>
 
-        <div class="definition-block"><h3>Hajj</h3><p>The "major" Islamic pilgrimage, obligatory once in a lifetime for every able Muslim. Performed on specific days of Dhu'l-Hijjah. Hajj 2027 falls in mid-May 2027.</p></div>
+        <div class="definition-block"><h3>Hajj</h3><p>The "major" Islamic pilgrimage, obligatory once in a lifetime for every able Muslim. Performed on specific days of Dhu'l-Hijjah. Hajj ${HAJJ_YEAR} bookings are currently open.</p></div>
 
         <div class="definition-block"><h3>Ihram</h3><p>The sacred state a pilgrim enters before performing Umrah or Hajj. Men wear two pieces of white unstitched cloth; women wear ordinary modest clothing. Certain everyday actions are restricted during ihram.</p></div>
 
@@ -824,6 +857,52 @@ ${urls.map(u => {
 }
 
 // ------------------------------------------------------------------
+// Auto-refresh hardcoded year references in index.html + llms.txt so
+// that running `node scripts/build-pages.js` keeps the WHOLE site
+// in sync with the current Hajj year — not just generated pages.
+//
+// Known Hajj date windows (approximate, walks earlier ~11 days/year):
+// ------------------------------------------------------------------
+const HAJJ_DATES = {
+  2026: { start: '2026-05-25', end: '2026-05-30' },
+  2027: { start: '2027-05-14', end: '2027-05-19' },
+  2028: { start: '2028-05-04', end: '2028-05-09' },
+  2029: { start: '2029-04-23', end: '2029-04-28' },
+  2030: { start: '2030-04-13', end: '2030-04-18' },
+  2031: { start: '2031-04-02', end: '2031-04-07' },
+  2032: { start: '2032-03-22', end: '2032-03-27' },
+};
+
+function refreshHardcodedYears() {
+  const dates = HAJJ_DATES[HAJJ_YEAR];
+  if (!dates) {
+    console.warn(`  WARNING: no Hajj date window for ${HAJJ_YEAR} — extend HAJJ_DATES table. Skipping year refresh.`);
+    return;
+  }
+
+  // ---- index.html ----
+  const indexPath = path.join(ROOT, 'index.html');
+  let indexHtml = fs.readFileSync(indexPath, 'utf8');
+  // Hajj 20XX in text + JSON-LD string values
+  indexHtml = indexHtml.replace(/Hajj 20\d{2}/g, `Hajj ${HAJJ_YEAR}`);
+  // Umrah 20XX in knowsAbout
+  indexHtml = indexHtml.replace(/Umrah 20\d{2}/g, `Umrah ${CURRENT_YEAR}`);
+  // Event schema dates
+  indexHtml = indexHtml.replace(/"startDate":\s*"20\d{2}-0[3-6]-\d{2}"/g, `"startDate": "${dates.start}"`);
+  indexHtml = indexHtml.replace(/"endDate":\s*"20\d{2}-0[3-6]-\d{2}"/g, `"endDate": "${dates.end}"`);
+  fs.writeFileSync(indexPath, indexHtml);
+  console.log(`  index.html refreshed → Hajj ${HAJJ_YEAR} (${dates.start} to ${dates.end}), Umrah ${CURRENT_YEAR}`);
+
+  // ---- llms.txt ----
+  const llmsPath = path.join(ROOT, 'llms.txt');
+  let llmsTxt = fs.readFileSync(llmsPath, 'utf8');
+  llmsTxt = llmsTxt.replace(/Hajj 20\d{2}/g, `Hajj ${HAJJ_YEAR}`);
+  llmsTxt = llmsTxt.replace(/Umrah 20\d{2}/g, `Umrah ${CURRENT_YEAR}`);
+  fs.writeFileSync(llmsPath, llmsTxt);
+  console.log(`  llms.txt refreshed`);
+}
+
+// ------------------------------------------------------------------
 // CSS minification — zero-dependency, conservative.
 // Strips comments, collapses whitespace around { } : ; , > + ~ , and
 // removes the last semicolon before }. Preserves "foo: bar" strings
@@ -933,6 +1012,11 @@ if (target === 'all' || target === 'sitemap') {
 if (target === 'all' || target === 'css') {
   console.log('minifying CSS...');
   minifyCss();
+}
+
+if (target === 'all' || target === 'years') {
+  console.log('refreshing hardcoded years in index.html + llms.txt...');
+  refreshHardcodedYears();
 }
 
 console.log('done.');
