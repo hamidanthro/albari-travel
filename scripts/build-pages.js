@@ -573,6 +573,46 @@ const STATIC_PAGES = [
     extraSchema: '',
   },
   {
+    slug: 'thanks',
+    pageName: 'Message Received',
+    pageSchemaType: 'WebPage',
+    eyebrow: 'Got it.',
+    h1: 'Thanks — we got your message',
+    lede: 'Your enquiry just landed in our inbox. Expect a reply within a few hours by email or WhatsApp.',
+    seoTitle: 'Message Received | Al Bari Travel & Tours',
+    seoDescription: 'Thanks for contacting Al Bari Travel & Tours. We received your message and will reply within a few hours by email or WhatsApp.',
+    body: `
+        <div class="trust-stats" style="margin-top:0;">
+            <div class="trust-stat" style="text-align:left;">
+                <div style="font-size:1.1rem;color:#c9a962;margin-bottom:8px;font-weight:600;">What happens next?</div>
+                <ul class="package-features" style="margin-top:8px;font-size:0.95rem;">
+                    <li>Your message is now in our queue</li>
+                    <li>A Regional Representative will reply within a few hours (Mon-Sat)</li>
+                    <li>You will also receive an auto-confirmation email — check spam if you do not see it</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 style="margin-top:40px;">Need to reach us faster?</h2>
+        <p style="margin-top:14px;line-height:1.8;">For urgent enquiries — Hajj group cut-offs, departure-week visa changes, or anything you would rather not wait on — WhatsApp Haiwad Ahmad (our Regional Branch Manager) directly:</p>
+
+        <div style="margin-top:20px;display:flex;gap:14px;flex-wrap:wrap;">
+            <a href="https://wa.me/923159596161" target="_blank" rel="noopener" class="btn btn-primary">WhatsApp +92 315 9596161</a>
+            <a href="tel:+923159596161" class="btn btn-secondary">Call Haiwad</a>
+        </div>
+
+        <h2 style="margin-top:40px;">While you wait — explore</h2>
+        <ul class="package-features" style="margin-top:14px;">
+            <li><a href="/offices/" style="color:#c9a962;">Browse our 7 Regional Representatives</a> — find the contact for your area</li>
+            <li><a href="/glossary/" style="color:#c9a962;">Umrah &amp; Hajj glossary</a> — plain-English definitions of every term</li>
+            <li><a href="/#packages" style="color:#c9a962;">Featured packages</a> — Economy, Premium, Family Umrah tiers</li>
+        </ul>
+
+        <p style="margin-top:40px;opacity:0.7;font-size:0.9rem;"><a href="/" style="color:#c9a962;">&larr; Back to home</a></p>
+    `,
+    extraSchema: '',
+  },
+  {
     slug: 'privacy',
     pageName: 'Privacy Policy',
     pageSchemaType: 'WebPage',
