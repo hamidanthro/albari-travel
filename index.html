@@ -381,11 +381,19 @@
                     </div>
                 </div>
             </div>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Email Address" required>
-                <input type="tel" placeholder="Phone Number">
-                <textarea placeholder="Tell us about your travel plans..."></textarea>
+            <form class="contact-form" action="https://formsubmit.co/hamidanthro@gmail.com" method="POST">
+                <!-- Formsubmit.co config — free, no signup required -->
+                <input type="hidden" name="_subject" value="New enquiry from albaritravelspk.com">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="true">
+                <input type="hidden" name="_autoresponse" value="Thanks for contacting Al Bari Travel & Tours — we received your enquiry and will respond within a few hours by WhatsApp or email. For urgent questions please WhatsApp +92 315 9596161.">
+                <!-- Honeypot — bots fill this, humans don't see it -->
+                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="tel" name="phone" placeholder="Phone Number">
+                <textarea name="message" placeholder="Tell us about your travel plans..." required></textarea>
                 <button type="submit">Send Message</button>
             </form>
         </div>
