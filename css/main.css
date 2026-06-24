@@ -1200,3 +1200,19 @@
         padding: 12px 18px;
     }
 }
+
+/* === Header home icon === */
+.nav-home-icon {
+    display: inline-flex !important;
+    align-items: center;
+    color: rgba(255,255,255,0.85);
+    transition: color 0.3s, transform 0.2s;
+}
+.nav-home-icon:hover {
+    color: #c9a962;
+    transform: translateY(-1px);
+}
+.nav-home-icon svg {
+    vertical-align: middle;
+    display: block;
+}
