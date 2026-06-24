@@ -1201,6 +1201,12 @@
     }
 }
 
+/* === Header nav layout — desktop default (mobile hides nav at 768px) === */
+header nav {
+    display: flex;
+    align-items: center;
+}
+
 /* === Header home icon === */
 .nav-home-icon {
     display: inline-flex !important;
