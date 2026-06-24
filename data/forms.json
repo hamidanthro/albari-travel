@@ -1,0 +1,276 @@
+{
+  "categories": [
+    {
+      "slug": "umrah-hajj",
+      "name": "Umrah &amp; Hajj Forms",
+      "icon": "moon",
+      "description": "Forms, checklists, and templates for Umrah and Hajj from Pakistan — including Saudi Umrah visa document checklists, Pakistan Hajj application forms, mahram affidavits, and pre-departure vaccination cards."
+    },
+    {
+      "slug": "saudi-visa",
+      "name": "Saudi Visa Forms",
+      "icon": "stamp",
+      "description": "Saudi visa application forms, attestation flowcharts, and embassy submission checklists for Pakistani applicants — covering Umrah, family visit, work, and Nusuk Masar e-Visa."
+    },
+    {
+      "slug": "european-visa",
+      "name": "European &amp; UK Visa Forms",
+      "icon": "passport",
+      "description": "Schengen, UK, and Ireland visa application forms, cover letter templates, financial-evidence checklists, and IELTS reference guides for Pakistani applicants."
+    },
+    {
+      "slug": "gulf-work",
+      "name": "Gulf Work Visa Forms",
+      "icon": "briefcase",
+      "description": "POE Protector application, GAMCA medical checklists, HEC-MoFA-Embassy attestation flowcharts, and Gulf country-specific work permit forms for Pakistani workers."
+    },
+    {
+      "slug": "pakistani-documents",
+      "name": "Pakistani Document Forms",
+      "icon": "id-card",
+      "description": "Pakistan passport renewal, NADRA CNIC corrections, computerised marriage and birth certificates, and police clearance certificate application forms."
+    },
+    {
+      "slug": "albari-templates",
+      "name": "Al Bari Templates",
+      "icon": "doc",
+      "description": "Al Bari Travel &amp; Tours' own templates for quotation requests, booking confirmation, group travel arrangements, and customer information collection."
+    }
+  ],
+  "forms": [
+    {
+      "slug": "pakistan-hajj-application-form-2027",
+      "title": "Pakistan Hajj 2027 Application Form (Government Scheme)",
+      "category": "umrah-hajj",
+      "description": "The official Pakistan Government Hajj Scheme application form for Hajj 1448H / 2027. Issued by the Ministry of Religious Affairs and Inter-faith Harmony (MoRA). Required for the November–December 2026 application window, with lottery (Qura) results announced in December 2026. The form requires CNIC details, passport details, banking information, vaccination records, and (for women under 45) Mahram details with nikah-nama or birth-certificate proof of relationship.",
+      "downloadType": "external",
+      "downloadUrl": "https://mora.gov.pk/",
+      "downloadLabel": "Get from MoRA",
+      "source": "Ministry of Religious Affairs Pakistan",
+      "fileSize": "Web form",
+      "fileType": "PDF / Web Form",
+      "tags": ["hajj 2027", "hajj application", "MoRA", "government hajj scheme", "Pakistan"]
+    },
+    {
+      "slug": "umrah-booking-checklist-pakistani-pilgrims",
+      "title": "Umrah Booking Checklist for Pakistani Pilgrims",
+      "category": "umrah-hajj",
+      "description": "Comprehensive pre-booking checklist for Pakistani pilgrims planning Umrah. Covers passport validity (6 months minimum), polio vaccination booster (mandatory for all Pakistani travellers, valid 28 days to 12 months before arrival), meningococcal ACWY vaccination, Saudi Umrah visa documents, hotel proximity requirements (within 400m of Haram recommended), airline baggage rules (30 kg + 7 kg on PIA, Saudia, Air Sial), and pre-departure briefing items. Use this before signing any Umrah package contract.",
+      "downloadType": "internal",
+      "downloadUrl": "/forms/files/umrah-booking-checklist.pdf",
+      "downloadLabel": "Download PDF",
+      "source": "Al Bari Travel &amp; Tours",
+      "fileSize": "Coming soon",
+      "fileType": "PDF",
+      "tags": ["umrah", "checklist", "Pakistani pilgrims", "Saudi visa", "booking"]
+    },
+    {
+      "slug": "mahram-affidavit-women-hajj-umrah",
+      "title": "Mahram Affidavit Template (Hajj/Umrah for Women)",
+      "category": "umrah-hajj",
+      "description": "Affidavit template for Pakistani women under 45 travelling to Saudi Arabia for Hajj or Umrah with a Mahram. Documents the relationship (father, brother, husband, or son), travel dates, and joint accommodation. Required by the Pakistan Government Hajj Scheme and many private Hajj Group Operators. Should be printed on Rs. 50 stamp paper, signed by both parties, and notarised by an Oath Commissioner. Saudi authorities allow women aged 45+ to travel for Hajj without Mahram in supervised groups since 2021.",
+      "downloadType": "internal",
+      "downloadUrl": "/forms/files/mahram-affidavit-template.pdf",
+      "downloadLabel": "Download Template",
+      "source": "Al Bari Travel &amp; Tours",
+      "fileSize": "Coming soon",
+      "fileType": "PDF",
+      "tags": ["mahram", "affidavit", "women's hajj", "umrah", "Pakistan"]
+    },
+    {
+      "slug": "polio-vaccination-card-pakistan-saudi",
+      "title": "Polio Vaccination Yellow Card (Pakistan → Saudi Arabia)",
+      "category": "umrah-hajj",
+      "description": "Information sheet explaining the mandatory polio vaccination booster for all Pakistani travellers to Saudi Arabia. The booster is free at any government EPI (Expanded Programme on Immunization) centre in Pakistan and must be administered between 28 days and 12 months before arrival in Saudi. The yellow vaccination card is checked at Jeddah and Madinah immigration. Major EPI centres in Karachi, Lahore, Islamabad, Peshawar, and Quetta are listed.",
+      "downloadType": "internal",
+      "downloadUrl": "/forms/files/polio-card-info.pdf",
+      "downloadLabel": "Get Info Sheet",
+      "source": "Al Bari Travel &amp; Tours / EPI Pakistan",
+      "fileSize": "Coming soon",
+      "fileType": "PDF",
+      "tags": ["polio", "vaccination", "yellow card", "Saudi Arabia", "Pakistan"]
+    },
+    {
+      "slug": "umrah-packing-checklist-printable",
+      "title": "Printable Umrah Packing Checklist (One-Page)",
+      "category": "umrah-hajj",
+      "description": "A printable one-page Umrah packing checklist covering documents (passport, e-visa, vaccination card, hotel vouchers), Ihram and clothing (2 sets Ihram for men, abayas for women, prayer shoes), toiletries (unscented for Ihram), medicines, electronics, money, and Madinah-specific extras. Built from what our group leaders carry on every departure — pin to the fridge, tick off as you pack.",
+      "downloadType": "internal",
+      "downloadUrl": "/forms/files/umrah-packing-checklist.pdf",
+      "downloadLabel": "Download PDF",
+      "source": "Al Bari Travel &amp; Tours",
+      "fileSize": "Coming soon",
+      "fileType": "PDF",
+      "tags": ["umrah", "packing", "checklist", "printable", "one-page"]
+    },
+    {
+      "slug": "saudi-umrah-visa-document-checklist",
+      "title": "Saudi Umrah Visa Document Checklist (Pakistan)",
+      "category": "saudi-visa",
+      "description": "Complete document checklist for the Saudi Umrah visa application from Pakistan — covering both the traditional MoFA route (via licensed Pakistani agent) and the Nusuk Masar e-Visa route (direct self-application). Includes the eight required documents: machine-readable passport with 6 months validity, two passport-size photographs, polio + meningococcal vaccination cards, confirmed hotel booking, confirmed return ticket, CNIC, and bank-statement evidence (for Nusuk Masar).",
+      "downloadType": "internal",
+      "downloadUrl": "/forms/files/saudi-umrah-visa-checklist.pdf",
+      "downloadLabel": "Download PDF",
+      "source": "Al Bari Travel &amp; Tours",
+      "fileSize": "Coming soon",
+      "fileType": "PDF",
+      "tags": ["Saudi visa", "Umrah visa", "Nusuk Masar", "checklist", "Pakistan"]
+    },
+    {
+      "slug": "saudi-attestation-flowchart-hec-mofa-embassy",
+      "title": "Saudi Document Attestation Flowchart (HEC → MoFA → Embassy)",
+      "category": "saudi-visa",
+      "description": "Visual flowchart showing the three-stage Pakistani document attestation chain required for Saudi work visas, student visas, and family residence visas: Stage 1 (originating authority — HEC for degrees, NADRA for marriage/birth certificates, District Police for PCC), Stage 2 (MoFA Camp Office), Stage 3 (Saudi Embassy Islamabad or Consulate Karachi). Each stage shows fees, processing time, required documents, and common rejection reasons.",
+      "downloadType": "internal",
+      "downloadUrl": "/forms/files/saudi-attestation-flowchart.pdf",
+      "downloadLabel": "Download PDF",
+      "source": "Al Bari Travel &amp; Tours",
+      "fileSize": "Coming soon",
+      "fileType": "PDF",
+      "tags": ["Saudi attestation", "HEC", "MoFA", "embassy", "Pakistan"]
+    },
+    {
+      "slug": "gamca-medical-centres-list-pakistan",
+      "title": "GAMCA Medical Centres in Pakistan — Full List",
+      "category": "saudi-visa",
+      "description": "Complete city-by-city list of GAMCA-approved (now Wafid-administered) medical centres in Pakistan for Gulf work visa applicants. Covers Karachi, Lahore, Islamabad, Rawalpindi, Peshawar, Quetta, Multan, Faisalabad, Sukkur, and Sialkot. Includes the standard panel of tests (HIV, Hep B/C, syphilis, chest X-ray, drug screen, pregnancy test), 2026 fees (PKR 6,500–9,500), and report turnaround (2–4 working days).",
+      "downloadType": "external",
+      "downloadUrl": "https://wafid.com/",
+      "downloadLabel": "Find at Wafid.com",
+      "source": "Wafid / GAMCA",
+      "fileSize": "Web tool",
+      "fileType": "Web Lookup",
+      "tags": ["GAMCA", "Wafid", "medical centres", "Gulf visa", "Pakistan"]
+    },
+    {
+      "slug": "schengen-visa-application-form-pakistan",
+      "title": "Schengen Visa Application Form (for Pakistani Applicants)",
+      "category": "european-visa",
+      "description": "Standard Schengen visa application form, harmonised across all 27 Schengen countries. Pakistani applicants apply through VFS Global (for France, Germany, Italy, Switzerland) or BLS International (for Spain) in Karachi, Lahore, or Islamabad. The form covers personal details, passport details, intended travel dates, accommodation, financial sponsor, and travel history. Must be filled in capital letters, signed, and submitted with all supporting documents.",
+      "downloadType": "external",
+      "downloadUrl": "https://visa.vfsglobal.com/pak/en/fra",
+      "downloadLabel": "Get from VFS",
+      "source": "European Commission / VFS Global",
+      "fileSize": "Web form",
+      "fileType": "PDF / Web Form",
+      "tags": ["Schengen", "visa application form", "Pakistan", "VFS Global"]
+    },
+    {
+      "slug": "schengen-visa-cover-letter-template-pakistan",
+      "title": "Schengen Cover Letter Template (Pakistani Applicants)",
+      "category": "european-visa",
+      "description": "Editable cover-letter template for Pakistani Schengen visa applicants. Frames your travel purpose, declares strong ties to Pakistan (employment, family, property, ongoing studies), confirms financial responsibility, provides a day-by-day itinerary outline, and confirms intent to return. Used by our agency for hundreds of successful Pakistani Schengen applications. Customise the highlighted sections with your specifics.",
+      "downloadType": "internal",
+      "downloadUrl": "/forms/files/schengen-cover-letter-template.pdf",
+      "downloadLabel": "Download Template",
+      "source": "Al Bari Travel &amp; Tours",
+      "fileSize": "Coming soon",
+      "fileType": "PDF / DOCX",
+      "tags": ["Schengen", "cover letter", "template", "Pakistan", "visa"]
+    },
+    {
+      "slug": "uk-student-visa-document-checklist-pakistan",
+      "title": "UK Student Visa Document Checklist (Pakistan)",
+      "category": "european-visa",
+      "description": "Complete UK Student Visa (formerly Tier 4) document checklist for Pakistani applicants. Covers the CAS letter from your UK sponsor, the financial requirement (first-year tuition + GBP 17,796 London / GBP 13,632 outside London for 12 months, held for 28 consecutive days), IELTS or alternative SELT, IOM TB test (mandatory for Pakistanis at IOM Karachi/Lahore/Islamabad), polio vaccination, academic transcripts, and biometric appointment booking at VFS Karachi or Islamabad.",
+      "downloadType": "internal",
+      "downloadUrl": "/forms/files/uk-student-visa-checklist.pdf",
+      "downloadLabel": "Download PDF",
+      "source": "Al Bari Travel &amp; Tours",
+      "fileSize": "Coming soon",
+      "fileType": "PDF",
+      "tags": ["UK Student Visa", "Tier 4", "Pakistan", "CAS", "checklist"]
+    },
+    {
+      "slug": "uk-visitor-visa-checklist-pakistan",
+      "title": "UK Standard Visitor Visa Checklist (Pakistan)",
+      "category": "european-visa",
+      "description": "Document checklist for the UK Standard Visitor Visa for Pakistani applicants. Covers passport requirements, financial evidence (6 months of bank statements showing consistent income/savings), employment proof, accommodation booking, return-flight reservation, sponsor letter (if relying on a UK-based sponsor), proof of strong ties to Pakistan, and the GBP 127 visa fee. Submit at VFS Karachi, Lahore, or Islamabad after online application at gov.uk.",
+      "downloadType": "internal",
+      "downloadUrl": "/forms/files/uk-visitor-visa-checklist.pdf",
+      "downloadLabel": "Download PDF",
+      "source": "Al Bari Travel &amp; Tours",
+      "fileSize": "Coming soon",
+      "fileType": "PDF",
+      "tags": ["UK Visit Visa", "Standard Visitor Visa", "Pakistan", "checklist"]
+    },
+    {
+      "slug": "poe-protector-stamp-application-pakistan",
+      "title": "POE Protector Stamp Application (Pakistan → Gulf Work)",
+      "category": "gulf-work",
+      "description": "Information on the mandatory Protector of Emigrants (POE) stamp for every Pakistani going abroad on a work visa. Issued by the Bureau of Emigration and Overseas Employment (BEMB) at one of 8 POE offices (Karachi, Lahore, Islamabad, Multan, Rawalpindi, Peshawar, Quetta, Faisalabad). Without the stamp, Pakistani immigration will block you from boarding the flight. Fee: PKR 1,000. Validity: 60 days from issuance.",
+      "downloadType": "external",
+      "downloadUrl": "https://beoe.gov.pk/",
+      "downloadLabel": "Get from BEMB",
+      "source": "Bureau of Emigration &amp; Overseas Employment, Pakistan",
+      "fileSize": "Web info",
+      "fileType": "Web Lookup",
+      "tags": ["POE Protector", "BEMB", "Gulf work visa", "Pakistan", "OEC"]
+    },
+    {
+      "slug": "gulf-work-visa-document-checklist-pakistan",
+      "title": "Gulf Work Visa Document Checklist (Pakistan)",
+      "category": "gulf-work",
+      "description": "Master document checklist for any Gulf country work visa from Pakistan — Saudi, UAE, Qatar, Bahrain, Oman, Kuwait. Covers the demand letter / offer letter, three-stage attested documents (educational degrees via HEC + MoFA + Embassy; PCC; marriage and birth certificates if going with family), GAMCA medical certificate, passport copy, photographs, POE Protector form, and country-specific extras (e.g. Tawjeeh for UAE, Hayya for Qatar).",
+      "downloadType": "internal",
+      "downloadUrl": "/forms/files/gulf-work-visa-checklist.pdf",
+      "downloadLabel": "Download PDF",
+      "source": "Al Bari Travel &amp; Tours",
+      "fileSize": "Coming soon",
+      "fileType": "PDF",
+      "tags": ["Gulf work visa", "Saudi", "UAE", "Qatar", "checklist", "Pakistan"]
+    },
+    {
+      "slug": "pakistan-passport-renewal-form-mrp-epassport",
+      "title": "Pakistan Passport Renewal Form (MRP / e-Passport)",
+      "category": "pakistani-documents",
+      "description": "Information and application procedure for Pakistan Machine-Readable Passport (MRP) and e-Passport renewal. Apply online at dgip.gov.pk, book an appointment at any DGI&amp;P Passport Office in Pakistan, pay the bank challan, attend biometric capture, and collect on the scheduled date. 2026 fees: MRP 5-year PKR 4,500 (normal) / PKR 9,000 (fee priority). e-Passport approximately double.",
+      "downloadType": "external",
+      "downloadUrl": "https://onlinemrp.dgip.gov.pk/",
+      "downloadLabel": "Apply at DGI&amp;P",
+      "source": "Directorate General of Immigration &amp; Passports, Pakistan",
+      "fileSize": "Web form",
+      "fileType": "Web Form",
+      "tags": ["Pakistan passport", "renewal", "MRP", "e-passport", "DGI&P"]
+    },
+    {
+      "slug": "nadra-marriage-certificate-application",
+      "title": "NADRA Computerised Marriage Certificate Application",
+      "category": "pakistani-documents",
+      "description": "Application procedure for the NADRA computerised marriage certificate, required for Saudi family visit/residence visas, UK spouse visas, US K-1 visas, and most international family applications. Apply at any NADRA Mega Centre with original Nikah-nama, both spouses' CNIC, and two witnesses' CNIC. Processing: 7–14 working days. Fee: PKR 250–500. The original Nikah-nama from your Nikah Registrar is not directly accepted by most foreign embassies — use the NADRA version.",
+      "downloadType": "external",
+      "downloadUrl": "https://www.nadra.gov.pk/",
+      "downloadLabel": "Apply at NADRA",
+      "source": "National Database and Registration Authority",
+      "fileSize": "Web info",
+      "fileType": "Web Form",
+      "tags": ["NADRA", "marriage certificate", "Pakistan", "nikah-nama", "family visa"]
+    },
+    {
+      "slug": "albari-umrah-quotation-request-form",
+      "title": "Al Bari Umrah Quotation Request Form",
+      "category": "albari-templates",
+      "description": "Use this form to request a customised Umrah quotation from Al Bari Travel &amp; Tours. Tell us your preferred departure city, intended travel dates (avoid Hajj-season blackout May–July if possible), number of pilgrims with ages, hotel preference (3-star economy / 4-star standard / 5-star premium), proximity to Haram preference, and any special requirements (wheelchair, dietary, mahram structure). We respond within 4 hours during Pakistan business hours.",
+      "downloadType": "internal",
+      "downloadUrl": "/contact/",
+      "downloadLabel": "Fill Online",
+      "source": "Al Bari Travel &amp; Tours",
+      "fileSize": "Web form",
+      "fileType": "Web Form",
+      "tags": ["Umrah quotation", "Al Bari Travel", "request", "Pakistan", "booking"]
+    },
+    {
+      "slug": "albari-group-booking-form-mosque-community",
+      "title": "Al Bari Group Booking Form (Mosque &amp; Community Groups)",
+      "category": "albari-templates",
+      "description": "Group booking form for mosques, community organisations, family groups, and corporate Umrah parties of 10+ pilgrims. We offer dedicated group leaders, separated accommodation blocks, customised meal plans, group ziyarat tours, and private pre-departure briefings at your mosque or community centre. Per-pilgrim rates fall significantly with group size. Form collects group size, preferred dates, hotel tier preference, and group leader contact.",
+      "downloadType": "internal",
+      "downloadUrl": "/contact/",
+      "downloadLabel": "Fill Online",
+      "source": "Al Bari Travel &amp; Tours",
+      "fileSize": "Web form",
+      "fileType": "Web Form",
+      "tags": ["group booking", "mosque Umrah", "community Hajj", "Pakistan", "Al Bari"]
+    }
+  ]
+}

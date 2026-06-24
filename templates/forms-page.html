@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{>head}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.albaritravelspk.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Travel & Visa Forms", "item": "https://www.albaritravelspk.com/forms/" }
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "{{canonical}}#webpage",
+      "url": "{{canonical}}",
+      "name": "{{seoTitle}}",
+      "description": "{{seoDescription}}",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://www.albaritravelspk.com/#website" },
+      "about": { "@id": "https://www.albaritravelspk.com/#organization" }
+    },
+    {
+      "@type": "ItemList",
+      "name": "Pakistani Travel & Visa Forms",
+      "numberOfItems": "{{formsCount}}",
+      "itemListElement": {{{itemListJson}}}
+    }
+  ]
+}
+</script>
+{{{faqSchema}}}
+</head>
+<body>
+<a href="#main-content" class="skip-to-content">Skip to main content</a>
+{{>header}}
+<main id="main-content">
+
+<section class="hero" style="height:auto;min-height:auto;padding:140px 40px 60px;">
+    <div class="hero-content" style="text-align:center;max-width:840px;">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a> <span aria-hidden="true">›</span>
+            <span aria-current="page">Travel &amp; Visa Forms</span>
+        </nav>
+        <p class="hero-tag">Forms Library</p>
+        <h1 style="font-size:2.4rem;">Travel &amp; Visa Forms for Pakistani Travellers</h1>
+        <p style="opacity:0.85;margin-top:14px;line-height:1.7;">Saudi Umrah and Hajj forms, Schengen and UK visa applications, GAMCA medical centres, Gulf work-visa attestation flowcharts, Pakistan passport renewal, NADRA marriage certificates, and Al Bari's own quotation and group-booking templates — all in one place, curated and kept current for Pakistani applicants.</p>
+        <div class="forms-hero-stats" style="margin-top:28px;display:flex;gap:32px;justify-content:center;flex-wrap:wrap;">
+            <div><strong style="color:#c9a962;font-size:1.6rem;font-family:'Playfair Display',serif;display:block;">{{formsCount}}</strong><span style="opacity:0.7;font-size:0.85rem;">Forms curated</span></div>
+            <div><strong style="color:#c9a962;font-size:1.6rem;font-family:'Playfair Display',serif;display:block;">{{categoriesCount}}</strong><span style="opacity:0.7;font-size:0.85rem;">Categories</span></div>
+            <div><strong style="color:#c9a962;font-size:1.6rem;font-family:'Playfair Display',serif;display:block;">Free</strong><span style="opacity:0.7;font-size:0.85rem;">All downloads</span></div>
+        </div>
+    </div>
+</section>
+
+<section class="packages" style="padding-top:30px;">
+    <div style="max-width:960px;margin:0 auto;">
+        <div class="forms-toc" style="margin-bottom:36px;padding:22px 26px;background:rgba(255,255,255,0.04);border-left:3px solid #c9a962;">
+            <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:2px;color:#c9a962;font-weight:600;margin-bottom:12px;">Jump to category</div>
+            <div class="forms-toc-links" style="display:flex;flex-wrap:wrap;gap:10px 16px;">
+{{{tocLinks}}}
+            </div>
+        </div>
+{{{categorySections}}}
+    </div>
+</section>
+
+<section class="packages" style="padding-top:40px;padding-bottom:80px;border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="max-width:760px;margin:0 auto;">
+        <div class="section-header" style="text-align:center;">
+            <p class="section-tag">Community contribution</p>
+            <h2 style="font-size:1.7rem;">Have a form to share?</h2>
+            <p style="opacity:0.8;margin-top:12px;line-height:1.7;">If you've successfully used a Pakistani travel or visa form that's not on this page — whether an embassy application, a Saudi MoFA document, or a useful template — share it with the community below. We review every submission and add the ones that help fellow Pakistani travellers. All credit to contributors.</p>
+        </div>
+
+        <form action="https://formsubmit.co/info@albaritravelspk.com" method="POST" enctype="multipart/form-data" class="forms-upload" style="margin-top:30px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:30px;">
+            <input type="hidden" name="_subject" value="New form submission for /forms/ page">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://www.albaritravelspk.com/thanks/">
+            <input type="hidden" name="_captcha" value="true">
+
+            <div class="form-row">
+                <label for="form_name" class="form-label">Name of the form <span style="color:#c9a962;">*</span></label>
+                <input type="text" id="form_name" name="Form name" required placeholder="e.g. Saudi Hajj Visa Application Form 2027" class="form-input">
+                <div class="form-hint">Be specific — this is how the form will appear on the page.</div>
+            </div>
+
+            <div class="form-row">
+                <label for="form_category" class="form-label">Category <span style="color:#c9a962;">*</span></label>
+                <select id="form_category" name="Category" required class="form-input">
+                    <option value="">Choose a category...</option>
+                    <option value="Umrah &amp; Hajj">Umrah &amp; Hajj</option>
+                    <option value="Saudi Visa">Saudi Visa</option>
+                    <option value="European &amp; UK Visa">European &amp; UK Visa</option>
+                    <option value="Gulf Work">Gulf Work</option>
+                    <option value="Pakistani Documents">Pakistani Documents</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="form_description" class="form-label">Brief description <span style="color:#c9a962;">*</span></label>
+                <textarea id="form_description" name="Description" required rows="3" placeholder="What is this form for? Who needs it? When/where to use it?" class="form-input"></textarea>
+                <div class="form-hint">2–4 sentences. Helps us write the SEO description if we publish it.</div>
+            </div>
+
+            <div class="form-row">
+                <label for="form_file" class="form-label">Upload file (PDF, max 8 MB) <span style="color:#c9a962;">*</span></label>
+                <input type="file" id="form_file" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" required class="form-input form-file">
+                <div class="form-hint">PDF preferred. We accept DOC/DOCX, JPG, PNG up to 8 MB.</div>
+            </div>
+
+            <div class="form-row">
+                <label for="form_email" class="form-label">Your email <span style="color:#c9a962;">*</span></label>
+                <input type="email" id="form_email" name="Submitter email" required placeholder="your.email@example.com" class="form-input">
+                <div class="form-hint">We'll confirm receipt and credit you when the form is published.</div>
+            </div>
+
+            <div class="form-row">
+                <label for="form_source" class="form-label">Where is this form from? (optional)</label>
+                <input type="text" id="form_source" name="Source" placeholder="e.g. Saudi MoFA, NADRA, Schengen embassy" class="form-input">
+            </div>
+
+            <div class="form-row" style="margin-top:24px;">
+                <button type="submit" class="btn btn-primary" style="width:100%;">Submit form for review</button>
+            </div>
+            <div class="form-hint" style="margin-top:14px;text-align:center;">By submitting you confirm the form is freely shareable and not subject to copyright restrictions. We review every submission before publishing.</div>
+        </form>
+    </div>
+</section>
+
+<section class="packages" style="padding-top:20px;padding-bottom:80px;border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="max-width:760px;margin:0 auto;text-align:center;">
+        <p class="section-tag">Direct help</p>
+        <h2 style="font-size:1.6rem;margin-bottom:14px;">Need help filling out a form?</h2>
+        <p style="opacity:0.8;margin-bottom:24px;">Our team handles Saudi visa, Schengen, UK student, and Gulf work-visa paperwork daily for Pakistani applicants. If you're stuck on a form, WhatsApp us a photo — we'll guide you through it.</p>
+        <a href="https://wa.me/923159596161" target="_blank" rel="noopener" class="btn btn-primary">WhatsApp +92 315 9596161</a>
+        <a href="/contact/" class="btn btn-secondary" style="margin-left:10px;">Contact page</a>
+    </div>
+</section>
+
+</main>
+{{>footer}}
+</body>
+</html>

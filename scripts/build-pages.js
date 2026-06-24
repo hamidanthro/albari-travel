@@ -579,6 +579,93 @@ ${JSON.stringify({
 }
 
 // ------------------------------------------------------------------
+// Forms page (/forms/) — SEO hub of downloadable travel & visa forms
+// ------------------------------------------------------------------
+
+function buildFormsPage() {
+  const forms = readJson('forms.json');
+  const tpl = readTemplate('forms-page.html');
+
+  // Build TOC links
+  const tocLinks = forms.categories.map(c => `<a href="#cat-${c.slug}" style="color:#fff;opacity:0.85;text-decoration:none;font-size:0.9rem;padding:6px 12px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);transition:all 0.2s;display:inline-block;">${c.name}</a>`).join('');
+
+  // Build category sections with form cards
+  const categorySections = forms.categories.map(cat => {
+    const catForms = forms.forms.filter(f => f.category === cat.slug);
+    if (catForms.length === 0) return '';
+    const cardsHtml = catForms.map(f => `
+            <article class="form-card" id="form-${f.slug}">
+                <div class="form-card-meta">
+                    <span class="form-card-type">${escapeHtml(f.fileType)}</span>
+                    <span class="form-card-source">${f.source}</span>
+                </div>
+                <h3 class="form-card-title">${escapeHtml(f.title)}</h3>
+                <p class="form-card-desc">${f.description}</p>
+                <div class="form-card-footer">
+                    <a href="${escapeHtml(f.downloadUrl)}" ${f.downloadType === 'external' ? 'target="_blank" rel="noopener nofollow"' : ''} class="form-card-cta">${f.downloadLabel} ${f.downloadType === 'external' ? '↗' : '↓'}</a>
+                    <span class="form-card-size">${escapeHtml(f.fileSize)}</span>
+                </div>
+            </article>`).join('');
+    return `
+        <section class="forms-category" id="cat-${cat.slug}" style="margin-top:50px;">
+            <div class="forms-cat-header">
+                <h2 class="forms-cat-title">${cat.name}</h2>
+                <p class="forms-cat-desc">${cat.description}</p>
+            </div>
+            <div class="forms-grid" style="margin-top:24px;">
+                ${cardsHtml}
+            </div>
+        </section>`;
+  }).join('');
+
+  // ItemList schema entries (each form as a ListItem)
+  const itemListJson = JSON.stringify(forms.forms.map((f, idx) => ({
+    '@type': 'ListItem',
+    position: idx + 1,
+    name: f.title.replace(/&amp;/g, '&'),
+    url: f.downloadType === 'external' ? f.downloadUrl : `https://www.albaritravelspk.com${f.downloadUrl}`,
+    description: f.description.replace(/&amp;/g, '&').replace(/<[^>]+>/g, ''),
+  })), null, 2);
+
+  // FAQ schema for forms page
+  const faqs = [
+    { q: 'Are these travel and visa forms free to download?', a: 'Yes. Every form on this page is free. Some link to official Pakistani or foreign government sources (NADRA, DGI&P, MoRA, Saudi MoFA, VFS Global); others are Al Bari Travel & Tours templates we share with our community.' },
+    { q: 'Can I trust the Saudi Hajj and Umrah application forms here?', a: 'The Pakistan Hajj Government Scheme form links directly to the Ministry of Religious Affairs (MoRA). The Saudi Umrah visa document checklists are based on current Saudi MoFA and Nusuk Masar requirements. We update this page whenever Saudi MoFA or MoRA changes their procedures.' },
+    { q: 'How can I submit a form to be added to this page?', a: 'Scroll to the "Have a form to share?" section, fill in the form name, category, description, and upload your file. We review every submission and add forms that help fellow Pakistani travellers, with credit to the contributor.' },
+    { q: 'Why are some forms listed as "Coming soon"?', a: 'We are gradually building out the Al Bari Travel & Tours templates (Umrah booking checklists, Mahram affidavits, cover letter templates). Forms marked "Coming soon" will be uploaded over the next few weeks. In the meantime, WhatsApp us at +92 315 9596161 and we can send you a copy directly.' },
+    { q: 'Do you help with filling out these forms?', a: 'Yes. Our team handles Saudi visa, Schengen, UK student, Hajj, Umrah, and Gulf work-visa paperwork daily. Send us a photo of the form via WhatsApp and we will guide you through it. There is no charge for guidance — only if we handle the full file end-to-end.' }
+  ];
+
+  const faqSchemaJson = `<script type="application/ld+json">
+${JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a }
+  }))
+}, null, 2)}
+</script>`;
+
+  const ctx = {
+    seoTitle: 'Travel & Visa Forms | Al Bari Travel & Tours — Pakistan',
+    seoDescription: 'Download Saudi Umrah, Hajj 2027, Schengen, UK student visa, GAMCA medical, POE Protector, Pakistan passport, and NADRA forms — all curated and current for Pakistani applicants.',
+    canonical: `${site.domain}/forms/`,
+    ogType: 'website',
+    formsCount: String(forms.forms.length),
+    categoriesCount: String(forms.categories.length),
+    tocLinks,
+    categorySections,
+    itemListJson,
+    faqSchema: faqSchemaJson,
+    footerOfficeList: footerOfficeListHtml(),
+    year: String(new Date().getFullYear()),
+  };
+  writeFile('forms/index.html', render(tpl, ctx));
+}
+
+// ------------------------------------------------------------------
 // Service pages (Hajj & Umrah, Airline Tickets, Student Visas, etc.)
 // ------------------------------------------------------------------
 
@@ -1150,6 +1237,7 @@ function buildSitemap() {
     })),
     { loc: `${site.domain}/contact/`, priority: '0.8', changefreq: 'monthly', image: ogImage, imageTitle: 'Contact Al Bari Travel & Tours' },
     { loc: `${site.domain}/blog/`, priority: '0.85', changefreq: 'weekly', image: ogImage, imageTitle: 'Al Bari Travel Blog' },
+    { loc: `${site.domain}/forms/`, priority: '0.85', changefreq: 'weekly', image: ogImage, imageTitle: 'Travel & Visa Forms' },
     ...blog.posts.map(p => ({
       loc: `${site.domain}/blog/${p.slug}/`,
       priority: '0.7',
@@ -1347,6 +1435,11 @@ if (target === 'all' || target === 'blog') {
   console.log('building blog landing + individual posts...');
   buildBlogLanding();
   blog.posts.forEach(buildBlogPost);
+}
+
+if (target === 'all' || target === 'forms') {
+  console.log('building forms library page...');
+  buildFormsPage();
 }
 
 if (target === 'all' || target === 'sitemap') {
