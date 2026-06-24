@@ -751,27 +751,81 @@ const STATIC_PAGES = [
             </div>
         </div>
 
-        <h2 style="margin-top:40px;">What we do</h2>
-        <ul class="package-features" style="margin-top:14px;">
-            <li><strong>Umrah Packages</strong> — economy through premium tiers, year-round departures, group and family options</li>
-            <li><strong>Hajj Packages</strong> — coordinated group departures with full logistics, accommodation near the Haram, guided rites</li>
-            <li><strong>International Flight Booking</strong> — Saudi Arabia, UAE, USA, and beyond from any major Pakistani airport</li>
-            <li><strong>Saudi Visa Processing</strong> — documentation, submission, and tracking, all handled by our team</li>
-            <li><strong>Group Travel Arrangements</strong> — extended families, mosque groups, community trips</li>
-        </ul>
+        <h2 style="margin-top:50px;">What we do</h2>
+        <p style="margin-top:12px;opacity:0.78;line-height:1.7;">Five service lines, end-to-end handled by named humans on your case — no call centres, no bots, no churn.</p>
+        <div class="about-services-grid" style="margin-top:28px;">
+            <a href="/services/hajj-and-umrah/" class="about-service-link"><article class="about-service-card">
+                <div class="about-service-num">01</div>
+                <h3>Hajj &amp; Umrah Packages</h3>
+                <p>Economy through premium tiers. Year-round Umrah departures from Lahore, Karachi &amp; Islamabad. Coordinated Hajj groups with full logistics and accommodation near the Haram.</p>
+                <span class="about-service-cta">View packages &rarr;</span>
+            </article></a>
+            <a href="/services/airline-tickets/" class="about-service-link"><article class="about-service-card">
+                <div class="about-service-num">02</div>
+                <h3>International Flight Booking</h3>
+                <p>Saudi Arabia, UAE, USA, UK, and beyond — from any major Pakistani airport. Best-fare comparison across PIA, Saudia, Air Sial, Emirates, Qatar, Etihad, and Turkish.</p>
+                <span class="about-service-cta">See flight service &rarr;</span>
+            </article></a>
+            <a href="/services/student-visas/" class="about-service-link"><article class="about-service-card">
+                <div class="about-service-num">03</div>
+                <h3>Student Visa Processing</h3>
+                <p>UK, USA, Canada, Australia, and Schengen student visas — end-to-end help: CAS / I-20 / acceptance letter, financial evidence, IELTS prep referral, embassy bookings.</p>
+                <span class="about-service-cta">See student visas &rarr;</span>
+            </article></a>
+            <a href="/services/visit-visas/" class="about-service-link"><article class="about-service-card">
+                <div class="about-service-num">04</div>
+                <h3>Visit &amp; Tourist Visas</h3>
+                <p>Schengen, UK, USA, Canada, Saudi, UAE, Malaysia, Thailand — full documentation, bank statement prep, itinerary planning, hotel &amp; flight bookings supplied for the file.</p>
+                <span class="about-service-cta">See visit visas &rarr;</span>
+            </article></a>
+            <a href="/services/work-visas/" class="about-service-link"><article class="about-service-card">
+                <div class="about-service-num">05</div>
+                <h3>Gulf Work Visas</h3>
+                <p>Saudi, UAE, Qatar, Bahrain, Oman, Kuwait — full pipeline: HEC + MoFA + embassy attestation, GAMCA medical, PCC, embassy stamping, POE Protector clearance.</p>
+                <span class="about-service-cta">See work visas &rarr;</span>
+            </article></a>
+        </div>
 
-        <h2 style="margin-top:40px;">How we're organised</h2>
-        <p style="margin-top:14px;line-height:1.8;">Al Bari Travel runs as a <strong>remote-first agency</strong>. We don't operate brick-and-mortar storefronts. Instead, we work through <strong>named Regional Representatives</strong> who each cover a part of Pakistan or the USA:</p>
-        <ul class="package-features" style="margin-top:14px;">
-            <li><strong>Hasan Abdal (Punjab)</strong> — Haiwad Ahmad, our Regional Branch Manager and the central hub for all bookings</li>
-            <li><strong>Rawalpindi (Punjab)</strong> — Maaz Ali</li>
-            <li><strong>Taxila (Punjab)</strong> — Jawad Ahmad</li>
-            <li><strong>Swabi (KP)</strong> — Yawar Hayat</li>
-            <li><strong>Mardan (KP)</strong> — Muhammad Huzaifa</li>
-            <li><strong>Peshawar (KP)</strong> — Faisal Khan</li>
-            <li><strong>Texas (USA)</strong> — Hamid Ali, serving the Pakistani-American community</li>
-        </ul>
-        <p style="margin-top:14px;line-height:1.8;">Beyond our 7 Regional Representatives, our remote agent network serves <strong>every district of Pakistan — all 170 of them</strong> — entirely by phone, WhatsApp, and email.</p>
+        <h2 style="margin-top:60px;">How we're organised</h2>
+        <p style="margin-top:14px;line-height:1.8;">Al Bari Travel runs as a <strong>remote-first agency</strong>. We don't operate brick-and-mortar storefronts. Instead, we work through <strong>named Regional Representatives</strong> who each cover a part of Pakistan or the USA — every enquiry handled by a named human who owns your booking end-to-end.</p>
+        <div class="about-reps-grid" style="margin-top:28px;">
+            <article class="about-rep-card about-rep-card--hub">
+                <div class="about-rep-region">Hasan Abdal · Punjab</div>
+                <h3>Haiwad Ahmad</h3>
+                <div class="about-rep-role">Regional Branch Manager &middot; Central hub</div>
+            </article>
+            <article class="about-rep-card">
+                <div class="about-rep-region">Rawalpindi · Punjab</div>
+                <h3>Maaz Ali</h3>
+                <div class="about-rep-role">Regional Representative</div>
+            </article>
+            <article class="about-rep-card">
+                <div class="about-rep-region">Taxila · Punjab</div>
+                <h3>Jawad Ahmad</h3>
+                <div class="about-rep-role">Regional Representative</div>
+            </article>
+            <article class="about-rep-card">
+                <div class="about-rep-region">Swabi · KP</div>
+                <h3>Yawar Hayat</h3>
+                <div class="about-rep-role">Regional Representative</div>
+            </article>
+            <article class="about-rep-card">
+                <div class="about-rep-region">Mardan · KP</div>
+                <h3>Muhammad Huzaifa</h3>
+                <div class="about-rep-role">Regional Representative</div>
+            </article>
+            <article class="about-rep-card">
+                <div class="about-rep-region">Peshawar · KP</div>
+                <h3>Faisal Khan</h3>
+                <div class="about-rep-role">Regional Representative</div>
+            </article>
+            <article class="about-rep-card">
+                <div class="about-rep-region">Texas · USA</div>
+                <h3>Hamid Ali</h3>
+                <div class="about-rep-role">Serving Pakistani-American community</div>
+            </article>
+        </div>
+        <p style="margin-top:28px;line-height:1.8;opacity:0.85;">Beyond our 7 Regional Representatives, our remote agent network serves <strong>every district of Pakistan — all 170 of them</strong> — entirely by phone, WhatsApp, and email.</p>
 
         <h2 style="margin-top:40px;">How we work</h2>
         <p style="margin-top:14px;line-height:1.8;">No call centres, no bots, no walk-in fuss. Every enquiry is handled by a named human Regional Representative who owns your booking end-to-end. Quotations within hours, bookings confirmed within days, no hidden fees. All documentation is handled remotely — you only travel when you fly out to Saudi Arabia.</p>

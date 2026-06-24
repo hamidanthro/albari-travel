@@ -1389,3 +1389,112 @@ header nav {
     .blog-body h3 { font-size: 1.1rem; }
     .blog-body p { font-size: 0.95rem; }
 }
+
+/* === About page: services grid + reps grid === */
+.about-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+}
+.about-service-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.about-service-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-top: 3px solid #c9a962;
+    padding: 26px 26px 22px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.25s;
+    position: relative;
+}
+.about-service-link:hover .about-service-card {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(201,169,98,0.5);
+    border-top-color: #c9a962;
+    transform: translateY(-2px);
+}
+.about-service-num {
+    font-family: 'Playfair Display', serif;
+    color: rgba(201,169,98,0.55);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.about-service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 4px 0 12px;
+    line-height: 1.3;
+}
+.about-service-card p {
+    color: rgba(255,255,255,0.72);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+.about-service-cta {
+    margin-top: auto;
+    color: #c9a962;
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.about-reps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+}
+.about-rep-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-left: 3px solid rgba(201,169,98,0.5);
+    padding: 20px 22px 18px;
+    transition: all 0.25s;
+}
+.about-rep-card:hover {
+    background: rgba(255,255,255,0.06);
+    border-left-color: #c9a962;
+}
+.about-rep-card--hub {
+    border-left-color: #c9a962;
+    background: rgba(201,169,98,0.07);
+}
+.about-rep-region {
+    color: rgba(201,169,98,0.85);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.about-rep-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: #fff;
+    margin: 0 0 8px;
+    line-height: 1.25;
+}
+.about-rep-role {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .about-services-grid { gap: 12px; }
+    .about-service-card { padding: 22px 20px 18px; }
+    .about-service-card h3 { font-size: 1.1rem; }
+    .about-service-card p { font-size: 0.88rem; }
+    .about-reps-grid { gap: 10px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+    .about-rep-card { padding: 16px 18px 14px; }
+    .about-rep-card h3 { font-size: 1.05rem; }
+}
