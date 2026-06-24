@@ -859,7 +859,15 @@ const STATIC_PAGES = [
 ];
 
 function contactPageBody() {
-  return offices.map(o => {
+  const mainLines = `
+        <section class="package-card" style="margin-bottom:30px;padding:28px 32px;border-color:rgba(201,169,98,0.4);background:linear-gradient(135deg,rgba(201,169,98,0.08) 0%,rgba(13,27,42,0.4) 100%);" aria-labelledby="main-lines-h">
+            <h2 id="main-lines-h" style="font-size:1.4rem;margin:0 0 14px;">Main contact lines</h2>
+            <p style="opacity:0.85;margin-bottom:14px;font-size:0.95rem;">Two phone numbers — either reaches our team. Both accept WhatsApp.</p>
+            <p style="opacity:0.85;margin-bottom:8px;"><strong>Pakistan (Main):</strong> <a href="tel:+923159596161" style="color:#c9a962;">+92 315 9596161</a> &middot; <a href="https://wa.me/923159596161" style="color:#c9a962;" target="_blank" rel="noopener">WhatsApp</a></p>
+            <p style="opacity:0.85;margin-bottom:8px;"><strong>Pakistan (Direct):</strong> <a href="tel:+923317312063" style="color:#c9a962;">+92 331 7312063</a> &middot; <a href="https://wa.me/923317312063" style="color:#c9a962;" target="_blank" rel="noopener">WhatsApp</a></p>
+            <p style="opacity:0.85;margin-bottom:0;"><strong>USA:</strong> <a href="tel:+14435894441" style="color:#c9a962;">+1 (443) 589-4441</a></p>
+        </section>`;
+  return mainLines + offices.map(o => {
     const firstName = escapeHtml(o.incharge.split(' ')[0]);
     return `
         <section class="package-card" style="margin-bottom:18px;padding:30px 32px;" aria-labelledby="office-${o.slug}-h">
