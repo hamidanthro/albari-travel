@@ -26,6 +26,7 @@ const site = readJson('site.json');
 const offices = readJson('offices.json').offices;
 const provinces = readJson('districts.json').provinces;
 const services = readJson('services.json').services;
+const blog = readJson('blog.json');
 const officesBySlug = Object.fromEntries(offices.map(o => [o.slug, o]));
 
 // ------------------------------------------------------------------
@@ -453,6 +454,128 @@ function buildOfficePage(office) {
     year: String(new Date().getFullYear()),
   };
   writeFile(`offices/${office.slug}/index.html`, render(tpl, ctx));
+}
+
+// ------------------------------------------------------------------
+// Blog posts + landing
+// ------------------------------------------------------------------
+
+function formatPublishDate(iso) {
+  try {
+    return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+  } catch { return iso; }
+}
+
+function blogPostCardHtml(post) {
+  return `        <a href="/blog/${post.slug}/" class="blog-card-link" aria-label="Read ${escapeHtml(post.title)}">
+            <article class="blog-card">
+                <div class="blog-card-category">${escapeHtml(post.category)}</div>
+                <h3 class="blog-card-title">${escapeHtml(post.title)}</h3>
+                <p class="blog-card-excerpt">${escapeHtml(post.excerpt)}</p>
+                <div class="blog-card-meta">
+                    <span>${escapeHtml(post.author)}</span>
+                    <span aria-hidden="true">·</span>
+                    <span>${formatPublishDate(post.publishedAt)}</span>
+                    <span aria-hidden="true">·</span>
+                    <span>${post.readingTimeMinutes} min read</span>
+                </div>
+            </article>
+        </a>`;
+}
+
+function buildBlogLanding() {
+  const tpl = readTemplate('blog-landing.html');
+  // Sort posts newest first
+  const sorted = [...blog.posts].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
+  const ctx = {
+    seoTitle: 'Blog | Al Bari Travel & Tours — Umrah, Hajj, Visa Guides',
+    seoDescription: 'Practical guides for Pakistani pilgrims and travellers: Umrah, Hajj 2027, Saudi visa, student visa, work visa, flight booking. Written by Al Bari Travel team.',
+    canonical: `${site.domain}/blog/`,
+    ogType: 'website',
+    postCards: sorted.map(blogPostCardHtml).join('\n'),
+    footerOfficeList: footerOfficeListHtml(),
+    year: String(new Date().getFullYear()),
+  };
+  writeFile('blog/index.html', render(tpl, ctx));
+}
+
+function buildBlogPost(post) {
+  const tpl = readTemplate('blog-post.html');
+
+  // FAQ block (rendered inline + JSON-LD schema)
+  let faqBlock = '';
+  let faqSchema = '';
+  if (post.faqs && post.faqs.length) {
+    faqBlock = `
+        <section class="blog-faq-section" style="margin-top:50px;padding-top:30px;border-top:1px solid rgba(255,255,255,0.08);">
+            <h2>Frequently Asked Questions</h2>
+${post.faqs.map(f => `
+            <details class="faq-item" style="margin-top:14px;">
+                <summary><h3 style="display:inline;margin:0;font-size:1.05rem;">${escapeHtml(f.q)}</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+                <div class="faq-answer"><p>${escapeHtml(f.a)}</p></div>
+            </details>`).join('')}
+        </section>`;
+    faqSchema = `<script type="application/ld+json">
+${JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': post.faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a }
+  }))
+}, null, 2)}
+</script>`;
+  }
+
+  // Related posts: same category preferred, else most recent
+  const sorted = [...blog.posts].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
+  const sameCat = sorted.filter(p => p.slug !== post.slug && p.category === post.category).slice(0, 3);
+  const fillers = sorted.filter(p => p.slug !== post.slug && !sameCat.find(s => s.slug === p.slug));
+  const related = [...sameCat, ...fillers].slice(0, 3);
+  const relatedPostsHtml = related.map(blogPostCardHtml).join('\n');
+
+  // CTA based on related service
+  const ctaMap = {
+    'hajj-and-umrah': { heading: 'Plan your Umrah or Hajj with us', subtext: 'Quotes within hours, named Regional Representative end-to-end.', button: 'See Hajj & Umrah Packages', link: '/services/hajj-and-umrah/' },
+    'airline-tickets': { heading: 'Need an international flight from Pakistan?', subtext: 'Best-fare comparison across PIA, Saudia, Air Sial, Emirates, Qatar and more.', button: 'See Flight Service', link: '/services/airline-tickets/' },
+    'student-visas': { heading: 'Applying for a student visa?', subtext: 'End-to-end help: documents, financials, embassy bookings.', button: 'See Student Visa Service', link: '/services/student-visas/' },
+    'visit-visas': { heading: 'Planning a visit abroad?', subtext: 'Tourist + family visit visa support for Schengen, UK, USA, Saudi, UAE and more.', button: 'See Visit Visa Service', link: '/services/visit-visas/' },
+    'work-visas': { heading: 'Heading to the Gulf for work?', subtext: 'Full visa pipeline: attestation, GAMCA, PCC, embassy stamping.', button: 'See Work Visa Service', link: '/services/work-visas/' },
+  };
+  const cta = ctaMap[post.relatedServiceSlug] || ctaMap['hajj-and-umrah'];
+
+  // Approximate word count from body (strip HTML for count)
+  const plainText = post.body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  const wordCount = plainText.split(/\s+/).length;
+
+  const ctx = {
+    title: post.title,
+    seoTitle: post.seoTitle || post.title,
+    seoDescription: post.seoDescription,
+    canonical: `${site.domain}/blog/${post.slug}/`,
+    ogType: 'article',
+    publishedAt: post.publishedAt,
+    updatedAt: post.updatedAt || post.publishedAt,
+    publishedDisplay: formatPublishDate(post.publishedAt),
+    author: post.author,
+    authorTitle: post.authorTitle,
+    authorBio: post.authorBio || `${post.author} is ${post.authorTitle} at Al Bari Travel & Tours, coordinating Umrah, Hajj, and international travel bookings for Pakistani families since 2018.`,
+    category: post.category,
+    readingTimeMinutes: String(post.readingTimeMinutes),
+    wordCount: String(wordCount),
+    body: post.body,
+    faqBlock,
+    faqSchema,
+    relatedPostsHtml,
+    ctaHeading: cta.heading,
+    ctaSubtext: cta.subtext,
+    ctaButton: cta.button,
+    ctaLink: cta.link,
+    footerOfficeList: footerOfficeListHtml(),
+    year: String(new Date().getFullYear()),
+  };
+  writeFile(`blog/${post.slug}/index.html`, render(tpl, ctx));
 }
 
 // ------------------------------------------------------------------
@@ -972,6 +1095,14 @@ function buildSitemap() {
       imageTitle: `${s.name} — Al Bari Travel & Tours`,
     })),
     { loc: `${site.domain}/contact/`, priority: '0.8', changefreq: 'monthly', image: ogImage, imageTitle: 'Contact Al Bari Travel & Tours' },
+    { loc: `${site.domain}/blog/`, priority: '0.85', changefreq: 'weekly', image: ogImage, imageTitle: 'Al Bari Travel Blog' },
+    ...blog.posts.map(p => ({
+      loc: `${site.domain}/blog/${p.slug}/`,
+      priority: '0.7',
+      changefreq: 'monthly',
+      image: ogImage,
+      imageTitle: p.title,
+    })),
     { loc: `${site.domain}/glossary/`, priority: '0.5', changefreq: 'yearly', image: ogImage, imageTitle: 'Umrah & Hajj Glossary — Al Bari Travel' },
     { loc: `${site.domain}/privacy/`, priority: '0.3', changefreq: 'yearly' },
     { loc: `${site.domain}/terms/`, priority: '0.3', changefreq: 'yearly' },
@@ -1156,6 +1287,12 @@ if (target === 'all' || target === 'services') {
   console.log('building services landing + individual service pages...');
   buildServicesLanding();
   services.forEach(buildServicePage);
+}
+
+if (target === 'all' || target === 'blog') {
+  console.log('building blog landing + individual posts...');
+  buildBlogLanding();
+  blog.posts.forEach(buildBlogPost);
 }
 
 if (target === 'all' || target === 'sitemap') {

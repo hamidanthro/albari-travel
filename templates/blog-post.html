@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{>head}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{canonical}}#article",
+  "headline": "{{title}}",
+  "description": "{{seoDescription}}",
+  "url": "{{canonical}}",
+  "datePublished": "{{publishedAt}}",
+  "dateModified": "{{updatedAt}}",
+  "author": {
+    "@type": "Person",
+    "name": "{{author}}",
+    "jobTitle": "{{authorTitle}}",
+    "worksFor": { "@id": "https://www.albaritravelspk.com/#organization" }
+  },
+  "publisher": { "@id": "https://www.albaritravelspk.com/#organization" },
+  "image": "https://www.albaritravelspk.com/og-default.svg",
+  "inLanguage": "en",
+  "articleSection": "{{category}}",
+  "wordCount": "{{wordCount}}",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "{{canonical}}#webpage" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.albaritravelspk.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.albaritravelspk.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "{{title}}", "item": "{{canonical}}" }
+  ]
+}
+</script>
+{{{faqSchema}}}
+</head>
+<body>
+<a href="#main-content" class="skip-to-content">Skip to main content</a>
+{{>header}}
+<main id="main-content">
+
+<article>
+<section class="hero" style="height:auto;min-height:auto;padding:140px 40px 50px;">
+    <div class="hero-content" style="text-align:center;max-width:780px;">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a> <span aria-hidden="true">›</span>
+            <a href="/blog/">Blog</a> <span aria-hidden="true">›</span>
+            <span aria-current="page">{{title}}</span>
+        </nav>
+        <p class="hero-tag">{{category}}</p>
+        <h1 style="font-size:2.4rem;line-height:1.2;">{{title}}</h1>
+        <p class="blog-meta" style="opacity:0.7;margin-top:18px;font-size:0.9rem;">
+            By <strong>{{author}}</strong> &middot; {{publishedDisplay}} &middot; {{readingTimeMinutes}} min read
+        </p>
+    </div>
+</section>
+
+<section class="packages" style="padding-top:30px;">
+    <div class="blog-body" style="max-width:760px;margin:0 auto;color:rgba(255,255,255,0.88);">
+{{{body}}}
+{{{faqBlock}}}
+    </div>
+</section>
+
+<section class="packages" style="padding-top:20px;padding-bottom:40px;">
+    <div style="max-width:760px;margin:0 auto;">
+        <aside class="blog-author-box">
+            <div class="blog-author-name">{{author}}</div>
+            <div class="blog-author-title">{{authorTitle}}</div>
+            <p class="blog-author-bio">{{authorBio}}</p>
+        </aside>
+    </div>
+</section>
+
+<section class="packages" style="padding-top:20px;padding-bottom:60px;border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="max-width:760px;margin:0 auto;text-align:center;">
+        <p class="section-tag">Ready to book?</p>
+        <h2 style="font-size:1.6rem;margin-bottom:14px;">{{ctaHeading}}</h2>
+        <p style="opacity:0.8;margin-bottom:24px;">{{ctaSubtext}}</p>
+        <a href="{{ctaLink}}" class="btn btn-primary">{{ctaButton}}</a>
+        <a href="https://wa.me/923159596161" target="_blank" rel="noopener" class="btn btn-secondary" style="margin-left:10px;">WhatsApp Us</a>
+    </div>
+</section>
+
+<section class="packages" style="padding-top:30px;padding-bottom:80px;border-top:1px solid rgba(255,255,255,0.08);">
+    <div class="section-header">
+        <p class="section-tag">More from the blog</p>
+        <h2 style="font-size:1.6rem;">Related posts</h2>
+    </div>
+    <div class="blog-grid" style="margin-top:30px;">
+{{{relatedPostsHtml}}}
+    </div>
+</section>
+
+</article>
+
+</main>
+{{>footer}}
+</body>
+</html>

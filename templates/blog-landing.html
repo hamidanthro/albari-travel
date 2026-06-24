@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{>head}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.albaritravelspk.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{canonical}}" }
+      ]
+    },
+    {
+      "@type": "Blog",
+      "@id": "{{canonical}}#blog",
+      "url": "{{canonical}}",
+      "name": "Al Bari Travel Blog",
+      "description": "{{seoDescription}}",
+      "publisher": { "@id": "https://www.albaritravelspk.com/#organization" },
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a href="#main-content" class="skip-to-content">Skip to main content</a>
+{{>header}}
+<main id="main-content">
+
+<section class="hero" style="height:auto;min-height:auto;padding:140px 40px 60px;">
+    <div class="hero-content" style="text-align:center;max-width:780px;">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a> <span aria-hidden="true">›</span>
+            <span aria-current="page">Blog</span>
+        </nav>
+        <p class="hero-tag">Insights &amp; Guides</p>
+        <h1 style="font-size:3rem;">Al Bari Travel Blog</h1>
+        <p style="opacity:0.85;margin-top:14px;max-width:640px;margin-left:auto;margin-right:auto;">Practical guides for Pakistani pilgrims, travellers, and visa applicants — written by our team from a decade of bookings and embassy paperwork.</p>
+    </div>
+</section>
+
+<section class="packages">
+    <div class="blog-grid">
+{{{postCards}}}
+    </div>
+</section>
+
+</main>
+{{>footer}}
+</body>
+</html>
