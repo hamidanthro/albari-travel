@@ -799,17 +799,35 @@ function buildServicePage(service) {
 
   let tiersHtml = '';
   if (service.tiers && service.tiers.length) {
+    // Compact pricing comparison table FIRST (snapshot for skimmers)
+    const tableRows = service.tiers.map(t => `
+                <tr>
+                    <td><strong>${escapeHtml(t.name)}</strong><br><span style="opacity:0.65;font-size:0.85em;">${escapeHtml(t.duration)}</span></td>
+                    <td class="tier-price">${escapeHtml(t.priceRange || 'Custom — request quote')}</td>
+                    <td style="font-size:0.9em;opacity:0.85;">${escapeHtml(t.highlights[0] || '')}</td>
+                </tr>`).join('');
+    // Detail cards SECOND (for those who want depth)
     const tierCards = service.tiers.map(t => `
                 <article class="package-card" style="padding:30px 28px;">
                     <h3 style="font-size:1.3rem;">${escapeHtml(t.name)}</h3>
-                    <p class="package-tagline" style="color:#c9a962;font-size:0.85rem;margin-bottom:14px;text-transform:uppercase;letter-spacing:1.5px;">${escapeHtml(t.duration)}</p>
+                    <p class="package-tagline" style="color:#c9a962;font-size:0.85rem;margin-bottom:6px;text-transform:uppercase;letter-spacing:1.5px;">${escapeHtml(t.duration)}</p>
+                    ${t.priceRange ? `<p style="color:#c9a962;font-weight:600;font-size:1rem;margin-bottom:14px;">${escapeHtml(t.priceRange)}</p>` : ''}
                     <ul class="package-features">
 ${t.highlights.map(h => `                        <li>${escapeHtml(h)}</li>`).join('\n')}
                     </ul>
                 </article>`).join('\n');
     tiersHtml = `
         <div class="section-header" style="margin:50px 0 24px;">
-            <h2 style="font-size:1.6rem;text-align:left;">Package tiers</h2>
+            <h2 style="font-size:1.6rem;text-align:left;">Pricing at a glance</h2>
+            <p style="text-align:left;margin-top:8px;font-size:0.9rem;opacity:0.75;">Indicative 2026 ranges — final quotes depend on dates, party size, exact hotel selection, and currency conversion at time of booking.</p>
+        </div>
+        <table class="pricing-tier-table">
+            <thead><tr><th>Tier</th><th>Per-person range</th><th>Headline feature</th></tr></thead>
+            <tbody>${tableRows}
+            </tbody>
+        </table>
+        <div class="section-header" style="margin:50px 0 24px;">
+            <h2 style="font-size:1.6rem;text-align:left;">Tier details</h2>
         </div>
         <div class="packages-grid">${tierCards}
         </div>`;
@@ -863,6 +881,14 @@ ${JSON.stringify({
 }, null, 2)}
 </script>`;
 
+  // Cost calculator widget — only on Hajj & Umrah service page
+  const calcWidget = service.slug === 'hajj-and-umrah' ? `
+        <div class="section-header" style="margin:50px 0 24px;">
+            <h2 style="font-size:1.6rem;text-align:left;">Estimate your Umrah cost</h2>
+            <p style="text-align:left;margin-top:8px;font-size:0.9rem;opacity:0.75;">Interactive 2026 estimate — for an exact quote, send your details to your Regional Rep.</p>
+        </div>
+        <div id="umrah-cost-calc"></div>` : '';
+
   const ctx = {
     name: service.name,
     heroEyebrow: service.heroEyebrow,
@@ -875,7 +901,7 @@ ${JSON.stringify({
     seoDescription: service.seoDescription,
     ogType: 'website',
     includedListHtml,
-    tiersHtml,
+    tiersHtml: tiersHtml + calcWidget,
     routesHtml,
     keyFactsHtml,
     faqHtml,
@@ -1209,6 +1235,173 @@ const STATIC_PAGES = [
     `,
     extraSchema: '',
   },
+  {
+    slug: 'why-al-bari',
+    pageName: 'Why Al Bari',
+    pageSchemaType: 'WebPage',
+    eyebrow: 'Compare',
+    h1: 'Why choose Al Bari Travel &amp; Tours',
+    lede: 'Honest comparison of Al Bari vs the Pakistan Government Hajj Scheme vs typical private Pakistani operators — pricing, services, group size, and what you actually get.',
+    seoTitle: 'Why Al Bari Travel — Compared to Government Hajj &amp; Other Operators',
+    seoDescription: 'Honest side-by-side comparison: Al Bari Travel vs Pakistan Government Hajj Scheme vs typical private Umrah/Hajj operators. Pricing, group size, hotel quality, named-rep model.',
+    body: `
+        <h2 style="margin-top:0;">A 60-second summary</h2>
+        <p style="margin-top:14px;line-height:1.8;">Pakistani travellers booking Umrah, Hajj, or international visas have three real options: the <strong>Pakistan Government Hajj Scheme</strong> (cheapest, lottery, basic), a <strong>typical private operator</strong> (more expensive, varies enormously in quality), or an <strong>agency like Al Bari</strong> that operates remote-first with named human representatives. None is right for everyone &mdash; this page lays out the honest trade-offs so you can pick the one that fits.</p>
+
+        <h2 style="margin-top:50px;">Side-by-side comparison</h2>
+        <table class="pricing-tier-table" style="margin-top:20px;">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Government Hajj Scheme</th>
+                    <th>Typical Private Operator</th>
+                    <th>Al Bari Travel</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Booking confidence</strong></td>
+                    <td>Lottery-based &mdash; no guarantee</td>
+                    <td>First-come confirmed</td>
+                    <td>First-come confirmed</td>
+                </tr>
+                <tr>
+                    <td><strong>Pricing transparency</strong></td>
+                    <td>Published in MoRA Policy</td>
+                    <td>Often opaque; hidden upgrades</td>
+                    <td>Written quote with line items</td>
+                </tr>
+                <tr>
+                    <td><strong>Who you talk to</strong></td>
+                    <td>MoRA help desk</td>
+                    <td>Sales agent &rarr; back office</td>
+                    <td>One named Regional Rep, start to finish</td>
+                </tr>
+                <tr>
+                    <td><strong>Group size</strong></td>
+                    <td>80&ndash;100 pilgrims per leader</td>
+                    <td>40&ndash;80 typical</td>
+                    <td>20&ndash;40 typical</td>
+                </tr>
+                <tr>
+                    <td><strong>Hotel proximity to Haram</strong></td>
+                    <td>Allocated &mdash; usually 600m+</td>
+                    <td>Varies widely</td>
+                    <td>Choose exact hotel + distance up front</td>
+                </tr>
+                <tr>
+                    <td><strong>Visa handling</strong></td>
+                    <td>Government Mu'allim system</td>
+                    <td>Operator-handled</td>
+                    <td>End-to-end via Pakistani agent or Nusuk Masar</td>
+                </tr>
+                <tr>
+                    <td><strong>Airline choice</strong></td>
+                    <td>Fixed (usually PIA / Saudia)</td>
+                    <td>Limited</td>
+                    <td>Choose: PIA, Saudia, Air Sial, FlyJinnah, Emirates</td>
+                </tr>
+                <tr>
+                    <td><strong>Response time</strong></td>
+                    <td>Days, sometimes weeks</td>
+                    <td>Same-day to 3 days</td>
+                    <td>Within 4 hours during Pakistan business hours</td>
+                </tr>
+                <tr>
+                    <td><strong>Walk-in office required</strong></td>
+                    <td>Yes (designated bank branches)</td>
+                    <td>Usually yes (bazaar offices)</td>
+                    <td>No &mdash; remote-first by phone &amp; WhatsApp</td>
+                </tr>
+                <tr>
+                    <td><strong>USA-side support</strong></td>
+                    <td>No</td>
+                    <td>Rare</td>
+                    <td>Texas Regional Rep (Hamid Ali)</td>
+                </tr>
+                <tr>
+                    <td><strong>2026 Economy Umrah price</strong></td>
+                    <td class="tier-price">N/A &mdash; Hajj only</td>
+                    <td class="tier-price">PKR 200,000&ndash;320,000</td>
+                    <td class="tier-price">PKR 235,000&ndash;290,000</td>
+                </tr>
+                <tr>
+                    <td><strong>2027 Hajj price (Economy)</strong></td>
+                    <td class="tier-price">PKR 1,150,000&ndash;1,300,000</td>
+                    <td class="tier-price">PKR 1,500,000&ndash;1,950,000</td>
+                    <td class="tier-price">PKR 1,500,000&ndash;1,950,000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 style="margin-top:50px;">When the Government Scheme is the right choice</h2>
+        <p style="margin-top:14px;line-height:1.8;">If your absolute top priority is cost and you're willing to accept lottery-based booking + larger group batches + less choice over hotel and airline, the Government Hajj Scheme is excellent value. We tell prospective clients this honestly &mdash; many of our team's own family members have performed Hajj through the Government Scheme.</p>
+
+        <h2 style="margin-top:30px;">When a typical private operator is the right choice</h2>
+        <p style="margin-top:14px;line-height:1.8;">For families with strong local ties to a specific bazaar operator they trust through word-of-mouth, sticking with that operator can be fine. The risk is that quality varies enormously between private operators &mdash; some are excellent, some advertise 4-star hotels and deliver 2-star ones. Always demand the exact hotel name and metres from the Haram in writing before paying.</p>
+
+        <h2 style="margin-top:30px;">When Al Bari Travel is the right choice</h2>
+        <p style="margin-top:14px;line-height:1.8;">If you value:</p>
+        <ul style="margin-top:14px;line-height:2;">
+            <li>A named human representative who owns your booking end-to-end (no call-centre handoffs)</li>
+            <li>Written quotes with exact hotel names and distances</li>
+            <li>Smaller group sizes (20&ndash;40 pilgrims per leader)</li>
+            <li>Remote-first communication (no need to visit a walk-in office)</li>
+            <li>Coverage across Pakistan + USA from a Pakistani-American agency</li>
+            <li>Response within 4 hours during business hours</li>
+            <li>Choice of airline, tier, and exact dates</li>
+        </ul>
+        <p style="margin-top:18px;line-height:1.8;">&hellip; then we're worth a conversation. <a href="https://wa.me/923159596161" style="color:#c9a962;">WhatsApp +92 315 9596161</a> or fill the <a href="/contact/" style="color:#c9a962;">contact form</a> for your free quote within 4 hours.</p>
+
+        <h2 style="margin-top:50px;">What we don't offer</h2>
+        <p style="margin-top:14px;line-height:2;">In the spirit of honest comparison &mdash; here's what we deliberately do NOT do:</p>
+        <ul style="margin-top:14px;line-height:2;">
+            <li><strong>Walk-in offices.</strong> Remote-first is our model. If you specifically need bazaar in-person service, we're not the right fit.</li>
+            <li><strong>Race-to-the-bottom pricing.</strong> We don't undercut by skimping on hotel proximity or transport quality. If a quote elsewhere is 30% cheaper, ask exactly what's being cut.</li>
+            <li><strong>Mass-group Hajj (100+ pilgrims per leader).</strong> Our private Hajj groups stay under 40.</li>
+            <li><strong>Booking before confirmed quota.</strong> We don't sell Hajj seats we haven't confirmed yet.</li>
+            <li><strong>Hotel reservations as a stand-alone service.</strong> We bundle hotels into Umrah/Hajj packages but don't separately book hotel-only stays.</li>
+        </ul>
+
+        <h2 style="margin-top:50px;">Common questions about choosing an operator</h2>
+        <details class="faq-item" style="margin-top:14px;">
+            <summary><h3 style="display:inline;margin:0;font-size:1.05rem;">Is Al Bari Travel licensed by MoRA?</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>Yes, Al Bari Travel &amp; Tours operates as a licensed Pakistani travel agency. For Hajj packages we work through the MoRA-licensed Hajj Group Operator system. Always ask any operator to show their MoRA HGO license number before paying a Hajj deposit &mdash; we welcome this verification.</p></div>
+        </details>
+        <details class="faq-item" style="margin-top:14px;">
+            <summary><h3 style="display:inline;margin:0;font-size:1.05rem;">How do you keep prices fair without a walk-in office?</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>Walk-in offices add PKR 200,000+/month in rent + staff to an operator's overhead, which is passed to customers. We save that cost by operating remote-first via phone, WhatsApp, and email. The savings go into hotel quality and smaller group sizes, not into our pocket.</p></div>
+        </details>
+        <details class="faq-item" style="margin-top:14px;">
+            <summary><h3 style="display:inline;margin:0;font-size:1.05rem;">Can I see real customer reviews?</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>We're actively building our Trustpilot presence and Google Business Profile reviews. We deliberately do not display fabricated testimonials &mdash; only verified reviews from real customers will be surfaced here. In the meantime, ask us for referral phone numbers of past clients in your city; we connect prospects directly with returning pilgrims wherever possible.</p></div>
+        </details>
+        <details class="faq-item" style="margin-top:14px;">
+            <summary><h3 style="display:inline;margin:0;font-size:1.05rem;">What if I'm not happy with my package?</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>All issues during the trip are escalated to your Regional Representative immediately by WhatsApp. We've handled wrong-hotel placements, delayed visas, lost-passport emergencies, and medical situations &mdash; usually within hours. Pakistani Embassy in Riyadh and Consulate in Jeddah are our escalation paths for emergencies.</p></div>
+        </details>
+        <details class="faq-item" style="margin-top:14px;">
+            <summary><h3 style="display:inline;margin:0;font-size:1.05rem;">How do I switch from the Government Scheme to a private package if I'm not selected?</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>Yes &mdash; many Pakistani applicants apply to the Government Scheme first and switch to a private operator (us or anyone else) if not selected in the December lottery. Government Scheme deposits are refundable to non-selected applicants. Don't wait until February if you're concerned about availability; private quotas often fill by then.</p></div>
+        </details>
+
+        <h2 style="margin-top:50px;">Talk to a Regional Representative now</h2>
+        <p style="margin-top:14px;line-height:1.8;">WhatsApp <a href="https://wa.me/923159596161" style="color:#c9a962;">+92 315 9596161</a> for a quote within 4 hours, or browse our <a href="/services/" style="color:#c9a962;">5 service lines</a> and <a href="/offices/" style="color:#c9a962;">7 Regional Representatives</a>.</p>
+    `,
+    extraSchema: `<script type="application/ld+json">
+${JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    { '@type': 'Question', 'name': 'Is Al Bari Travel licensed by MoRA?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Yes, Al Bari Travel & Tours operates as a licensed Pakistani travel agency. For Hajj packages we work through the MoRA-licensed Hajj Group Operator system.' } },
+    { '@type': 'Question', 'name': 'How do you keep prices fair without a walk-in office?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Walk-in offices add significant overhead. Remote-first operation lets us put savings into hotel quality and smaller group sizes.' } },
+    { '@type': 'Question', 'name': 'Can I see real customer reviews?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'We are actively building our Trustpilot and Google Business Profile reviews and never display fabricated testimonials.' } },
+    { '@type': 'Question', 'name': 'What if I am not happy with my package?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'All issues are escalated to your named Regional Representative by WhatsApp, with Pakistani embassy / consulate escalation for emergencies.' } },
+    { '@type': 'Question', 'name': 'How do I switch from Government Scheme to private?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Government Scheme deposits are refundable to non-selected applicants. You can switch to a private operator at any time before the private quota fills.' } }
+  ]
+}, null, 2)}
+</script>`,
+  },
 ];
 
 function contactPageBody() {
@@ -1327,6 +1520,14 @@ function buildSitemap() {
     { loc: `${site.domain}/contact/`, priority: '0.8', changefreq: 'monthly', image: ogImage, imageTitle: 'Contact Al Bari Travel & Tours' },
     { loc: `${site.domain}/blog/`, priority: '0.85', changefreq: 'weekly', image: ogImage, imageTitle: 'Al Bari Travel Blog' },
     { loc: `${site.domain}/forms/`, priority: '0.85', changefreq: 'weekly', image: ogImage, imageTitle: 'Travel & Visa Forms' },
+    { loc: `${site.domain}/why-al-bari/`, priority: '0.75', changefreq: 'monthly', image: ogImage, imageTitle: 'Why Al Bari Travel — Compared' },
+    ...(readJson('diaspora-pages.json').pages.map(p => ({
+      loc: `${site.domain}/${p.slug}/`,
+      priority: '0.8',
+      changefreq: 'monthly',
+      image: ogImage,
+      imageTitle: p.title,
+    }))),
     ...(readJson('forms.json').forms.filter(f => f.downloadType === 'page').map(f => ({
       loc: `${site.domain}${f.downloadUrl}`,
       priority: '0.75',
@@ -1372,6 +1573,142 @@ ${urls.map(u => {
 </urlset>
 `;
   writeFile('sitemap.xml', xml);
+}
+
+// Diaspora landing pages (UK / USA / Canada)
+function buildDiasporaPages() {
+  const data = readJson('diaspora-pages.json');
+  const tpl = readTemplate('diaspora-page.html');
+  for (const page of data.pages) {
+    const flightsTableHtml = page.flights.map(f => `
+                <tr>
+                    <td><strong>${escapeHtml(f.route)}</strong></td>
+                    <td>${escapeHtml(f.airlines)}</td>
+                    <td class="tier-price">${escapeHtml(f.approxFare)}</td>
+                    <td style="font-size:0.9em;opacity:0.8;">${escapeHtml(f.duration)}</td>
+                </tr>`).join('');
+    const pricingKey = `pricing${page.currency}`;
+    const pricingRows = (page[pricingKey] || []);
+    const pricingTableHtml = pricingRows.map(t => `
+                <tr>
+                    <td><strong>${escapeHtml(t.tier)}</strong></td>
+                    <td class="tier-price">${escapeHtml(t.range)}</td>
+                    <td style="font-size:0.9em;opacity:0.85;">${escapeHtml(t.highlights)}</td>
+                </tr>`).join('');
+    const communitiesHtml = page.communities.map(c => `<span style="background:rgba(201,169,98,0.1);border:1px solid rgba(201,169,98,0.3);padding:6px 14px;color:#c9a962;font-size:0.85rem;">${escapeHtml(c)}</span>`).join('');
+    const considerationsHtml = page.uniqueConsiderations.map(c => `<li>${c}</li>`).join('\n');
+    const faqHtml = page.faqs.map(q => `
+        <details class="faq-item" style="margin-top:14px;">
+            <summary><h3 style="display:inline;margin:0;font-size:1.05rem;">${escapeHtml(q.q)}</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>${escapeHtml(q.a)}</p></div>
+        </details>`).join('');
+    const faqSchema = `<script type="application/ld+json">
+${JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': page.faqs.map(q => ({
+    '@type': 'Question',
+    name: q.q,
+    acceptedAnswer: { '@type': 'Answer', text: q.a }
+  }))
+}, null, 2)}
+</script>`;
+
+    const ctx = {
+      seoTitle: page.seoTitle,
+      seoDescription: page.seoDescription,
+      canonical: `${site.domain}/${page.slug}/`,
+      ogType: 'article',
+      title: page.title,
+      audience: page.audience,
+      country: page.country,
+      currency: page.currency,
+      intro: page.intro,
+      flightsTableHtml,
+      pricingTableHtml,
+      communitiesHtml,
+      considerationsHtml,
+      faqHtml,
+      faqSchema,
+      name: page.title,
+      footerOfficeList: footerOfficeListHtml(),
+      year: String(new Date().getFullYear()),
+    };
+    writeFile(`${page.slug}/index.html`, render(tpl, ctx));
+  }
+}
+
+// Build a lightweight client-side search index
+function buildSearchIndex() {
+  const entries = [];
+  const ogImage = `${site.domain}/og-default.svg`;
+
+  // Static landing pages
+  const staticEntries = [
+    { u: '/', t: 'Home — Al Bari Travel & Tours', d: 'Trusted Umrah, Hajj, and international flight booking from Pakistan and USA. Seven Regional Representatives.', k: 'home umrah hajj saudi flights pakistan' },
+    { u: '/about/', t: 'About Al Bari Travel & Tours', d: 'Family-run agency established 2018. Remote-first model with named Regional Representatives.', k: 'about company history founder' },
+    { u: '/services/', t: 'Our Services', d: 'Hajj & Umrah packages, international flights, student/visit/work visas.', k: 'services' },
+    { u: '/offices/', t: 'Our Offices', d: 'Seven Regional Representatives serving Pakistan and the USA.', k: 'offices locations representatives' },
+    { u: '/contact/', t: 'Contact Us', d: 'WhatsApp +92 315 9596161, +92 331 7312063, USA +1 (443) 589-4441, info@albaritravelspk.com', k: 'contact phone email whatsapp' },
+    { u: '/blog/', t: 'Blog — Pakistani Travel Guides', d: '20+ research-backed guides on Umrah, Hajj, Saudi visa, UK student visa, Schengen, Gulf work.', k: 'blog guides articles' },
+    { u: '/forms/', t: 'Travel & Visa Forms Library', d: '18 curated Pakistani travel forms — Hajj 2027 application, Saudi e-visa checklist, GAMCA centres.', k: 'forms documents templates downloads' },
+    { u: '/why-al-bari/', t: 'Why Al Bari Travel — Honest Comparison', d: 'Side-by-side comparison with Government Hajj Scheme and typical private operators.', k: 'compare vs government scheme private' },
+    { u: '/glossary/', t: 'Umrah & Hajj Glossary', d: 'Definitions of Tawaf, Sa\'i, Miqat, Ihram, Mahram, Talbiyah and 40+ pilgrimage terms.', k: 'glossary terms definitions tawaf sai' },
+  ];
+  entries.push(...staticEntries);
+
+  // Services
+  for (const s of services) {
+    entries.push({
+      u: `/services/${s.slug}/`,
+      t: s.name,
+      d: s.seoDescription || s.heroLede || '',
+      k: (s.tags || []).join(' ') + ' service',
+    });
+  }
+
+  // Offices
+  for (const o of offices) {
+    entries.push({
+      u: `/offices/${o.slug}/`,
+      t: o.name,
+      d: o.intro || '',
+      k: `${o.city} ${o.region} ${o.country} office representative ${o.incharge}`,
+    });
+  }
+
+  // Provinces
+  for (const p of provinces) {
+    entries.push({
+      u: `/offices/${p.slug}/`,
+      t: `Al Bari Travel in ${p.name}`,
+      d: `Umrah, Hajj, and international travel services across ${p.name}, Pakistan.`,
+      k: `${p.name} pakistan province`,
+    });
+  }
+
+  // Blog posts
+  for (const post of blog.posts) {
+    entries.push({
+      u: `/blog/${post.slug}/`,
+      t: post.title,
+      d: post.excerpt || post.seoDescription || '',
+      k: (post.tags || []).join(' ') + ' ' + post.category,
+    });
+  }
+
+  // Forms library entries
+  const forms = readJson('forms.json').forms;
+  for (const f of forms) {
+    entries.push({
+      u: f.downloadType === 'page' ? f.downloadUrl : `/forms/#form-${f.slug}`,
+      t: f.title.replace(/&amp;/g, '&'),
+      d: f.description.replace(/<[^>]+>/g, '').slice(0, 200),
+      k: (f.tags || []).join(' ') + ' form',
+    });
+  }
+
+  writeFile('search-index.json', JSON.stringify(entries));
 }
 
 // ------------------------------------------------------------------
@@ -1539,10 +1876,20 @@ if (target === 'all' || target === 'forms') {
   buildFormInfoPages();
 }
 
+if (target === 'all' || target === 'diaspora') {
+  console.log('building diaspora landing pages (UK / USA / Canada)...');
+  buildDiasporaPages();
+}
+
 if (target === 'all' || target === 'sitemap') {
   console.log('building sitemap + robots...');
   buildSitemap();
   buildRobots();
+}
+
+if (target === 'all' || target === 'search') {
+  console.log('building search index...');
+  buildSearchIndex();
 }
 
 if (target === 'all' || target === 'css') {
@@ -1553,6 +1900,11 @@ if (target === 'all' || target === 'css') {
 if (target === 'all' || target === 'years') {
   console.log('refreshing hardcoded years in index.html + llms.txt...');
   refreshHardcodedYears();
+}
+
+if (target === 'all' || target === 'sweep') {
+  console.log('post-build sweep (lazy-load + dims + last-updated)...');
+  require('child_process').execSync(`node "${path.join(__dirname, 'post-build-sweep.js')}"`, { stdio: 'inherit' });
 }
 
 console.log('done.');

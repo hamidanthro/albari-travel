@@ -21,11 +21,26 @@
       "heroHeading": "Hajj & Umrah Packages",
       "heroLede": "Complete pilgrimage packages from Pakistan and the USA — Economy through Premium tiers. Saudi visa via the official Nusuk platform, hotels chosen for proximity to the Haram, full Ziyarat program in Madinah.",
       "keyFacts": [
-        { "label": "Hajj 2027 dates", "value": "14–19 May 2027 (8–13 Dhu'l-Hijjah 1448 AH)" },
-        { "label": "Umrah availability", "value": "Year-round via Saudi e-Visa (1-year, multi-entry, 90-day stays)" },
-        { "label": "Visa platform", "value": "Nusuk — official Saudi government system" },
-        { "label": "Mandatory vaccines", "value": "Meningococcal ACYW135 + Polio booster (within 6 weeks for Pakistanis)" },
-        { "label": "PK Hajj quota", "value": "~179,000 seats annually, split Govt + Private operators" }
+        {
+          "label": "Hajj 2027 dates",
+          "value": "14–19 May 2027 (8–13 Dhu'l-Hijjah 1448 AH)"
+        },
+        {
+          "label": "Umrah availability",
+          "value": "Year-round via Saudi e-Visa (1-year, multi-entry, 90-day stays)"
+        },
+        {
+          "label": "Visa platform",
+          "value": "Nusuk — official Saudi government system"
+        },
+        {
+          "label": "Mandatory vaccines",
+          "value": "Meningococcal ACYW135 + Polio booster (within 6 weeks for Pakistanis)"
+        },
+        {
+          "label": "PK Hajj quota",
+          "value": "~179,000 seats annually, split Govt + Private operators"
+        }
       ],
       "intro": "Al Bari Travel has coordinated Hajj and Umrah for Pakistani and Pakistani-American families since 2018. Every Umrah package includes round-trip international flights, Saudi visa processing via the official Nusuk platform, hotel accommodation chosen for proximity to Masjid al-Haram (Makkah) and Masjid an-Nabawi (Madinah), ground transport between cities, and a guided Ziyarat tour. Hajj packages add the multi-stage rites coordination across Makkah, Mina, Arafat, Muzdalifah, and Madinah, with a licensed mu'allim (Saudi guide) attached to each group. Your Regional Representative handles every step — no call centres, no hand-offs.",
       "whatsIncluded": [
@@ -40,21 +55,108 @@
         "Optional add-ons: room upgrades, premium meal plans, Zamzam water arrangements, family-suite room types, wheelchair assistance"
       ],
       "tiers": [
-        { "name": "Economy Umrah", "duration": "10 days / 9 nights", "highlights": ["3-star hotels (800m–2km from Haram)", "Shared bus transport", "Quad-share or triple-share rooms", "Basic meal plan optional", "Round-trip flights included", "Saudi e-Visa included"] },
-        { "name": "Premium Umrah", "duration": "12 days / 11 nights", "highlights": ["5-star hotels (50–300m from Haram, Haram view available)", "Private or shared SUV transport", "Double-share rooms", "Breakfast included", "Personal guide throughout", "Extended Ziyarat program"] },
-        { "name": "Family Umrah", "duration": "10–14 days", "highlights": ["Multi-room hotel suites for 4–6 family members", "Connecting rooms where possible", "Family-paced Ziyarat", "Wheelchair-friendly logistics on request", "Pre-departure briefing for first-timers"] },
-        { "name": "Hajj 2027 Package", "duration": "25–40 days", "highlights": ["Group departure with synchronised flights", "Accommodation in Makkah, Mina (tents), Aziziyah, and Madinah", "Licensed mu'allim (Saudi guide) attached to group", "Full Hajj rites coordination across all stages", "Pre-Hajj training session in Pakistan"] }
+        {
+          "name": "Economy Umrah",
+          "duration": "14 days / 13 nights",
+          "priceRange": "PKR 235,000–290,000 per person",
+          "highlights": [
+            "3-star hotels (500m+ from Haram)",
+            "Quad-share or triple-share rooms",
+            "Round-trip flights included",
+            "Saudi e-Visa included",
+            "Breakfast included",
+            "Shared coach transport in Saudi"
+          ]
+        },
+        {
+          "name": "Standard Umrah",
+          "duration": "14 days / 13 nights",
+          "priceRange": "PKR 335,000–410,000 per person",
+          "highlights": [
+            "4-star hotels (200–400m from Haram)",
+            "Triple- or double-share rooms",
+            "Breakfast included",
+            "Madinah & Makkah ziyarat tours",
+            "Pre-departure briefing",
+            "Private group transport"
+          ]
+        },
+        {
+          "name": "Premium Umrah",
+          "duration": "14 days / 13 nights",
+          "priceRange": "PKR 510,000–750,000 per person",
+          "highlights": [
+            "5-star hotels (within 200m of Haram, Haram view available)",
+            "Double-share or single rooms",
+            "Full board meal plan",
+            "Extended ziyarat program",
+            "Personal group leader",
+            "Premium SUV / Mercedes transport"
+          ]
+        },
+        {
+          "name": "Family Umrah",
+          "duration": "10–14 days",
+          "priceRange": "Custom — request quote",
+          "highlights": [
+            "Multi-room hotel suites for 4–6 family members",
+            "Connecting rooms where possible",
+            "Family-paced ziyarat",
+            "Wheelchair-friendly logistics on request",
+            "Pre-departure briefing for first-timers"
+          ]
+        },
+        {
+          "name": "Hajj 2027 Package",
+          "duration": "35–45 days",
+          "priceRange": "PKR 1,500,000–3,500,000 per person",
+          "highlights": [
+            "Government & Private operator routes both supported",
+            "Madinah + Makkah + Aziziyah accommodation",
+            "Mina tents in Wadi Muhassir zone (premium)",
+            "Licensed Saudi Mu'allim attached to group",
+            "Pre-Hajj training session in Pakistan",
+            "Adahi qurbani voucher included"
+          ]
+        }
       ],
       "faqs": [
-        { "q": "What is the difference between Hajj and Umrah?", "a": "Hajj is the obligatory pilgrimage every able Muslim must perform once in a lifetime, on specific days of Dhu'l-Hijjah (Hajj 2027 falls 14–19 May 2027). Umrah is non-obligatory and can be performed any time of year. From Pakistan, Umrah trips typically last 10–14 days; Hajj trips run 25–40 days because of the multi-stage rites at Makkah, Mina, Arafat, Muzdalifah, and Madinah." },
-        { "q": "What documents do I need?", "a": "Valid passport (6+ months from return date), recent passport-size photographs, NIC copy, Meningococcal ACYW135 vaccination certificate (mandatory for Hajj, recommended for Umrah), Polio vaccination certificate within last 6 weeks (mandatory for Pakistanis travelling to Saudi). For minors: birth certificate plus father's consent letter if mother travels alone with children. For couples: marriage certificate may be required for some package categories." },
-        { "q": "How early should I book Hajj 2027?", "a": "As early as possible. Pakistan's Hajj visa quota from Saudi (~179,000 seats annually, split between the Government Hajj Scheme and licensed Private Hajj Operators) fills months in advance. Premium hotels near Masjid al-Haram book out 6+ months ahead. For Hajj 2027 (mid-May 2027), confirm your booking by November–December 2026 at the latest." },
-        { "q": "How early should I book Umrah?", "a": "For standard Umrah, 2–4 weeks before travel is comfortable. Ramadan Umrah (busiest period) needs 6–8 weeks ahead because flights, hotels near the Haram, and visa slots are all in peak demand. Off-peak months (mid-September to mid-October, late February to early April) are easiest to book on short notice." },
-        { "q": "Are payment plans available?", "a": "Yes — for Hajj packages we accept staged payments (typically: confirmation deposit on booking, balance due before visa submission). For Umrah, full payment is usually required before ticket issuance because international airfares and hotel pre-pays do not allow staged structures. Your Regional Representative will walk you through specific options on the first call." },
-        { "q": "Can my elderly parents travel?", "a": "Yes. We arrange airport wheelchair assistance in Jeddah and Madinah, hotels closer to the Haram for those with mobility issues, slower-paced Ziyarat tours, and ground transport with assistance. Tell us your family's needs and we'll tailor the package — this is one of our most common arrangements." },
-        { "q": "Are family Umrah packages available?", "a": "Yes. We tailor hotel categories, room types (connecting rooms, large suites for 4–6 people), and Ziyarat pacing for families of any size — couples, parents with adult children, multi-generational groups. Tell your Regional Representative the group composition and we'll quote accordingly." },
-        { "q": "What is the Nusuk platform?", "a": "Nusuk is the Saudi government's official platform for Hajj and Umrah pilgrim management — visa issuance, Masjid al-Haram and Riyadh-ul-Jannah entry permits, and trip planning. We handle all Nusuk-related steps on your behalf; you do not need to register or operate the platform yourself, though you can install the Nusuk app to track your visa and entry permits." },
-        { "q": "What hotels do you book?", "a": "It depends on package tier. Economy: 3-star or 4-star hotels in the Misfalah area (800m–2km from Haram) — common chains include Al Olayan, Dar Al Eiman, Anjum. Premium: 4–5 star hotels in Ajyad / Abraj Al Bait towers area (50–300m from Haram) — including Hilton Suites, Anjum, Conrad, Pullman Zamzam. Hotel selection is confirmed at booking; substitutions only if a specific hotel is fully sold out." }
+        {
+          "q": "What is the difference between Hajj and Umrah?",
+          "a": "Hajj is the obligatory pilgrimage every able Muslim must perform once in a lifetime, on specific days of Dhu'l-Hijjah (Hajj 2027 falls 14–19 May 2027). Umrah is non-obligatory and can be performed any time of year. From Pakistan, Umrah trips typically last 10–14 days; Hajj trips run 25–40 days because of the multi-stage rites at Makkah, Mina, Arafat, Muzdalifah, and Madinah."
+        },
+        {
+          "q": "What documents do I need?",
+          "a": "Valid passport (6+ months from return date), recent passport-size photographs, NIC copy, Meningococcal ACYW135 vaccination certificate (mandatory for Hajj, recommended for Umrah), Polio vaccination certificate within last 6 weeks (mandatory for Pakistanis travelling to Saudi). For minors: birth certificate plus father's consent letter if mother travels alone with children. For couples: marriage certificate may be required for some package categories."
+        },
+        {
+          "q": "How early should I book Hajj 2027?",
+          "a": "As early as possible. Pakistan's Hajj visa quota from Saudi (~179,000 seats annually, split between the Government Hajj Scheme and licensed Private Hajj Operators) fills months in advance. Premium hotels near Masjid al-Haram book out 6+ months ahead. For Hajj 2027 (mid-May 2027), confirm your booking by November–December 2026 at the latest."
+        },
+        {
+          "q": "How early should I book Umrah?",
+          "a": "For standard Umrah, 2–4 weeks before travel is comfortable. Ramadan Umrah (busiest period) needs 6–8 weeks ahead because flights, hotels near the Haram, and visa slots are all in peak demand. Off-peak months (mid-September to mid-October, late February to early April) are easiest to book on short notice."
+        },
+        {
+          "q": "Are payment plans available?",
+          "a": "Yes — for Hajj packages we accept staged payments (typically: confirmation deposit on booking, balance due before visa submission). For Umrah, full payment is usually required before ticket issuance because international airfares and hotel pre-pays do not allow staged structures. Your Regional Representative will walk you through specific options on the first call."
+        },
+        {
+          "q": "Can my elderly parents travel?",
+          "a": "Yes. We arrange airport wheelchair assistance in Jeddah and Madinah, hotels closer to the Haram for those with mobility issues, slower-paced Ziyarat tours, and ground transport with assistance. Tell us your family's needs and we'll tailor the package — this is one of our most common arrangements."
+        },
+        {
+          "q": "Are family Umrah packages available?",
+          "a": "Yes. We tailor hotel categories, room types (connecting rooms, large suites for 4–6 people), and Ziyarat pacing for families of any size — couples, parents with adult children, multi-generational groups. Tell your Regional Representative the group composition and we'll quote accordingly."
+        },
+        {
+          "q": "What is the Nusuk platform?",
+          "a": "Nusuk is the Saudi government's official platform for Hajj and Umrah pilgrim management — visa issuance, Masjid al-Haram and Riyadh-ul-Jannah entry permits, and trip planning. We handle all Nusuk-related steps on your behalf; you do not need to register or operate the platform yourself, though you can install the Nusuk app to track your visa and entry permits."
+        },
+        {
+          "q": "What hotels do you book?",
+          "a": "It depends on package tier. Economy: 3-star or 4-star hotels in the Misfalah area (800m–2km from Haram) — common chains include Al Olayan, Dar Al Eiman, Anjum. Premium: 4–5 star hotels in Ajyad / Abraj Al Bait towers area (50–300m from Haram) — including Hilton Suites, Anjum, Conrad, Pullman Zamzam. Hotel selection is confirmed at booking; substitutions only if a specific hotel is fully sold out."
+        }
       ],
       "primaryCta": "Get a Pilgrimage Quote"
     },
@@ -78,11 +180,26 @@
       "heroHeading": "International Airline Tickets",
       "heroLede": "Book international flights from any major Pakistani airport — to Saudi Arabia, UAE, USA, Canada, UK, and beyond — with best-fare comparison across every carrier serving Pakistan.",
       "keyFacts": [
-        { "label": "PK departure airports", "value": "ISB, LHE, KHI, PEW, MUX, LYP, SKT (+ smaller ones on request)" },
-        { "label": "Carriers we issue", "value": "PIA, Saudia, Air Sial, AirBlue, Emirates, Qatar, Etihad, Turkish, Oman Air, Salam Air" },
-        { "label": "Booking system", "value": "GDS (Amadeus / Sabre / Galileo) — same source major OTAs use" },
-        { "label": "E-ticket delivery", "value": "30 minutes to 4 hours after payment in business hours" },
-        { "label": "Class options", "value": "Economy, Premium Economy, Business, First (carrier-dependent)" }
+        {
+          "label": "PK departure airports",
+          "value": "ISB, LHE, KHI, PEW, MUX, LYP, SKT (+ smaller ones on request)"
+        },
+        {
+          "label": "Carriers we issue",
+          "value": "PIA, Saudia, Air Sial, AirBlue, Emirates, Qatar, Etihad, Turkish, Oman Air, Salam Air"
+        },
+        {
+          "label": "Booking system",
+          "value": "GDS (Amadeus / Sabre / Galileo) — same source major OTAs use"
+        },
+        {
+          "label": "E-ticket delivery",
+          "value": "30 minutes to 4 hours after payment in business hours"
+        },
+        {
+          "label": "Class options",
+          "value": "Economy, Premium Economy, Business, First (carrier-dependent)"
+        }
       ],
       "intro": "Al Bari Travel issues international airline tickets from every major Pakistani airport — Islamabad (ISB), Lahore (LHE), Karachi (KHI), Peshawar (PEW), Multan (MUX), Faisalabad (LYP), and Sialkot (SKT). We work with all major regional carriers connected to global GDS booking systems (Amadeus, Sabre, Galileo), so you get the same fares the major OTAs do — plus a human Regional Representative who can advise on routings, stopovers, and cancellation rules. E-tickets are typically delivered within 30 minutes to 4 hours of payment during business hours.",
       "whatsIncluded": [
@@ -97,23 +214,120 @@
         "Cancellation assistance — we file the refund request and chase the airline on your behalf"
       ],
       "routes": [
-        { "destination": "Saudi Arabia", "carriers": "PIA, Saudia, Air Sial — direct from major PK cities to JED, MED, RUH" },
-        { "destination": "UAE", "carriers": "Emirates, Etihad, flydubai, PIA, Air Sial, AirBlue — to DXB, AUH, SHJ" },
-        { "destination": "USA", "carriers": "Most commonly Qatar Airways (via DOH) or Turkish Airlines (via IST) — PIA direct currently restricted" },
-        { "destination": "UK", "carriers": "PIA, Qatar Airways (via DOH), Emirates (via DXB), Etihad (via AUH)" },
-        { "destination": "Canada", "carriers": "Qatar Airways, Turkish, Emirates — with one stop" },
-        { "destination": "Europe / Schengen", "carriers": "Turkish Airlines (via IST), Qatar (via DOH), Emirates (via DXB), PIA (direct CDG resumed Jan 2025)" }
+        {
+          "destination": "Saudi Arabia",
+          "carriers": "PIA, Saudia, Air Sial — direct from major PK cities to JED, MED, RUH"
+        },
+        {
+          "destination": "UAE",
+          "carriers": "Emirates, Etihad, flydubai, PIA, Air Sial, AirBlue — to DXB, AUH, SHJ"
+        },
+        {
+          "destination": "USA",
+          "carriers": "Most commonly Qatar Airways (via DOH) or Turkish Airlines (via IST) — PIA direct currently restricted"
+        },
+        {
+          "destination": "UK",
+          "carriers": "PIA, Qatar Airways (via DOH), Emirates (via DXB), Etihad (via AUH)"
+        },
+        {
+          "destination": "Canada",
+          "carriers": "Qatar Airways, Turkish, Emirates — with one stop"
+        },
+        {
+          "destination": "Europe / Schengen",
+          "carriers": "Turkish Airlines (via IST), Qatar (via DOH), Emirates (via DXB), PIA (direct CDG resumed Jan 2025)"
+        }
       ],
       "faqs": [
-        { "q": "Which airlines do you book?", "a": "All major carriers serving Pakistan: PIA, Saudia (Saudi Airlines), Air Sial, AirBlue, Qatar Airways, Emirates, Etihad, Turkish Airlines, Oman Air, Salam Air, and others as available on your route. We use GDS systems (Amadeus, Sabre, Galileo) so we see real-time inventory and fares across all of them." },
-        { "q": "Which Pakistani airports can I fly from?", "a": "All major international airports: Allama Iqbal Lahore (LHE), Jinnah Karachi (KHI), Islamabad (ISB), Bacha Khan Peshawar (PEW), Multan (MUX), Faisalabad (LYP), and Sialkot (SKT). For passengers in cities without direct international service (Sukkur, Quetta, Skardu), we arrange domestic feeder flights to the nearest international hub." },
-        { "q": "How fast do I get my ticket?", "a": "E-tickets are typically delivered within 30 minutes to 4 hours of payment confirmation during business hours (Mon–Sat, 9 AM–8 PM PKT). Complex multi-city itineraries may take up to 24 hours. Once issued, the e-ticket arrives via WhatsApp or email and you can check the booking directly on the airline's website using the PNR." },
-        { "q": "Can I change or cancel a ticket?", "a": "Yes, subject to the airline's fare rules. Each fare class has its own rules (Restricted Economy = often non-refundable, Flex Economy = changes allowed with fee, Business/First = usually fully flexible). We brief you on the fare rules before you book, and we handle the change/cancellation request on your behalf if needed." },
-        { "q": "Do you offer student-fare or Hajj/Umrah group-fare discounts?", "a": "Yes — many airlines offer special fares: student fares (typically 10–15% off, requires student status verification), Hajj/Umrah group fares (substantially discounted, requires Hajj/Umrah package booking), labour/worker fares (some Gulf routes). Your Regional Representative will check available discounts for your dates and destination." },
-        { "q": "Can you book complex itineraries with stopovers?", "a": "Yes. Multi-city routings, dual-airline tickets, stopovers in Doha / Dubai / Istanbul / Bangkok for sightseeing — all standard. Some airlines (Qatar, Turkish, Emirates) offer free stopover programmes with hotel discounts at their hub cities. Worth mentioning your travel plans to the Regional Representative so we can suggest the best routing." },
-        { "q": "Why book through you instead of an online travel agency?", "a": "Three reasons: (1) Same fares because we use the same GDS booking systems, often slightly better due to consolidator agreements. (2) Real human help with re-booking, cancellations, and complex itineraries — OTAs put you in chat queues. (3) Local payment methods (cash, JazzCash, Easypaisa, bank transfer) instead of being forced to use a credit card." }
+        {
+          "q": "Which airlines do you book?",
+          "a": "All major carriers serving Pakistan: PIA, Saudia (Saudi Airlines), Air Sial, AirBlue, Qatar Airways, Emirates, Etihad, Turkish Airlines, Oman Air, Salam Air, and others as available on your route. We use GDS systems (Amadeus, Sabre, Galileo) so we see real-time inventory and fares across all of them."
+        },
+        {
+          "q": "Which Pakistani airports can I fly from?",
+          "a": "All major international airports: Allama Iqbal Lahore (LHE), Jinnah Karachi (KHI), Islamabad (ISB), Bacha Khan Peshawar (PEW), Multan (MUX), Faisalabad (LYP), and Sialkot (SKT). For passengers in cities without direct international service (Sukkur, Quetta, Skardu), we arrange domestic feeder flights to the nearest international hub."
+        },
+        {
+          "q": "How fast do I get my ticket?",
+          "a": "E-tickets are typically delivered within 30 minutes to 4 hours of payment confirmation during business hours (Mon–Sat, 9 AM–8 PM PKT). Complex multi-city itineraries may take up to 24 hours. Once issued, the e-ticket arrives via WhatsApp or email and you can check the booking directly on the airline's website using the PNR."
+        },
+        {
+          "q": "Can I change or cancel a ticket?",
+          "a": "Yes, subject to the airline's fare rules. Each fare class has its own rules (Restricted Economy = often non-refundable, Flex Economy = changes allowed with fee, Business/First = usually fully flexible). We brief you on the fare rules before you book, and we handle the change/cancellation request on your behalf if needed."
+        },
+        {
+          "q": "Do you offer student-fare or Hajj/Umrah group-fare discounts?",
+          "a": "Yes — many airlines offer special fares: student fares (typically 10–15% off, requires student status verification), Hajj/Umrah group fares (substantially discounted, requires Hajj/Umrah package booking), labour/worker fares (some Gulf routes). Your Regional Representative will check available discounts for your dates and destination."
+        },
+        {
+          "q": "Can you book complex itineraries with stopovers?",
+          "a": "Yes. Multi-city routings, dual-airline tickets, stopovers in Doha / Dubai / Istanbul / Bangkok for sightseeing — all standard. Some airlines (Qatar, Turkish, Emirates) offer free stopover programmes with hotel discounts at their hub cities. Worth mentioning your travel plans to the Regional Representative so we can suggest the best routing."
+        },
+        {
+          "q": "Why book through you instead of an online travel agency?",
+          "a": "Three reasons: (1) Same fares because we use the same GDS booking systems, often slightly better due to consolidator agreements. (2) Real human help with re-booking, cancellations, and complex itineraries — OTAs put you in chat queues. (3) Local payment methods (cash, JazzCash, Easypaisa, bank transfer) instead of being forced to use a credit card."
+        }
       ],
-      "primaryCta": "Get a Flight Quote"
+      "primaryCta": "Get a Flight Quote",
+      "tiers": [
+        {
+          "name": "Pakistan ↔ Saudi Arabia",
+          "duration": "Per ticket",
+          "priceRange": "PKR 125,000–195,000 round-trip Economy",
+          "highlights": [
+            "PIA, Saudia, Air Sial, FlyJinnah, SereneAir, AirBlue",
+            "Direct flights from KHI, LHE, ISB, PEW, MUX, SLM",
+            "30 kg checked + 7 kg cabin standard",
+            "Free 5L ZamZam allowance on PIA & Saudia",
+            "Madinah-first or Jeddah-first itinerary"
+          ]
+        },
+        {
+          "name": "Pakistan ↔ UAE / Gulf",
+          "duration": "Per ticket",
+          "priceRange": "PKR 75,000–145,000 round-trip Economy",
+          "highlights": [
+            "Emirates, Etihad, Qatar, flydubai, Air Arabia, Salam Air",
+            "Daily flights from all major Pakistani cities",
+            "Direct or transit via Dubai/Doha/Abu Dhabi",
+            "Best-fare comparison across 6+ airlines"
+          ]
+        },
+        {
+          "name": "Pakistan ↔ UK / Europe",
+          "duration": "Per ticket",
+          "priceRange": "PKR 220,000–450,000 round-trip Economy",
+          "highlights": [
+            "Turkish, Qatar, Emirates, Etihad, British Airways, PIA",
+            "Transit via Istanbul, Doha, Dubai, Abu Dhabi",
+            "Multi-city itineraries supported",
+            "Student fare discounts where applicable"
+          ]
+        },
+        {
+          "name": "Pakistan ↔ USA / Canada",
+          "duration": "Per ticket",
+          "priceRange": "PKR 380,000–750,000 round-trip Economy",
+          "highlights": [
+            "Turkish, Qatar, Emirates, Etihad",
+            "Long-haul transit via Istanbul, Doha, Dubai",
+            "Stopover packages on request",
+            "Diaspora family-bundle pricing"
+          ]
+        },
+        {
+          "name": "Business & First Class",
+          "duration": "Per ticket",
+          "priceRange": "PKR 400,000–1,200,000+ per ticket",
+          "highlights": [
+            "Available on PIA, Saudia, Emirates, Qatar, Turkish, Etihad",
+            "Lounge access, priority boarding, lie-flat seats",
+            "Group business-class for premium Umrah/Hajj packages",
+            "Personalised seat selection"
+          ]
+        }
+      ]
     },
     {
       "slug": "student-visas",
@@ -135,11 +349,26 @@
       "heroHeading": "Student Visa Applications",
       "heroLede": "End-to-end student visa support for Pakistani students applying to universities in the UK, USA, Canada, Australia, and other study destinations — document attestation, financial proof guidance, embassy bookings, status tracking.",
       "keyFacts": [
-        { "label": "UK Student Route", "value": "CAS + £1,334/mo (London) or £1,023/mo held 28 days · TB test mandatory · £490 fee · 3 weeks std" },
-        { "label": "USA F-1", "value": "I-20 + SEVIS fee $350 + DS-160 + interview · $185 fee · Long interview waits in PK currently" },
-        { "label": "Canada SDS", "value": "LOA + GIC + medical + biometric · 20-day target processing · Faster than regular Study Permit" },
-        { "label": "Australia subclass 500", "value": "CoE + GTE statement + OSHC + AUD 24,505 funds · 4–8 weeks processing" },
-        { "label": "Common requirement", "value": "Biometric appointment at VFS Global (Islamabad, Karachi, Lahore)" }
+        {
+          "label": "UK Student Route",
+          "value": "CAS + £1,334/mo (London) or £1,023/mo held 28 days · TB test mandatory · £490 fee · 3 weeks std"
+        },
+        {
+          "label": "USA F-1",
+          "value": "I-20 + SEVIS fee $350 + DS-160 + interview · $185 fee · Long interview waits in PK currently"
+        },
+        {
+          "label": "Canada SDS",
+          "value": "LOA + GIC + medical + biometric · 20-day target processing · Faster than regular Study Permit"
+        },
+        {
+          "label": "Australia subclass 500",
+          "value": "CoE + GTE statement + OSHC + AUD 24,505 funds · 4–8 weeks processing"
+        },
+        {
+          "label": "Common requirement",
+          "value": "Biometric appointment at VFS Global (Islamabad, Karachi, Lahore)"
+        }
       ],
       "intro": "Studying abroad starts with a complete, error-free visa application — that is where we come in. Al Bari Travel helps Pakistani students assemble the right documentation, financial proof, and embassy paperwork for the major destinations: UK (Student Route), USA (F-1), Canada (Study Permit), Australia (subclass 500), plus Germany, Ireland, France, New Zealand, and Malaysia as commonly requested. We work with applications from undergraduate through PhD level.",
       "whatsIncluded": [
@@ -156,16 +385,101 @@
         "Re-application support if first attempt is unsuccessful"
       ],
       "faqs": [
-        { "q": "Which countries do you handle student visas for?", "a": "UK, USA, Canada, Australia primarily, plus Germany, France, Ireland, New Zealand, and Malaysia as commonly requested. Tell us your university acceptance and destination and we will confirm what is needed for that specific country." },
-        { "q": "How long does the application take?", "a": "UK Student Route: 3 weeks standard, 5 working days priority. USA F-1: depends mostly on interview wait time — currently very long in Pakistan for new applicants (often 6–12 months at the Karachi/Islamabad consulates), so apply 8+ months before your intake. Canada Study Permit via SDS: 20 calendar days target. Australia subclass 500: 4–8 weeks typical. Always start early." },
-        { "q": "Do you guarantee visa approval?", "a": "No agent can guarantee visa approval — the decision rests with the embassy. What we guarantee is a complete, error-free application with all supporting documentation in the correct format. Most rejections come from incomplete or inconsistent documents, which we eliminate. We also brief you on what to say at the visa interview." },
-        { "q": "What is the financial requirement?", "a": "Varies by country. UK Student Route requires £1,334/month (London) or £1,023/month (outside London) for up to 9 months, held in your account for 28 consecutive days ending no more than 31 days before the application date. Canada needs CAD 20,635 for first year living expenses plus tuition. Australia needs AUD 24,505 (2024 update). USA requires you to demonstrate financial capacity at the interview rather than meeting a fixed number. Your Regional Representative will give exact figures for your case." },
-        { "q": "Do I need IELTS?", "a": "Most English-medium destinations require an English-proficiency test: IELTS (Academic for most), TOEFL iBT, PTE Academic, or Duolingo English Test for some institutions. UK requires a SELT (UKVI-approved test) specifically — typically UKVI IELTS or PTE Academic. We help you choose the right test and book it." },
-        { "q": "Do I need a TB test for the UK?", "a": "Yes. Pakistani applicants applying for UK Student Route MUST have a TB test from a UK-approved clinic in Pakistan before the application. Approved clinics are in Islamabad, Karachi, and Lahore. We book this appointment for you as part of the package." },
-        { "q": "Can my family come with me?", "a": "Depends on the destination and your level of study. UK Student Route allows dependants only for postgraduate research courses (PhD/MRes) or government-sponsored students (since 2024 rule change). Canada and Australia have generous family routes that allow spouses and dependent children. USA F-2 visa is for F-1 dependants but does not allow the spouse to work. We can advise based on your specific program." },
-        { "q": "What is SDS (Study Direct Stream) for Canada?", "a": "SDS is Canada's expedited study-permit programme for students from select countries including Pakistan. To qualify you need: a Letter of Acceptance from a DLI, IELTS 6.0+ in each band, payment of first-year tuition, a CAD 20,635 GIC (Guaranteed Investment Certificate) from a Canadian bank, biometric submission, and a medical exam. Target processing: 20 calendar days, much faster than the regular Study Permit route." }
+        {
+          "q": "Which countries do you handle student visas for?",
+          "a": "UK, USA, Canada, Australia primarily, plus Germany, France, Ireland, New Zealand, and Malaysia as commonly requested. Tell us your university acceptance and destination and we will confirm what is needed for that specific country."
+        },
+        {
+          "q": "How long does the application take?",
+          "a": "UK Student Route: 3 weeks standard, 5 working days priority. USA F-1: depends mostly on interview wait time — currently very long in Pakistan for new applicants (often 6–12 months at the Karachi/Islamabad consulates), so apply 8+ months before your intake. Canada Study Permit via SDS: 20 calendar days target. Australia subclass 500: 4–8 weeks typical. Always start early."
+        },
+        {
+          "q": "Do you guarantee visa approval?",
+          "a": "No agent can guarantee visa approval — the decision rests with the embassy. What we guarantee is a complete, error-free application with all supporting documentation in the correct format. Most rejections come from incomplete or inconsistent documents, which we eliminate. We also brief you on what to say at the visa interview."
+        },
+        {
+          "q": "What is the financial requirement?",
+          "a": "Varies by country. UK Student Route requires £1,334/month (London) or £1,023/month (outside London) for up to 9 months, held in your account for 28 consecutive days ending no more than 31 days before the application date. Canada needs CAD 20,635 for first year living expenses plus tuition. Australia needs AUD 24,505 (2024 update). USA requires you to demonstrate financial capacity at the interview rather than meeting a fixed number. Your Regional Representative will give exact figures for your case."
+        },
+        {
+          "q": "Do I need IELTS?",
+          "a": "Most English-medium destinations require an English-proficiency test: IELTS (Academic for most), TOEFL iBT, PTE Academic, or Duolingo English Test for some institutions. UK requires a SELT (UKVI-approved test) specifically — typically UKVI IELTS or PTE Academic. We help you choose the right test and book it."
+        },
+        {
+          "q": "Do I need a TB test for the UK?",
+          "a": "Yes. Pakistani applicants applying for UK Student Route MUST have a TB test from a UK-approved clinic in Pakistan before the application. Approved clinics are in Islamabad, Karachi, and Lahore. We book this appointment for you as part of the package."
+        },
+        {
+          "q": "Can my family come with me?",
+          "a": "Depends on the destination and your level of study. UK Student Route allows dependants only for postgraduate research courses (PhD/MRes) or government-sponsored students (since 2024 rule change). Canada and Australia have generous family routes that allow spouses and dependent children. USA F-2 visa is for F-1 dependants but does not allow the spouse to work. We can advise based on your specific program."
+        },
+        {
+          "q": "What is SDS (Study Direct Stream) for Canada?",
+          "a": "SDS is Canada's expedited study-permit programme for students from select countries including Pakistan. To qualify you need: a Letter of Acceptance from a DLI, IELTS 6.0+ in each band, payment of first-year tuition, a CAD 20,635 GIC (Guaranteed Investment Certificate) from a Canadian bank, biometric submission, and a medical exam. Target processing: 20 calendar days, much faster than the regular Study Permit route."
+        }
       ],
-      "primaryCta": "Start Visa Application"
+      "primaryCta": "Start Visa Application",
+      "tiers": [
+        {
+          "name": "UK Student Visa",
+          "duration": "21 days standard processing",
+          "priceRange": "Visa fee GBP 524 + IHS GBP 776/year + service charge",
+          "highlights": [
+            "CAS letter coordination with UK sponsor",
+            "Financial evidence preparation (28-day rule)",
+            "IELTS / SELT centre booking guidance",
+            "IOM TB test scheduling",
+            "VFS Karachi/Lahore/Islamabad biometrics"
+          ]
+        },
+        {
+          "name": "USA Student Visa (F-1)",
+          "duration": "6–12 weeks (visa interview backlog)",
+          "priceRange": "I-901 SEVIS $350 + MRV $185 + service charge",
+          "highlights": [
+            "I-20 coordination with US university",
+            "DS-160 form preparation",
+            "SEVIS fee payment guidance",
+            "Mock interview preparation",
+            "Embassy appointment booking"
+          ]
+        },
+        {
+          "name": "Canadian Student Visa",
+          "duration": "8–12 weeks",
+          "priceRange": "CAD 150 study permit + service charge",
+          "highlights": [
+            "Letter of Acceptance verification",
+            "GIC investment guidance (CAD 20,635 for SDS route)",
+            "Provincial Attestation Letter coordination",
+            "IRCC online application",
+            "VFS Karachi/Lahore biometrics"
+          ]
+        },
+        {
+          "name": "Australian Student Visa (500)",
+          "duration": "4–6 weeks",
+          "priceRange": "AUD 1,600 + service charge",
+          "highlights": [
+            "CoE verification",
+            "OSHC health insurance setup",
+            "Financial capacity documents",
+            "English proficiency evidence",
+            "VFS Karachi/Lahore submission"
+          ]
+        },
+        {
+          "name": "Schengen Student Visa",
+          "duration": "15–30 days",
+          "priceRange": "EUR 90 + service charge",
+          "highlights": [
+            "University admission letter verification",
+            "Financial evidence (block account / sponsor letter)",
+            "Travel insurance setup",
+            "VFS / BLS submission"
+          ]
+        }
+      ]
     },
     {
       "slug": "visit-visas",
@@ -187,11 +501,26 @@
       "heroHeading": "Visit Visa Applications",
       "heroLede": "Tourist and family-visit visa support for popular destinations — Saudi Arabia, UAE, Schengen Area (29 European countries), UK, USA, Canada, Australia — handled end-to-end from your home.",
       "keyFacts": [
-        { "label": "Saudi tourist e-Visa", "value": "24–48 hours · 1-year multi-entry · 90-day stays · also valid for Umrah" },
-        { "label": "UAE tourist", "value": "3–5 working days · 30-day or 60-day options · single + multi-entry" },
-        { "label": "Schengen", "value": "29 countries on one visa (Bulgaria, Romania joined Mar 2024, Croatia Jan 2023) · 15–30 days processing" },
-        { "label": "UK Standard Visitor", "value": "3 weeks standard / 5 working days priority / 24h super-priority" },
-        { "label": "USA B1/B2", "value": "Interview wait times currently 6–12+ months in Pakistan for new applicants" }
+        {
+          "label": "Saudi tourist e-Visa",
+          "value": "24–48 hours · 1-year multi-entry · 90-day stays · also valid for Umrah"
+        },
+        {
+          "label": "UAE tourist",
+          "value": "3–5 working days · 30-day or 60-day options · single + multi-entry"
+        },
+        {
+          "label": "Schengen",
+          "value": "29 countries on one visa (Bulgaria, Romania joined Mar 2024, Croatia Jan 2023) · 15–30 days processing"
+        },
+        {
+          "label": "UK Standard Visitor",
+          "value": "3 weeks standard / 5 working days priority / 24h super-priority"
+        },
+        {
+          "label": "USA B1/B2",
+          "value": "Interview wait times currently 6–12+ months in Pakistan for new applicants"
+        }
       ],
       "intro": "Whether you are planning a family visit to relatives abroad or a leisure trip, Al Bari Travel handles the visa application from document preparation through embassy submission and tracking. We support tourist and family-visit applications for all major destinations: Saudi Arabia (e-Visa tourist + Umrah-eligible), UAE, Schengen Area (29 European countries on one visa), UK, USA, Canada, Australia, Malaysia, Singapore, Turkey, and Thailand.",
       "whatsIncluded": [
@@ -208,15 +537,95 @@
         "Re-application support if first attempt is unsuccessful"
       ],
       "faqs": [
-        { "q": "Which countries' visit visas do you process?", "a": "Saudi Arabia (e-Visa tourist + Umrah-eligible), UAE (30-day and 60-day tourist), Schengen (29 European countries — Germany, France, Italy, Spain, Netherlands, Portugal, Greece, Austria, Belgium, and 20 others), UK (Standard Visitor / Family), USA (B1/B2), Canada (TRV), Australia (subclass 600 visitor), Malaysia, Singapore, Turkey (e-Visa), Thailand." },
-        { "q": "How long does processing take?", "a": "Saudi e-Visa: 24–48 hours. UAE tourist: 3–5 working days. Schengen: 15–30 days standard. UK Standard Visitor: 3 weeks standard, 5 working days priority, 24 hours super-priority (additional fees apply). USA B1/B2: interview wait time is the bottleneck — currently 6–12+ months in Pakistan for new applicants at both Karachi and Islamabad consulates. Canada TRV: 2–3 weeks. Australia: 2–3 months. Apply as early as your travel dates allow." },
-        { "q": "Do I need an invitation letter for family visits?", "a": "Most destinations require one when visiting family — UK, Schengen, USA, Canada all do. Your host abroad sends a signed invitation letter along with proof of their immigration status (visa / residence permit / citizenship document), proof of their address (utility bill / tenancy agreement), and proof of relationship (birth certificate, marriage certificate, etc). We tell you exactly what is needed for each destination." },
-        { "q": "How much money should I show in my bank account?", "a": "Varies by destination. Common guidance: USD 5,000–10,000 minimum for Schengen / UK / Canada to demonstrate funds for your trip. USA looks at your overall financial profile and ties to Pakistan (job, family, property), not just bank balance. Saudi tourist e-Visa requires proof of accommodation + return ticket but has a lower bank requirement. Your Regional Representative will tell you the figure for your case." },
-        { "q": "Do I need travel insurance?", "a": "Mandatory for Schengen (minimum €30,000 medical coverage, valid across all Schengen countries for the visa duration). Recommended for UK, Canada, USA. Most other destinations do not require it but it is sensible. We coordinate insurance with reliable providers — typical premiums are PKR 1,500–4,000 for a 30-day trip depending on age and destination." },
-        { "q": "Can I get a multi-entry visit visa?", "a": "Many destinations offer multi-entry options: Saudi e-Visa is 1-year multi-entry by default. UAE has 60-day multi-entry and 5-year multi-entry options. Schengen offers multi-entry visas (up to 5 years for frequent travellers with a clean history). USA B1/B2 is typically 5-year multi-entry. UK Standard Visitor is up to 10-year multi-entry. We will recommend the right option based on your travel pattern." },
-        { "q": "What if I have been refused a visa before?", "a": "Past refusals must be disclosed on every future application — concealing them is grounds for permanent ban. We work with you to understand why the refusal happened (most are document-related, some are intent-related) and prepare a stronger re-application with the issues addressed. Refusal does not mean permanent block; many re-applications succeed once the underlying problem is fixed." }
+        {
+          "q": "Which countries' visit visas do you process?",
+          "a": "Saudi Arabia (e-Visa tourist + Umrah-eligible), UAE (30-day and 60-day tourist), Schengen (29 European countries — Germany, France, Italy, Spain, Netherlands, Portugal, Greece, Austria, Belgium, and 20 others), UK (Standard Visitor / Family), USA (B1/B2), Canada (TRV), Australia (subclass 600 visitor), Malaysia, Singapore, Turkey (e-Visa), Thailand."
+        },
+        {
+          "q": "How long does processing take?",
+          "a": "Saudi e-Visa: 24–48 hours. UAE tourist: 3–5 working days. Schengen: 15–30 days standard. UK Standard Visitor: 3 weeks standard, 5 working days priority, 24 hours super-priority (additional fees apply). USA B1/B2: interview wait time is the bottleneck — currently 6–12+ months in Pakistan for new applicants at both Karachi and Islamabad consulates. Canada TRV: 2–3 weeks. Australia: 2–3 months. Apply as early as your travel dates allow."
+        },
+        {
+          "q": "Do I need an invitation letter for family visits?",
+          "a": "Most destinations require one when visiting family — UK, Schengen, USA, Canada all do. Your host abroad sends a signed invitation letter along with proof of their immigration status (visa / residence permit / citizenship document), proof of their address (utility bill / tenancy agreement), and proof of relationship (birth certificate, marriage certificate, etc). We tell you exactly what is needed for each destination."
+        },
+        {
+          "q": "How much money should I show in my bank account?",
+          "a": "Varies by destination. Common guidance: USD 5,000–10,000 minimum for Schengen / UK / Canada to demonstrate funds for your trip. USA looks at your overall financial profile and ties to Pakistan (job, family, property), not just bank balance. Saudi tourist e-Visa requires proof of accommodation + return ticket but has a lower bank requirement. Your Regional Representative will tell you the figure for your case."
+        },
+        {
+          "q": "Do I need travel insurance?",
+          "a": "Mandatory for Schengen (minimum €30,000 medical coverage, valid across all Schengen countries for the visa duration). Recommended for UK, Canada, USA. Most other destinations do not require it but it is sensible. We coordinate insurance with reliable providers — typical premiums are PKR 1,500–4,000 for a 30-day trip depending on age and destination."
+        },
+        {
+          "q": "Can I get a multi-entry visit visa?",
+          "a": "Many destinations offer multi-entry options: Saudi e-Visa is 1-year multi-entry by default. UAE has 60-day multi-entry and 5-year multi-entry options. Schengen offers multi-entry visas (up to 5 years for frequent travellers with a clean history). USA B1/B2 is typically 5-year multi-entry. UK Standard Visitor is up to 10-year multi-entry. We will recommend the right option based on your travel pattern."
+        },
+        {
+          "q": "What if I have been refused a visa before?",
+          "a": "Past refusals must be disclosed on every future application — concealing them is grounds for permanent ban. We work with you to understand why the refusal happened (most are document-related, some are intent-related) and prepare a stronger re-application with the issues addressed. Refusal does not mean permanent block; many re-applications succeed once the underlying problem is fixed."
+        }
       ],
-      "primaryCta": "Apply for Visit Visa"
+      "primaryCta": "Apply for Visit Visa",
+      "tiers": [
+        {
+          "name": "Schengen Visit Visa (Europe)",
+          "duration": "15–30 days",
+          "priceRange": "EUR 90 + service fee + insurance",
+          "highlights": [
+            "France, Germany, Italy, Spain, Netherlands, Switzerland routes",
+            "Cover letter template + itinerary planning",
+            "Bank statement preparation (6-month consistency)",
+            "Hotel & flight reservations supplied for file",
+            "VFS / BLS booking & submission"
+          ]
+        },
+        {
+          "name": "UK Standard Visitor Visa",
+          "duration": "15 working days standard",
+          "priceRange": "GBP 127 + service fee",
+          "highlights": [
+            "Family visit / tourism / business categories",
+            "Sponsor letter coordination",
+            "Financial documents preparation",
+            "Itinerary & accommodation evidence",
+            "VFS Karachi/Lahore/Islamabad submission"
+          ]
+        },
+        {
+          "name": "USA B1/B2 Visit Visa",
+          "duration": "4–8 weeks (interview wait varies)",
+          "priceRange": "MRV $185 + service fee",
+          "highlights": [
+            "DS-160 form preparation",
+            "Interview preparation & mock session",
+            "Financial & ties-to-Pakistan evidence",
+            "Embassy Islamabad / Consulate Karachi booking"
+          ]
+        },
+        {
+          "name": "Saudi / UAE Visit Visa",
+          "duration": "24–72 hours (e-visa)",
+          "priceRange": "SAR 535 (Nusuk) / AED 350+ (UAE) + service",
+          "highlights": [
+            "Direct online e-Visa applications",
+            "Hotel & return ticket coordination",
+            "Family group submissions",
+            "Mahram coordination where required"
+          ]
+        },
+        {
+          "name": "Other (Canada, Australia, Turkey, Malaysia)",
+          "duration": "Varies by country",
+          "priceRange": "From PKR 8,000 service fee",
+          "highlights": [
+            "Canada Visitor Visa (TRV) — 60+ days processing",
+            "Australia Visitor Visa (subclass 600) — 30+ days",
+            "Turkey e-Visa (instant for most categories)",
+            "Malaysia, Thailand, Indonesia e-Visa support"
+          ]
+        }
+      ]
     },
     {
       "slug": "work-visas",
@@ -238,11 +647,26 @@
       "heroHeading": "Gulf Work Visa Processing",
       "heroLede": "End-to-end employment-visa support for Pakistani workers heading to UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman — educational attestation, GAMCA medical, police clearance, and embassy stamping handled in parallel to compress the timeline.",
       "keyFacts": [
-        { "label": "Countries we cover", "value": "All 6 GCC: UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman" },
-        { "label": "Typical timeline", "value": "4–8 weeks from job offer to visa-in-hand (parallel processing speeds this up)" },
-        { "label": "Attestation chain", "value": "IBCC (if foreign) → HEC → MoFA Pakistan → destination embassy in Islamabad" },
-        { "label": "Mandatory medical", "value": "GAMCA-approved clinic — TB, HBV, HCV, HIV, syphilis, pregnancy (women)" },
-        { "label": "Required vaccines", "value": "Polio booster within 12 months for Saudi/UAE travel" }
+        {
+          "label": "Countries we cover",
+          "value": "All 6 GCC: UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman"
+        },
+        {
+          "label": "Typical timeline",
+          "value": "4–8 weeks from job offer to visa-in-hand (parallel processing speeds this up)"
+        },
+        {
+          "label": "Attestation chain",
+          "value": "IBCC (if foreign) → HEC → MoFA Pakistan → destination embassy in Islamabad"
+        },
+        {
+          "label": "Mandatory medical",
+          "value": "GAMCA-approved clinic — TB, HBV, HCV, HIV, syphilis, pregnancy (women)"
+        },
+        {
+          "label": "Required vaccines",
+          "value": "Polio booster within 12 months for Saudi/UAE travel"
+        }
       ],
       "intro": "If you have received a job offer from a Gulf employer, Al Bari Travel handles the full work-visa pipeline — educational document attestation (HEC → MoFA → destination embassy in Pakistan), GAMCA-approved medical screening, Pakistani Police Clearance Certificate, polio vaccination, embassy stamping, and final visa issuance. We work with Pakistani workers heading to all six GCC countries — UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman — in both blue-collar and white-collar roles.",
       "whatsIncluded": [
@@ -256,16 +680,87 @@
         "Pre-departure briefing covering the destination country's labour regulations, contract obligations, accommodation arrangements, and what to expect on arrival"
       ],
       "faqs": [
-        { "q": "Which Gulf countries do you handle work visas for?", "a": "All six GCC countries: UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman. Each has its own visa process, attestation requirements, and timeline — we are familiar with all of them." },
-        { "q": "What is GAMCA medical?", "a": "GAMCA (Gulf Approved Medical Centres Association) is the network of medical centres approved by GCC governments to conduct pre-departure health checks for workers. Tests include TB chest X-ray, Hepatitis B and C, HIV, syphilis, malaria (some countries), pregnancy test for women, and general physical examination. Required for all GCC work visas. Results are uploaded directly into the Gulf country's labour system — you cannot work around this. We book your appointment at the nearest approved centre." },
-        { "q": "How long does the process take?", "a": "Typically 4–8 weeks from job offer to visa-in-hand. The slowest steps are document attestation (HEC takes 5–15 working days for normal service, 1–3 days for urgent; MoFA 3–7 days; embassy 5–10 days) and medical clearance. We run them in parallel rather than sequentially to compress the timeline. Some embassies have express services for an additional fee." },
-        { "q": "Do you find me a job?", "a": "No — we are a visa-processing agency, not a recruiter. You need an existing job offer from a Gulf employer to start the visa process. Once you have it, we handle everything else. If you do not yet have an offer we can refer you to licensed Pakistani recruitment agencies, but we do not place workers ourselves." },
-        { "q": "Do I need polio vaccination?", "a": "Yes for travel to Saudi Arabia (booster within 12 months of travel is required by Saudi authorities for Pakistani nationals). Strongly recommended for UAE and other GCC countries. We book this at any approved vaccination centre in Pakistan." },
-        { "q": "What educational documents need attesting?", "a": "Typically your highest qualification (matric, intermediate, bachelor, master, professional certificate, trade certificate, etc.). The chain is: original document → IBCC equivalence (if foreign-issued) → HEC (Higher Education Commission Pakistan) → MoFA (Ministry of Foreign Affairs Pakistan) → destination country embassy in Islamabad. For some trades and unskilled roles, only matric/intermediate is needed. We handle each step on your behalf." },
-        { "q": "Can I change employers in the Gulf?", "a": "Depends on the country and your visa type. Saudi Arabia introduced job-mobility reforms in 2021 that allow some workers to transfer employers without sponsor permission after a contract period. UAE allows transfer with a No-Objection Certificate (NOC) or after contract expiry. Qatar abolished the Kafala system in 2020 and now allows transfers without NOC in many cases. Each country has nuances — your Regional Representative can advise on options once you arrive." },
-        { "q": "What if my visa is rejected?", "a": "Visa rejections at the work-visa stage are most often due to: document mismatches (name spelling differences between passport and educational documents), incomplete attestation, medical issues flagged at GAMCA, PCC concerns (past record), or employer-side delays in submitting paperwork on their end. We work with you to fix the root cause and re-apply. Genuine medical-fitness issues are the only category we cannot work around — those require resolving the underlying condition first." }
+        {
+          "q": "Which Gulf countries do you handle work visas for?",
+          "a": "All six GCC countries: UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman. Each has its own visa process, attestation requirements, and timeline — we are familiar with all of them."
+        },
+        {
+          "q": "What is GAMCA medical?",
+          "a": "GAMCA (Gulf Approved Medical Centres Association) is the network of medical centres approved by GCC governments to conduct pre-departure health checks for workers. Tests include TB chest X-ray, Hepatitis B and C, HIV, syphilis, malaria (some countries), pregnancy test for women, and general physical examination. Required for all GCC work visas. Results are uploaded directly into the Gulf country's labour system — you cannot work around this. We book your appointment at the nearest approved centre."
+        },
+        {
+          "q": "How long does the process take?",
+          "a": "Typically 4–8 weeks from job offer to visa-in-hand. The slowest steps are document attestation (HEC takes 5–15 working days for normal service, 1–3 days for urgent; MoFA 3–7 days; embassy 5–10 days) and medical clearance. We run them in parallel rather than sequentially to compress the timeline. Some embassies have express services for an additional fee."
+        },
+        {
+          "q": "Do you find me a job?",
+          "a": "No — we are a visa-processing agency, not a recruiter. You need an existing job offer from a Gulf employer to start the visa process. Once you have it, we handle everything else. If you do not yet have an offer we can refer you to licensed Pakistani recruitment agencies, but we do not place workers ourselves."
+        },
+        {
+          "q": "Do I need polio vaccination?",
+          "a": "Yes for travel to Saudi Arabia (booster within 12 months of travel is required by Saudi authorities for Pakistani nationals). Strongly recommended for UAE and other GCC countries. We book this at any approved vaccination centre in Pakistan."
+        },
+        {
+          "q": "What educational documents need attesting?",
+          "a": "Typically your highest qualification (matric, intermediate, bachelor, master, professional certificate, trade certificate, etc.). The chain is: original document → IBCC equivalence (if foreign-issued) → HEC (Higher Education Commission Pakistan) → MoFA (Ministry of Foreign Affairs Pakistan) → destination country embassy in Islamabad. For some trades and unskilled roles, only matric/intermediate is needed. We handle each step on your behalf."
+        },
+        {
+          "q": "Can I change employers in the Gulf?",
+          "a": "Depends on the country and your visa type. Saudi Arabia introduced job-mobility reforms in 2021 that allow some workers to transfer employers without sponsor permission after a contract period. UAE allows transfer with a No-Objection Certificate (NOC) or after contract expiry. Qatar abolished the Kafala system in 2020 and now allows transfers without NOC in many cases. Each country has nuances — your Regional Representative can advise on options once you arrive."
+        },
+        {
+          "q": "What if my visa is rejected?",
+          "a": "Visa rejections at the work-visa stage are most often due to: document mismatches (name spelling differences between passport and educational documents), incomplete attestation, medical issues flagged at GAMCA, PCC concerns (past record), or employer-side delays in submitting paperwork on their end. We work with you to fix the root cause and re-apply. Genuine medical-fitness issues are the only category we cannot work around — those require resolving the underlying condition first."
+        }
       ],
-      "primaryCta": "Enquire About Work Visa"
+      "primaryCta": "Enquire About Work Visa",
+      "tiers": [
+        {
+          "name": "Saudi Arabia Work Visa",
+          "duration": "8–16 weeks end-to-end",
+          "priceRange": "Embassy SAR 2,000 + GAMCA PKR 8,000 + service",
+          "highlights": [
+            "Demand letter / Wakala verification",
+            "Three-stage attestation (HEC + MoFA + Embassy)",
+            "GAMCA medical at approved Pakistani centre",
+            "POE Protector stamp at one of 8 BEMB offices",
+            "Family residence visa add-on supported"
+          ]
+        },
+        {
+          "name": "UAE Work Visa",
+          "duration": "6–12 weeks end-to-end",
+          "priceRange": "Employer-funded + service charge",
+          "highlights": [
+            "Employment Visa (entry) → Residence Visa (post-arrival)",
+            "Tawjeeh orientation booking",
+            "Emirates ID processing post-arrival",
+            "Family residence add-on supported"
+          ]
+        },
+        {
+          "name": "Qatar Work Visa",
+          "duration": "4–10 weeks",
+          "priceRange": "Employer-funded + service charge",
+          "highlights": [
+            "No-Objection Certificate (NOC) coordination",
+            "Hayya card pre-registration",
+            "GAMCA medical with Qatar-specific panel",
+            "Post-2020 Kafala reforms — job-change flexibility"
+          ]
+        },
+        {
+          "name": "Kuwait / Bahrain / Oman Work Visa",
+          "duration": "6–14 weeks",
+          "priceRange": "Varies by country + service charge",
+          "highlights": [
+            "Article 17 / 18 visa categories (Kuwait)",
+            "LMRA flexible work permit (Bahrain)",
+            "Royal Oman Police permit (Oman)",
+            "Country-specific GAMCA medical"
+          ]
+        }
+      ]
     }
   ]
 }

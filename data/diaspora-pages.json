@@ -1,0 +1,115 @@
+{
+  "pages": [
+    {
+      "slug": "umrah-from-uk",
+      "title": "Umrah from the UK: Complete 2026 Guide for Pakistani-British Pilgrims",
+      "seoTitle": "Umrah from UK 2026 — Guide for Pakistani-British Pilgrims",
+      "seoDescription": "Plan Umrah from the UK in 2026 — flights from London Heathrow, Birmingham, Manchester to Jeddah & Madinah, Saudi e-Visa for UK residents, package pricing in GBP.",
+      "country": "United Kingdom",
+      "currency": "GBP",
+      "majorAirports": ["London Heathrow (LHR)", "London Gatwick (LGW)", "Birmingham (BHX)", "Manchester (MAN)", "Glasgow (GLA)"],
+      "communities": ["Bradford", "Birmingham", "London (East London / Tooting)", "Manchester (Cheetham Hill)", "Glasgow", "Leeds", "Luton"],
+      "audience": "Pakistani-British community (~1.6 million strong)",
+      "intro": "The UK has the largest Pakistani diaspora in Europe — over 1.6 million people, concentrated in Bradford, Birmingham, London, Manchester, and Luton. Al Bari Travel serves UK-based Pakistani families through our remote-first model: same named Regional Representatives who handle our Pakistan-side bookings, with full WhatsApp + email support across UK time zones (Mon–Fri 6am–4pm UK time matches Pakistan business hours).",
+      "flights": [
+        { "route": "London ↔ Jeddah direct", "airlines": "Saudia, British Airways", "approxFare": "GBP 480–680 round-trip Economy", "duration": "~7 hours" },
+        { "route": "London ↔ Madinah direct", "airlines": "Saudia (seasonal)", "approxFare": "GBP 510–740 round-trip Economy", "duration": "~7 hours" },
+        { "route": "Birmingham/Manchester ↔ Jeddah via Istanbul / Dubai / Doha", "airlines": "Turkish, Emirates, Qatar", "approxFare": "GBP 460–650 round-trip Economy", "duration": "~9–11 hours including transit" },
+        { "route": "Birmingham direct ↔ Jeddah", "airlines": "Saudia (limited)", "approxFare": "GBP 520–720 round-trip Economy", "duration": "~7 hours" }
+      ],
+      "pricingGBP": [
+        { "tier": "Economy 12-day Umrah", "range": "GBP 1,850–2,400 per person", "highlights": "3-star hotel, ~500m from Haram, breakfast, return flight from UK, Saudi e-Visa included" },
+        { "tier": "Standard 12-day Umrah", "range": "GBP 2,450–3,100 per person", "highlights": "4-star hotel within 300m of Haram, breakfast, ziyarat tours, group leader" },
+        { "tier": "Premium 12-day Umrah", "range": "GBP 3,500–5,500 per person", "highlights": "5-star hotel within 200m, Haram view available, full board, private SUV transport" }
+      ],
+      "uniqueConsiderations": [
+        "UK Pakistani families often travel as multi-generational groups (grandparents + parents + children) — quote multi-room hotel suites accordingly.",
+        "Many UK pilgrims prefer to depart from Birmingham or Manchester (not just London) — Al Bari coordinates regional departures.",
+        "British Pakistani returning pilgrims often combine Umrah with a 7–10 day Pakistan visit — we book onward Saudi ↔ Pakistan ↔ UK multi-city tickets.",
+        "Polio vaccination booster is mandatory for UK travellers visiting Pakistan (NHS clinics provide; carry yellow card to Saudi too).",
+        "Saudi Tourist e-Visa is straightforward for UK passport holders (instant approval, multi-entry, 1 year validity)."
+      ],
+      "faqs": [
+        { "q": "Do I need a Pakistani passport to book through Al Bari from the UK?", "a": "No. We serve any UK resident, regardless of passport. We routinely book Umrah for British nationals, dual UK-Pakistani citizens, and Pakistani citizens on UK visas." },
+        { "q": "Are flight prices in GBP fixed?", "a": "Quoted in GBP at time of booking. Final ticket issuance uses the airline's GBP rate. Hotel and Saudi-side costs are quoted in GBP using the day's SAR/GBP rate." },
+        { "q": "Can you arrange airport pickup from a UK airport?", "a": "We don't handle UK-side ground transport, but we coordinate Saudi-side airport pickup at Jeddah / Madinah as standard for all package bookings." },
+        { "q": "How do payments work from the UK?", "a": "UK bank transfer to our Pakistan bank account (sterling-denominated invoice). Wise / Remitly transfers also accepted. No credit card processing fee — final price is the price quoted." },
+        { "q": "Is Saudi Tourist e-Visa or Umrah e-Visa better for UK residents?", "a": "Saudi Tourist e-Visa is generally faster and more flexible for UK passport holders (instant approval, 1-year multi-entry, 90-day stay). Umrah-specific e-Visa via Nusuk Masar is also an option (single entry, 30-day stay). We advise on the best route based on your travel plans." }
+      ]
+    },
+    {
+      "slug": "umrah-from-usa",
+      "title": "Umrah from the USA: 2026 Guide for Pakistani-American Pilgrims",
+      "seoTitle": "Umrah from USA 2026 — Pakistani-American Family Guide",
+      "seoDescription": "Plan Umrah from the USA in 2026 — flights from NYC, Houston, Dallas, Chicago to Jeddah & Madinah, Saudi e-Visa for US residents, package pricing in USD.",
+      "country": "United States",
+      "currency": "USD",
+      "majorAirports": ["New York JFK (JFK)", "Washington Dulles (IAD)", "Chicago O'Hare (ORD)", "Houston Bush (IAH)", "Dallas-Fort Worth (DFW)", "Los Angeles (LAX)"],
+      "communities": ["Houston / Sugar Land", "Dallas / Plano / Irving", "Chicago / Schaumburg", "NYC / NJ", "DC Metro", "San Francisco Bay Area", "Atlanta", "Detroit / Dearborn"],
+      "audience": "Pakistani-American community (~700,000)",
+      "intro": "The Pakistani-American community is one of the most prosperous diaspora populations globally — ~700,000 people, with major hubs in Houston, Dallas, Chicago, the NYC/NJ corridor, the DC metro area, and the San Francisco Bay. Al Bari Travel serves Pakistani-American families through Hamid Ali, our Texas Regional Representative based in Austin, plus full WhatsApp + email coverage across all US time zones.",
+      "flights": [
+        { "route": "NYC ↔ Jeddah via Istanbul / Doha / Dubai", "airlines": "Turkish, Qatar, Emirates", "approxFare": "USD 1,400–2,100 round-trip Economy", "duration": "~16–20 hours including transit" },
+        { "route": "Houston/Dallas ↔ Jeddah via Doha / Dubai", "airlines": "Qatar, Emirates", "approxFare": "USD 1,500–2,300 round-trip Economy", "duration": "~18–22 hours including transit" },
+        { "route": "Chicago ↔ Jeddah via Istanbul / Doha", "airlines": "Turkish, Qatar", "approxFare": "USD 1,450–2,150 round-trip Economy", "duration": "~17–20 hours" },
+        { "route": "Washington DC ↔ Jeddah via Istanbul / Dubai", "airlines": "Turkish, Emirates", "approxFare": "USD 1,500–2,200 round-trip Economy", "duration": "~17–20 hours" }
+      ],
+      "pricingUSD": [
+        { "tier": "Economy 14-day Umrah", "range": "USD 2,650–3,400 per person", "highlights": "3-star hotel, ~500m from Haram, breakfast, return flight from US, Saudi e-Visa included" },
+        { "tier": "Standard 14-day Umrah", "range": "USD 3,450–4,400 per person", "highlights": "4-star hotel within 300m of Haram, breakfast, ziyarat tours, group leader" },
+        { "tier": "Premium 14-day Umrah", "range": "USD 4,800–7,500 per person", "highlights": "5-star hotel within 200m, Haram view available, full board, private SUV transport" }
+      ],
+      "uniqueConsiderations": [
+        "Texas (Houston, Dallas) and the Bay Area have the highest concentration of Pakistani-American Umrah travellers — Hamid Ali (our Texas Regional Rep) is based there and handles local coordination.",
+        "Pakistani-Americans often combine Umrah with extended family visits to Pakistan — we book multi-city US ↔ Saudi ↔ Pakistan ↔ US tickets.",
+        "US-side travel insurance is highly recommended (medical evacuation cover) — we provide carrier referrals.",
+        "Saudi Tourist e-Visa for US passport holders is instant via visa.visitsaudi.com (USD 137 including insurance).",
+        "Most Pakistani-American families prefer mid-tier 4-star packages (Standard) for comfort + value balance."
+      ],
+      "faqs": [
+        { "q": "Where is Al Bari's Texas representative based?", "a": "Hamid Ali, our USA Regional Representative, serves the Pakistani-American community from Austin, Texas. Reach him on +1 (443) 589-4441 or via the standard Al Bari channels." },
+        { "q": "Can you book Umrah for US citizens (not Pakistani-Americans)?", "a": "Yes. We serve any US resident, regardless of passport. We book Umrah for American Muslims of all backgrounds, including converts." },
+        { "q": "Do I need a Pakistani polio booster if I'm a US resident?", "a": "Only if you've recently been to Pakistan (within 12 months of Saudi entry). US-resident travellers who haven't been to Pakistan don't need the polio booster. Meningococcal ACWY is required for all Umrah pilgrims regardless of origin." },
+        { "q": "How are payments handled from the US?", "a": "Wire transfer, ACH, Zelle (Hamid's USA account), or Pakistani bank transfer via Wise / Remitly. USD-denominated invoice, no FX surprises." },
+        { "q": "Can I combine Umrah with a trip to Pakistan from the US?", "a": "Yes — this is one of our most common Pakistani-American bookings. We arrange multi-city: USA ↔ Saudi (Umrah) ↔ Pakistan (family visit) ↔ USA on a single coordinated ticket, often saving USD 200–400 vs separate bookings." }
+      ]
+    },
+    {
+      "slug": "umrah-from-canada",
+      "title": "Umrah from Canada: 2026 Guide for Pakistani-Canadian Pilgrims",
+      "seoTitle": "Umrah from Canada 2026 — Pakistani-Canadian Family Guide",
+      "seoDescription": "Plan Umrah from Canada in 2026 — flights from Toronto, Vancouver, Calgary to Jeddah & Madinah, Saudi e-Visa for Canadian residents, package pricing in CAD.",
+      "country": "Canada",
+      "currency": "CAD",
+      "majorAirports": ["Toronto Pearson (YYZ)", "Vancouver (YVR)", "Calgary (YYC)", "Montreal Trudeau (YUL)", "Edmonton (YEG)"],
+      "communities": ["Toronto / Mississauga / Brampton", "Vancouver / Surrey", "Calgary", "Edmonton", "Montreal", "Ottawa"],
+      "audience": "Pakistani-Canadian community (~250,000)",
+      "intro": "The Pakistani-Canadian community is one of the fastest-growing diaspora populations in North America — ~250,000 people concentrated in the Greater Toronto Area (Mississauga, Brampton, Markham), Greater Vancouver (Surrey, Burnaby), Calgary, Edmonton, and Ottawa. Al Bari Travel serves Pakistani-Canadian families through our remote-first model with full WhatsApp + email support across Canadian time zones.",
+      "flights": [
+        { "route": "Toronto ↔ Jeddah via Istanbul / Doha / Dubai", "airlines": "Turkish, Qatar, Emirates", "approxFare": "CAD 1,800–2,500 round-trip Economy", "duration": "~17–20 hours including transit" },
+        { "route": "Vancouver ↔ Jeddah via Doha / Dubai", "airlines": "Qatar, Emirates", "approxFare": "CAD 2,100–2,900 round-trip Economy", "duration": "~19–23 hours" },
+        { "route": "Calgary ↔ Jeddah via Doha", "airlines": "Qatar", "approxFare": "CAD 2,000–2,750 round-trip Economy", "duration": "~18–22 hours" },
+        { "route": "Montreal ↔ Jeddah via Istanbul", "airlines": "Turkish", "approxFare": "CAD 1,850–2,550 round-trip Economy", "duration": "~17–20 hours" }
+      ],
+      "pricingCAD": [
+        { "tier": "Economy 14-day Umrah", "range": "CAD 3,400–4,300 per person", "highlights": "3-star hotel, ~500m from Haram, breakfast, return flight from Canada, Saudi e-Visa included" },
+        { "tier": "Standard 14-day Umrah", "range": "CAD 4,400–5,500 per person", "highlights": "4-star hotel within 300m of Haram, breakfast, ziyarat tours, group leader" },
+        { "tier": "Premium 14-day Umrah", "range": "CAD 6,200–9,500 per person", "highlights": "5-star hotel within 200m, Haram view available, full board, private SUV transport" }
+      ],
+      "uniqueConsiderations": [
+        "Toronto / Mississauga / Brampton (the 'Peel Region') has the highest concentration of Pakistani-Canadian families — most of our Canadian bookings originate from this area.",
+        "Pakistani-Canadians often book through community mosques (ISNA, MAC, Khalid bin Walid in Toronto) — we welcome mosque group inquiries with dedicated tour leaders.",
+        "Many Pakistani-Canadians have aging parents still in Pakistan — multi-generational Hajj + Umrah trips combining the Canadian family with Pakistan-side grandparents are common; we coordinate both legs.",
+        "Saudi Tourist e-Visa for Canadian passport holders is instant via visa.visitsaudi.com (around CAD 195 including insurance).",
+        "Canadian-side travel insurance is recommended (Manulife, RBC, Sun Life all offer Umrah-friendly policies)."
+      ],
+      "faqs": [
+        { "q": "Do you have a Canadian representative?", "a": "We don't have a Canada-based Regional Representative yet, but we serve Pakistani-Canadian families remotely with full WhatsApp + email coverage during Canadian business hours. Our Texas Regional Rep (Hamid Ali) handles North American time zones." },
+        { "q": "Can you book for Canadian citizens who aren't Pakistani?", "a": "Yes. We serve any Canadian resident, regardless of passport or background. We book Umrah for Canadian Muslims from many backgrounds." },
+        { "q": "How are payments handled from Canada?", "a": "Wire transfer, Interac e-Transfer (Canadian account), or via Wise to our Pakistan bank account. CAD-denominated invoice." },
+        { "q": "Can my elderly Pakistani parents join us via Pakistan?", "a": "Yes — we coordinate combined bookings where Canadian family flies from Toronto/Vancouver, Pakistani parents fly from Lahore/Karachi/Islamabad, both meeting in Madinah or Makkah on aligned dates. Common scenario for us." },
+        { "q": "Do I need any Canadian-side vaccinations?", "a": "Meningococcal ACWY is required for Saudi (any nationality). Polio booster is required only for travellers who've been to polio-endemic countries (Pakistan, Afghanistan) within 12 months of Saudi entry. Most Canadian residents don't need it." }
+      ]
+    }
+  ]
+}

@@ -1671,3 +1671,288 @@ header nav {
     .forms-cat-desc { font-size: 0.88rem; }
     .forms-upload { padding: 22px !important; }
 }
+
+/* === Floating WhatsApp button (visible all viewports, bottom-right) === */
+.float-wa {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(37,211,102,0.45), 0 2px 6px rgba(0,0,0,0.2);
+    z-index: 9998;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: floatWaPulse 2s ease-in-out infinite;
+}
+.float-wa:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(37,211,102,0.6), 0 3px 8px rgba(0,0,0,0.25);
+}
+@keyframes floatWaPulse {
+    0%, 100% { box-shadow: 0 4px 14px rgba(37,211,102,0.45), 0 2px 6px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 14px rgba(37,211,102,0.65), 0 0 0 8px rgba(37,211,102,0.18); }
+}
+
+/* === Mobile sticky bottom CTA bar (phone only) === */
+.mobile-bottom-cta {
+    display: none;
+}
+@media (max-width: 768px) {
+    .mobile-bottom-cta {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9997;
+        background: rgba(13,27,42,0.97);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(201,169,98,0.3);
+        padding: 8px 10px;
+        gap: 8px;
+        box-shadow: 0 -2px 12px rgba(0,0,0,0.25);
+    }
+    .mb-cta-btn {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 8px;
+        text-decoration: none;
+        color: white;
+        font-size: 0.95rem;
+        font-weight: 600;
+        min-height: 44px;
+        border-radius: 4px;
+    }
+    .mb-cta-wa { background: #25D366; }
+    .mb-cta-call { background: #c9a962; color: #0d1b2a; }
+    .mb-cta-call svg { stroke: #0d1b2a; }
+    /* Reserve room so footer/dock doesn't cover content */
+    body { padding-bottom: 64px; }
+    /* Move floating WA up above the bottom bar on mobile */
+    .float-wa { bottom: 78px; right: 14px; width: 52px; height: 52px; }
+    .float-wa svg { width: 24px; height: 24px; }
+}
+
+/* === Quote form (inline on service + office pages) === */
+.quote-form { margin-top: 8px; }
+.quote-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+}
+.quote-field { display: flex; flex-direction: column; }
+.quote-field label {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.quote-field input, .quote-field select, .quote-field textarea {
+    padding: 11px 14px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #fff;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s;
+    box-sizing: border-box;
+    border-radius: 0;
+}
+.quote-field input:focus, .quote-field select:focus, .quote-field textarea:focus {
+    outline: none;
+    border-color: #c9a962;
+    background: rgba(255,255,255,0.08);
+}
+.quote-field input::placeholder, .quote-field textarea::placeholder { color: rgba(255,255,255,0.4); }
+.quote-field select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c9a962' stroke-width='2'><polyline points='6 9 12 15 18 9'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+/* === Author byline === */
+.author-byline {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 22px;
+    background: rgba(255,255,255,0.04);
+    border-left: 3px solid #c9a962;
+    margin: 30px 0;
+}
+.author-byline-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c9a962, #8b7a4a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #0d1b2a;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+.author-byline-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.75);
+}
+.author-byline-text strong { color: #fff; font-weight: 600; }
+.author-byline-text .role { color: rgba(201,169,98,0.85); }
+
+/* === Pricing tier table === */
+.pricing-tier-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 0.92rem;
+}
+.pricing-tier-table th, .pricing-tier-table td {
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 14px 16px;
+    text-align: left;
+    vertical-align: top;
+}
+.pricing-tier-table th {
+    background: rgba(201,169,98,0.1);
+    color: #c9a962;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.pricing-tier-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+.pricing-tier-table .tier-price {
+    color: #c9a962;
+    font-weight: 600;
+    white-space: nowrap;
+}
+@media (max-width: 600px) {
+    .pricing-tier-table { font-size: 0.85rem; }
+    .pricing-tier-table th, .pricing-tier-table td { padding: 10px 12px; }
+}
+
+/* === Last updated stamp === */
+.last-updated {
+    color: rgba(201,169,98,0.7) !important;
+}
+
+/* === Exit-intent popup === */
+#exit-popup {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+    z-index: 10000; display: flex; align-items: center; justify-content: center;
+    padding: 20px; animation: exitPopupFade 0.25s ease;
+    backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+}
+@keyframes exitPopupFade { from { opacity: 0; } to { opacity: 1; } }
+.exit-popup-closing { opacity: 0; transition: opacity 0.25s; }
+.exit-popup-card {
+    background: #0d1b2a; border: 1px solid rgba(201,169,98,0.4);
+    border-top: 4px solid #c9a962; padding: 36px 32px; max-width: 460px; width: 100%;
+    position: relative; color: #fff; text-align: center;
+}
+.exit-popup-close {
+    position: absolute; top: 12px; right: 16px; background: transparent; border: none;
+    color: rgba(255,255,255,0.6); font-size: 1.8rem; cursor: pointer; line-height: 1;
+    padding: 4px 8px;
+}
+.exit-popup-close:hover { color: #c9a962; }
+.exit-popup-tag {
+    color: #c9a962; font-size: 0.72rem; text-transform: uppercase;
+    letter-spacing: 2.5px; font-weight: 600; margin: 0 0 10px;
+}
+.exit-popup-card h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0 0 14px;
+    line-height: 1.25;
+}
+.exit-popup-body {
+    color: rgba(255,255,255,0.78); font-size: 0.95rem; line-height: 1.6; margin: 0 0 24px;
+}
+.exit-popup-btn { display: inline-block; width: 100%; box-sizing: border-box; }
+.exit-popup-dismiss {
+    display: block; width: 100%; margin-top: 14px; background: transparent; border: none;
+    color: rgba(255,255,255,0.5); font-size: 0.82rem; cursor: pointer; padding: 8px;
+}
+.exit-popup-dismiss:hover { color: rgba(255,255,255,0.85); }
+
+/* === Site search dropdown === */
+.search-results {
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: #0d1b2a; border: 1px solid rgba(201,169,98,0.4);
+    border-top: 2px solid #c9a962; max-height: 480px; overflow-y: auto;
+    z-index: 50; display: none; margin-top: 4px;
+}
+.search-result {
+    display: block; padding: 14px 16px; text-decoration: none; color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.06); transition: background 0.15s;
+}
+.search-result:hover { background: rgba(201,169,98,0.1); }
+.search-result-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; color: #c9a962; }
+.search-result-desc { font-size: 0.82rem; opacity: 0.75; line-height: 1.4; margin-bottom: 4px; }
+.search-result-url { font-size: 0.72rem; opacity: 0.45; }
+.search-empty { padding: 20px 16px; font-size: 0.88rem; opacity: 0.7; }
+.search-empty a { color: #c9a962; }
+
+/* === Cost calculator widget === */
+.calc-wrap {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(201,169,98,0.3);
+    border-left: 3px solid #c9a962; padding: 30px;
+}
+.calc-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin: 0 0 6px; color: #fff; }
+.calc-sub { color: rgba(255,255,255,0.65); font-size: 0.88rem; margin: 0 0 24px; }
+.calc-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px; margin-bottom: 24px;
+}
+.calc-field label {
+    display: block; color: rgba(255,255,255,0.85); font-size: 0.85rem;
+    margin-bottom: 6px; font-weight: 500;
+}
+.calc-field input, .calc-field select {
+    width: 100%; padding: 10px 12px; background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.15); color: #fff; font-size: 0.95rem;
+    font-family: 'Inter', sans-serif; box-sizing: border-box; border-radius: 0;
+}
+.calc-field input:focus, .calc-field select:focus { outline: none; border-color: #c9a962; }
+.calc-field select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c9a962' stroke-width='2'><polyline points='6 9 12 15 18 9'/></svg>");
+    background-repeat: no-repeat; background-position: right 14px center; background-size: 16px;
+    padding-right: 38px;
+}
+.calc-result {
+    padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;
+}
+.calc-result-label {
+    color: rgba(201,169,98,0.85); font-size: 0.75rem; text-transform: uppercase;
+    letter-spacing: 2px; font-weight: 600; margin-bottom: 8px;
+}
+.calc-result-amount {
+    color: #c9a962; font-family: 'Playfair Display', serif; font-size: 1.8rem;
+    font-weight: 600; margin-bottom: 6px;
+}
+.calc-result-note {
+    color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-bottom: 8px;
+}
+
+/* === Trustpilot placeholder === */
+.trustpilot-placeholder {
+    display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(0,182,122,0.3);
+    font-size: 0.78rem; color: rgba(255,255,255,0.75);
+}
+.trustpilot-placeholder strong { color: #00b67a; }

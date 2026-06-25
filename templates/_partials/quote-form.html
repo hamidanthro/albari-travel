@@ -1,0 +1,58 @@
+<section class="packages quote-section" style="padding:50px 40px;background:rgba(201,169,98,0.05);border-top:1px solid rgba(201,169,98,0.2);border-bottom:1px solid rgba(201,169,98,0.2);">
+    <div style="max-width:760px;margin:0 auto;">
+        <div class="section-header" style="margin-bottom:24px;">
+            <p class="section-tag">Get a Quote</p>
+            <h2 style="font-size:1.6rem;">Tell us what you need &mdash; reply within 4 hours</h2>
+            <p style="opacity:0.8;margin-top:8px;line-height:1.65;">Quick form below. We'll WhatsApp or call back with your personalised quote during Pakistan business hours (Mon&ndash;Sat 9 AM&ndash;8 PM PKT).</p>
+        </div>
+        <form action="https://formsubmit.co/info@albaritravelspk.com" method="POST" class="quote-form">
+            <input type="hidden" name="_subject" value="New quote request from {{name}} page">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="_autoresponse" value="Thanks for your quote request &mdash; we received it and will respond within 4 hours by WhatsApp or email. For urgent matters please WhatsApp +92 315 9596161.">
+            <input type="hidden" name="_next" value="https://www.albaritravelspk.com/thanks/">
+            <input type="hidden" name="Service" value="{{name}}">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+            <div class="quote-grid">
+                <div class="quote-field">
+                    <label for="qf_name">Your name <span style="color:#c9a962;">*</span></label>
+                    <input type="text" id="qf_name" name="Name" required placeholder="e.g. Muhammad Aslam">
+                </div>
+                <div class="quote-field">
+                    <label for="qf_phone">Phone (with country code) <span style="color:#c9a962;">*</span></label>
+                    <input type="tel" id="qf_phone" name="Phone" required placeholder="+92 3xx xxxxxxx">
+                </div>
+                <div class="quote-field">
+                    <label for="qf_party">Party size</label>
+                    <input type="text" id="qf_party" name="Party size" placeholder="e.g. 2 adults + 2 children">
+                </div>
+                <div class="quote-field">
+                    <label for="qf_dates">Preferred dates</label>
+                    <input type="text" id="qf_dates" name="Preferred dates" placeholder="e.g. February 2027, flexible">
+                </div>
+                <div class="quote-field">
+                    <label for="qf_tier">Budget tier</label>
+                    <select id="qf_tier" name="Budget tier">
+                        <option value="">Not sure / Send all options</option>
+                        <option value="Economy (3-star)">Economy (3-star)</option>
+                        <option value="Standard (4-star)">Standard (4-star)</option>
+                        <option value="Premium (5-star)">Premium (5-star)</option>
+                    </select>
+                </div>
+                <div class="quote-field">
+                    <label for="qf_city">Departure city</label>
+                    <input type="text" id="qf_city" name="Departure city" placeholder="e.g. Lahore, Karachi, Islamabad">
+                </div>
+            </div>
+            <div class="quote-field" style="margin-top:14px;">
+                <label for="qf_msg">Anything else we should know?</label>
+                <textarea id="qf_msg" name="Additional notes" rows="3" placeholder="Special requirements, mahram structure, elderly pilgrims, dietary needs, etc."></textarea>
+            </div>
+            <div style="margin-top:24px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+                <button type="submit" class="btn btn-primary">Send Quote Request</button>
+                <a href="https://wa.me/923159596161" target="_blank" rel="noopener" class="btn btn-secondary">Or WhatsApp Us</a>
+            </div>
+        </form>
+    </div>
+</section>
