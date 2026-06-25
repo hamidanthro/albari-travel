@@ -1900,6 +1900,7 @@ function buildUrduPages() {
     canonical: 'https://www.albaritravelspk.com/ur/services/hajj-and-umrah/',
     enEquivalent: 'https://www.albaritravelspk.com/services/hajj-and-umrah/',
     ogType: 'website',
+    _lang: 'ur',
   }));
 
   // /ur/contact/
@@ -1909,6 +1910,7 @@ function buildUrduPages() {
     canonical: 'https://www.albaritravelspk.com/ur/contact/',
     enEquivalent: 'https://www.albaritravelspk.com/contact/',
     ogType: 'website',
+    _lang: 'ur',
   }));
 
   // /ur/about/
@@ -1918,6 +1920,7 @@ function buildUrduPages() {
     canonical: 'https://www.albaritravelspk.com/ur/about/',
     enEquivalent: 'https://www.albaritravelspk.com/about/',
     ogType: 'website',
+    _lang: 'ur',
   }));
 
   // /ur/services/
@@ -1927,6 +1930,7 @@ function buildUrduPages() {
     canonical: 'https://www.albaritravelspk.com/ur/services/',
     enEquivalent: 'https://www.albaritravelspk.com/services/',
     ogType: 'website',
+    _lang: 'ur',
   }));
 
   // /ur/offices/
@@ -1936,6 +1940,7 @@ function buildUrduPages() {
     canonical: 'https://www.albaritravelspk.com/ur/offices/',
     enEquivalent: 'https://www.albaritravelspk.com/offices/',
     ogType: 'website',
+    _lang: 'ur',
   }));
 
   // /ur/blog/
@@ -1945,6 +1950,7 @@ function buildUrduPages() {
     canonical: 'https://www.albaritravelspk.com/ur/blog/',
     enEquivalent: 'https://www.albaritravelspk.com/blog/',
     ogType: 'website',
+    _lang: 'ur',
   }));
 
   // /ur/forms/
@@ -1954,6 +1960,7 @@ function buildUrduPages() {
     canonical: 'https://www.albaritravelspk.com/ur/forms/',
     enEquivalent: 'https://www.albaritravelspk.com/forms/',
     ogType: 'website',
+    _lang: 'ur',
   }));
 }
 
