@@ -56,20 +56,42 @@ function escapeHtml(s) {
   }[c]));
 }
 
+// Pages that have an Urdu translation — keep in sync with buildUrduPages().
+// Maps an EN path (e.g. "/about/") to its UR equivalent ("/ur/about/").
+const UR_TRANSLATED = {
+  '/': '/ur/',
+  '/about/': '/ur/about/',
+  '/contact/': '/ur/contact/',
+  '/services/': '/ur/services/',
+  '/services/hajj-and-umrah/': '/ur/services/hajj-and-umrah/',
+};
+
+function urEquivalentFor(canonical) {
+  if (!canonical) return null;
+  // Strip the domain to get the path
+  const m = String(canonical).match(/^https?:\/\/[^\/]+(\/.*)$/);
+  if (!m) return null;
+  const path = m[1];
+  return UR_TRANSLATED[path] || null;
+}
+
 // Defaults injected into every render context — for keys that are
 // optional and should not throw on missing. Add to this map as new
 // optional template vars are introduced.
 function withDefaults(ctx) {
   const isUr = ctx && ctx._lang === 'ur';
+  // For EN pages: detect if a UR translation exists for this canonical URL
+  const urPath = isUr ? null : urEquivalentFor(ctx && ctx.canonical);
+  const enPath = (ctx && ctx.canonical && isUr) ? (ctx.canonical.replace('/ur/', '/').replace(/^https?:\/\/[^\/]+/, '')) : '/';
   return {
-    // Language-switcher defaults — EN pages point to /ur/ equivalent,
-    // UR pages point back to EN. Page-specific contexts can override.
-    altLangUrl: isUr ? '/' : '/ur/',
+    // Language-switcher defaults — EN pages point to UR translation if it
+    // exists, otherwise fall back to UR homepage. UR pages point back to EN.
+    altLangUrl: isUr ? enPath : (urPath || '/ur/'),
     altLangCode: isUr ? 'en' : 'ur',
     altLangLabel: isUr ? 'English' : 'اردو',
-    // hreflang head metadata
-    hreflangEnUrl: isUr ? '/' : '/',
-    hreflangUrUrl: isUr ? '/ur/' : '/ur/',
+    // hreflang head metadata: emit only when there IS a UR translation
+    hreflangEnUrl: isUr ? enPath : '/',
+    hreflangUrUrl: isUr ? '/ur/' : (urPath || '/ur/'),
     htmlLang: isUr ? 'ur' : 'en',
     htmlDir: isUr ? 'rtl' : 'ltr',
     bodyClass: isUr ? 'ur-body' : '',
@@ -79,8 +101,13 @@ function withDefaults(ctx) {
 
 function render(tpl, ctx) {
   ctx = withDefaults(ctx || {});
-  // Inline partials first ({{>name}})
-  let out = tpl.replace(/\{\{>\s*([\w-]+)\s*\}\}/g, (_, name) => readPartial(name));
+  // Inline partials, recursively — a partial may itself contain {{>otherPartial}}.
+  // Loop until no more {{>...}} patterns remain (with safety bound to avoid infinite recursion).
+  let out = tpl;
+  for (let i = 0; i < 8; i++) {
+    if (!/\{\{>\s*[\w-]+\s*\}\}/.test(out)) break;
+    out = out.replace(/\{\{>\s*([\w-]+)\s*\}\}/g, (_, name) => readPartial(name));
+  }
   // Raw substitution ({{{var}}})
   out = out.replace(/\{\{\{\s*([\w-]+)\s*\}\}\}/g, (_, key) => {
     if (!(key in ctx)) throw new Error(`Missing template var: ${key}`);
@@ -1530,6 +1557,10 @@ function buildSitemap() {
   const urls = [
     { loc: `${site.domain}/`, priority: '1.0', changefreq: 'weekly', image: ogImage, imageTitle: 'Al Bari Travel & Tours — Umrah, Hajj, International Flights' },
     { loc: `${site.domain}/ur/`, priority: '0.9', changefreq: 'weekly', image: ogImage, imageTitle: 'الباری ٹریول اینڈ ٹورز — اردو ورژن' },
+    { loc: `${site.domain}/ur/services/`, priority: '0.85', changefreq: 'monthly', image: ogImage, imageTitle: 'ہماری خدمات — الباری ٹریول' },
+    { loc: `${site.domain}/ur/services/hajj-and-umrah/`, priority: '0.85', changefreq: 'monthly', image: ogImage, imageTitle: 'حج و عمرہ پیکجز — الباری ٹریول' },
+    { loc: `${site.domain}/ur/about/`, priority: '0.7', changefreq: 'yearly', image: ogImage, imageTitle: 'ہمارے بارے میں — الباری ٹریول' },
+    { loc: `${site.domain}/ur/contact/`, priority: '0.8', changefreq: 'monthly', image: ogImage, imageTitle: 'رابطہ کریں — الباری ٹریول' },
     { loc: `${site.domain}/offices/`, priority: '0.9', changefreq: 'monthly', image: ogImage, imageTitle: 'Al Bari Travel & Tours offices in Pakistan and USA' },
     { loc: `${site.domain}/about/`, priority: '0.6', changefreq: 'yearly', image: ogImage, imageTitle: 'About Al Bari Travel & Tours' },
     { loc: `${site.domain}/services/`, priority: '0.9', changefreq: 'monthly', image: ogImage, imageTitle: 'Our Services — Al Bari Travel & Tours' },
@@ -1691,6 +1722,42 @@ function buildUrduPages() {
     callMobile: 'کال',
   };
   writeFile('ur/index.html', render(homeTpl, homeCtx));
+
+  // /ur/services/hajj-and-umrah/
+  writeFile('ur/services/hajj-and-umrah/index.html', render(readTemplate('urdu-hajj-umrah.html'), {
+    seoTitle: 'حج و عمرہ پیکجز 2026-2027 | الباری ٹریول اینڈ ٹورز',
+    seoDescription: 'پاکستان سے حج اور عمرہ کے مکمل پیکجز — سعودی ویزا، پروازیں، حرم کے قریب ہوٹل، گراؤنڈ ٹرانسپورٹ اور زیارات۔ اقتصادی سے پریمیم تک تمام درجات۔',
+    canonical: 'https://www.albaritravelspk.com/ur/services/hajj-and-umrah/',
+    enEquivalent: 'https://www.albaritravelspk.com/services/hajj-and-umrah/',
+    ogType: 'website',
+  }));
+
+  // /ur/contact/
+  writeFile('ur/contact/index.html', render(readTemplate('urdu-contact.html'), {
+    seoTitle: 'رابطہ کریں | الباری ٹریول اینڈ ٹورز',
+    seoDescription: 'الباری ٹریول اینڈ ٹورز سے رابطہ کریں — 7 ریجنل نمائندے، پاکستان (+92 315 9596161) اور امریکہ (+1 443 589 4441)۔ واٹس ایپ، فون، یا ای میل۔',
+    canonical: 'https://www.albaritravelspk.com/ur/contact/',
+    enEquivalent: 'https://www.albaritravelspk.com/contact/',
+    ogType: 'website',
+  }));
+
+  // /ur/about/
+  writeFile('ur/about/index.html', render(readTemplate('urdu-about.html'), {
+    seoTitle: 'ہمارے بارے میں | الباری ٹریول اینڈ ٹورز — خاندانی پاکستانی سفری ادارہ',
+    seoDescription: 'الباری ٹریول اینڈ ٹورز — 2018 سے قائم خاندانی سفری ادارہ۔ سات ریجنل نمائندے پاکستان اور امریکہ میں خدمات سرانجام دے رہے ہیں۔ ریموٹ-فرسٹ، شفاف۔',
+    canonical: 'https://www.albaritravelspk.com/ur/about/',
+    enEquivalent: 'https://www.albaritravelspk.com/about/',
+    ogType: 'website',
+  }));
+
+  // /ur/services/
+  writeFile('ur/services/index.html', render(readTemplate('urdu-services-landing.html'), {
+    seoTitle: 'ہماری خدمات | الباری ٹریول اینڈ ٹورز — 5 سفری سروسز پاکستان سے',
+    seoDescription: 'الباری ٹریول اینڈ ٹورز کی 5 سفری سروسز — حج اور عمرہ، بین الاقوامی پروازیں، طالب علم ویزا، ویزٹ ویزا، خلیجی ورک ویزا۔ ایک ہی ادارہ، نام رکھنے والے انسان۔',
+    canonical: 'https://www.albaritravelspk.com/ur/services/',
+    enEquivalent: 'https://www.albaritravelspk.com/services/',
+    ogType: 'website',
+  }));
 }
 
 // Diaspora landing pages (UK / USA / Canada)

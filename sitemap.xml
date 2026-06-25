@@ -22,6 +22,46 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.albaritravelspk.com/ur/services/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>ہماری خدمات — الباری ٹریول</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.albaritravelspk.com/ur/services/hajj-and-umrah/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>حج و عمرہ پیکجز — الباری ٹریول</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.albaritravelspk.com/ur/about/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>ہمارے بارے میں — الباری ٹریول</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.albaritravelspk.com/ur/contact/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.albaritravelspk.com/og-default.svg</image:loc>
+      <image:title>رابطہ کریں — الباری ٹریول</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.albaritravelspk.com/offices/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
