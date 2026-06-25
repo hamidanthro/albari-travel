@@ -21,6 +21,11 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const TODAY = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 
+// Urdu month names + numeral-localised date
+const UR_MONTHS = ['جنوری','فروری','مارچ','اپریل','مئی','جون','جولائی','اگست','ستمبر','اکتوبر','نومبر','دسمبر'];
+const NOW = new Date();
+const TODAY_UR = `${NOW.getUTCDate()} ${UR_MONTHS[NOW.getUTCMonth()]} ${NOW.getUTCFullYear()}`;
+
 // Skip these top-level paths entirely
 const SKIP_PATHS = new Set(['node_modules', 'scripts', 'data', 'templates', 'css', 'fonts', '.git', 'build']);
 
@@ -69,6 +74,8 @@ function addLastUpdated(html, relPath) {
   if (relPath === 'index.html' || relPath === '404.html') return html;
   // Skip if already has one
   if (/data-last-updated/.test(html)) return html;
+  // Detect Urdu pages (path starts with ur/) — use Urdu label + Urdu month name
+  const isUr = relPath.startsWith('ur/') || /<html[^>]+lang=["']ur["']/.test(html);
   // Find first <h1>...</h1> in <main>; insert "Last updated" line after it
   const mainIdx = html.indexOf('<main');
   if (mainIdx < 0) return html;
@@ -76,7 +83,9 @@ function addLastUpdated(html, relPath) {
   const match = h1Re.exec(html.slice(mainIdx));
   if (!match) return html;
   const insertAt = mainIdx + match.index + match[0].length;
-  const stamp = `\n<p class="last-updated" data-last-updated="${TODAY}" style="font-size:0.78rem;opacity:0.55;letter-spacing:1px;text-transform:uppercase;margin-top:8px;margin-bottom:0;">Last updated: ${TODAY}</p>`;
+  const stamp = isUr
+    ? `\n<p class="last-updated" data-last-updated="${TODAY_UR}" lang="ur" dir="rtl" style="font-family:'Noto Nastaliq Urdu',sans-serif;font-size:0.85rem;opacity:0.6;margin-top:8px;margin-bottom:0;text-align:right;">آخری بار اپ ڈیٹ: ${TODAY_UR}</p>`
+    : `\n<p class="last-updated" data-last-updated="${TODAY}" style="font-size:0.78rem;opacity:0.55;letter-spacing:1px;text-transform:uppercase;margin-top:8px;margin-bottom:0;">Last updated: ${TODAY}</p>`;
   return html.slice(0, insertAt) + stamp + html.slice(insertAt);
 }
 

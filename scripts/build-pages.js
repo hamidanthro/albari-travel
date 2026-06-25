@@ -1640,8 +1640,8 @@ function buildUrduPages() {
     learnMoreLabel: t.cta.learnMore,
     // Hajj/Umrah card
     hajjUmrahTitle: 'حج و عمرہ پیکجز',
-    hajjUmrahTagline: 'اقتصادی سے پریمیم تک تمام تہات',
-    hajjUmrahFeat1: 'سعودی ویزا، پروازیں، ہوٹل، گاؤنڈ ٹرانسپورٹ',
+    hajjUmrahTagline: 'اقتصادی سے پریمیم تک تمام درجات',
+    hajjUmrahFeat1: 'سعودی ویزا، پروازیں، ہوٹل، گراؤنڈ ٹرانسپورٹ',
     hajjUmrahFeat2: 'حرم کے قریب ہوٹل (3 تا 5 ستارہ)',
     hajjUmrahFeat3: 'تربیت یافتہ گروپ لیڈرز کے ساتھ',
     // Flights card
@@ -1655,7 +1655,7 @@ function buildUrduPages() {
     visasTagline: 'شینگن، یوکے، یو ایس اے، اور خلیج',
     visasFeat1: 'مکمل دستاویزات کی تیاری',
     visasFeat2: 'سفارت خانے کی بکنگ',
-    visasFeat3: 'انکار کے امکانات پر مشاورت',
+    visasFeat3: 'ویزا منظوری کے امکانات بہتر بنانے پر مشاورت',
     // Trust strip
     trustTag: t.homepage.trustTag,
     trustH2: t.homepage.trustH2,
