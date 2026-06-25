@@ -2138,13 +2138,22 @@ body[dir="rtl"] .skip-to-content {
 
 @media (max-width: 768px) {
     /* Mobile chrome cleanup: ONE primary CTA pattern (bottom sticky bar).
-       Hide the desktop nav, lang switcher, header 'Book Now' CTA, and
-       floating WhatsApp bubble — all redundant with the always-visible
-       bottom sticky bar (WhatsApp + Call). Header becomes just logo + hamburger. */
+       Hide the desktop nav, header 'Book Now' CTA, and floating WhatsApp
+       bubble — all redundant with the always-visible bottom sticky bar
+       (WhatsApp + Call). Header keeps: logo + compact lang switcher + hamburger. */
     header > nav { display: none !important; }
-    header > .lang-switcher { display: none !important; }
     header > .header-cta { display: none !important; }
     .float-wa { display: none !important; }
+
+    /* Compact lang switcher next to hamburger on mobile */
+    header > .lang-switcher {
+        margin: 0 4px 0 4px;
+        padding: 6px 10px;
+        font-size: 0.72rem;
+        min-height: 36px;
+    }
+    header > .lang-switcher svg { display: none; }
+    body[dir="rtl"] header > .lang-switcher { font-family: 'Noto Nastaliq Urdu', sans-serif; }
 
     /* Show hamburger button */
     .mobile-menu-toggle {
