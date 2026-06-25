@@ -1926,7 +1926,7 @@ function buildUrduPages() {
   // /ur/services/
   writeFile('ur/services/index.html', render(readTemplate('urdu-services-landing.html'), {
     seoTitle: 'ہماری خدمات | الباری ٹریول اینڈ ٹورز — 5 سفری سروسز پاکستان سے',
-    seoDescription: 'الباری ٹریول اینڈ ٹورز کی 5 سفری سروسز — حج اور عمرہ، بین الاقوامی پروازیں، طالب علم ویزا، ویزٹ ویزا، خلیجی ورک ویزا۔ ایک ہی ادارہ، نام رکھنے والے انسان۔',
+    seoDescription: 'الباری ٹریول اینڈ ٹورز کی 5 سفری سروسز — حج اور عمرہ، بین الاقوامی پروازیں، طالب علم ویزا، ویزٹ ویزا، خلیجی ورک ویزا۔ ایک ہی ادارہ، متعین نمائندے۔',
     canonical: 'https://www.albaritravelspk.com/ur/services/',
     enEquivalent: 'https://www.albaritravelspk.com/services/',
     ogType: 'website',
