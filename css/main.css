@@ -1715,9 +1715,14 @@ header nav {
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border-top: 1px solid rgba(201,169,98,0.3);
-        padding: 8px 10px;
+        /* iOS safe-area-inset support: extend the bar below to cover the home indicator */
+        padding: 8px 10px calc(8px + env(safe-area-inset-bottom, 0px));
         gap: 8px;
         box-shadow: 0 -2px 12px rgba(0,0,0,0.25);
+    }
+    /* Reserve body padding for the bar + safe-area */
+    body {
+        padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
     }
     .mb-cta-btn {
         flex: 1;
@@ -1736,8 +1741,7 @@ header nav {
     .mb-cta-wa { background: #25D366; }
     .mb-cta-call { background: #c9a962; color: #0d1b2a; }
     .mb-cta-call svg { stroke: #0d1b2a; }
-    /* Reserve room so footer/dock doesn't cover content */
-    body { padding-bottom: 64px; }
+    /* (body padding-bottom set above, includes safe-area-inset for iOS) */
     /* Move floating WA up above the bottom bar on mobile */
     .float-wa { bottom: 78px; right: 14px; width: 52px; height: 52px; }
     .float-wa svg { width: 24px; height: 24px; }
@@ -1971,18 +1975,35 @@ body[dir="rtl"] h2,
 body[dir="rtl"] h3,
 body[dir="rtl"] h4 {
     font-family: 'Noto Nastaliq Urdu', 'Playfair Display', serif;
-    line-height: 1.6;
+    line-height: 1.95;
     font-weight: 600;
+    /* Nastaliq ascenders (ا ل ک) extend high; reserve top padding so they
+       aren't clipped by the line-box of the section above */
+    padding-top: 0.25em;
+    padding-bottom: 0.15em;
 }
 body[dir="rtl"] p,
 body[dir="rtl"] li {
-    line-height: 1.95;
+    line-height: 2.0;
     font-size: 1.05rem;
 }
 
 /* Reserve more vertical space — Nastaliq glyphs are tall */
-body[dir="rtl"] .hero h1 { line-height: 1.6; font-size: 2.4rem; }
-body[dir="rtl"] .hero-tag { font-size: 0.95rem; letter-spacing: 0; }
+body[dir="rtl"] .hero {
+    /* Hero on Urdu pages: enough top padding for Nastaliq H1 ascenders */
+    padding-top: 130px;
+    padding-bottom: 60px;
+    min-height: auto;
+}
+body[dir="rtl"] .hero h1 {
+    line-height: 1.85;
+    font-size: 2.2rem;
+    padding-top: 0.4em;
+    padding-bottom: 0.3em;
+    margin-top: 0;
+}
+body[dir="rtl"] .hero-tag { font-size: 0.95rem; letter-spacing: 0; margin-bottom: 18px; }
+body[dir="rtl"] .hero-content > p { line-height: 2.05; margin-top: 18px; }
 
 /* Mirror header layout */
 body[dir="rtl"] header {
@@ -2114,10 +2135,28 @@ body[dir="rtl"] .skip-to-content {
     font-family: 'Noto Nastaliq Urdu', sans-serif;
 }
 
-/* Mobile: pad bottom slightly more in RTL for Nastaliq descenders */
+/* Mobile RTL: Nastaliq glyphs need more vertical breathing room on small screens */
 @media (max-width: 768px) {
-    body[dir="rtl"] h1, body[dir="rtl"] h2 { line-height: 1.7; }
-    body[dir="rtl"] p, body[dir="rtl"] li { font-size: 1rem; line-height: 2.0; }
+    body[dir="rtl"] h1, body[dir="rtl"] h2 {
+        line-height: 1.95;
+        padding-top: 0.35em;
+        padding-bottom: 0.2em;
+    }
+    body[dir="rtl"] p, body[dir="rtl"] li { font-size: 1rem; line-height: 2.05; }
+    /* Hero on Urdu mobile: enough top room for tag + h1 ascenders */
+    body[dir="rtl"] .hero {
+        padding-top: 110px !important;
+        padding-bottom: 40px !important;
+    }
+    body[dir="rtl"] .hero h1 {
+        font-size: 1.75rem;
+        line-height: 1.85;
+        padding-top: 0.5em;
+    }
+    body[dir="rtl"] .hero-tag {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+    }
 }
 
 /* === Email signup widget === */
