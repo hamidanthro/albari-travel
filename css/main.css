@@ -2119,3 +2119,15 @@ body[dir="rtl"] .skip-to-content {
     body[dir="rtl"] h1, body[dir="rtl"] h2 { line-height: 1.7; }
     body[dir="rtl"] p, body[dir="rtl"] li { font-size: 1rem; line-height: 2.0; }
 }
+
+/* === Email signup widget === */
+.email-signup-form input[type="email"]:focus {
+    outline: 2px solid #c9a962;
+    outline-offset: 2px;
+}
+.email-signup-form input[type="email"]::placeholder { color: rgba(13,27,42,0.5); }
+@media (max-width: 480px) {
+    .email-signup-form { flex-direction: column; }
+    .email-signup-form input[type="email"] { width: 100%; }
+    .email-signup-form button { width: 100%; }
+}

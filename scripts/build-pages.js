@@ -64,6 +64,9 @@ const UR_TRANSLATED = {
   '/contact/': '/ur/contact/',
   '/services/': '/ur/services/',
   '/services/hajj-and-umrah/': '/ur/services/hajj-and-umrah/',
+  '/offices/': '/ur/offices/',
+  '/blog/': '/ur/blog/',
+  '/forms/': '/ur/forms/',
 };
 
 function urEquivalentFor(canonical) {
@@ -95,6 +98,14 @@ function withDefaults(ctx) {
     htmlLang: isUr ? 'ur' : 'en',
     htmlDir: isUr ? 'rtl' : 'ltr',
     bodyClass: isUr ? 'ur-body' : '',
+    // Email signup defaults (override per-page for context-specific signups)
+    emailSignupTag: isUr ? 'مفت سفری مشورے' : 'Free travel tips',
+    emailSignupHeading: isUr ? 'پاکستانی مسافروں کے لیے مفت ماہانہ مشورے' : 'Monthly travel tips for Pakistani families',
+    emailSignupSub: isUr ? 'ہر مہینے ایک ای میل میں عمرہ، حج، ویزا اور پروازوں پر تازہ ترین تجاویز۔ کوئی سپام نہیں — جب چاہیں ان سبسکرائب کریں۔' : 'One email a month with practical Umrah, Hajj, visa, and flight tips — written by our Regional Reps for Pakistani families. No spam, unsubscribe any time.',
+    emailSignupListName: 'monthly-tips',
+    emailSignupBtnText: isUr ? 'سبسکرائب کریں' : 'Subscribe',
+    emailSignupAutoreply: isUr ? 'شکریہ سبسکرپشن کے لیے۔ پہلا ای میل اگلے ماہ کے شروع میں۔ کوئی سوال؟ واٹس ایپ کریں +92 315 9596161۔' : 'Thanks for subscribing! Your first email arrives at the start of next month. Any questions? WhatsApp +92 315 9596161.',
+    emailSignupFinePrint: isUr ? 'ہم آپ کی ای میل صرف ماہانہ تجاویز کے لیے استعمال کریں گے۔ کبھی کسی تیسرے فریق کو فروخت نہیں۔' : 'We only use your email for the monthly tips. Never sold to third parties.',
     ...ctx,
   };
 }
@@ -1451,6 +1462,161 @@ ${JSON.stringify({
 }, null, 2)}
 </script>`,
   },
+  {
+    slug: 'hajj-2027',
+    pageName: 'Hajj 2027 from Pakistan',
+    pageSchemaType: 'WebPage',
+    eyebrow: 'Hajj 2027 / 1448H',
+    h1: 'Hajj 2027 from Pakistan — Complete Application Help',
+    lede: 'MoRA applications open in November 2026 and the private operator quota fills fast. Get the timeline, costs, and a free alert when applications open.',
+    seoTitle: 'Hajj 2027 from Pakistan — Application, Costs, MoRA Alert',
+    seoDescription: 'Complete Hajj 2027 (1448H) guide for Pakistani applicants — Government Scheme vs Private route, PKR costs, application timeline, MoRA portal help, free alert when applications open in November 2026.',
+    body: `
+        <section style="background:rgba(201,169,98,0.08);border-left:3px solid #c9a962;padding:20px 24px;margin-bottom:30px;">
+            <p style="margin:0;font-size:0.95rem;line-height:1.7;"><strong style="color:#c9a962;">Time-critical:</strong> Pakistani MoRA opens Hajj 2027 applications in <strong>November 2026</strong> (~5 months away). Quota was 179,210 in 2026; expected similar for 2027. Government Scheme is lottery-based — private quota is first-come-first-served and historically fills by February. <strong>Decide your route now.</strong></p>
+        </section>
+
+        <h2 style="margin-top:0;">Hajj 2027 — what we know so far</h2>
+        <p style="margin-top:14px;line-height:1.8;">Hajj 1448H falls in <strong>late May to early June 2027</strong>. Specific dates (confirmed by moon-sighting):</p>
+        <ul style="margin-top:14px;line-height:2;">
+            <li><strong>Yawm at-Tarwiyah (8 Dhu al-Hijjah):</strong> approximately 26 May 2027</li>
+            <li><strong>Yawm Arafah (9 Dhu al-Hijjah):</strong> approximately 27 May 2027</li>
+            <li><strong>Eid al-Adha (10 Dhu al-Hijjah):</strong> approximately 28 May 2027</li>
+            <li><strong>Days of Tashreeq (11&ndash;13 Dhu al-Hijjah):</strong> 29 May &ndash; 31 May 2027</li>
+        </ul>
+        <p style="margin-top:14px;line-height:1.8;">Pakistani Hajj flights typically depart from <strong>mid-April to mid-May 2027</strong> and return <strong>mid-June to mid-July 2027</strong>. Each pilgrim spends 35&ndash;45 days in Saudi Arabia depending on the package.</p>
+
+        <h2 style="margin-top:50px;">Pakistani Hajj 2027 timeline — month by month</h2>
+        <table class="pricing-tier-table" style="margin-top:20px;">
+            <thead><tr><th>When</th><th>What happens</th></tr></thead>
+            <tbody>
+                <tr><td><strong>October 2026</strong></td><td>MoRA publishes Hajj Policy 2027 (cost, dates, application window)</td></tr>
+                <tr><td><strong>November 2026</strong></td><td><strong>Government Scheme application window opens</strong> (typically 10&ndash;15 days)</td></tr>
+                <tr><td><strong>December 2026</strong></td><td>Government Scheme lottery (Qura) draw + results published</td></tr>
+                <tr><td><strong>October 2026 &ndash; February 2027</strong></td><td>Private Hajj Group Operators (HGOs) accept bookings until quota fills</td></tr>
+                <tr><td><strong>January &ndash; February 2027</strong></td><td>Successful applicants pay second installment + medical screening begins</td></tr>
+                <tr><td><strong>February &ndash; April 2027</strong></td><td>Document collection, Saudi visa processing, group leader briefings</td></tr>
+                <tr><td><strong>Mid-April &ndash; mid-May 2027</strong></td><td>Pakistani Hajj flights depart</td></tr>
+                <tr><td><strong>26 May &ndash; 31 May 2027</strong></td><td>Hajj rites (Mina &rarr; Arafah &rarr; Muzdalifah &rarr; Jamarat &rarr; Tawaf al-Ifadah)</td></tr>
+                <tr><td><strong>Mid-June &ndash; mid-July 2027</strong></td><td>Pakistani Hajj flights return</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="margin-top:50px;">Cost expectations for Hajj 2027</h2>
+        <p style="margin-top:14px;line-height:1.8;">Expected pricing based on 2026 actuals + ~6&ndash;12% annual inflation:</p>
+        <table class="pricing-tier-table" style="margin-top:20px;">
+            <thead><tr><th>Route</th><th>Per Person PKR (estimated)</th><th>What you get</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Government Hajj Scheme</strong></td><td class="tier-price">PKR 1,150,000 &ndash; 1,300,000</td><td>Lottery-based, basic services, ~80&ndash;100 pilgrims per group</td></tr>
+                <tr><td><strong>Private Basic</strong></td><td class="tier-price">PKR 1,500,000 &ndash; 1,950,000</td><td>Confirmed seat, 3-star hotels, group of ~50</td></tr>
+                <tr><td><strong>Private Standard</strong></td><td class="tier-price">PKR 2,000,000 &ndash; 2,500,000</td><td>4-star hotels, ~200&ndash;400m from Haram, group of ~30&ndash;40</td></tr>
+                <tr><td><strong>Private Premium</strong></td><td class="tier-price">PKR 2,600,000 &ndash; 3,500,000+</td><td>5-star hotels within 200m, Aziziya private apartments, ~20&ndash;25 pilgrims</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="margin-top:50px;">Three application routes — decide now</h2>
+        <h3 style="margin-top:24px;">Route 1: Pakistan Government Hajj Scheme</h3>
+        <p style="margin-top:8px;line-height:1.8;">Apply via the official <a href="https://hajj.mora.gov.pk/login" target="_blank" rel="noopener" style="color:#c9a962;">MoRA Hajj Portal</a> in November 2026. Cheapest option. Lottery-based &mdash; oversubscribed in recent years (in 2024, 510,000+ applied for ~90,000 government seats). <strong>If not selected, deposit refundable.</strong></p>
+        <h3 style="margin-top:24px;">Route 2: Private Hajj Group Operator (HGO)</h3>
+        <p style="margin-top:8px;line-height:1.8;">Book directly with a MoRA-licensed private operator (verify license number on <a href="https://mora.gov.pk/" target="_blank" rel="noopener" style="color:#c9a962;">mora.gov.pk</a>). More expensive but seat is confirmed. Operator handles full pipeline. Quality varies enormously &mdash; demand the exact Makkah hotel name + metres from Haram in writing before paying. See our <a href="/blog/government-hajj-scheme-vs-private-hajj-operators-pakistan/" style="color:#c9a962;">full comparison guide</a>.</p>
+        <h3 style="margin-top:24px;">Route 3: Hybrid (apply to both)</h3>
+        <p style="margin-top:8px;line-height:1.8;">Many Pakistani families apply to the Government Scheme first AND reserve a private seat. If lottery selected, cancel the private booking (most operators allow before final installment). If lottery missed, switch fully to private. Avoids the worst-case &quot;missed Hajj entirely&quot; scenario.</p>
+
+        <h2 style="margin-top:50px;">What to prepare NOW (before November)</h2>
+        <p style="margin-top:14px;line-height:1.8;">The application window is only 10&ndash;15 days. Don&apos;t scramble in November &mdash; have these ready:</p>
+        <ul style="margin-top:14px;line-height:2;">
+            <li><strong>Original CNIC</strong> (renew at NADRA if expiring within 12 months)</li>
+            <li><strong>Original MRP / e-Passport</strong> valid through July 2027 (renew at DGI&amp;P if borderline &mdash; takes 21 working days)</li>
+            <li><strong>4 passport-size photographs</strong> (white background, 4&times;6 cm, no glasses)</li>
+            <li><strong>Polio booster</strong> from any government EPI centre (free, valid 28 days&ndash;12 months)</li>
+            <li><strong>Meningococcal ACWY vaccination</strong> (~PKR 4,000&ndash;6,500 at private hospitals, valid 3 years)</li>
+            <li><strong>Medical fitness certificate</strong> from a government hospital (required for application)</li>
+            <li><strong>For women under 45:</strong> Mahram nikah-nama or NADRA FRC + notarised affidavit. See our <a href="/forms/mahram-affidavit-women-hajj-umrah/" style="color:#c9a962;">mahram affidavit guide</a>.</li>
+            <li><strong>Saved-up funds</strong> for the application deposit (typically PKR 200,000 for Government Scheme)</li>
+            <li><strong>Decided departure city</strong> (Lahore / Karachi / Islamabad)</li>
+            <li><strong>Decided room sharing</strong> (quad / triple / double / single)</li>
+        </ul>
+
+        <section style="margin:50px 0 30px;padding:30px;background:rgba(201,169,98,0.1);border:1px solid rgba(201,169,98,0.4);border-left:4px solid #c9a962;text-align:center;">
+            <p class="section-tag">Free Hajj 2027 alert</p>
+            <h3 style="font-size:1.45rem;margin:6px 0 12px;">Alert me when MoRA opens Hajj 2027 applications</h3>
+            <p style="opacity:0.85;margin-bottom:22px;line-height:1.7;">Drop your email below — we'll send one email the day MoRA opens applications in November 2026, with a step-by-step guide on how to apply. No spam, no other emails until then.</p>
+            <form action="https://formsubmit.co/info@albaritravelspk.com" method="POST" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:560px;margin:0 auto;">
+                <input type="hidden" name="_subject" value="[EMAIL SIGNUP — hajj-2027-alert] New subscriber">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="true">
+                <input type="hidden" name="_autoresponse" value="Thanks! You're on the Hajj 2027 alert list. We'll email you the day MoRA opens applications in November 2026 with a step-by-step guide. Questions in the meantime? WhatsApp +92 315 9596161.">
+                <input type="hidden" name="_next" value="https://www.albaritravelspk.com/thanks/">
+                <input type="hidden" name="List" value="hajj-2027-alert">
+                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                <input type="email" name="Email" required placeholder="your.email@example.com" aria-label="Email for Hajj 2027 alert" style="flex:1;min-width:240px;padding:14px 18px;font-size:1rem;background:rgba(255,255,255,0.95);border:none;color:#0d1b2a;box-sizing:border-box;">
+                <button type="submit" class="btn btn-primary" style="padding:14px 26px;white-space:nowrap;">Alert me</button>
+            </form>
+            <p style="font-size:0.78rem;opacity:0.65;margin-top:14px;">One-time alert. Unsubscribe instantly. We never sell emails to third parties.</p>
+        </section>
+
+        <h2 style="margin-top:50px;">Common Hajj 2027 questions</h2>
+        <details class="faq-item" style="margin-top:14px;">
+            <summary><h3 style="display:inline;margin:0;font-size:1.05rem;">When exactly will MoRA open Hajj 2027 applications?</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>MoRA typically publishes the Hajj Policy 2027 in <strong>October 2026</strong> and opens the application window in <strong>November 2026</strong> for 10&ndash;15 days. Exact dates vary &mdash; sign up below for the email alert and we&apos;ll notify you the day applications open.</p></div>
+        </details>
+        <details class="faq-item" style="margin-top:14px;">
+            <summary><h3 style="display:inline;margin:0;font-size:1.05rem;">How much will Hajj 2027 cost from Pakistan?</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>Government Scheme is expected to be <strong>PKR 1,150,000&ndash;1,300,000</strong>. Private packages start around PKR 1,500,000 (basic) and exceed PKR 3,000,000 for premium 5-star options. Final pricing announced in MoRA Hajj Policy 2027 (October&ndash;November 2026).</p></div>
+        </details>
+        <details class="faq-item" style="margin-top:14px;">
+            <summary><h3 style="display:inline;margin:0;font-size:1.05rem;">Can I apply to both Government Scheme and private operator?</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>Yes &mdash; this is the &quot;hybrid&quot; route many Pakistani families use. Apply to Government Scheme in November, reserve a private seat in parallel. If the lottery selects you, cancel the private (most operators allow before final installment). If you miss the lottery, switch fully to private. Hedges against the worst-case &quot;no Hajj at all&quot; scenario.</p></div>
+        </details>
+        <details class="faq-item" style="margin-top:14px;">
+            <summary><h3 style="display:inline;margin:0;font-size:1.05rem;">What if I&apos;m not selected in the Government lottery?</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>Your Government Scheme deposit is refundable in full &mdash; refund processing typically takes 4&ndash;8 weeks. You can then book with any MoRA-licensed private operator (subject to private quota availability). Don&apos;t wait until February &mdash; private quotas often fill by then.</p></div>
+        </details>
+        <details class="faq-item" style="margin-top:14px;">
+            <summary><h3 style="display:inline;margin:0;font-size:1.05rem;">What documents do I need to start preparing now?</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>CNIC (renew if expiring), MRP/e-Passport (valid through July 2027), 4 passport photos, polio + meningococcal vaccination cards, medical fitness certificate, and (for women under 45) a notarised mahram affidavit + NADRA family registration proof. Application window is short &mdash; have everything ready by mid-October 2026.</p></div>
+        </details>
+        <details class="faq-item" style="margin-top:14px;">
+            <summary><h3 style="display:inline;margin:0;font-size:1.05rem;">Can a woman under 45 perform Hajj 2027 without a mahram?</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>The Pakistan Government Scheme strictly requires a mahram (father, brother, husband, or son) for women under 45. Saudi has permitted women aged 45+ in supervised groups since 2021. Some private operators have additional flexibility for adult sisters travelling together &mdash; ask specifically. <a href="/forms/mahram-affidavit-women-hajj-umrah/" style="color:#c9a962;">Mahram affidavit guide</a>.</p></div>
+        </details>
+        <details class="faq-item" style="margin-top:14px;">
+            <summary><h3 style="display:inline;margin:0;font-size:1.05rem;">How long is the Pakistani Hajj 2027 package?</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>Standard packages are 35&ndash;45 days in Saudi: Madinah ziyarah (8&ndash;10 days), Makkah pre-Hajj (5&ndash;7 days), Hajj rites (5&ndash;6 days), post-Hajj rest (3&ndash;5 days), and travel buffers. Short packages of 25&ndash;30 days exist but compress the Madinah portion significantly.</p></div>
+        </details>
+        <details class="faq-item" style="margin-top:14px;">
+            <summary><h3 style="display:inline;margin:0;font-size:1.05rem;">How do I verify a private Hajj operator is legitimate?</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>Visit <a href="https://mora.gov.pk/" target="_blank" rel="noopener" style="color:#c9a962;">mora.gov.pk</a> and find the published list of licensed Hajj Group Operators (HGOs). Each licensed operator has a unique license number. Cross-check this number against the operator&apos;s claim. Never pay a deposit to an operator who cannot show you their MoRA HGO license certificate.</p></div>
+        </details>
+
+        <h2 style="margin-top:50px;">How Al Bari Travel helps with Hajj 2027</h2>
+        <p style="margin-top:14px;line-height:1.8;">As a MoRA-recognised travel agency, we offer:</p>
+        <ul style="margin-top:14px;line-height:2;">
+            <li>Government Scheme application help &mdash; we walk you through the MoRA portal during the November window and ensure documents are filed correctly</li>
+            <li>Private Hajj packages from PKR 1,500,000 to PKR 3,500,000+, with confirmed seats, exact hotel names, and small group sizes (20&ndash;40 pilgrims)</li>
+            <li>Hybrid strategy &mdash; we hold a private seat for you while you wait for the Government Scheme lottery result</li>
+            <li>Pre-departure briefings in Urdu, Punjabi, Pashto</li>
+            <li>Mahram coordination + women&apos;s group options (45+)</li>
+            <li>Senior pilgrim accommodations (wheelchair-friendly, medical-friendly routing)</li>
+            <li>Family multi-room booking with connecting suites</li>
+        </ul>
+        <p style="margin-top:18px;line-height:1.8;">WhatsApp <a href="https://wa.me/923159596161" style="color:#c9a962;">+92 315 9596161</a> for a Hajj 2027 consultation. Quote within 4 hours during Pakistan business hours.</p>
+    `,
+    extraSchema: `<script type="application/ld+json">
+${JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    { '@type': 'Question', 'name': 'When will MoRA open Hajj 2027 applications?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'MoRA typically publishes Hajj Policy in October 2026 and opens the application window in November 2026 for 10–15 days.' } },
+    { '@type': 'Question', 'name': 'How much will Hajj 2027 cost from Pakistan?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Government Scheme expected PKR 1,150,000–1,300,000. Private packages PKR 1,500,000–3,500,000+ depending on tier.' } },
+    { '@type': 'Question', 'name': 'Can I apply to both Government and private?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Yes — many Pakistani families use this hybrid strategy to hedge against missing the Government Scheme lottery.' } },
+    { '@type': 'Question', 'name': 'What if I am not selected in lottery?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Your Government Scheme deposit is fully refundable. You can then book with a MoRA-licensed private operator (subject to private quota availability).' } },
+    { '@type': 'Question', 'name': 'How long is the Pakistani Hajj 2027 package?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Standard packages are 35–45 days in Saudi Arabia covering Madinah ziyarah, Makkah, Hajj rites, and travel.' } },
+    { '@type': 'Question', 'name': 'How do I verify a private Hajj operator?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Visit mora.gov.pk and find the published list of licensed Hajj Group Operators (HGOs). Verify the operator unique license number.' } }
+  ]
+}, null, 2)}
+</script>`,
+  },
 ];
 
 function contactPageBody() {
@@ -1561,6 +1727,9 @@ function buildSitemap() {
     { loc: `${site.domain}/ur/services/hajj-and-umrah/`, priority: '0.85', changefreq: 'monthly', image: ogImage, imageTitle: 'حج و عمرہ پیکجز — الباری ٹریول' },
     { loc: `${site.domain}/ur/about/`, priority: '0.7', changefreq: 'yearly', image: ogImage, imageTitle: 'ہمارے بارے میں — الباری ٹریول' },
     { loc: `${site.domain}/ur/contact/`, priority: '0.8', changefreq: 'monthly', image: ogImage, imageTitle: 'رابطہ کریں — الباری ٹریول' },
+    { loc: `${site.domain}/ur/offices/`, priority: '0.8', changefreq: 'monthly', image: ogImage, imageTitle: 'ہمارے دفاتر — الباری ٹریول' },
+    { loc: `${site.domain}/ur/blog/`, priority: '0.75', changefreq: 'weekly', image: ogImage, imageTitle: 'بلاگ — الباری ٹریول' },
+    { loc: `${site.domain}/ur/forms/`, priority: '0.75', changefreq: 'monthly', image: ogImage, imageTitle: 'فارمز — الباری ٹریول' },
     { loc: `${site.domain}/offices/`, priority: '0.9', changefreq: 'monthly', image: ogImage, imageTitle: 'Al Bari Travel & Tours offices in Pakistan and USA' },
     { loc: `${site.domain}/about/`, priority: '0.6', changefreq: 'yearly', image: ogImage, imageTitle: 'About Al Bari Travel & Tours' },
     { loc: `${site.domain}/services/`, priority: '0.9', changefreq: 'monthly', image: ogImage, imageTitle: 'Our Services — Al Bari Travel & Tours' },
@@ -1575,6 +1744,7 @@ function buildSitemap() {
     { loc: `${site.domain}/blog/`, priority: '0.85', changefreq: 'weekly', image: ogImage, imageTitle: 'Al Bari Travel Blog' },
     { loc: `${site.domain}/forms/`, priority: '0.85', changefreq: 'weekly', image: ogImage, imageTitle: 'Travel & Visa Forms' },
     { loc: `${site.domain}/why-al-bari/`, priority: '0.75', changefreq: 'monthly', image: ogImage, imageTitle: 'Why Al Bari Travel — Compared' },
+    { loc: `${site.domain}/hajj-2027/`, priority: '0.9', changefreq: 'monthly', image: ogImage, imageTitle: 'Hajj 2027 from Pakistan — Application Help' },
     ...(readJson('diaspora-pages.json').pages.map(p => ({
       loc: `${site.domain}/${p.slug}/`,
       priority: '0.8',
@@ -1756,6 +1926,33 @@ function buildUrduPages() {
     seoDescription: 'الباری ٹریول اینڈ ٹورز کی 5 سفری سروسز — حج اور عمرہ، بین الاقوامی پروازیں، طالب علم ویزا، ویزٹ ویزا، خلیجی ورک ویزا۔ ایک ہی ادارہ، نام رکھنے والے انسان۔',
     canonical: 'https://www.albaritravelspk.com/ur/services/',
     enEquivalent: 'https://www.albaritravelspk.com/services/',
+    ogType: 'website',
+  }));
+
+  // /ur/offices/
+  writeFile('ur/offices/index.html', render(readTemplate('urdu-offices-landing.html'), {
+    seoTitle: 'ہمارے دفاتر | الباری ٹریول — 7 ریجنل نمائندے پاکستان اور امریکہ',
+    seoDescription: 'الباری ٹریول کے 7 ریجنل نمائندے — حسن ابدال (مرکزی ہب)، راولپنڈی، ٹیکسلا، صوابی، مردان، پشاور، اور ٹیکساس (امریکہ)۔ ریموٹ-فرسٹ، 170 پاکستانی اضلاع تک رسائی۔',
+    canonical: 'https://www.albaritravelspk.com/ur/offices/',
+    enEquivalent: 'https://www.albaritravelspk.com/offices/',
+    ogType: 'website',
+  }));
+
+  // /ur/blog/
+  writeFile('ur/blog/index.html', render(readTemplate('urdu-blog-landing.html'), {
+    seoTitle: 'بلاگ | الباری ٹریول — پاکستانی مسافروں کے لیے گائیڈز',
+    seoDescription: 'پاکستان سے عمرہ، حج 2027، سعودی ویزا، UK طالب علم ویزا، شینگن، GAMCA میڈیکل اور خلیجی ورک ویزا پر تحقیقاتی گائیڈز۔ 20+ گہرے گائیڈز۔',
+    canonical: 'https://www.albaritravelspk.com/ur/blog/',
+    enEquivalent: 'https://www.albaritravelspk.com/blog/',
+    ogType: 'website',
+  }));
+
+  // /ur/forms/
+  writeFile('ur/forms/index.html', render(readTemplate('urdu-forms-landing.html'), {
+    seoTitle: 'فارمز | الباری ٹریول — پاکستانی سفری اور ویزا فارمز',
+    seoDescription: 'حج 2027 درخواست، عمرہ بکنگ چیک لسٹ، محرم حلف نامہ، سعودی Umrah ویزا، Schengen، UK طالب علم ویزا، GAMCA — 18 فارمز پاکستانی مسافروں کے لیے۔',
+    canonical: 'https://www.albaritravelspk.com/ur/forms/',
+    enEquivalent: 'https://www.albaritravelspk.com/forms/',
     ogType: 'website',
   }));
 }

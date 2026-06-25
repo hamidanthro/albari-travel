@@ -1,0 +1,27 @@
+<!--
+  Reusable email-signup widget.
+  Defaults via withDefaults(): emailSignupHeading, emailSignupSub, emailSignupListName, emailSignupBtnText
+  Override per-page in build context.
+  Backend: Formsubmit (Hamid receives each signup as email, manually adds to list).
+  Migration path: replace action="https://formsubmit.co/..." with Mailchimp/Brevo embed
+  when subscriber count justifies. Hidden _list field carries the list name to filter on.
+-->
+<section class="email-signup" style="padding:50px 40px;background:linear-gradient(135deg,rgba(201,169,98,0.1) 0%,rgba(13,27,42,0.4) 100%);border-top:1px solid rgba(201,169,98,0.3);border-bottom:1px solid rgba(201,169,98,0.3);">
+    <div style="max-width:640px;margin:0 auto;text-align:center;">
+        <p class="section-tag">{{emailSignupTag}}</p>
+        <h2 style="font-size:1.6rem;margin-bottom:12px;">{{emailSignupHeading}}</h2>
+        <p style="opacity:0.85;margin-bottom:24px;line-height:1.7;">{{emailSignupSub}}</p>
+        <form action="https://formsubmit.co/info@albaritravelspk.com" method="POST" class="email-signup-form" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+            <input type="hidden" name="_subject" value="[EMAIL SIGNUP — {{emailSignupListName}}] New subscriber">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="_autoresponse" value="{{emailSignupAutoreply}}">
+            <input type="hidden" name="_next" value="https://www.albaritravelspk.com/thanks/">
+            <input type="hidden" name="List" value="{{emailSignupListName}}">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="email" name="Email" required placeholder="your.email@example.com" aria-label="Email address" style="flex:1;min-width:240px;padding:14px 18px;font-size:1rem;background:rgba(255,255,255,0.95);border:none;color:#0d1b2a;font-family:'Inter',sans-serif;box-sizing:border-box;">
+            <button type="submit" class="btn btn-primary" style="padding:14px 28px;white-space:nowrap;">{{emailSignupBtnText}}</button>
+        </form>
+        <p style="font-size:0.75rem;opacity:0.6;margin-top:14px;line-height:1.6;">{{emailSignupFinePrint}}</p>
+    </div>
+</section>
