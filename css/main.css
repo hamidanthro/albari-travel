@@ -2137,12 +2137,15 @@ body[dir="rtl"] .skip-to-content {
 .mobile-menu-toggle { display: none; }
 
 @media (max-width: 768px) {
-    /* Hide desktop nav + lang switcher + header CTA text on mobile */
+    /* Mobile chrome cleanup: ONE primary CTA pattern (bottom sticky bar).
+       Hide the desktop nav, lang switcher, header 'Book Now' CTA, and
+       floating WhatsApp bubble — all redundant with the always-visible
+       bottom sticky bar (WhatsApp + Call). Header becomes just logo + hamburger. */
     header > nav { display: none !important; }
     header > .lang-switcher { display: none !important; }
-    /* Keep header CTA visible but compact */
-    header > .header-cta { padding: 6px 12px; font-size: 0.78rem; }
-    
+    header > .header-cta { display: none !important; }
+    .float-wa { display: none !important; }
+
     /* Show hamburger button */
     .mobile-menu-toggle {
         display: flex;
