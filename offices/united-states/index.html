@@ -46,13 +46,14 @@
 <link rel="preload" as="font" type="font/woff2" href="/fonts/playfair-display-variable.woff2" crossorigin>
 
 <!-- Self-hosted fonts (replaces Google Fonts external request) -->
-<link rel="stylesheet" href="/fonts/fonts.css?v=20260625a">
-<link rel="stylesheet" href="/css/main.min.css?v=20260625a">
+<link rel="stylesheet" href="/fonts/fonts.css?v=20260625d">
+<link rel="stylesheet" href="/css/main.min.css?v=20260625d">
 
 <!-- Site search + exit intent + cost calc — all deferred -->
 <script src="/js/site-search.js?v=20260625a" defer></script>
 <script src="/js/exit-intent.js?v=20260625a" defer></script>
 <script src="/js/cost-calculator.js?v=20260625a" defer></script>
+<script src="/js/mobile-menu.js?v=20260625d" defer></script>
 
 <!-- Analytics — deferred to window load event to keep TTI low -->
 <script>
@@ -149,7 +150,41 @@ window.addEventListener('load', function(){
         <span class="cta-full">Book Now: +92 315 9596161</span>
         <span class="cta-short">Book Now</span>
     </a>
+    <button type="button" id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
 </header>
+
+<div id="mobile-menu-backdrop" class="mobile-menu-backdrop" aria-hidden="true"></div>
+<aside id="mobile-menu" class="mobile-menu" role="dialog" aria-modal="true" aria-label="Site navigation">
+    <div class="mobile-menu-header">
+        <div class="logo">Al Bari <span>Travel &amp; Tours</span></div>
+        <button type="button" class="mobile-menu-close" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="mobile-menu-nav">
+        <a href="/">Home</a>
+        <a href="/about/">About Us</a>
+        <a href="/services/">Our Services</a>
+        <a href="/offices/">Our Offices</a>
+        <a href="/blog/">Blog</a>
+        <a href="/forms/">Travel &amp; Visa Forms</a>
+        <a href="/why-al-bari/">Why Al Bari</a>
+        <a href="/hajj-2027/" class="highlight">Hajj 2027 Application Help &rarr;</a>
+        <a href="/glossary/">Umrah &amp; Hajj Glossary</a>
+        <a href="/contact/">Contact</a>
+    </nav>
+    <div class="mobile-menu-footer">
+        <a href="https://wa.me/923159596161" target="_blank" rel="noopener" class="wa-bar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            WhatsApp: +92 315 9596161
+        </a>
+        <a href="/ur/" class="lang-switcher" hreflang="ur" lang="ur" aria-label="اردو">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    <span>اردو</span>
+</a>
+
+    </div>
+</aside>
 
 <main id="main-content">
 
