@@ -602,7 +602,7 @@ function buildFormsPage() {
                 <h3 class="form-card-title">${escapeHtml(f.title)}</h3>
                 <p class="form-card-desc">${f.description}</p>
                 <div class="form-card-footer">
-                    <a href="${escapeHtml(f.downloadUrl)}" ${f.downloadType === 'external' ? 'target="_blank" rel="noopener nofollow"' : ''} class="form-card-cta">${f.downloadLabel} ${f.downloadType === 'external' ? '↗' : '↓'}</a>
+                    <a href="${escapeHtml(f.downloadUrl)}" ${f.downloadType === 'external' ? 'target="_blank" rel="noopener nofollow"' : ''} class="form-card-cta">${f.downloadLabel} ${f.downloadType === 'external' ? '↗' : (f.downloadType === 'page' ? '→' : '↓')}</a>
                     <span class="form-card-size">${escapeHtml(f.fileSize)}</span>
                 </div>
             </article>`).join('');
@@ -663,6 +663,95 @@ ${JSON.stringify({
     year: String(new Date().getFullYear()),
   };
   writeFile('forms/index.html', render(tpl, ctx));
+}
+
+// Build a dedicated info page for each form whose downloadType === 'page'
+function buildFormInfoPages() {
+  const forms = readJson('forms.json');
+  const tpl = readTemplate('form-info-page.html');
+  const pageForms = forms.forms.filter(f => f.downloadType === 'page' && f.pageBody);
+  if (pageForms.length === 0) return;
+
+  pageForms.forEach(f => {
+    // FAQ block + schema
+    let faqBlock = '';
+    let faqSchema = '';
+    const faqs = f.pageFaqs || [];
+    if (faqs.length) {
+      faqBlock = `
+        <section class="blog-faq-section" style="margin-top:50px;padding-top:30px;border-top:1px solid rgba(255,255,255,0.08);">
+            <h2>Frequently Asked Questions</h2>
+${faqs.map(q => `
+            <details class="faq-item" style="margin-top:14px;">
+                <summary><h3 style="display:inline;margin:0;font-size:1.05rem;">${escapeHtml(q.q)}</h3><span class="faq-toggle" aria-hidden="true">+</span></summary>
+                <div class="faq-answer"><p>${escapeHtml(q.a)}</p></div>
+            </details>`).join('')}
+        </section>`;
+      faqSchema = `<script type="application/ld+json">
+${JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(q => ({
+    '@type': 'Question',
+    name: q.q,
+    acceptedAnswer: { '@type': 'Answer', text: q.a }
+  }))
+}, null, 2)}
+</script>`;
+    }
+
+    // Related forms: same category, then fill up to 3
+    const sameCat = forms.forms.filter(x => x.slug !== f.slug && x.category === f.category).slice(0, 3);
+    const otherForms = forms.forms.filter(x => x.slug !== f.slug && !sameCat.find(s => s.slug === x.slug));
+    const related = [...sameCat, ...otherForms].slice(0, 3);
+    const relatedCardsHtml = related.map(r => `
+            <article class="form-card">
+                <div class="form-card-meta">
+                    <span class="form-card-type">${escapeHtml(r.fileType)}</span>
+                    <span class="form-card-source">${r.source}</span>
+                </div>
+                <h3 class="form-card-title">${escapeHtml(r.title)}</h3>
+                <p class="form-card-desc">${r.description.slice(0, 220)}${r.description.length > 220 ? '...' : ''}</p>
+                <div class="form-card-footer">
+                    <a href="${escapeHtml(r.downloadUrl)}" ${r.downloadType === 'external' ? 'target="_blank" rel="noopener nofollow"' : ''} class="form-card-cta">${r.downloadLabel} ${r.downloadType === 'external' ? '↗' : (r.downloadType === 'page' ? '→' : '↓')}</a>
+                    <span class="form-card-size">${escapeHtml(r.fileSize)}</span>
+                </div>
+            </article>`).join('');
+
+    // Word count
+    const plainText = f.pageBody.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+    const wordCount = plainText.split(/\s+/).length;
+    const readingTimeMinutes = Math.max(3, Math.round(wordCount / 220));
+
+    // Category label
+    const cat = forms.categories.find(c => c.slug === f.category);
+    const categoryLabel = cat ? cat.name.replace(/&amp;/g, '&') : f.category;
+
+    const publishedAt = '2026-06-24';
+    const updatedAt = '2026-06-24';
+
+    const ctx = {
+      seoTitle: f.pageSeoTitle || f.pageTitle || f.title,
+      seoDescription: f.pageSeoDescription || f.description,
+      canonical: `${site.domain}${f.downloadUrl}`,
+      ogType: 'article',
+      title: f.pageTitle || f.title,
+      categoryLabel,
+      category: f.category,
+      publishedAt,
+      updatedAt,
+      publishedDisplay: formatPublishDate(publishedAt),
+      readingTimeMinutes: String(readingTimeMinutes),
+      wordCount: String(wordCount),
+      body: f.pageBody,
+      faqBlock,
+      faqSchema,
+      relatedCardsHtml,
+      footerOfficeList: footerOfficeListHtml(),
+      year: String(new Date().getFullYear()),
+    };
+    writeFile(`forms/${f.slug}/index.html`, render(tpl, ctx));
+  });
 }
 
 // ------------------------------------------------------------------
@@ -1238,6 +1327,13 @@ function buildSitemap() {
     { loc: `${site.domain}/contact/`, priority: '0.8', changefreq: 'monthly', image: ogImage, imageTitle: 'Contact Al Bari Travel & Tours' },
     { loc: `${site.domain}/blog/`, priority: '0.85', changefreq: 'weekly', image: ogImage, imageTitle: 'Al Bari Travel Blog' },
     { loc: `${site.domain}/forms/`, priority: '0.85', changefreq: 'weekly', image: ogImage, imageTitle: 'Travel & Visa Forms' },
+    ...(readJson('forms.json').forms.filter(f => f.downloadType === 'page').map(f => ({
+      loc: `${site.domain}${f.downloadUrl}`,
+      priority: '0.75',
+      changefreq: 'monthly',
+      image: ogImage,
+      imageTitle: f.pageTitle || f.title,
+    }))),
     ...blog.posts.map(p => ({
       loc: `${site.domain}/blog/${p.slug}/`,
       priority: '0.7',
@@ -1438,8 +1534,9 @@ if (target === 'all' || target === 'blog') {
 }
 
 if (target === 'all' || target === 'forms') {
-  console.log('building forms library page...');
+  console.log('building forms library page + per-form info pages...');
   buildFormsPage();
+  buildFormInfoPages();
 }
 
 if (target === 'all' || target === 'sitemap') {
