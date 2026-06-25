@@ -1956,3 +1956,166 @@ header nav {
     font-size: 0.78rem; color: rgba(255,255,255,0.75);
 }
 .trustpilot-placeholder strong { color: #00b67a; }
+
+/* =====================================================================
+ * URDU + RTL — all rules scoped to body[dir="rtl"] so EN site is unaffected
+ * ===================================================================== */
+
+body[dir="rtl"] {
+    font-family: 'Noto Nastaliq Urdu', 'Inter', sans-serif;
+    text-align: right;
+    line-height: 2.0;
+}
+body[dir="rtl"] h1,
+body[dir="rtl"] h2,
+body[dir="rtl"] h3,
+body[dir="rtl"] h4 {
+    font-family: 'Noto Nastaliq Urdu', 'Playfair Display', serif;
+    line-height: 1.6;
+    font-weight: 600;
+}
+body[dir="rtl"] p,
+body[dir="rtl"] li {
+    line-height: 1.95;
+    font-size: 1.05rem;
+}
+
+/* Reserve more vertical space — Nastaliq glyphs are tall */
+body[dir="rtl"] .hero h1 { line-height: 1.6; font-size: 2.4rem; }
+body[dir="rtl"] .hero-tag { font-size: 0.95rem; letter-spacing: 0; }
+
+/* Mirror header layout */
+body[dir="rtl"] header {
+    flex-direction: row-reverse;
+}
+body[dir="rtl"] header nav { flex-direction: row-reverse; }
+body[dir="rtl"] .header-left { text-align: right; }
+body[dir="rtl"] .header-cta { margin-right: 0; }
+
+/* Mirror footer columns — text aligns right, last column flips first */
+body[dir="rtl"] footer ul { padding-right: 0; padding-left: 0; }
+body[dir="rtl"] footer ul li { text-align: right; }
+body[dir="rtl"] footer h2 { text-align: right; }
+body[dir="rtl"] footer p { text-align: right; }
+
+/* Mirror breadcrumb arrows */
+body[dir="rtl"] .breadcrumb span[aria-hidden="true"] {
+    transform: scaleX(-1);
+    display: inline-block;
+}
+
+/* Mirror left-border accents → right-border */
+body[dir="rtl"] .author-byline,
+body[dir="rtl"] .forms-toc,
+body[dir="rtl"] .blog-card,
+body[dir="rtl"] .form-card,
+body[dir="rtl"] .about-rep-card {
+    border-left: 1px solid rgba(255,255,255,0.08);
+    border-right: 3px solid rgba(201,169,98,0.5);
+}
+body[dir="rtl"] .blog-card { border-right: 3px solid #c9a962; }
+body[dir="rtl"] .about-rep-card--hub { border-right: 3px solid #c9a962; }
+
+/* Floating WhatsApp moves to bottom-LEFT in RTL */
+body[dir="rtl"] .float-wa {
+    right: auto;
+    left: 24px;
+}
+@media (max-width: 768px) {
+    body[dir="rtl"] .float-wa {
+        right: auto;
+        left: 14px;
+    }
+}
+
+/* Mobile bottom CTA: reverse button order */
+body[dir="rtl"] .mobile-bottom-cta {
+    flex-direction: row-reverse;
+}
+
+/* Forms + inputs align right */
+body[dir="rtl"] input[type="text"],
+body[dir="rtl"] input[type="email"],
+body[dir="rtl"] input[type="tel"],
+body[dir="rtl"] input[type="search"],
+body[dir="rtl"] textarea,
+body[dir="rtl"] select {
+    text-align: right;
+    direction: rtl;
+}
+/* Numbers and emails stay LTR even inside RTL forms */
+body[dir="rtl"] input[type="tel"],
+body[dir="rtl"] input[type="email"] {
+    direction: ltr;
+    text-align: left;
+    unicode-bidi: bidi-override;
+}
+
+/* Tables: right-align text but keep layout direction */
+body[dir="rtl"] .pricing-tier-table th,
+body[dir="rtl"] .pricing-tier-table td {
+    text-align: right;
+}
+
+/* Numbers, phone numbers, URLs inside Urdu text use Latin font with LTR direction */
+body[dir="rtl"] .ltr {
+    direction: ltr;
+    unicode-bidi: embed;
+    font-family: 'Inter', sans-serif;
+    display: inline-block;
+}
+
+/* Language switcher in nav */
+.lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border: 1px solid rgba(201,169,98,0.3);
+    background: rgba(201,169,98,0.05);
+    text-decoration: none;
+    color: #c9a962;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    margin-left: 14px;
+    white-space: nowrap;
+}
+.lang-switcher:hover {
+    background: rgba(201,169,98,0.15);
+    color: #fff;
+}
+body[dir="rtl"] .lang-switcher {
+    font-family: 'Inter', sans-serif;
+    margin-left: 0;
+    margin-right: 14px;
+}
+
+/* Notice for fallback pages: when UR translation doesn't exist yet */
+.ur-fallback-notice {
+    background: rgba(201,169,98,0.1);
+    border: 1px solid rgba(201,169,98,0.3);
+    border-right: 3px solid #c9a962;
+    padding: 14px 20px;
+    margin: 20px auto;
+    max-width: 760px;
+    font-family: 'Noto Nastaliq Urdu', sans-serif;
+    line-height: 1.9;
+    font-size: 0.95rem;
+    text-align: right;
+    color: rgba(255,255,255,0.85);
+}
+.ur-fallback-notice a { color: #c9a962; }
+
+/* Skip-to-content link in Urdu uses Urdu font */
+body[dir="rtl"] .skip-to-content {
+    font-family: 'Noto Nastaliq Urdu', sans-serif;
+}
+
+/* Mobile: pad bottom slightly more in RTL for Nastaliq descenders */
+@media (max-width: 768px) {
+    body[dir="rtl"] h1, body[dir="rtl"] h2 { line-height: 1.7; }
+    body[dir="rtl"] p, body[dir="rtl"] li { font-size: 1rem; line-height: 2.0; }
+}

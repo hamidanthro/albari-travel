@@ -1,0 +1,94 @@
+{
+  "_meta": {
+    "language": "ur",
+    "languageName": "اردو",
+    "direction": "rtl",
+    "locale": "ur-PK",
+    "notes": "Pakistani Urdu translations. Brand names, phone numbers, English service names like 'WhatsApp / Saudia / Schengen' stay in Latin script within RTL paragraphs. Numbers stay Western Arabic (0-9). Updated: 2026-06-25."
+  },
+  "brand": {
+    "name": "الباری ٹریول اینڈ ٹورز",
+    "nameEn": "Al Bari Travel & Tours",
+    "tagline": "آپ کا قابلِ اعتماد سفری پارٹنر",
+    "shortDescription": "پاکستان اور امریکہ سے قابلِ اعتماد عمرہ، حج اور بین الاقوامی پروازوں کی بکنگ۔ سات ریجنل نمائندے، خاندانی طور پر چلایا جانے والا ادارہ۔ 2018 سے خدمات سرانجام دے رہا ہے۔"
+  },
+  "nav": {
+    "home": "صفحۂ اول",
+    "about": "ہمارے بارے میں",
+    "services": "خدمات",
+    "offices": "ہمارے دفاتر",
+    "blog": "بلاگ",
+    "forms": "فارمز",
+    "contact": "رابطہ",
+    "glossary": "اصطلاحات",
+    "whyAlBari": "الباری کیوں",
+    "switchToEnglish": "English",
+    "switchToUrdu": "اردو"
+  },
+  "cta": {
+    "bookNow": "ابھی بک کریں",
+    "whatsAppUs": "واٹس ایپ کریں",
+    "callUs": "کال کریں",
+    "getQuote": "قیمت کا تخمینہ لیں",
+    "sendMessage": "پیغام بھیجیں",
+    "learnMore": "مزید جانیں",
+    "viewPackages": "پیکجز دیکھیں",
+    "readMore": "مزید پڑھیں",
+    "talkToRep": "نمائندے سے بات کریں"
+  },
+  "footer": {
+    "explore": "تلاش کریں",
+    "services": "خدمات",
+    "ourOffices": "ہمارے دفاتر",
+    "contact": "رابطہ",
+    "allRights": "جملہ حقوق محفوظ ہیں",
+    "tagline": "خاندانی طور پر چلایا جانے والا ادارہ، 2018 سے قائم۔ سات ریجنل نمائندے پاکستان اور امریکہ میں خدمات سرانجام دے رہے ہیں۔ تمام 170 پاکستانی اضلاع کو دور سے کام کرنے کے ماڈل کے ذریعے کور کرتے ہیں۔",
+    "trustpilotComingSoon": "Trustpilot · توثیق شدہ ریویوز جلد آرہے ہیں"
+  },
+  "hero": {
+    "tag": "آپ کا قابلِ اعتماد سفری پارٹنر",
+    "h1": "پُرسکون اور پُروقار سفر",
+    "searchPlaceholder": "تلاش کریں: عمرہ، حج 2027، سعودی ویزا، شینگن، گاما۔۔۔"
+  },
+  "homepage": {
+    "servicesTag": "ہم کیا پیش کرتے ہیں",
+    "servicesH2": "ہماری خدمات",
+    "servicesIntro": "حج و عمرہ، بین الاقوامی پروازیں، اور ویزا سروسز — کسی بھی کارڈ پر ٹیپ کریں اور تفصیلات دیکھیں۔",
+    "trustTag": "خاندان ہمیں کیوں منتخب کرتے ہیں",
+    "trustH2": "2018 سے پاکستانی خاندانوں کا اعتماد",
+    "trustNote": "نہ کوئی کال سینٹر، نہ بوٹس، نہ والک اِن کا جھنجھٹ۔ ہر استفسار کا جواب ایک نام رکھنے والا ریجنل نمائندہ دیتا ہے جو آپ کی بکنگ کو شروع سے آخر تک سنبھالتا ہے۔",
+    "contactTag": "ہم سے رابطہ کریں",
+    "contactH2": "اپنے سفر کی منصوبہ بندی کریں",
+    "contactSub": "تیار ہیں؟ صرف 4 گھنٹوں میں ذاتی نوعیت کے تخمینہ کے لیے رابطہ کریں۔"
+  },
+  "trust": {
+    "regionalReps": "ریجنل نمائندے",
+    "regionalRepsSub": "پاکستان اور امریکہ کوریج",
+    "districts": "پاکستانی اضلاع",
+    "districtsSub": "دور سے کام کرنے کا ماڈل",
+    "yearEstablished": "سال قائم",
+    "yearSub": "خاندانی ادارہ",
+    "languages": "زبانیں",
+    "languagesSub": "انگریزی · اردو · پنجابی · پشتو"
+  },
+  "common": {
+    "skipToContent": "مرکزی مواد پر جائیں",
+    "breadcrumb": "بریڈ کرمب",
+    "home": "صفحۂ اول",
+    "lastUpdated": "آخری بار اپ ڈیٹ:",
+    "minRead": "منٹ مطالعہ",
+    "by": "بذریعہ",
+    "in": "میں",
+    "category": "زمرہ",
+    "tags": "ٹیگز",
+    "relatedPosts": "متعلقہ پوسٹس",
+    "frequentlyAsked": "اکثر پوچھے جانے والے سوالات"
+  },
+  "contact": {
+    "whatsappLine": "واٹس ایپ",
+    "directLine": "براہِ راست",
+    "usaLine": "امریکہ",
+    "email": "ای میل",
+    "phoneHours": "فون کا وقت: پیر تا ہفتہ صبح 9 بجے تا رات 8 بجے (پاکستان وقت)"
+  }
+}

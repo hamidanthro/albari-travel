@@ -56,7 +56,29 @@ function escapeHtml(s) {
   }[c]));
 }
 
+// Defaults injected into every render context — for keys that are
+// optional and should not throw on missing. Add to this map as new
+// optional template vars are introduced.
+function withDefaults(ctx) {
+  const isUr = ctx && ctx._lang === 'ur';
+  return {
+    // Language-switcher defaults — EN pages point to /ur/ equivalent,
+    // UR pages point back to EN. Page-specific contexts can override.
+    altLangUrl: isUr ? '/' : '/ur/',
+    altLangCode: isUr ? 'en' : 'ur',
+    altLangLabel: isUr ? 'English' : 'اردو',
+    // hreflang head metadata
+    hreflangEnUrl: isUr ? '/' : '/',
+    hreflangUrUrl: isUr ? '/ur/' : '/ur/',
+    htmlLang: isUr ? 'ur' : 'en',
+    htmlDir: isUr ? 'rtl' : 'ltr',
+    bodyClass: isUr ? 'ur-body' : '',
+    ...ctx,
+  };
+}
+
 function render(tpl, ctx) {
+  ctx = withDefaults(ctx || {});
   // Inline partials first ({{>name}})
   let out = tpl.replace(/\{\{>\s*([\w-]+)\s*\}\}/g, (_, name) => readPartial(name));
   // Raw substitution ({{{var}}})
@@ -1507,6 +1529,7 @@ function buildSitemap() {
   }
   const urls = [
     { loc: `${site.domain}/`, priority: '1.0', changefreq: 'weekly', image: ogImage, imageTitle: 'Al Bari Travel & Tours — Umrah, Hajj, International Flights' },
+    { loc: `${site.domain}/ur/`, priority: '0.9', changefreq: 'weekly', image: ogImage, imageTitle: 'الباری ٹریول اینڈ ٹورز — اردو ورژن' },
     { loc: `${site.domain}/offices/`, priority: '0.9', changefreq: 'monthly', image: ogImage, imageTitle: 'Al Bari Travel & Tours offices in Pakistan and USA' },
     { loc: `${site.domain}/about/`, priority: '0.6', changefreq: 'yearly', image: ogImage, imageTitle: 'About Al Bari Travel & Tours' },
     { loc: `${site.domain}/services/`, priority: '0.9', changefreq: 'monthly', image: ogImage, imageTitle: 'Our Services — Al Bari Travel & Tours' },
@@ -1573,6 +1596,101 @@ ${urls.map(u => {
 </urlset>
 `;
   writeFile('sitemap.xml', xml);
+}
+
+// =====================================================================
+// URDU PAGES — RTL Pakistani Urdu version at /ur/*
+// Infrastructure ready for full translation rollout. Currently builds
+// only the homepage as proof-of-concept; add more templates + per-page
+// translation files in data/ur/ as content gets translated.
+// =====================================================================
+function buildUrduPages() {
+  const t = readJson('ur/translations.json');
+
+  // Homepage
+  const homeTpl = readTemplate('urdu-home.html');
+  const homeCtx = {
+    // SEO
+    seoTitle: 'الباری ٹریول اینڈ ٹورز | پاکستان سے عمرہ، حج اور بین الاقوامی پروازیں',
+    seoDescription: t.brand.shortDescription,
+    // Brand
+    brandName: t.brand.name,
+    brandLogoHtml: `الباری <span>ٹریول اینڈ ٹورز</span>`,
+    // Skip-link + nav
+    skipLabel: t.common.skipToContent,
+    home: t.nav.home,
+    aboutLabel: t.nav.about,
+    servicesLabel: t.nav.services,
+    officesLabel: t.nav.offices,
+    blogLabel: t.nav.blog,
+    formsLabel: t.nav.forms,
+    contactLabel: t.nav.contact,
+    whatsappBookLabel: 'واٹس ایپ پر بک کریں',
+    bookNowLabel: t.cta.bookNow,
+    // Hero
+    heroTag: t.hero.tag,
+    heroH1: t.hero.h1,
+    searchPlaceholder: t.hero.searchPlaceholder,
+    searchLabel: 'سائٹ پر تلاش کریں',
+    // Services section
+    servicesTag: t.homepage.servicesTag,
+    servicesH2: t.homepage.servicesH2,
+    servicesIntro: t.homepage.servicesIntro,
+    mostPopularLabel: 'سب سے مقبول',
+    learnMoreLabel: t.cta.learnMore,
+    // Hajj/Umrah card
+    hajjUmrahTitle: 'حج و عمرہ پیکجز',
+    hajjUmrahTagline: 'اقتصادی سے پریمیم تک تمام تہات',
+    hajjUmrahFeat1: 'سعودی ویزا، پروازیں، ہوٹل، گاؤنڈ ٹرانسپورٹ',
+    hajjUmrahFeat2: 'حرم کے قریب ہوٹل (3 تا 5 ستارہ)',
+    hajjUmrahFeat3: 'تربیت یافتہ گروپ لیڈرز کے ساتھ',
+    // Flights card
+    flightsTitle: 'بین الاقوامی پروازیں',
+    flightsTagline: 'سعودی عرب، یو اے ای، یو ایس اے، اور آگے',
+    flightsFeat1: 'PIA، سعودیہ، ایئر سیال، ایمریٹس',
+    flightsFeat2: 'پاکستان کے کسی بھی بڑے ایئرپورٹ سے',
+    flightsFeat3: 'بہترین قیمت کا موازنہ',
+    // Visas card
+    visasTitle: 'ویزا سروسز',
+    visasTagline: 'شینگن، یوکے، یو ایس اے، اور خلیج',
+    visasFeat1: 'مکمل دستاویزات کی تیاری',
+    visasFeat2: 'سفارت خانے کی بکنگ',
+    visasFeat3: 'انکار کے امکانات پر مشاورت',
+    // Trust strip
+    trustTag: t.homepage.trustTag,
+    trustH2: t.homepage.trustH2,
+    trustReps: t.trust.regionalReps,
+    trustRepsSub: t.trust.regionalRepsSub,
+    trustDistricts: t.trust.districts,
+    trustDistrictsSub: t.trust.districtsSub,
+    trustYear: t.trust.yearEstablished,
+    trustYearSub: t.trust.yearSub,
+    trustLanguages: t.trust.languages,
+    trustLanguagesSub: t.trust.languagesSub,
+    trustNote: t.homepage.trustNote,
+    aboutLink: 'ہمارے کام کے بارے میں مزید پڑھیں ←',
+    // Contact
+    contactTag: t.homepage.contactTag,
+    contactH2: t.homepage.contactH2,
+    contactSub: t.homepage.contactSub,
+    whatsAppCta: 'واٹس ایپ',
+    callCta: 'کال کریں',
+    // Footer
+    footerTagline: t.footer.tagline,
+    footerExplore: t.footer.explore,
+    footerContact: t.footer.contact,
+    whatsAppLine: t.contact.whatsappLine,
+    directLine: t.contact.directLine,
+    usaLine: t.contact.usaLine,
+    allRights: t.footer.allRights,
+    tagline: t.brand.tagline,
+    // Float CTA + mobile
+    whatsAppAria: 'واٹس ایپ پر چیٹ کریں',
+    quickContactLabel: 'فوری رابطہ',
+    whatsAppMobile: 'واٹس ایپ',
+    callMobile: 'کال',
+  };
+  writeFile('ur/index.html', render(homeTpl, homeCtx));
 }
 
 // Diaspora landing pages (UK / USA / Canada)
@@ -1879,6 +1997,11 @@ if (target === 'all' || target === 'forms') {
 if (target === 'all' || target === 'diaspora') {
   console.log('building diaspora landing pages (UK / USA / Canada)...');
   buildDiasporaPages();
+}
+
+if (target === 'all' || target === 'urdu') {
+  console.log('building Urdu pages (RTL, Noto Nastaliq)...');
+  buildUrduPages();
 }
 
 if (target === 'all' || target === 'sitemap') {
