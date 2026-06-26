@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{>head}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "{{canonical}}#webpage",
+  "url": "{{canonical}}",
+  "name": "{{pageName}}",
+  "description": "{{seoDescription}}",
+  "isPartOf": { "@id": "https://www.albaritravelspk.com/#website" },
+  "inLanguage": "en"
+}
+</script>
+</head>
+<body>
+{{>header}}
+<main id="main-content">
+<section class="packages" style="padding:120px 40px 60px;">
+    <div data-last-updated="skip" style="max-width:720px;margin:0 auto;">
+        <h1 style="font-size:2rem;margin:0 0 30px;">Manage Booking</h1>
+{{{body}}}
+    </div>
+</section>
+</main>
+</body>
+</html>

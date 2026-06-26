@@ -1617,33 +1617,25 @@ ${JSON.stringify({
 }, null, 2)}
 </script>`,
   },
-  {
-    slug: 'manage',
-    pageName: 'Manage Bookings',
-    pageSchemaType: 'WebPage',
-    eyebrow: 'Quick Access',
-    h1: 'Manage Your Bookings',
-    lede: 'Direct links to airline manage-booking portals, visa application trackers, and travel-document services — for travellers already booked with us or anywhere else.',
-    seoTitle: 'Manage Bookings | Al Bari Travel — Airline + Visa Direct Links',
-    seoDescription: 'One-page directory of airline manage-booking portals, Saudi visa trackers, and Pakistani travel document services. Quick-access links curated for Pakistani travellers.',
-    body: `
-        <p style="margin-top:0;line-height:1.8;">Use the links below to manage your existing bookings directly with airlines and government portals. These open in a new tab. If you booked your trip through Al Bari Travel, you can also <a href="https://wa.me/923159596161" target="_blank" rel="noopener" style="color:#c9a962;">WhatsApp us +92 315 9596161</a> and we'll handle changes for you.</p>
-
-        <h2 style="margin-top:50px;">Airline manage booking</h2>
-        <div class="manage-grid">
-            <a href="https://www.airblue.com/reservations" target="_blank" rel="noopener nofollow" class="manage-card">
-                <div class="manage-card-name">Airblue</div>
-                <div class="manage-card-desc">Manage your Airblue reservation — view itinerary, change date, add baggage, web check-in.</div>
-                <div class="manage-card-url">airblue.com/reservations &nbsp;&#8599;</div>
-            </a>
-        </div>
-
-        <h2 style="margin-top:50px;">More links coming soon</h2>
-        <p style="margin-top:14px;line-height:1.8;">This directory will grow to cover all major airlines (PIA, Saudia, Emirates, Qatar, FlyJinnah, Air Sial), Saudi visa portals (Nusuk Masar, MoFA), Pakistani government services (NADRA, DGI&amp;P, BEMB), and embassy trackers. <a href="https://wa.me/923159596161" target="_blank" rel="noopener" style="color:#c9a962;">Suggest one</a> we should add.</p>
-    `,
-    extraSchema: '',
-  },
 ];
+
+function buildManagePage() {
+  const tpl = readTemplate('manage-page.html');
+  const ctx = {
+    pageName: 'Manage Booking',
+    seoTitle: 'Manage Booking | Al Bari Travel',
+    seoDescription: 'Manage your existing bookings directly with airlines and government portals.',
+    canonical: `${site.domain}/manage/`,
+    ogType: 'website',
+    body: `
+        <a href="https://www.airblue.com/reservations" target="_blank" rel="noopener nofollow" class="manage-card">
+            <div class="manage-card-name">Airblue</div>
+            <div class="manage-card-url">airblue.com/reservations &nbsp;&#8599;</div>
+        </a>
+    `,
+  };
+  writeFile('manage/index.html', render(tpl, ctx));
+}
 
 function contactPageBody() {
   const mainLines = `
@@ -2272,6 +2264,11 @@ if (target === 'all' || target === 'provinces') {
 if (target === 'all' || target === 'static') {
   console.log('building static pages (about, contact, privacy, terms)...');
   buildStaticPages();
+}
+
+if (target === 'all' || target === 'manage') {
+  console.log('building manage booking page (minimal, no footer)...');
+  buildManagePage();
 }
 
 if (target === 'all' || target === 'services') {
