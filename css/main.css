@@ -2315,3 +2315,49 @@ body[dir="rtl"] .mobile-menu-nav a:focus {
     border-radius: 2px;
 }
 
+
+/* === Manage bookings page === */
+.manage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+}
+.manage-card {
+    display: block;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-left: 3px solid #c9a962;
+    padding: 22px 24px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.25s;
+}
+.manage-card:hover {
+    background: rgba(255,255,255,0.07);
+    border-left-color: #c9a962;
+    transform: translateY(-2px);
+}
+.manage-card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.manage-card-desc {
+    color: rgba(255,255,255,0.72);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin-bottom: 10px;
+}
+.manage-card-url {
+    color: #c9a962;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+body[dir="rtl"] .manage-card {
+    border-left: 1px solid rgba(255,255,255,0.08);
+    border-right: 3px solid #c9a962;
+}
