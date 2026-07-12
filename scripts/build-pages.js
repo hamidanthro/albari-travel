@@ -290,43 +290,108 @@ console.log(`  context: currentYear=${CURRENT_YEAR}, upcomingHajjYear=${HAJJ_YEA
 
 // Nearest international airport per district — meaningful entity signal for SEO + real
 // info for the user. Mapping is by region + a few district overrides for major hubs.
-function nearestAirport(province, district) {
-  // Per-district overrides where a major airport sits in that district.
-  const overrides = {
-    'lahore':            { code: 'LHE', name: 'Allama Iqbal International Airport, Lahore' },
-    'multan':            { code: 'MUX', name: 'Multan International Airport' },
-    'faisalabad':        { code: 'LYP', name: 'Faisalabad International Airport' },
-    'sialkot':           { code: 'SKT', name: 'Sialkot International Airport' },
-    'rahim-yar-khan':    { code: 'RYK', name: 'Sheikh Zayed International Airport, Rahim Yar Khan' },
-    'karachi-central':   { code: 'KHI', name: 'Jinnah International Airport, Karachi' },
-    'karachi-east':      { code: 'KHI', name: 'Jinnah International Airport, Karachi' },
-    'karachi-south':     { code: 'KHI', name: 'Jinnah International Airport, Karachi' },
-    'karachi-west':      { code: 'KHI', name: 'Jinnah International Airport, Karachi' },
-    'kemari':            { code: 'KHI', name: 'Jinnah International Airport, Karachi' },
-    'korangi':           { code: 'KHI', name: 'Jinnah International Airport, Karachi' },
-    'malir':             { code: 'KHI', name: 'Jinnah International Airport, Karachi' },
-    'sukkur':            { code: 'SKZ', name: 'Sukkur Airport' },
-    'gwadar':            { code: 'GWD', name: 'Gwadar International Airport' },
-    'quetta':            { code: 'UET', name: 'Quetta International Airport' },
-    'turbat':            { code: 'TUK', name: 'Turbat International Airport' },
-    'kech':              { code: 'TUK', name: 'Turbat International Airport' },
-    'skardu':            { code: 'KDU', name: 'Skardu International Airport' },
-    'gilgit':            { code: 'GIL', name: 'Gilgit Airport' },
-  };
-  if (overrides[district.slug]) return overrides[district.slug];
+// Airport code -> full name. Real commercial/international airports in Pakistan.
+const AIRPORTS = {
+  ISB: 'Islamabad International Airport',
+  LHE: 'Allama Iqbal International Airport, Lahore',
+  SKT: 'Sialkot International Airport',
+  LYP: 'Faisalabad International Airport',
+  MUX: 'Multan International Airport',
+  BHV: 'Bahawalpur Airport',
+  RYK: 'Sheikh Zayed International Airport, Rahim Yar Khan',
+  DEA: 'Dera Ghazi Khan International Airport',
+  KHI: 'Jinnah International Airport, Karachi',
+  WNS: 'Nawabshah Airport',
+  SKZ: 'Sukkur Airport',
+  PEW: 'Bacha Khan International Airport, Peshawar',
+  SDT: 'Saidu Sharif Airport, Swat',
+  CJL: 'Chitral Airport',
+  DSK: 'Dera Ismail Khan Airport',
+  BNP: 'Bannu Airport',
+  UET: 'Quetta International Airport',
+  PZH: 'Zhob Airport',
+  GWD: 'Gwadar International Airport',
+  TUK: 'Turbat International Airport',
+  PJG: 'Panjgur Airport',
+  DBA: 'Dalbandin Airport',
+  GIL: 'Gilgit Airport',
+  KDU: 'Skardu International Airport',
+  IAH: 'George Bush Intercontinental Airport, Houston',
+};
 
-  // Province-level defaults.
-  const defaults = {
-    'punjab':              { code: 'ISB', name: 'Islamabad International Airport' },
-    'sindh':               { code: 'KHI', name: 'Jinnah International Airport, Karachi' },
-    'khyber-pakhtunkhwa':  { code: 'PEW', name: 'Bacha Khan International Airport, Peshawar' },
-    'balochistan':         { code: 'UET', name: 'Quetta International Airport' },
-    'islamabad':           { code: 'ISB', name: 'Islamabad International Airport' },
-    'azad-kashmir':        { code: 'ISB', name: 'Islamabad International Airport' },
-    'gilgit-baltistan':    { code: 'ISB', name: 'Islamabad International Airport' },
-    'united-states':       { code: 'IAH', name: 'George Bush Intercontinental Airport, Houston' },
-  };
-  return defaults[province.slug] || { code: 'ISB', name: 'Islamabad International Airport' };
+// Accurate nearest-airport per district (by real geography, not province default).
+// This is the primary genuine differentiator across the coverage pages: the airport,
+// route, and flight content now vary district-to-district instead of one-per-province.
+const DISTRICT_AIRPORT = {
+  // --- Punjab ---
+  lahore:'LHE', kasur:'LHE', sheikhupura:'LHE', 'nankana-sahib':'LHE', okara:'LHE',
+  sialkot:'SKT', narowal:'SKT', gujranwala:'SKT', gujrat:'SKT', wazirabad:'SKT', hafizabad:'SKT', 'mandi-bahauddin':'SKT',
+  faisalabad:'LYP', chiniot:'LYP', 'toba-tek-singh':'LYP', jhang:'LYP', sargodha:'LYP',
+  multan:'MUX', khanewal:'MUX', lodhran:'MUX', vehari:'MUX', sahiwal:'MUX', pakpattan:'MUX', muzaffargarh:'MUX', layyah:'MUX', 'kot-addu':'MUX', taunsa:'MUX',
+  bahawalpur:'BHV', bahawalnagar:'BHV',
+  'rahim-yar-khan':'RYK',
+  'dera-ghazi-khan':'DEA', rajanpur:'DEA',
+  attock:'ISB', chakwal:'ISB', jhelum:'ISB', talagang:'ISB', murree:'ISB', mianwali:'ISB', khushab:'ISB', bhakkar:'ISB',
+  // --- Sindh ---
+  'karachi-central':'KHI','karachi-east':'KHI','karachi-south':'KHI','karachi-west':'KHI', malir:'KHI', korangi:'KHI', kemari:'KHI',
+  thatta:'KHI', sujawal:'KHI', badin:'KHI', jamshoro:'KHI', hyderabad:'KHI', matiari:'KHI', 'tando-allahyar':'KHI', 'tando-muhammad-khan':'KHI',
+  'mirpur-khas':'KHI', umerkot:'KHI', tharparkar:'KHI', sanghar:'KHI', dadu:'KHI',
+  'shaheed-benazirabad':'WNS', 'naushahro-feroze':'WNS',
+  sukkur:'SKZ', ghotki:'SKZ', khairpur:'SKZ', shikarpur:'SKZ', jacobabad:'SKZ', kashmore:'SKZ', larkana:'SKZ', 'qambar-shahdadkot':'SKZ',
+  // --- Khyber Pakhtunkhwa ---
+  peshawar:'PEW', charsadda:'PEW', nowshera:'PEW', mardan:'PEW', swabi:'PEW', mohmand:'PEW', khyber:'PEW', kohat:'PEW', hangu:'PEW', orakzai:'PEW', kurram:'PEW', 'central-kurram':'PEW', bajaur:'PEW', malakand:'PEW', buner:'PEW', shangla:'PEW', 'lower-dir':'PEW', 'upper-dir':'PEW', karak:'PEW',
+  abbottabad:'ISB', haripur:'ISB', mansehra:'ISB', battagram:'ISB', 'tor-ghar':'ISB', 'upper-kohistan':'ISB', 'lower-kohistan':'ISB', 'kolai-palas':'ISB',
+  swat:'SDT', 'lower-chitral':'CJL', 'upper-chitral':'CJL',
+  'dera-ismail-khan':'DSK', tank:'DSK', 'upper-south-waziristan':'DSK', 'lower-south-waziristan':'DSK', 'lakki-marwat':'DSK',
+  bannu:'BNP', 'north-waziristan':'BNP',
+  // --- Balochistan ---
+  quetta:'UET', pishin:'UET', 'killa-abdullah':'UET', chaman:'UET', mastung:'UET', kalat:'UET', nushki:'UET', ziarat:'UET', sibi:'UET', harnai:'UET', duki:'UET', loralai:'UET', musakhel:'UET', barkhan:'UET', kohlu:'UET', 'dera-bugti':'UET', 'killa-saifullah':'UET', surab:'UET', khuzdar:'UET',
+  zhob:'PZH', sherani:'PZH',
+  gwadar:'GWD', kech:'TUK', awaran:'TUK',
+  panjgur:'PJG', washuk:'PJG',
+  chagai:'DBA', kharan:'DBA',
+  nasirabad:'SKZ', jafarabad:'SKZ', 'jhal-magsi':'SKZ', 'usta-muhammad':'SKZ', sohbatpur:'SKZ', kachhi:'SKZ', lehri:'SKZ',
+  hub:'KHI', lasbela:'KHI',
+  // --- Azad Kashmir (Islamabad is the international gateway) ---
+  muzaffarabad:'ISB', bagh:'ISB', poonch:'ISB', haveli:'ISB', sudhanoti:'ISB', neelum:'ISB', 'hattian-bala':'ISB', kotli:'ISB', mirpur:'SKT', bhimber:'SKT',
+  // --- Gilgit-Baltistan ---
+  gilgit:'GIL', ghizer:'GIL', nagar:'GIL', hunza:'GIL', diamer:'GIL', astore:'GIL', 'gupis-yasin':'GIL', darel:'GIL', tangir:'GIL', roundu:'GIL',
+  skardu:'KDU', shigar:'KDU', kharmang:'KDU', ghanche:'KDU',
+};
+
+// Which airports run direct international/Umrah service, and where domestic-only
+// airports connect for Saudi Arabia. Real, useful info that varies per district.
+const INTL_GATEWAYS = new Set(['ISB','LHE','KHI','MUX','SKT','PEW','UET','LYP','BHV','RYK','GWD','IAH']);
+const DOMESTIC_HUB = {
+  DEA:'MUX', WNS:'KHI', SKZ:'KHI', SDT:'ISB', CJL:'ISB', DSK:'ISB', BNP:'ISB',
+  PZH:'UET', TUK:'KHI', PJG:'KHI', DBA:'KHI', GIL:'ISB', KDU:'ISB',
+};
+
+// A factual, per-district sentence about how pilgrims actually reach Saudi Arabia
+// from their nearest airport. Direct-gateway vs domestic-connection is real and varies.
+function routeNote(air) {
+  if (INTL_GATEWAYS.has(air.code)) {
+    return `${air.name} (${air.code}) offers international departures, so pilgrims can fly toward Jeddah (JED) or Madinah (MED) directly or with a single stopover.`;
+  }
+  const hub = DOMESTIC_HUB[air.code] || 'ISB';
+  return `${air.name} (${air.code}) primarily handles domestic flights, so most pilgrims connect through ${AIRPORTS[hub]} (${hub}) for the onward flight to Jeddah (JED) or Madinah (MED) — a routing we book end-to-end.`;
+}
+
+function nearestAirport(province, district) {
+  const code = DISTRICT_AIRPORT[district.slug];
+  let picked;
+  if (code && AIRPORTS[code]) picked = { code, name: AIRPORTS[code] };
+  else {
+    // Province-level fallback for any district not explicitly mapped above.
+    const defaults = {
+      'punjab': 'ISB', 'sindh': 'KHI', 'khyber-pakhtunkhwa': 'PEW', 'balochistan': 'UET',
+      'islamabad': 'ISB', 'azad-kashmir': 'ISB', 'gilgit-baltistan': 'GIL', 'united-states': 'IAH',
+    };
+    const fb = defaults[province.slug] || 'ISB';
+    picked = { code: fb, name: AIRPORTS[fb] };
+  }
+  picked.route = routeNote(picked);
+  return picked;
 }
 
 function buildDistrictPage(province, district) {
@@ -347,8 +412,8 @@ function buildDistrictPage(province, district) {
   const introTemplates = [
     `Book Umrah and Hajj packages from ${district.name}, ${province.name} with Al Bari Travel & Tours. We coordinate flights from ${airportInfo.name} (${airportInfo.code}) to Saudi Arabia (Makkah and Madinah), full Saudi visa processing, hotel accommodation near the Haram, and group departures. Your dedicated contact for ${district.name} is ${bm.incharge}, ${bm.title}, reachable directly by phone or WhatsApp.`,
     `Planning Umrah, Hajj, or an international flight from ${district.name}? Al Bari Travel & Tours coordinates the entire trip — package selection, Saudi visa, ticketing on PIA / Saudi Airlines / Air Sial, hotel near Masjid al-Haram, and ground transport between Makkah and Madinah — through ${bm.title} ${bm.incharge}. Nearest departure hub: ${airportInfo.name} (${airportInfo.code}).`,
-    `Pilgrims and travellers in ${district.name}, ${province.name} have a direct line to Al Bari Travel & Tours via ${bm.incharge}, our ${bm.title}. Reach out for Umrah and Hajj packages, Saudi Arabia visa documentation, flight booking from ${airportInfo.name} (${airportInfo.code}), and group departure coordination — all handled remotely by phone and WhatsApp.`,
-    `For families and individuals in ${district.name} planning Umrah, Hajj ${HAJJ_YEAR}, or international travel, Al Bari Travel & Tours offers complete branch-network service. ${bm.incharge} (${bm.title}) handles enquiries personally from our ${bm.regionalHubLocation} hub — package quotes, Saudi visa applications, flights from ${airportInfo.name} (${airportInfo.code}), and hotel bookings in Makkah and Madinah.`,
+    `Pilgrims and travellers in ${district.name}, ${province.name} have a direct line to Al Bari Travel & Tours via ${bm.incharge}, our ${bm.title}. Reach out for Umrah and Hajj packages, Saudi Arabia visa documentation, flight booking, and group departure coordination — all handled remotely by phone and WhatsApp. ${airportInfo.route}`,
+    `For families and individuals in ${district.name} planning Umrah, Hajj ${HAJJ_YEAR}, or international travel, Al Bari Travel & Tours offers complete branch-network service. ${bm.incharge} (${bm.title}) handles enquiries personally from our ${bm.regionalHubLocation} hub — package quotes, Saudi visa applications, flights, and hotel bookings in Makkah and Madinah. ${airportInfo.route}`,
   ];
   const intro = introTemplates[hashSlug(district.slug) % introTemplates.length];
 
@@ -370,6 +435,8 @@ function buildDistrictPage(province, district) {
     { q: `Do I need to be in Hasan Abdal to book through Al Bari Travel?`, a: `No. ${district.name} clients can book entirely remotely. Our team in ${bm.regionalHubLocation} handles your application, visa, and ticketing end-to-end. Documents are shared via WhatsApp or email; the only thing you collect in person (if you wish) is the final visa stamping — and even that we can courier where possible.` },
     { q: `Which airlines do you book for Umrah flights from ${district.name}?`, a: `From ${airportInfo.name} (${airportInfo.code}) we book PIA (Pakistan International Airlines), Saudi Airlines (Saudia), Air Sial, AirBlue, Qatar Airways, and Emirates depending on departure date and budget. Most Umrah pilgrims from ${district.name} fly direct or with a single stopover.` },
     { q: `What is included in an Al Bari Travel Umrah package from ${district.name}?`, a: `A standard Umrah package from ${district.name} includes: return international flights, Saudi e-visa, hotel accommodation in Makkah (near Masjid al-Haram) and Madinah (near Masjid an-Nabawi), ground transport between cities, guided Ziyarat tour of historical Islamic sites, and full in-country support. Meals, Zamzam water, and laundry are typically extra unless you select a premium package.` },
+    { q: `Which airport do pilgrims from ${district.name} fly from for Umrah and Hajj?`, a: `The nearest airport to ${district.name} is ${airportInfo.name} (${airportInfo.code}). ${airportInfo.route} ${bm.incharge} arranges the full routing and ticketing so you travel with the fewest connections possible.` },
+    { q: `Can Al Bari Travel arrange the connecting flights for pilgrims from ${district.name}?`, a: `Yes. ${airportInfo.route} We book the domestic leg and the international leg together on one itinerary for ${district.name} pilgrims, so there is no gap between flights and your baggage is checked through where the airlines allow it.` },
   ];
   const seed = hashSlug(district.slug);
   const picked = [];
