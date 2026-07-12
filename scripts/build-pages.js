@@ -98,6 +98,8 @@ function withDefaults(ctx) {
     htmlLang: isUr ? 'ur' : 'en',
     htmlDir: isUr ? 'rtl' : 'ltr',
     bodyClass: isUr ? 'ur-body' : '',
+    // Optional hero image (override per-page for cities with a local photo)
+    heroImageHtml: '',
     // Email signup defaults (override per-page for context-specific signups)
     emailSignupTag: isUr ? 'مفت سفری مشورے' : 'Free travel tips',
     emailSignupHeading: isUr ? 'پاکستانی مسافروں کے لیے مفت ماہانہ مشورے' : 'Monthly travel tips for Pakistani families',
@@ -394,6 +396,27 @@ function nearestAirport(province, district) {
   return picked;
 }
 
+// Local hero photos, keyed by district/office slug. Images live in /images/, already
+// cropped to 16:9 and compressed. Real local imagery = genuine per-page content + trust.
+const CITY_HERO = {
+  'multan':          { file: 'multan.jpg',     w: 1400, h: 788 },
+  'lahore':          { file: 'lahore.jpg',     w: 1024, h: 576 },
+  'faisalabad':      { file: 'faisalabad.jpg', w: 493,  h: 277 },
+  'karachi-central': { file: 'karachi.jpg',    w: 612,  h: 344 },
+  'islamabad':       { file: 'islamabad.jpg',  w: 479,  h: 269 },
+  'peshawar':        { file: 'peshawar.jpg',   w: 1000, h: 562 },
+  'mardan':          { file: 'mardan.jpg',     w: 1280, h: 720 },
+};
+
+function heroImageHtmlFor(slug, cityName) {
+  const img = CITY_HERO[slug];
+  if (!img) return '';
+  const alt = `${cityName}, Pakistan — Umrah and Hajj travel with Al Bari Travel & Tours`;
+  return `<figure style="margin:26px auto 0;max-width:760px;">
+            <img src="/images/${img.file}" alt="${escapeHtml(alt)}" width="${img.w}" height="${img.h}" loading="eager" decoding="async" style="width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:14px;box-shadow:0 12px 34px rgba(0,0,0,0.18);display:block;">
+        </figure>`;
+}
+
 function buildDistrictPage(province, district) {
   if (district.linkedOfficeSlug) return; // real office already has its own page
   const tpl = readTemplate('district.html');
@@ -535,6 +558,7 @@ ${JSON.stringify({
     hajjYear: String(HAJJ_YEAR),
     hajjDates: HAJJ_DATES[HAJJ_YEAR] ? `${new Date(HAJJ_DATES[HAJJ_YEAR].start).toLocaleDateString('en-GB',{day:'numeric',month:'long',timeZone:'UTC'})}–${new Date(HAJJ_DATES[HAJJ_YEAR].end).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}` : `mid-May ${HAJJ_YEAR}`,
     airportName: `${airportInfo.name} (${airportInfo.code})`,
+    heroImageHtml: heroImageHtmlFor(district.slug, district.name),
     relatedDistrictsHtml,
     footerOfficeList: footerOfficeListHtml(),
     year: String(new Date().getFullYear()),
@@ -576,6 +600,7 @@ function buildOfficePage(office) {
     knowsLanguageJson: JSON.stringify(office.languages),
     ctaButtons: ctaButtonsHtml(office),
     serviceList: serviceListHtml(office),
+    heroImageHtml: heroImageHtmlFor(office.slug, office.name),
     otherOfficeCards: others.map(officeCardHtml).join('\n'),
     footerOfficeList: footerOfficeListHtml(),
     year: String(new Date().getFullYear()),
