@@ -1787,6 +1787,29 @@ header nav {
     padding-right: 40px;
 }
 
+/* The quote form sits on a LIGHT background, but the rules above are styled white
+   for dark sections. Scope dark, readable colours to .quote-section only so other
+   (dark-background) uses of .section-header / .quote-field stay correct. */
+.quote-section .section-header h2 { color: #0d1b2a; }
+.quote-section .section-header p { color: rgba(26,26,26,0.72); }
+.quote-section .section-tag { color: #b8933f; }
+.quote-section .quote-field label { color: #1a1a1a; }
+.quote-section .quote-field input,
+.quote-section .quote-field select,
+.quote-section .quote-field textarea {
+    color: #1a1a1a;
+    background-color: #fff;
+    border: 1px solid rgba(13,27,42,0.22);
+}
+.quote-section .quote-field input:focus,
+.quote-section .quote-field select:focus,
+.quote-section .quote-field textarea:focus {
+    background-color: #fff;
+    border-color: #c9a962;
+}
+.quote-section .quote-field input::placeholder,
+.quote-section .quote-field textarea::placeholder { color: rgba(26,26,26,0.42); }
+
 /* === Author byline === */
 .author-byline {
     display: flex;
