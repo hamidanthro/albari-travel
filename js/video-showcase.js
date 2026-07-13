@@ -10,7 +10,7 @@
   if (!track || !modal) return;
 
   var GAP = 20; // must match .vm-track gap in CSS
-  var SPEED = 0.6; // px per frame (~36px/sec at 60fps)
+  var SPEED = 0.3; // px per frame (~18px/sec at 60fps)
   var player = document.getElementById('vmModalPlayer');
   var closeBtn = document.getElementById('vmModalClose');
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
