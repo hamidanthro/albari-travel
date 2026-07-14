@@ -100,6 +100,8 @@ function withDefaults(ctx) {
     bodyClass: isUr ? 'ur-body' : '',
     // Optional hero image (override per-page for cities with a local photo)
     heroImageHtml: '',
+    // Optional rich per-city local guide (override per-page from city-guides.json)
+    localGuideHtml: '',
     // Email signup defaults (override per-page for context-specific signups)
     emailSignupTag: isUr ? 'مفت سفری مشورے' : 'Free travel tips',
     emailSignupHeading: isUr ? 'پاکستانی مسافروں کے لیے مفت ماہانہ مشورے' : 'Monthly travel tips for Pakistani families',
@@ -408,6 +410,29 @@ const CITY_HERO = {
   'mardan':          { file: 'mardan.jpg',     w: 1280, h: 720 },
 };
 
+// Rich, unique per-city local guide content (data/city-guides.json). Rendered as a
+// distinct "Traveller's Guide" section so major-city pages are genuinely unique — not
+// templated — which is what gets them indexed. Add ~10 cities/week to the JSON.
+const CITY_GUIDES = (() => { try { return readJson('city-guides.json'); } catch (e) { return {}; } })();
+
+function localGuideHtmlFor(slug, cityName) {
+  const guide = CITY_GUIDES[slug];
+  if (!Array.isArray(guide) || !guide.length) return '';
+  const blocks = guide.map(s => `
+            <div style="margin-bottom:22px;">
+                <h3 style="font-size:1.15rem;color:#c9a962;margin-bottom:8px;">${escapeHtml(s.h)}</h3>
+                <p style="line-height:1.8;opacity:0.9;">${escapeHtml(s.p)}</p>
+            </div>`).join('');
+  return `<section class="packages" style="padding-top:30px;padding-bottom:30px;border-top:1px solid rgba(255,255,255,0.08);">
+    <div class="section-header">
+        <p class="section-tag">Traveller's Guide</p>
+        <h2 style="font-size:1.8rem;">Umrah, Hajj &amp; Travel from ${escapeHtml(cityName)}</h2>
+    </div>
+    <div style="max-width:820px;margin:30px auto 0;">${blocks}
+    </div>
+</section>`;
+}
+
 function heroImageHtmlFor(slug, cityName) {
   const img = CITY_HERO[slug];
   if (!img) return '';
@@ -559,6 +584,7 @@ ${JSON.stringify({
     hajjDates: HAJJ_DATES[HAJJ_YEAR] ? `${new Date(HAJJ_DATES[HAJJ_YEAR].start).toLocaleDateString('en-GB',{day:'numeric',month:'long',timeZone:'UTC'})}–${new Date(HAJJ_DATES[HAJJ_YEAR].end).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}` : `mid-May ${HAJJ_YEAR}`,
     airportName: `${airportInfo.name} (${airportInfo.code})`,
     heroImageHtml: heroImageHtmlFor(district.slug, district.name),
+    localGuideHtml: localGuideHtmlFor(district.slug, district.name),
     relatedDistrictsHtml,
     footerOfficeList: footerOfficeListHtml(),
     year: String(new Date().getFullYear()),
