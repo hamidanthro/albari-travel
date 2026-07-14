@@ -24,7 +24,7 @@
       '<span class="vm-thumb" style="background-image:url(https://i.ytimg.com/vi/' + id + '/hqdefault.jpg)">' +
       '<span class="vm-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>' +
       '</span>' +
-      (title ? '<span class="vm-title">' + title + '</span>' : '');
+      (title ? '<span class="vm-title" dir="auto">' + title + '</span>' : '');
   }
 
   var originals = Array.prototype.slice.call(track.querySelectorAll('.vm-card'));
